@@ -138,6 +138,51 @@
             max-width: 900px;
             margin: 0 auto;
         }
+
+        /* 目录面板 */
+        .toc-panel {
+            width: 250px;
+            background: #fff;
+            border-left: 1px solid var(--border-color);
+            padding: 1.5rem 1rem;
+            overflow-y: auto;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .toc-panel h4 {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-item {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            color: #666;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transition: color 0.2s;
+        }
+
+        .toc-item:hover {
+            color: var(--primary-color);
+        }
+
+        .toc-item.h1 { font-weight: bold; font-size: 0.95rem; }
+        .toc-item.h2 { padding-left: 12px; }
+        .toc-item.h3 { padding-left: 24px; color: #888; }
     </style>
 </head>
 <body>
@@ -176,12 +221,18 @@
                     <p>请从左侧选择一个文档进行查看。</p>
                 </div>
             </div>
+            <div class="toc-panel" id="toc-panel" style="display: none;">
+                <h4>目录</h4>
+                <ul class="toc-list" id="toc-list-content">
+                    <!-- 目录将动态生成 -->
+                </ul>
+            </div>
         </div>
     </div>
 
     <script>
         // 配置：修改此密码
-        const ACCESS_PASSWORD = 'globalpay'; 
+        const ACCESS_PASSWORD = 'vhfHXumBYtERWiKPje';
         
         // 文档列表：根据 README.md 整理的国家和对应路径
         const docs = [
@@ -235,14 +286,18 @@
             element.classList.add('active');
 
             const viewer = document.getElementById('markdown-viewer');
+            const tocPanel = document.getElementById('toc-panel');
+            const tocList = document.getElementById('toc-list-content');
+            
             viewer.innerHTML = '<p>正在加载...</p>';
+            tocPanel.style.display = 'none';
 
             try {
                 const response = await fetch(doc.path);
                 if (!response.ok) throw new Error('文件未找到');
                 const text = await response.text();
                 
-                // 配置 marked 使用 highlight.js
+                // 配置 marked
                 marked.setOptions({
                     highlight: function(code, lang) {
                         const language = hljs.getLanguage(lang) ? lang : 'plaintext';
@@ -253,6 +308,10 @@
 
                 viewer.innerHTML = marked.parse(text);
                 
+                // 生成目录
+                generateTOC(viewer, tocList);
+                tocPanel.style.display = 'block';
+
                 // 对所有代码块执行高亮
                 viewer.querySelectorAll('pre code').forEach((block) => {
                     hljs.highlightElement(block);
@@ -260,6 +319,35 @@
             } catch (err) {
                 viewer.innerHTML = '<p style="color: red;">加载失败: ' + err.message + '</p>';
             }
+        }
+
+        function generateTOC(viewer, tocList) {
+            tocList.innerHTML = '';
+            
+            // 添加“回到顶部”选项
+            const topLi = document.createElement('li');
+            topLi.className = 'toc-item h1';
+            topLi.textContent = '回到顶部 ↑';
+            topLi.onclick = () => {
+                document.querySelector('.content-area').scrollTo({ top: 0, behavior: 'smooth' });
+            };
+            tocList.appendChild(topLi);
+
+            const headings = viewer.querySelectorAll('h1, h2, h3');
+            
+            headings.forEach((heading, index) => {
+                const id = `heading-${index}`;
+                heading.id = id;
+                
+                const li = document.createElement('li');
+                li.className = `toc-item ${heading.tagName.toLowerCase()}`;
+                li.textContent = heading.textContent;
+                li.title = heading.textContent;
+                li.onclick = () => {
+                    heading.scrollIntoView({ behavior: 'smooth' });
+                };
+                tocList.appendChild(li);
+            });
         }
 
         // 检查登录状态
