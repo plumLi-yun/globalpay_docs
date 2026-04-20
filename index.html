@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalPay 文档中心</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/styles/github.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets/highlight.min.js"></script>
     <style>
         :root {
             --primary-color: #007bff;
@@ -78,11 +81,28 @@
         }
 
         .sidebar {
-            width: 250px;
+            width: 200px;
             background: #fff;
-            border-right: 1px solid var(--border-color);
-            padding: 1rem;
+            padding: 1.5rem 1rem;
+            margin-left: 30px;
             overflow-y: auto;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .sidebar h4 {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .doc-list {
@@ -115,18 +135,8 @@
         }
 
         #markdown-viewer {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .header {
-            background: #fff;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
     </style>
 </head>
@@ -152,18 +162,16 @@
 
     <!-- 主界面 -->
     <div id="main-content">
-        <div class="header">
-            <h3>GlobalPay Docs</h3>
-        </div>
         <div style="display: flex; flex: 1; overflow: hidden;">
             <div class="sidebar">
+                <h3>GlobalPay Docs</h3>
                 <h4>国家列表</h4>
                 <ul class="doc-list" id="doc-list">
                     <!-- 文档列表将动态生成 -->
                 </ul>
             </div>
             <div class="content-area">
-                <div id="markdown-viewer">
+                <div id="markdown-viewer" class="markdown-body">
                     <h1>欢迎</h1>
                     <p>请从左侧选择一个文档进行查看。</p>
                 </div>
@@ -207,12 +215,17 @@
         function renderDocList() {
             const list = document.getElementById('doc-list');
             list.innerHTML = '';
-            docs.forEach(doc => {
+            docs.forEach((doc, index) => {
                 const li = document.createElement('li');
                 li.className = 'doc-item';
                 li.textContent = doc.name;
                 li.onclick = () => loadDoc(doc, li);
                 list.appendChild(li);
+
+                // 默认加载第一个文档
+                if (index === 0) {
+                    loadDoc(doc, li);
+                }
             });
         }
 
@@ -228,7 +241,22 @@
                 const response = await fetch(doc.path);
                 if (!response.ok) throw new Error('文件未找到');
                 const text = await response.text();
+                
+                // 配置 marked 使用 highlight.js
+                marked.setOptions({
+                    highlight: function(code, lang) {
+                        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                        return hljs.highlight(code, { language }).value;
+                    },
+                    langPrefix: 'hljs language-'
+                });
+
                 viewer.innerHTML = marked.parse(text);
+                
+                // 对所有代码块执行高亮
+                viewer.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightElement(block);
+                });
             } catch (err) {
                 viewer.innerHTML = '<p style="color: red;">加载失败: ' + err.message + '</p>';
             }
