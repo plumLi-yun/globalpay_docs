@@ -55,22 +55,22 @@
 | timestamp      | string | false | 下单时间戳 10位时间戳单位S                                                                                                                                                               |
 
 - 代收-attach 附加参数字段说明
-  
-  | 名称            | 类型     | 必填    | 描述                                               |
-  | ------------- | ------ | ----- | ------------------------------------------------ |
-  | name          | string | false | 付款人姓名   （建议填写例如巴基斯坦必须）     巴西个人传个人姓名, 巴西公司传公司名称  |
-  | email         | string | false | 付款人邮箱   （建议填写例如巴基斯坦必须）                           |
-  | phone         | string | false | 付款人手机号  （建议填写例如巴基斯坦必须 03开头的11位数字（真实有效））          |
-  | identify_type | string | false | 证件类型 CPF、CNPJ、IFSC                               |
-  | identify_num  | string | false | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)  印度（IFSC） |
-  | account_no    | string | true  | 付款账号                                             |
-  | account_type  | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE,UPI(印度Upi),BANK(银行帐号)  |
-  | bank_code     | string | false | 银行代码（泰国必须）                                       |
-  | bank_name     | string | false | 银行名称                                             |
+
+| 名称            | 类型     | 必填    | 描述                                               |
+| ------------- | ------ | ----- | ------------------------------------------------ |
+| name          | string | false | 付款人姓名   （建议填写例如巴基斯坦必须）     巴西个人传个人姓名, 巴西公司传公司名称  |
+| email         | string | false | 付款人邮箱   （建议填写例如巴基斯坦必须）                           |
+| phone         | string | false | 付款人手机号  （建议填写例如巴基斯坦必须 03开头的11位数字（真实有效））          |
+| identify_type | string | false | 证件类型 CPF、CNPJ、IFSC                               |
+| identify_num  | string | false | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)  印度（IFSC） |
+| account_no    | string | true  | 付款账号                                             |
+| account_type  | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE,UPI(印度Upi),BANK(银行帐号)  |
+| bank_code     | string | false | 银行代码（泰国必须）                                       |
+| bank_name     | string | false | 银行名称                                             |
 
 - 代收-下单请求示例
-  
-  ```json
+
+```json
   {
   "trade_no": 10003,
   "order_no": "p7158412025RAprmNz7lR",
@@ -85,7 +85,7 @@
   "fail_url": "",
   "user_id": "2677343"
   }
-  ```
+```
 
 ## 4.2 代收-下单响应
 
@@ -105,18 +105,17 @@
 
 失败:
 
-json
-
+```json
 {
   "code": 1005,
   "msg": "Merchant not found",
   "sign": ""
 }
+```
 
 成功:
 
-json
-
+```json
 {
   "code": 200,
   "msg": "",
@@ -126,6 +125,7 @@ json
   "create_time": 1752825512,
   "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
 }
+```
 
 # 5、代收回调通知 post/json
 
@@ -149,8 +149,7 @@ json
 
 - 代收回调-请求参数示例
 
-json
-
+```json
 {
   "trade_no": 10003,
   "status": 3,
@@ -163,6 +162,7 @@ json
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
 }
+```
 
 ## 5.2 代收回调-响应说明
 
@@ -197,8 +197,7 @@ json
 
 - 代付-请求参数示例
 
-json
-
+```json
 {
   "trade_no": 10003,
   "order_no": "p7158412025MsJydJqT7b",
@@ -216,6 +215,7 @@ json
   "identify_type": "",
   "identify_num": ""
 }
+```
 
 ## 6.2 代付-下单响应
 
@@ -233,18 +233,17 @@ json
 
 失败:
 
-json
-
+```json
 {
   "code": 1005,
   "msg": "Merchant not found",
   "sign": ""
 }
+```
 
 成功:
 
-json
-
+```json
 {
   "code": 200,
   "msg": "",
@@ -254,6 +253,7 @@ json
   "create_time": 1752826877,
   "status": 10
 }
+```
 
 # 7、代付回调通知
 
@@ -277,8 +277,7 @@ json
 
 - 代付回调请求示例
 
-json
-
+```json
 {
   "trade_no": 10003,
   "status": 3,
@@ -289,6 +288,7 @@ json
   "create_time": 1752808865,
   "sign": "746140950528indi"
 }
+```
 
 ## 7.2 代付回调响应说明
 
@@ -311,8 +311,7 @@ json
 
 - 查询请求示例
 
-json
-
+```json
 {
   "order_type": "pay_in",
   "trade_no": 165,
@@ -320,6 +319,7 @@ json
   "dis_order_no": "p7158277185f96603047656571",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
+```
 
 ## 8.2 查询响应
 
@@ -345,17 +345,16 @@ json
 
 失败:
 
-json
-
+```json
 {
   "code": 1017,
   "msg": "订单不存在"
 }
+```
 
 成功:
 
-json
-
+```json
 {
   "code": 200,
   "msg": "success",
@@ -371,6 +370,7 @@ json
   "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
+```
 
 # 9、代付余额查询接口
 
@@ -387,13 +387,13 @@ json
 
 - 余额请求示例
 
-json
-
+```json
 {
   "trade_no": 165,
   "app_id": 281,
   "sign": "db3406277185f9660b3b928d6adc115"
 }
+```
 
 ## 9.2 余额响应
 
@@ -409,17 +409,16 @@ json
 
 失败:
 
-json
-
+```json
 {
   "code": 10001,
   "msg": "商户不存在"
 }
+```
 
 成功:
 
-json
-
+```json
 {
   "code": 200,
   "msg": "success",
@@ -427,6 +426,7 @@ json
   "balance_frozen": 1000,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
+```
 
 # 10、付款凭证查询接口
 
@@ -445,8 +445,7 @@ json
 
 - 付款凭证请求示例
 
-json
-
+```json
 {
     "trade_no": 10003,
     "app_id": 10003,
@@ -454,6 +453,7 @@ json
     "dis_order_no": "35011C02gljuf6k0800india1lVY",
     "sign": "3969f17cd1a551769f85967d0a05b7b6"
 }
+```
 
 ## 10.2 付款凭证响应参数
 
@@ -468,8 +468,7 @@ json
 - 付款凭证响应示例  
   没有付款凭证
 
-json
-
+```json
 {
 "code":200,
 "msg":"No payment voucher available at the moment",
@@ -477,11 +476,11 @@ json
 "img_link": "",
 "img_base": ""
 }
+```
 
 有付款凭证
 
-json
-
+```json
 {
 "code": 200,
 "msg": "",
@@ -489,6 +488,7 @@ json
 "img_link": "http://dsggfgdsf.djdj?ddd=snn",
 "img_base": "data:image/png;base64,hfhshdhfhfh"
 }
+```
 
 # 11、银行编码
 
