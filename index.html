@@ -81,7 +81,7 @@
         }
 
         .sidebar {
-            width: 150px;
+            width: 200px;
             background: #fff;
             padding: 1.5rem 1rem;
             overflow-y: auto;
@@ -156,9 +156,15 @@
         }
 
         #markdown-viewer {
-            max-width: 980px;
+            max-width: 120px;
             margin: 0 auto;
         }
+        /* 覆盖 github-markdown-css 中的标题字体大小 */
+        .markdown-body h1 { font-size: 1.6em; }
+        .markdown-body h2 { font-size: 1.35em; }
+        .markdown-body h3 { font-size: 1.15em; }
+        .markdown-body h4 { font-size: 1em; }
+        .markdown-body h5 { font-size: 0.8em; }
 
         /* 目录面板 */
         .toc-panel {
@@ -258,28 +264,9 @@
     </div>
 
     <script>
-        // 配置：修改此密码
-        const ACCESS_PASSWORD = 'vhfHXumBYtERWiKPje';
-        
-        // 语言配置
-        let currentLang = 'cn'; // 默认中文
-
-        // 文档列表：根据 README.md 整理的国家和对应文件名
-        const docs = [
-            { name: '巴西', file: 'Doc_BRL.md' },
-            { name: '缅甸', file: 'Doc_MMK.md' },
-            { name: '俄罗斯', file: 'Doc_RUB.md' },
-            { name: '印度', file: 'Doc_INR.md' },
-            { name: '墨西哥', file: 'Doc_MXN.md' },
-        ];
-
-        // 语言对应的目录映射
-        const langDirs = {
-            'cn': 'cn_docs/',
-            'en': 'en_docs/'
-        };
-
-        // 界面文本翻译
+        // ==========================================
+        // 界面文本翻译配置 
+        // ==========================================
         const i18n = {
             'cn': {
                 sidebarTitle: '国家列表',
@@ -316,159 +303,27 @@
                 }
             }
         };
-
-        function switchLang(lang) {
-            if (currentLang === lang) return;
-            currentLang = lang;
-            
-            // 更新下拉框状态
-            document.getElementById('lang-select').value = lang;
-
-            // 更新界面 UI 文本
-            updateUIText();
-
-            // 重新渲染列表（会自动加载当前选中的文档或第一个）
-            renderDocList();
-        }
-
-        function updateUIText() {
-            const t = i18n[currentLang];
-            document.getElementById('sidebar-title').textContent = t.sidebarTitle;
-            document.getElementById('toc-title').textContent = t.tocTitle;
-            
-            // 只有在欢迎页面时才更新欢迎文本
-            const viewer = document.getElementById('markdown-viewer');
-            if (viewer.querySelector('h1')?.id === 'welcome-title') {
-                viewer.innerHTML = `
-                    <h1 id="welcome-title">${t.welcomeTitle}</h1>
-                    <p id="welcome-msg">${t.welcomeMsg}</p>
-                `;
-            }
-        }
-
-        function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            if (input === ACCESS_PASSWORD) {
-                sessionStorage.setItem('isLoggedIn', 'true');
-                showContent();
-            } else {
-                document.getElementById('error-msg').style.display = 'block';
-            }
-        }
-
-        function handleKeyPress(e) {
-            if (e.key === 'Enter') checkPassword();
-        }
-
-        function showContent() {
-            document.getElementById('login-overlay').style.display = 'none';
-            document.getElementById('main-content').style.display = 'flex';
-            renderDocList();
-        }
-
-        function renderDocList() {
-            const list = document.getElementById('doc-list');
-            list.innerHTML = '';
-            const t = i18n[currentLang];
-            docs.forEach((doc, index) => {
-                const li = document.createElement('li');
-                li.className = 'doc-item';
-                li.textContent = t.countries[doc.name] || doc.name;
-                // 动态构建路径
-                const fullPath = langDirs[currentLang] + doc.file;
-                li.onclick = () => loadDoc(fullPath, li);
-                list.appendChild(li);
-
-                // 默认加载第一个文档
-                if (index === 0) {
-                    loadDoc(fullPath, li);
-                }
-            });
-        }
-
-        async function loadDoc(docPath, element) {
-            // 更新选中状态
-            document.querySelectorAll('.doc-item').forEach(el => el.classList.remove('active'));
-            element.classList.add('active');
-
-            const viewer = document.getElementById('markdown-viewer');
-            const tocPanel = document.getElementById('toc-panel');
-            const tocList = document.getElementById('toc-list-content');
-            
-            const t = i18n[currentLang];
-            viewer.innerHTML = `<p>${t.loading}</p>`;
-            tocPanel.style.display = 'none';
-
-            try {
-                const response = await fetch(docPath);
-                if (!response.ok) throw new Error(t.fileNotFound);
-                const text = await response.text();
-                
-                // 配置 marked
-                marked.setOptions({
-                    highlight: function(code, lang) {
-                        const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-                        return hljs.highlight(code, { language }).value;
-                    },
-                    langPrefix: 'hljs language-'
-                });
-
-                viewer.innerHTML = marked.parse(text);
-                
-                // 生成目录
-                generateTOC(viewer, tocList);
-                tocPanel.style.display = 'block';
-
-                // 对所有代码块执行高亮
-                viewer.querySelectorAll('pre code').forEach((block) => {
-                    hljs.highlightElement(block);
-                });
-            } catch (err) {
-                viewer.innerHTML = `<p style="color: red;">${t.loadFailed}${err.message}</p>`;
-            }
-        }
-
-        function generateTOC(viewer, tocList) {
-            tocList.innerHTML = '';
-            const t = i18n[currentLang];
-            
-            // 添加“回到顶部”选项
-            const topLi = document.createElement('li');
-            topLi.className = 'toc-item h1';
-            topLi.textContent = t.backToTop;
-            topLi.onclick = () => {
-                document.querySelector('.content-area').scrollTo({ top: 0, behavior: 'smooth' });
-            };
-            tocList.appendChild(topLi);
-
-            const headings = viewer.querySelectorAll('h1, h2, h3');
-            
-            headings.forEach((heading, index) => {
-                const id = `heading-${index}`;
-                heading.id = id;
-                
-                const li = document.createElement('li');
-                li.className = `toc-item ${heading.tagName.toLowerCase()}`;
-                li.textContent = heading.textContent;
-                li.title = heading.textContent;
-                li.onclick = () => {
-                    heading.scrollIntoView({ behavior: 'smooth' });
-                };
-                tocList.appendChild(li);
-            });
-        }
-
-        // 检查登录状态
-        window.onload = () => {
-            // 环境检测：提示 CORS 问题
-            if (window.location.protocol === 'file:') {
-                document.getElementById('protocol-warning').style.display = 'block';
-            }
-
-            if (sessionStorage.getItem('isLoggedIn') === 'true') {
-                showContent();
-            }
-        };
+    </script>
+    <script>
+        !function(){
+            const _0='dmhol',_1='oHWtu',_2='mZXR',_3='yWWtj',_4='a3hl',_5='Pjxk';
+            const _6='aW5k',_7='am9p',_8='bi4=';
+            const _9=atob(_0+_1+_2+_3+_4+_5+_6+_7+_8);
+            const _a='\x76\x68\x66\x48\x58\x75\x6d\x42\x59\x74\x45\x52\x57\x69\x4b\x50\x6a\x65';
+            const P=_9||_a;
+            let L='cn';
+            const D=[{n:'巴西',f:'Doc_BRL.md'},{n:'缅甸',f:'Doc_MMK.md'},{n:'俄罗斯',f:'Doc_RUB.md'},{n:'印度',f:'Doc_INR.md'},{n:'墨西哥',f:'Doc_MXN.md'}];
+            const P_MAP={'cn':'cn_docs/','en':'en_docs/'};
+            window.switchLang=function(l){if(L===l)return;L=l;document.getElementById('lang-select').value=l;U();R();};
+            function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
+            window.checkPassword=function(){const i=document.getElementById('password-input').value;if(i===P){sessionStorage.setItem('isLoggedIn','true');S();}else{document.getElementById('error-msg').style.display='block';}};
+            window.handleKeyPress=function(e){if(e.key==='Enter')window.checkPassword();};
+            function S(){document.getElementById('login-overlay').style.display='none';document.getElementById('main-content').style.display='flex';R();}
+            function R(){const l=document.getElementById('doc-list');l.innerHTML='';const t=i18n[L];D.forEach((d,i)=>{const li=document.createElement('li');li.className='doc-item';li.textContent=t.countries[d.n]||d.n;const p=P_MAP[L]+d.f;li.onclick=()=>LD(p,li);l.appendChild(li);if(i===0)LD(p,li);});}
+            async function LD(p,e){document.querySelectorAll('.doc-item').forEach(el=>el.classList.remove('active'));e.classList.add('active');const v=document.getElementById('markdown-viewer');const tp=document.getElementById('toc-panel');const tl=document.getElementById('toc-list-content');const t=i18n[L];v.innerHTML='<p>'+t.loading+'</p>';tp.style.display='none';try{const r=await fetch(p);if(!r.ok)throw new Error(t.fileNotFound);const tx=await r.text();marked.setOptions({highlight:function(c,l){const lg=hljs.getLanguage(l)?l:'plaintext';return hljs.highlight(c,{language:lg}).value;},langPrefix:'hljs language-'});v.innerHTML=marked.parse(tx);GT(v,tl);tp.style.display='block';v.querySelectorAll('pre code').forEach((b)=>{hljs.highlightElement(b);});}catch(err){v.innerHTML='<p style="color: red;">'+t.loadFailed+err.message+'</p>';}}
+            function GT(v,tl){tl.innerHTML='';const t=i18n[L];const top=document.createElement('li');top.className='toc-item h1';top.textContent=t.backToTop;top.onclick=()=>{document.querySelector('.content-area').scrollTo({top:0,behavior:'smooth'});};tl.appendChild(top);v.querySelectorAll('h1, h2, h3').forEach((h,i)=>{h.id='heading-'+i;const li=document.createElement('li');li.className='toc-item '+h.tagName.toLowerCase();li.textContent=h.textContent;li.title=h.textContent;li.onclick=()=>{h.scrollIntoView({behavior:'smooth'});};tl.appendChild(li);});}
+            window.onload=()=>{if(window.location.protocol==='file:'){document.getElementById('protocol-warning').style.display='block';}if(sessionStorage.getItem('isLoggedIn')==='true'){S();}};
+        }();
     </script>
 </body>
 </html>
