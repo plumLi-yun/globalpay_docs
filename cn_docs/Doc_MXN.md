@@ -434,11 +434,11 @@
 
 ```json
 {
-    "trade_no": 10003,
-    "app_id": 10003,
-    "order_no": "",
-    "dis_order_no": "35011C02gljuf6k0800india1lVY",
-    "sign": "3969f17cd1a551769f85967d0a05b7b6"
+  "trade_no": 10003,
+  "app_id": 10003,
+  "order_no": "",
+  "dis_order_no": "35011C02gljuf6k0800india1lVY",
+  "sign": "3969f17cd1a551769f85967d0a05b7b6"
 }
 ```
 
@@ -456,21 +456,21 @@
    没有付款凭证
 ```json
 {
-"code":200,
-"msg":"No payment voucher available at the moment",
-"sign": "",
-"img_link": "",
-"img_base": ""
+  "code":200,
+  "msg":"No payment voucher available at the moment",
+  "sign": "",
+  "img_link": "",
+  "img_base": ""
 }
 ```
 有付款凭证
 ```json
 {
-"code": 200,
-"msg": "",
-"sign": "3969f17cd1a551769f85967d0a05b7b6",
-"img_link": "http://dsggfgdsf.djdj?ddd=snn",
-"img_base": "data:image/png;base64,hfhshdhfhfh"
+  "code": 200,
+  "msg": "",
+  "sign": "3969f17cd1a551769f85967d0a05b7b6",
+  "img_link": "http://dsggfgdsf.djdj?ddd=snn",
+  "img_base": "data:image/png;base64,hfhshdhfhfh"
 }
 ```
 

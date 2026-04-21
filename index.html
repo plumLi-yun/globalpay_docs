@@ -114,7 +114,8 @@
                     '缅甸': '缅甸',
                     '俄罗斯': '俄罗斯',
                     '印度': '印度',
-                    '墨西哥': '墨西哥'
+                    '墨西哥': '墨西哥',
+                    '越南': '越南'
                 }
             },
             'en': {
@@ -131,7 +132,8 @@
                     '缅甸': 'Myanmar',
                     '俄罗斯': 'Russia',
                     '印度': 'India',
-                    '墨西哥': 'Mexico'
+                    '墨西哥': 'Mexico',
+                    '越南': 'Vietnam'
                 }
             }
         };
@@ -143,7 +145,7 @@
             const _a='\x76\x68\x66\x48\x58\x75\x6d\x42\x59\x74\x45\x52\x57\x69\x4b\x50\x6a\x65';
             const P=_6||_a;
             let L='cn';
-            const D=[{n:'巴西',f:'Doc_BRL.md'},{n:'缅甸',f:'Doc_MMK.md'},{n:'俄罗斯',f:'Doc_RUB.md'},{n:'印度',f:'Doc_INR.md'},{n:'墨西哥',f:'Doc_MXN.md'}];
+            const D=[{n:'巴西',f:'Doc_BRL.md'},{n:'缅甸',f:'Doc_MMK.md'},{n:'俄罗斯',f:'Doc_RUB.md'},{n:'印度',f:'Doc_INR.md'},{n:'墨西哥',f:'Doc_MXN.md'},{n:'越南',f:'Doc_VND.md'}];
             const P_MAP={'cn':'cn_docs/','en':'en_docs/'};
             window.switchLang=function(l){if(L===l)return;L=l;document.getElementById('lang-select').value=l;U();R();};
             function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
