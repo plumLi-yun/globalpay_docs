@@ -81,20 +81,41 @@
         }
 
         .sidebar {
-            width: 200px;
+            width: 150px;
             background: #fff;
             padding: 1.5rem 1rem;
-            margin-left: 30px;
             overflow-y: auto;
         }
 
         .sidebar h3 {
             margin-top: 0;
-            margin-bottom: 2rem;
+            margin-bottom: 0.5rem;
             font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary-color);
             letter-spacing: -0.5px;
+        }
+
+        /* 语言下拉框容器 */
+        .lang-select-container {
+            margin-bottom: 1rem;
+            text-align: right;
+        }
+
+        .lang-select {
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: #fff;
+            color: #666;
+            cursor: pointer;
+            outline: none;
+            width: 100%;
+        }
+
+        .lang-select:hover {
+            border-color: var(--primary-color);
         }
 
         .sidebar h4 {
@@ -135,7 +156,7 @@
         }
 
         #markdown-viewer {
-            max-width: 900px;
+            max-width: 980px;
             margin: 0 auto;
         }
 
@@ -209,20 +230,26 @@
     <div id="main-content">
         <div style="display: flex; flex: 1; overflow: hidden;">
             <div class="sidebar">
-                <h3>GlobalPay Docs</h3>
-                <h4>国家列表</h4>
+                <h3>GlobalPay</h3>
+                <div class="lang-select-container">
+                    <select class="lang-select" id="lang-select" onchange="switchLang(this.value)">
+                        <option value="cn">中文</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <h4 id="sidebar-title">国家列表</h4>
                 <ul class="doc-list" id="doc-list">
                     <!-- 文档列表将动态生成 -->
                 </ul>
             </div>
             <div class="content-area">
                 <div id="markdown-viewer" class="markdown-body">
-                    <h1>欢迎</h1>
-                    <p>请从左侧选择一个文档进行查看。</p>
+                    <h1 id="welcome-title">欢迎</h1>
+                    <p id="welcome-msg">请从左侧选择一个文档进行查看。</p>
                 </div>
             </div>
             <div class="toc-panel" id="toc-panel" style="display: none;">
-                <h4>目录</h4>
+                <h4 id="toc-title">目录</h4>
                 <ul class="toc-list" id="toc-list-content">
                     <!-- 目录将动态生成 -->
                 </ul>
@@ -234,14 +261,90 @@
         // 配置：修改此密码
         const ACCESS_PASSWORD = 'vhfHXumBYtERWiKPje';
         
-        // 文档列表：根据 README.md 整理的国家和对应路径
+        // 语言配置
+        let currentLang = 'cn'; // 默认中文
+
+        // 文档列表：根据 README.md 整理的国家和对应文件名
         const docs = [
-            { name: '巴西', path: 'cn_docs/Doc_BRL.md' },
-            { name: '缅甸', path: 'cn_docs/Doc_MMK.md' },
-            { name: '俄罗斯', path: 'cn_docs/Doc_RUB.md' },
-            { name: '印度', path: 'cn_docs/Doc_INR.md' },
-            { name: '墨西哥', path: 'cn_docs/Doc_MXN.md' },
+            { name: '巴西', file: 'Doc_BRL.md' },
+            { name: '缅甸', file: 'Doc_MMK.md' },
+            { name: '俄罗斯', file: 'Doc_RUB.md' },
+            { name: '印度', file: 'Doc_INR.md' },
+            { name: '墨西哥', file: 'Doc_MXN.md' },
         ];
+
+        // 语言对应的目录映射
+        const langDirs = {
+            'cn': 'cn_docs/',
+            'en': 'en_docs/'
+        };
+
+        // 界面文本翻译
+        const i18n = {
+            'cn': {
+                sidebarTitle: '国家列表',
+                tocTitle: '目录',
+                backToTop: '回到顶部 ↑',
+                welcomeTitle: '欢迎',
+                welcomeMsg: '请从左侧选择一个文档进行查看。',
+                loading: '正在加载...',
+                fileNotFound: '文件未找到',
+                loadFailed: '加载失败: ',
+                countries: {
+                    '巴西': '巴西',
+                    '缅甸': '缅甸',
+                    '俄罗斯': '俄罗斯',
+                    '印度': '印度',
+                    '墨西哥': '墨西哥'
+                }
+            },
+            'en': {
+                sidebarTitle: 'Countries',
+                tocTitle: 'Table of Contents',
+                backToTop: 'Back to Top ↑',
+                welcomeTitle: 'Welcome',
+                welcomeMsg: 'Please select a document from the left to view.',
+                loading: 'Loading...',
+                fileNotFound: 'File not found',
+                loadFailed: 'Load failed: ',
+                countries: {
+                    '巴西': 'Brazil',
+                    '缅甸': 'Myanmar',
+                    '俄罗斯': 'Russia',
+                    '印度': 'India',
+                    '墨西哥': 'Mexico'
+                }
+            }
+        };
+
+        function switchLang(lang) {
+            if (currentLang === lang) return;
+            currentLang = lang;
+            
+            // 更新下拉框状态
+            document.getElementById('lang-select').value = lang;
+
+            // 更新界面 UI 文本
+            updateUIText();
+
+            // 重新渲染列表（会自动加载当前选中的文档或第一个）
+            renderDocList();
+        }
+
+        function updateUIText() {
+            const t = i18n[currentLang];
+            document.getElementById('sidebar-title').textContent = t.sidebarTitle;
+            document.getElementById('toc-title').textContent = t.tocTitle;
+            
+            // 只有在欢迎页面时才更新欢迎文本
+            const viewer = document.getElementById('markdown-viewer');
+            if (viewer.querySelector('h1')?.id === 'welcome-title') {
+                viewer.innerHTML = `
+                    <h1 id="welcome-title">${t.welcomeTitle}</h1>
+                    <p id="welcome-msg">${t.welcomeMsg}</p>
+                `;
+            }
+        }
 
         function checkPassword() {
             const input = document.getElementById('password-input').value;
@@ -266,21 +369,24 @@
         function renderDocList() {
             const list = document.getElementById('doc-list');
             list.innerHTML = '';
+            const t = i18n[currentLang];
             docs.forEach((doc, index) => {
                 const li = document.createElement('li');
                 li.className = 'doc-item';
-                li.textContent = doc.name;
-                li.onclick = () => loadDoc(doc, li);
+                li.textContent = t.countries[doc.name] || doc.name;
+                // 动态构建路径
+                const fullPath = langDirs[currentLang] + doc.file;
+                li.onclick = () => loadDoc(fullPath, li);
                 list.appendChild(li);
 
                 // 默认加载第一个文档
                 if (index === 0) {
-                    loadDoc(doc, li);
+                    loadDoc(fullPath, li);
                 }
             });
         }
 
-        async function loadDoc(doc, element) {
+        async function loadDoc(docPath, element) {
             // 更新选中状态
             document.querySelectorAll('.doc-item').forEach(el => el.classList.remove('active'));
             element.classList.add('active');
@@ -289,12 +395,13 @@
             const tocPanel = document.getElementById('toc-panel');
             const tocList = document.getElementById('toc-list-content');
             
-            viewer.innerHTML = '<p>正在加载...</p>';
+            const t = i18n[currentLang];
+            viewer.innerHTML = `<p>${t.loading}</p>`;
             tocPanel.style.display = 'none';
 
             try {
-                const response = await fetch(doc.path);
-                if (!response.ok) throw new Error('文件未找到');
+                const response = await fetch(docPath);
+                if (!response.ok) throw new Error(t.fileNotFound);
                 const text = await response.text();
                 
                 // 配置 marked
@@ -317,17 +424,18 @@
                     hljs.highlightElement(block);
                 });
             } catch (err) {
-                viewer.innerHTML = '<p style="color: red;">加载失败: ' + err.message + '</p>';
+                viewer.innerHTML = `<p style="color: red;">${t.loadFailed}${err.message}</p>`;
             }
         }
 
         function generateTOC(viewer, tocList) {
             tocList.innerHTML = '';
+            const t = i18n[currentLang];
             
             // 添加“回到顶部”选项
             const topLi = document.createElement('li');
             topLi.className = 'toc-item h1';
-            topLi.textContent = '回到顶部 ↑';
+            topLi.textContent = t.backToTop;
             topLi.onclick = () => {
                 document.querySelector('.content-area').scrollTo({ top: 0, behavior: 'smooth' });
             };
