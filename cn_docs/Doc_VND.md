@@ -524,230 +524,113 @@
 
 | 字段名称      | 编码                                    | 银行名称                                  |
 |:--------- |:------------------------------------- |:------------------------------------- |
-| bank_code | RUB_BANK                              | RUBBANK                               |
-| bank_code | SBER                                  | Сбер Be patient                       |
-| bank_code | TINKOFF                               | Тинькофф Tinkoff                      |
-| bank_code | АБ_РОССИЯ                             | АБ РОССИЯ                             |
-| bank_code | АГРОПРОМКРЕДИТ                        | АГРОПРОМКРЕДИТ                        |
-| bank_code | АКБ_Держава                           | АКБ Держава                           |
-| bank_code | АКБ_ЕВРОФИНАНС_МОСНАРБАНК             | АКБ ЕВРОФИНАНС МОСНАРБАНК             |
-| bank_code | АКБ_Приморье                          | АКБ Приморье                          |
-| bank_code | АКБ_СЛАВИЯ                            | АКБ СЛАВИЯ                            |
-| bank_code | АКБ_Тендер_Банк                       | АКБ Тендер Банк                       |
-| bank_code | АКБ_ЦентроКредит                      | АКБ ЦентроКредит                      |
-| bank_code | АКИБАНК                               | АКИБАНК                               |
-| bank_code | Абсолют_Банк                          | Абсолют Банк                          |
-| bank_code | Авангард                              | Авангард                              |
-| bank_code | Авто_Финанс_Банк                      | Авто Финанс Банк                      |
-| bank_code | Автоградбанк                          | Автоградбанк                          |
-| bank_code | Автоторгбанк                          | Автоторгбанк                          |
-| bank_code | Азиатско-Тихоокеанский_Банк           | Азиатско-Тихоокеанский Банк           |
-| bank_code | Ак_Барс_Банк                          | Ак Барс Банк                          |
-| bank_code | Алеф-Банк                             | Алеф-Банк                             |
-| bank_code | Алмазэргиэнбанк                       | Алмазэргиэнбанк                       |
-| bank_code | Алтайкапиталбанк                      | Алтайкапиталбанк                      |
-| bank_code | Альфа-Банк                            | Альфа-Банк                            |
-| bank_code | Америкэн_Экспресс_Банк                | Америкэн Экспресс Банк                |
-| bank_code | Аресбанк                              | Аресбанк                              |
-| bank_code | БАНК_МОСКВА-СИТИ                      | БАНК МОСКВА-СИТИ                      |
-| bank_code | БАНК_ОРЕНБУРГ                         | БАНК ОРЕНБУРГ                         |
-| bank_code | БАНК_УРАЛСИБ                          | БАНК УРАЛСИБ                          |
-| bank_code | БЖФ_Банк                              | БЖФ Банк                              |
-| bank_code | БКС_Банк                              | БКС Банк                              |
-| bank_code | Банк_131                              | Банк 131                              |
-| bank_code | Банк_Аверс                            | Банк Аверс                            |
-| bank_code | Банк_Агророс                          | Банк Агророс                          |
-| bank_code | Банк_Акцепт                           | Банк Акцепт                           |
-| bank_code | Банк_Александровский                  | Банк Александровский                  |
-| bank_code | Банк_ББР                              | Банк ББР                              |
-| bank_code | Банк_БКФ                              | Банк БКФ                              |
-| bank_code | Банк_ВБРР                             | Банк ВБРР                             |
-| bank_code | Банк_Венец                            | Банк Венец                            |
-| bank_code | Банк_Вологжанин                       | Банк Вологжанин                       |
-| bank_code | Банк_ДОМ.РФ                           | Банк ДОМ.РФ                           |
-| bank_code | Банк_Екатеринбург                     | Банк Екатеринбург                     |
-| bank_code | Банк_Заречье                          | Банк Заречье                          |
-| bank_code | Банк_Зенит                            | Банк Зенит                            |
-| bank_code | Банк_ИПБ                              | Банк ИПБ                              |
-| bank_code | Банк_ИТУРУП                           | Банк ИТУРУП                           |
-| bank_code | Банк_Интеза                           | Банк Интеза                           |
-| bank_code | Банк_Йошкар-Ола                       | Банк Йошкар-Ола                       |
-| bank_code | Банк_Казани                           | Банк Казани                           |
-| bank_code | Банк_Кремлевский                      | Банк Кремлевский                      |
-| bank_code | Банк_МБА-МОСКВА                       | Банк МБА-МОСКВА                       |
-| bank_code | Банк_Мир_Привилегий                   | Банк Мир Привилегий                   |
-| bank_code | Банк_Объединенный_капитал             | Банк Объединенный капитал             |
-| bank_code | Банк_Оранжевый                        | Банк Оранжевый                        |
-| bank_code | Банк_ПСКБ                             | Банк ПСКБ                             |
-| bank_code | Банк_Пермь                            | Банк Пермь                            |
-| bank_code | Банк_Развитие-Столица                 | Банк Развитие-Столица                 |
-| bank_code | Банк_Раунд                            | Банк Раунд                            |
-| bank_code | Банк_Русский_Стандарт                 | Банк Русский Стандарт                 |
-| bank_code | Банк_СИАБ                             | Банк СИАБ                             |
-| bank_code | Банк_Саратов                          | Банк Саратов                          |
-| bank_code | Банк_Синара                           | Банк Синара                           |
-| bank_code | Банк_Снежинский                       | Банк Снежинский                       |
-| bank_code | Банк_Финсервис                        | Банк Финсервис                        |
-| bank_code | Банк_ЧБРР                             | Банк ЧБРР                             |
-| bank_code | Белгородсоцбанк                       | Белгородсоцбанк                       |
-| bank_code | Бланк_банк                            | Бланк банк                            |
-| bank_code | Братский_АНКБ                         | Братский АНКБ                         |
-| bank_code | БыстроБанк                            | БыстроБанк                            |
-| bank_code | ВЛАДБИЗНЕСБАНК                        | ВЛАДБИЗНЕСБАНК                        |
-| bank_code | ВНЕШФИНБАНК                           | ВНЕШФИНБАНК                           |
-| bank_code | ВТБ                                   | ВТБ                                   |
-| bank_code | ВУЗ_банк                              | ВУЗ банк                              |
-| bank_code | Вайлдберриз_Банк                      | Вайлдберриз Банк                      |
-| bank_code | ГЕНБАНК                               | ГЕНБАНК                               |
-| bank_code | ГОРБАНК                               | ГОРБАНК                               |
-| bank_code | ГУТА-БАНК                             | ГУТА-БАНК                             |
-| bank_code | Газпромбанк                           | Газпромбанк                           |
-| bank_code | Газтрансбанк                          | Газтрансбанк                          |
-| bank_code | Газэнергобанк                         | Газэнергобанк                         |
-| bank_code | Гарант-Инвест_банк                    | Гарант-Инвест банк                    |
-| bank_code | Дальневосточный_банк                  | Дальневосточный банк                  |
-| bank_code | Датабанк                              | Датабанк                              |
-| bank_code | Джей_энд_Ти_Банк                      | Джей энд Ти Банк                      |
-| bank_code | Дойче_Банк                            | Дойче Банк                            |
-| bank_code | Долинск                               | Долинск                               |
-| bank_code | Драйв_Клик_Банк                       | Драйв Клик Банк                       |
-| bank_code | Енисейский_Объединенный_банк          | Енисейский Объединенный банк          |
-| bank_code | Земский_банк                          | Земский банк                          |
-| bank_code | Золотая_Корона_(РНКО_Платежный_центр) | Золотая Корона (РНКО Платежный центр) |
-| bank_code | ИК_Банк                               | ИК Банк                               |
-| bank_code | ИНЭКО                                 | ИНЭКО                                 |
-| bank_code | ИШБАНК                                | ИШБАНК                                |
-| bank_code | Инбанк                                | Инбанк                                |
-| bank_code | Ингосстрах_Банк                       | Ингосстрах Банк                       |
-| bank_code | КБ_ИС_Банк                            | КБ ИС Банк                            |
-| bank_code | КБ_Новый_Век                          | КБ Новый Век                          |
-| bank_code | КБ_Пойдем!                            | КБ Пойдем!                            |
-| bank_code | КБ_РостФинанс                         | КБ РостФинанс                         |
-| bank_code | КБ_СОЛИДАРНОСТЬ                       | КБ СОЛИДАРНОСТЬ                       |
-| bank_code | КБ_Стройлесбанк                       | КБ Стройлесбанк                       |
-| bank_code | КБ_Хлынов                             | КБ Хлынов                             |
-| bank_code | КБ_ЮНИСТРИМ                           | КБ ЮНИСТРИМ                           |
-| bank_code | КИВИ_Банк                             | КИВИ Банк                             |
-| bank_code | КОШЕЛЕВ-БАНК                          | КОШЕЛЕВ-БАНК                          |
-| bank_code | КЭБ_ЭйчЭнБи_Банк                      | КЭБ ЭйчЭнБи Банк                      |
-| bank_code | Кредит_Европа_Банк_(Россия)           | Кредит Европа Банк (Россия)           |
-| bank_code | Кредит_Урал_Банк                      | Кредит Урал Банк                      |
-| bank_code | Крокус-Банк                           | Крокус-Банк                           |
-| bank_code | Кубань_Кредит                         | Кубань Кредит                         |
-| bank_code | Кубаньторгбанк                        | Кубаньторгбанк                        |
-| bank_code | Кузнецкбизнесбанк                     | Кузнецкбизнесбанк                     |
-| bank_code | ЛОКО-Банк                             | ЛОКО-Банк                             |
-| bank_code | Ланта-Банк                            | Ланта-Банк                            |
-| bank_code | Левобережный                          | Левобережный                          |
-| bank_code | МЕЖДУНАРОДНЫЙ_ФИНАНСОВЫЙ_КЛУБ         | МЕЖДУНАРОДНЫЙ ФИНАНСОВЫЙ КЛУБ         |
-| bank_code | МЕТКОМБАНК                            | МЕТКОМБАНК                            |
-| bank_code | МКБ                                   | МКБ                                   |
-| bank_code | МОНЕТА                                | МОНЕТА                                |
-| bank_code | МОРСКОЙ_БАНК                          | МОРСКОЙ БАНК                          |
-| bank_code | МОСКОМБАНК                            | МОСКОМБАНК                            |
-| bank_code | МОСОБЛБАНК                            | МОСОБЛБАНК                            |
-| bank_code | МС_Банк_Рус                           | МС Банк Рус                           |
-| bank_code | МСП_Банк                              | МСП Банк                              |
-| bank_code | МТС-Банк                              | МТС-Банк                              |
-| bank_code | Металлинвестбанк                      | Металлинвестбанк                      |
-| bank_code | Мир_Бизнес_Банк                       | Мир Бизнес Банк                       |
-| bank_code | Модульбанк                            | Модульбанк                            |
-| bank_code | Москоммерцбанк                        | Москоммерцбанк                        |
-| bank_code | НБД-Банк                              | НБД-Банк                              |
-| bank_code | НДБанк                                | НДБанк                                |
-| bank_code | НИКО-БАНК                             | НИКО-БАНК                             |
-| bank_code | НК_Банк                               | НК Банк                               |
-| bank_code | НКО_МОБИ.Деньги                       | НКО МОБИ.Деньги                       |
-| bank_code | НКО_Мобильная_карта                   | НКО Мобильная карта                   |
-| bank_code | НКО_НРД                               | НКО НРД                               |
-| bank_code | НКО_Перспектива_(Все_платежи)         | НКО Перспектива (Все платежи)         |
-| bank_code | НКО_ЭЛЕКСНЕТ                          | НКО ЭЛЕКСНЕТ                          |
-| bank_code | НКО_Элексир                           | НКО Элексир                           |
-| bank_code | НКО_ЮМани                             | НКО ЮМани                             |
-| bank_code | НОВИКОМБАНК                           | НОВИКОМБАНК                           |
-| bank_code | НОКССБАНК                             | НОКССБАНК                             |
-| bank_code | НРБанк                                | НРБанк                                |
-| bank_code | НС_Банк                               | НС Банк                               |
-| bank_code | Нацинвестпромбанк                     | Нацинвестпромбанк                     |
-| bank_code | Национальный_стандарт                 | Национальный стандарт                 |
-| bank_code | Новобанк                              | Новобанк                              |
-| bank_code | Норвик_Банк                           | Норвик Банк                           |
-| bank_code | ОТП_Банк                              | ОТП Банк                              |
-| bank_code | Озон_Банк_(Ozon)                      | Озон Банк (Ozon)                      |
-| bank_code | Открытие                              | Открытие                              |
-| bank_code | Первый_Дортрансбанк                   | Первый Дортрансбанк                   |
-| bank_code | Первый_Инвестиционный_Банк            | Первый Инвестиционный Банк            |
-| bank_code | Почта_Банк                            | Почта Банк                            |
-| bank_code | Примсоцбанк                           | Примсоцбанк                           |
-| bank_code | Прио-Внешторгбанк                     | Прио-Внешторгбанк                     |
-| bank_code | ПроБанк                               | ПроБанк                               |
-| bank_code | ПромТрансБанк                         | ПромТрансБанк                         |
-| bank_code | Промсвязьбанк                         | Промсвязьбанк                         |
-| bank_code | Промсельхозбанк                       | Промсельхозбанк                       |
-| bank_code | РЕСО_Кредит                           | РЕСО Кредит                           |
-| bank_code | РНКБ_Банк                             | РНКБ Банк                             |
-| bank_code | РНКО_Деньги.Мэйл.Ру                   | РНКО Деньги.Мэйл.Ру                   |
-| bank_code | РУСНАРБАНК                            | РУСНАРБАНК                            |
-| bank_code | Райффайзен_Банк                       | Райффайзен Банк                       |
-| bank_code | Реалист_Банк                          | Реалист Банк                          |
-| bank_code | Ренессанс_Кредит                      | Ренессанс Кредит                      |
-| bank_code | РосДорБанк                            | РосДорБанк                            |
-| bank_code | Росбанк                               | Росбанк                               |
-| bank_code | Россельхозбанк                        | Россельхозбанк                        |
-| bank_code | Роял_Кредит_Банк                      | Роял Кредит Банк                      |
-| bank_code | Русьуниверсалбанк                     | Русьуниверсалбанк                     |
-| bank_code | СДМ-Банк                              | СДМ-Банк                              |
-| bank_code | СИНКО-БАНК                            | СИНКО-БАНК                            |
-| bank_code | СМП_Банк                              | СМП Банк                              |
-| bank_code | СНГБ                                  | СНГБ                                  |
-| bank_code | СОЦИУМ-БАНК                           | СОЦИУМ-БАНК                           |
-| bank_code | Санкт-Петербург                       | Санкт-Петербург                       |
-| bank_code | Сбербанк                              | Сбербанк                              |
-| bank_code | Свой_Банк                             | Свой Банк                             |
-| bank_code | Севергазбанк                          | Севергазбанк                          |
-| bank_code | Северный_Народный_Банк                | Северный Народный Банк                |
-| bank_code | Сибсоцбанк                            | Сибсоцбанк                            |
-| bank_code | Ситибанк                              | Ситибанк                              |
-| bank_code | Совкомбанк                            | Совкомбанк                            |
-| bank_code | Солид_Банк                            | Солид Банк                            |
-| bank_code | Ставропольпромстройбанк               | Ставропольпромстройбанк               |
-| bank_code | ТАТСОЦБАНК                            | ТАТСОЦБАНК                            |
-| bank_code | Таврический_Банк                      | Таврический Банк                      |
-| bank_code | Тимер_Банк                            | Тимер Банк                            |
-| bank_code | Тинькофф                              | Тинькофф                              |
-| bank_code | Тойота_Банк                           | Тойота Банк                           |
-| bank_code | Тольяттихимбанк                       | Тольяттихимбанк                       |
-| bank_code | Томскпромстройбанк                    | Томскпромстройбанк                    |
-| bank_code | Точка_'ФК_Открытие'                   | Точка 'ФК Открытие'                   |
-| bank_code | Точка_Банк                            | Точка Банк                            |
-| bank_code | Точка_КИВИ                            | Точка КИВИ                            |
-| bank_code | Транскапиталбанк                      | Транскапиталбанк                      |
-| bank_code | Трансстройбанк                        | Трансстройбанк                        |
-| bank_code | УБРиР                                 | УБРиР                                 |
-| bank_code | УРАЛПРОМБАНК                          | УРАЛПРОМБАНК                          |
-| bank_code | Углеметбанк                           | Углеметбанк                           |
-| bank_code | Урал_ФД                               | Урал ФД                               |
-| bank_code | Уралфинанс                            | Уралфинанс                            |
-| bank_code | ФИНАМ                                 | ФИНАМ                                 |
-| bank_code | ФОРА-БАНК                             | ФОРА-БАНК                             |
-| bank_code | ФФИН_Банк_(Цифра_банк)                | ФФИН Банк (Цифра банк)                |
-| bank_code | Форштадт                              | Форштадт                              |
-| bank_code | Хайс                                  | Хайс                                  |
-| bank_code | Хакасский_муниципальный_банк          | Хакасский муниципальный банк          |
-| bank_code | Хоум_Кредит_Банк_(Хоум_Банк)          | Хоум Кредит Банк (Хоум Банк)          |
-| bank_code | Центр-инвест                          | Центр-инвест                          |
-| bank_code | ЧЕЛИНДБАНК                            | ЧЕЛИНДБАНК                            |
-| bank_code | ЧЕЛЯБИНВЕСТБАНК                       | ЧЕЛЯБИНВЕСТБАНК                       |
-| bank_code | Экономбанк                            | Экономбанк                            |
-| bank_code | Экспобанк                             | Экспобанк                             |
-| bank_code | Элита                                 | Элита                                 |
-| bank_code | Элплат                                | Элплат                                |
-| bank_code | Энергобанк                            | Энергобанк                            |
-| bank_code | Энерготрансбанк                       | Энерготрансбанк                       |
-| bank_code | Эс-Би-Ай_Банк                         | Эс-Би-Ай Банк                         |
-| bank_code | ЮГ-Инвестбанк                         | ЮГ-Инвестбанк                         |
-| bank_code | Юникредит_Банк                        | Юникредит Банк                        |
-| bank_code | Яндекс_Банк                           | Яндекс Банк                           |
+| bank_code | SHINHANYND   | NHShinhan(ShinhanBank)                                                               |
+| bank_code | KBankYNDA    | Ngân hàng Đại chúng TNHH Kasikornbank                                                |
+| bank_code | HSBCYND      | Ngân hàng TNHH MTV HSBC (Việt Nam)                                                   |
+| bank_code | DBSYND       | DBS Bank Ltd - Chi nhánh Thành phố Hồ Chí Minh                                       |
+| bank_code | CITIBANKYND  | Ngân hàng Citibank, N.A. - Chi nhánh Hà Nội                                          |
+| bank_code | ANZYDD       | Ngân hàng TNHH MTV ANZ (Việt Nam)                                                    |
+| bank_code | NKCHCM       | Ngân hàng Kookmin CN Ho Chi Minh                                                     |
+| bank_code | NHB HN       | Ngân hàng Nonghyup - Chi nhánh Hà Nội                                                |
+| bank_code | IBK - HCM    | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh TP.Hồ Chí Minh                            |
+| bank_code | HLBVN        | Ngân hàng TNHH MTV Hong Leong Việt Nam                                               |
+| bank_code | DAB          | Ngân hàng TMCP Đông Á                                                                |
+| bank_code | WOORIHCM     | NHWooriViệtNam(WooriBank)                                                            |
+| bank_code | VIETTELMONEY | ViettelMoney                                                                         |
+| bank_code | VID          | NHPublicViệtNam(PublicBankVietnam)                                                   |
+| bank_code | PVCB         | Ngân hàng TMCP Đại Chúng Việt Nam                                                    |
+| bank_code | LPB          | Ngân hàng TMCP Lộc Phát Việt Nam                                                     |
+| bank_code | KBHN         | Ngân hàng Kookmin - Chi nhánh Hà Nội                                                 |
+| bank_code | VBA          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam                               |
+| bank_code | TIMO         | Ngân hàng số Timo by Ban Viet Bank (Timo by Ban Viet Bank)                           |
+| bank_code | MAFC         | Công ty Tài chính TNHH MTV Mirae Asset (Việt Nam)                                    |
+| bank_code | IBK - HN     | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
+| bank_code | EAB          | NHĐôngÁ(DongABank)                                                                   |
+| bank_code | BID          | NHĐầuTư&PTViệtNam(BIDV)                                                              |
+| bank_code | VCCB         | Ngân hàng TMCP Bản Việt                                                              |
+| bank_code | KEBHANAHCM   | Ngân hàng KEB Hana – Chi nhánh Thành phố Hồ Chí Minh                                 |
+| bank_code | KBHCM        | Ngân hàng Kookmin - Chi nhánh Thành phố Hồ Chí Minh                                  |
+| bank_code | IBK          | NHCôngnghiệpHànQuốcHàNội(IBK-HN)                                                     |
+| bank_code | COOPBANK     | Ngân hàng Hợp tác xã Việt Nam                                                        |
+| bank_code | WVN          | Ngân hàng TNHH MTV Woori Việt Nam                                                    |
+| bank_code | SGICB        | Ngân hàng TMCP Sài Gòn Công Thương                                                   |
+| bank_code | ICB          | Ngân hàng TMCP Công thương Việt Nam                                                  |
+| bank_code | IBKHN        | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
+| bank_code | VNPTMONEY    | VNPT Money                                                                           |
+| bank_code | UOB          | Ngân hàng United Overseas - Chi nhánh TP. Hồ Chí Minh                                |
+| bank_code | PVB          | NHĐạiChúng(PVcomBank)                                                                |
+| bank_code | OCEANBANK    | Ngân hàng Thương mại TNHH MTV Đại Dương                                              |
+| bank_code | CTG          | NHCôngThươngViệtNam(Vietinbank)                                                      |
+| bank_code | VIETBANK     | Ngân hàng TMCP Việt Nam Thương Tín                                                   |
+| bank_code | SCVN         | Ngân hàng TNHH MTV Standard Chartered Bank Việt Nam                                  |
+| bank_code | PVDB         | Ngân hàng TMCP Đại Chúng Việt Nam Ngân hàng số                                       |
+| bank_code | NTMXVN       | Ngân hàng TNHH MTV Xây dựng Viet Nam                                                 |
+| bank_code | IBKHCM       | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Thành phố Hồ Chí Minh                     |
+| bank_code | VBSP         | Ngân hàng Chính sách Xã hội                                                          |
+| bank_code | NTMHLVN      | Ngân hàng TNHH MTV Hong Leong Viet Nam                                               |
+| bank_code | momo         | CTCP Dịch Vụ Di Động Trực Tuyến                                                      |
+| bank_code | KEBHANAHN    | Ngân hàng KEB Hana – Chi nhánh Hà Nội                                                |
+| bank_code | VTLMONEY     | Tổng Công ty Dịch vụ số Viettel - Chi nhánh tập đoàn công nghiệp viễn thông Quân Đội |
+| bank_code | LIOBANK      | Liobank by OCB                                                                       |
+| bank_code | UBANK        | Ubank by VPBank                                                                      |
+| bank_code | CAKE         | Cake by VPBank                                                                       |
+| bank_code | VIKKI        | Vikki Digital Bank                                                                   |
+| bank_code | SAIGONB      | SAIGONBANK                                                                           |
+| bank_code | PBVN         | VIDPublic Bank                                                                       |
+| bank_code | EIB          | NGAN HANG TMCP XUAT NHAP KHAU VIET NAM (EXIMBANK)                                    |
+| bank_code | VTB          | NGAN HANG TMCP CONG THUONG VIET NAM (VIETINBANK)                                     |
+| bank_code | VCAPB        | NHTMCP BAN VIET                                                                      |
+| bank_code | VUOB         | UNITED OVERSEAS BANK                                                                 |
+| bank_code | HDB          | NGAN HANG TMCP PHAT TRIEN TP.HCM (HDBANK)                                            |
+| bank_code | GPB          | Ngân hàng TM TNHH MTV (GPBANK)                                                       |
+| bank_code | BIDV         | NGAN HANG TMCP DAU TU VA PHAT TRIEN VIET NAM (BIDV)                                  |
+| bank_code | DONGA        | Donga Bank                                                                           |
+| bank_code | MSB          | NGAN HANG TMCP HANG HAI VIET NAM (MARITIME BANK)                                     |
+| bank_code | VPB          | NGAN HANG TMCP VIET NAM THINH VUONG (VPBANK)                                         |
+| bank_code | SACOMB       | SACOMBANK                                                                            |
+| bank_code | LVB          | NGAN HANG BUU DIEN LIEN VIET (LIENVIETPOSTBANK)                                      |
+| bank_code | KLB          | Kien Long Joint-stock Commercial Bank (KienLongBank)                                 |
+| bank_code | BAB          | Ngân hàng TMCP Bắc Á (BAC A BANK)                                                    |
+| bank_code | ABB          | NGAN HANG TMCP AN BINH (ABBANK)                                                      |
+| bank_code | VDBS         | DBS                                                                                  |
+| bank_code | NCB          | NH TMCP QUOC DAN                                                                     |
+| bank_code | YOLO         | Ngân hàng số VPDirect                                                                |
+| bank_code | TPB          | TIENPHONG BANK                                                                       |
+| bank_code | SHBVN        | SHINHAN BANK VN                                                                      |
+| bank_code | SCB          | SCB                                                                                  |
+| bank_code | OJB          | OCEANBANK                                                                            |
+| bank_code | VIETB        | VIETBANK                                                                             |
+| bank_code | SGB          | SAIGONBANK                                                                           |
+| bank_code | SEAB         | SEABANK                                                                              |
+| bank_code | NAB          | Ngân hàng TMCP Nam Á (NAM A BANK)                                                    |
+| bank_code | IVB          | NGAN HANG TNHH INDOVINA (INDOVINA BANK)                                              |
+| bank_code | AGR          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (AGRIBANK)                    |
+| bank_code | MBV          | Military Bank                                                                        |
+| bank_code | VIETA        | VietABank                                                                            |
+| bank_code | WOO          | WOORI BANK                                                                           |
+| bank_code | HLB          | NGAN HANG TNHH MTV HONGLEONG VIET NAM (HLBANK)                                       |
+| bank_code | CIMB         | NH MTV CIMB                                                                          |
+| bank_code | OCBV         | OCB Vietnam                                                                          |
+| bank_code | VHSBC        | HSBC                                                                                 |
+| bank_code | VIB          | VIB BANK                                                                             |
+| bank_code | VCPTB        | VIET CAPITAL BANK                                                                    |
+| bank_code | VCB          | VIETCOMBANK                                                                          |
+| bank_code | VAB          | Ngân hàng TMCP Việt Á                                                                |
+| bank_code | SHB          | SHB BANK                                                                             |
+| bank_code | BVB          | BAO VIET BANK (BVB)                                                                  |
+| bank_code | ACB          | NGAN HANG TMCP A CHAU (ACB)                                                          |
+| bank_code | VSTB         | STB                                                                                  |
+| bank_code | STB          | SACOMBANK                                                                            |
+| bank_code | PVCOMB       | PVCOMBANK                                                                            |
+| bank_code | PGB          | PGBANK                                                                               |
+| bank_code | OCB          | PHUONGDONG BANK                                                                      |
+| bank_code | MB           | NGAN HANG TMCP QUAN DOI (MB)                                                         |
+| bank_code | VIETCB       | VietCapitalBank                                                                      |
+| bank_code | CBB          | C B BANK                                                                             |
+| bank_code | VNCB         | National Citizen Bank                                                                |
+| bank_code | VNHSBC       | HSBC Bank Vietnam Ltd (HSBC)                                                         |
+| bank_code | VRB          | NH LD VIET NGA                                                                       |
+| bank_code | TCB          | TECHCOMBANK  |
 
 # 12、错误码
 
