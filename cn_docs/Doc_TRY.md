@@ -477,16 +477,16 @@
 
 ### 参数:
 
-| 名称           | 类型     | 必填    | 描述                        |
-|--------------|--------|-------|---------------------------|
-| app_id       | string    | true  | 商户app_id                     |
-| order_no       | string    | true  | 商户订单号                     |
-| amount       | string    | true  | 商户金额单位元                     |
-| notice_url       | string    | false | 异步通知地址                     |
+| 名称           | 类型     | 必填    | 描述        |
+|--------------|--------|-------|-----------|
+| app_id       | string    | true  | 商户app_id  |
+| order_no       | string    | true  | 商户订单号     |
+| amount       | string    | true  | 商户金额单位:里拉 |
+| notice_url       | string    | false | 异步通知地址    |
 
 #### 示例
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位元}}&notice_url={{异步通知地址}}
+/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位里拉}}&notice_url={{异步通知地址}}
 ```
 

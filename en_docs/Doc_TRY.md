@@ -477,11 +477,11 @@ Request Method: GET
 
 ### Parameters:
 
-| Name    | Type  | Required | Description            |
+| Name    | Type  | Required | Description                        |
 |------------|--------|----------|------------------------------------|
-| app_id   | string | true   | Merchant app_id.          |
-| order_no  | string | true   | Merchant order number.       |
-| amount   | string | true   | Merchant Amount (Unit: Real) |
+| app_id   | string | true   | Merchant app_id.                   |
+| order_no  | string | true   | Merchant order number.             |
+| amount   | string | true   | Merchant Amount (Unit: Lira)       |
 | notice_url | string | false  | Asynchronous notification address. |
 
 #### Example
