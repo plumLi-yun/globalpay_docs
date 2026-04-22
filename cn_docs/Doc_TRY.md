@@ -16,12 +16,12 @@
 
 ## 3.1 接口相关
 > 1、本文档中的所有接口，均采用 HTTP 标准通信协议，POST提交，请求和响应的 Content-type 均为 application/json，字符编码统一为 UTF-8。
-> 2、金额单位为分。
+> 2、金额单位为库鲁什。
 > 3、请求接口的 IP 需要加白。
 > 4、user_ip 尽量收集用户真实ip，确实没有就留空，不要使用127.0.0.1这种本地ip
 
 ## 3.2 回调相关
-> 1、回调接收处理成功，请返回&#32;success，系统将不再推送此订单信息，否则还会重复推送多次
+> 1、回调接收处理成功，请返回 success，系统将不再推送此订单信息，否则还会重复推送多次
 > 2、在进行异步通知交互时，如果收到的应答不是 success ，会认为通知失败，会通过一定的策略定期重新发起通知。通知的间隔频率为：1m、1m、4m、10m、10m、1h、2h、6h、15h。
 > 3、pay_notice_url通知地址如果为空，会视为商家不需要回调
 
@@ -33,35 +33,29 @@
 
 ## 4.1 代收-下单请求参数
 
-| 名称             | 类型   | 必填  | 描述                                                                                                                                                                                   |
-|----------------|------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                                                                                                                                  |
-| app_id         | int    | true  | 商户 appId                                                                                                                                                                             |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                                                                                                        |
-| pay_method     | string    | true  | 支付方式   参照支付方式字典                                                                                                                                                                      |
-| price          | int    | true  | 下单金额，单位：分，整型。1 雷亚尔 = 100 分                                                                                                                                           |
-| order_no       | string | true  | 商户订单号                                                                                                                                                                                |
-| success_url    | string | false | 支付成功跳转 url                                                                                                                                                                           |
-| fail_url       | string | false | 支付失败跳转 url                                                                                                                                                                           |
-| pay_notice_url | string | false | 支付成功通知 url                                                                                                                                                                           |
-| user_id        | string | true | 系统用户ID                                                                                                                                                                               |
-| user_ip        | string | true | 付款人 IP                                                                                                                                                                               |
-|attach|string|true| 附加参数 json字符串  {\"name\":\"bob james\"，\"identify_type\":\"CPF\",\"identify_num\":\"61035067358\"}  |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                                                       |
+| 名称             | 类型   | 必填  | 描述                                                                                                                                                                                  |
+|----------------|------|-----|--------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                                          |
+| app_id         | int    | true  | 商户 appId                                                                     |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                |
+| pay_method     | string    | true  | 支付方式   参照支付方式字典                                                              |
+| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                                    |
+| order_no       | string | true  | 商户订单号                                                                        |
+| success_url    | string | false | 支付成功跳转 url                                                                   |
+| fail_url       | string | false | 支付失败跳转 url                                                                   |
+| pay_notice_url | string | false | 支付成功通知 url                                                                   |
+| user_id        | string | true  | 付款人在商户平台的 ID       |
+| user_ip        | string | false | 付款人 IP                   |
+| attach         | string | true | 附加参数json字符串{"name":"真实姓名","email":"邮箱"}                    |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                     |
 |timestamp|string|false| 下单时间戳 10位时间戳单位S |
 
 -  代收-attach 附加参数字段说明
 
 | 名称           | 类型     | 必填  | 描述                                            |
 |--------------|--------|-----|-----------------------------------------------|
-| name       | string | false  | 付款人姓名  巴西个人传个人姓名, 巴西公司传公司名称 |
-| identify_type       | string    | false  | 证件类型 CPF、CNPJ                             |
-| identify_num       | string    | false  | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字) |
-
-##### attach 示例
-```json
-{"name":"巴西个人传个人姓名, 巴西公司传公司名称","identify_type":"证件类型 CPF、CNPJ","identify_num":" 巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)"}
-```
+| name       | string | false  | 付款人姓名 |
+| email         | string    | false  | 付款人邮箱                     |
 
 
 - 代收-下单请求示例
@@ -90,7 +84,7 @@
 | code         | int    | true | 200:下单成功 其他:下单失败                                  |
 | msg          | string | true | 失败原因                                              |
 | pay_url      | string | false | 付款链接                                              |
-| qr_code      | string | false | pix 二维码字符串                                        |
+| qr_code      | string | false | 二维码字符串                                        |
 | order_no     | string | true | 商户订单号                                             |
 | dis_order_no | string | true | 平台订单号                                             |
 | create_time  | int    | true | 创建时间                                              |
@@ -135,8 +129,8 @@
 | status       | int    | true  | 订单状态, 2.成功, 3.失败                                                                                       |
 | order_no     | string | true  | 商户订单号                                                                                                  |
 | dis_order_no | string | true  | 平台订单号                                                                                                  |
-| order_price  | int    | true  | 订单金额,单位:分                                                                                              |
-| real_price   | int    | true  | 用户真实付款金额 ,单位:分                                                                                         |
+| order_price  | int    | true  | 订单金额,单位:库鲁什                                                                                              |
+| real_price   | int    | true  | 用户真实付款金额 ,单位:库鲁什                                                                                         |
 | nti_time     | int    | false | 发起通知时间                                                                                                 |
 | payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |
@@ -170,24 +164,22 @@
 
 ## 6.1 代付-请求参数
 
-| 名称             | 类型   | 必填    | 描述                                                     |
-|----------------|------|-------|--------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                    |
-| order_no       | string | true  | 商户订单号                                                  |
-| app_id         | int    | true  | 商户 appId                                               |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                          |
-| price          | int    | true  | 下单金额，单位：分，整型。1 雷亚尔 = 100 分                             |
-| account_no     | string | true  | 收款账号                                                   |
-| account_type   | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE                              |
-| account_name   | string | true  | 姓名                                                     |
-| bank_code      | string | true  | 固定填写： PIXPAY                                  |
-| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ）                                     |
-| identify_num   | string | true  | 证件号码                                                   |
-| pay_notice_url | string | false | 代付成功通知 url                                             |
-| attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |
-| user_ip        | string | true  | 收款用户 IP                                                |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                         |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                        |
+| 名称             | 类型   | 必填    | 描述                                                    |
+|----------------|------|-------|-------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                   |
+| order_no       | string | true  | 商户订单号                                                 |
+| app_id         | int    | true  | 商户 appId                                              |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                         |
+| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                         |
+| account_no     | string | true  | 收款账号                                                  |
+| account_type   | string | true  | 账号类型:BANK                              |
+| account_name   | string | true  | 姓名                                                    |
+| bank_code      | string | true  | 固定填写：参照银行编码字典                                |
+| pay_notice_url | string | false | 代付成功通知 url                                            |
+| attach         | string | false | 附加参数   {"email":"邮箱"} |
+| user_ip        | string | false  | 收款用户 IP                                               |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                        |
+|timestamp|string|false| 下单时间戳 10位时间戳单位S                                       |
 
 - 代付-请求参数示例
 
@@ -202,12 +194,10 @@
   "attach": "",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "PHONE",
+  "account_type": "BANK",
   "account_no": "123456789",
   "account_name": "test",
-  "bank_code": "PKREAYPAISA",
-  "identify_type": "",
-  "identify_num": ""
+  "bank_code": "TRY_BANK"
 }
 ```
 
@@ -255,19 +245,19 @@
 
 ## 7.1 代付回调请求参数
 
-| 名称         | 类型   | 必填  | 描述                                            |
-|------------|------|-----|-----------------------------------------------|
-| trade_no     | int    | true  | 商户号                                           |
-| order_no     | string | true  | 商户订单号                                         |
-| dis_order_no | string | true  | 平台订单号                                         |
-| order_price        | int    | true  | 订单金额,单位:分                                     |
-| fee          | int    | false | 订单手续费 ,单位:分                                   |
-| status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正               |
-| pay_info  | string    | false | 付款信息 |
-| remark       | string | false | 失败原因                                          |
-| create_time  | int    | true  | 创建时间                                          |
-| sign         | string | true  | 签名结果,签名方法在文档顶部                                |
-| nti_time     | int    | true | 发起通知时间                                        |
+| 名称         | 类型   | 必填  | 描述                            |
+|------------|------|-----|-------------------------------|
+| trade_no     | int    | true  | 商户号                           |
+| order_no     | string | true  | 商户订单号                         |
+| dis_order_no | string | true  | 平台订单号                         |
+| order_price        | int    | true  | 订单金额,单位:库鲁什                      |
+| fee          | int    | false | 订单手续费 ,单位:库鲁什                    |
+| status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正 |
+| pay_info  | string    | false | 付款信息                          |
+| remark       | string | false | 失败原因                          |
+| create_time  | int    | true  | 创建时间                          |
+| sign         | string | true  | 签名结果,签名方法在文档顶部                |
+| nti_time     | int    | true | 发起通知时间                        |
 
 - 代付回调请求示例
 
@@ -316,22 +306,22 @@
 
 ## 8.2 查询响应
 
-| 名称         | 类型   | 必填  | 描述                                                                                                                                                |
-|------------|------|-----|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| code         | int    | true  | 200:查询成功 其他:失败                                                                                                                                    |
-| msg          | string | true  | 查询失败原因                                                                                                                                            |
-| trade_no     | int    | true  | 商户号                                                                                                                                               |
-| real_price   | int    | true  | 真实付款金额 ,单位:分                                                                                                                                      |
-| status       | int    | true  | 订单状态, 1.未支付, 2.成功, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                                       |
-| success_time | int    | true  | 成功时间戳                                                                                                                                             |
-| order_no     | string | true  | 商户订单号                                                                                                                                             |
-| dis_order_no | string | true  | 平台订单号                                                                                                                                             |
-| remark       | string | true  | 代付失败原因                                                                                                                                            |
-| fee          | int    | false | 订单手续费 ,单位:分                                                                                                                                       |
-| create_time  | int    | true  | 创建时间                                                                                                                                              |
+| 名称         | 类型   | 必填  | 描述                                                                                                                                              |
+|------------|------|-----|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| code         | int    | true  | 200:查询成功 其他:失败                                                                                                                                  |
+| msg          | string | true  | 查询失败原因                                                                                                                                          |
+| trade_no     | int    | true  | 商户号                                                                                                                                             |
+| real_price   | int    | true  | 真实付款金额 ,单位:库鲁什                                                                                                                                     |
+| status       | int    | true  | 订单状态, 1.未支付, 2.成功, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                                     |
+| success_time | int    | true  | 成功时间戳                                                                                                                                           |
+| order_no     | string | true  | 商户订单号                                                                                                                                           |
+| dis_order_no | string | true  | 平台订单号                                                                                                                                           |
+| remark       | string | true  | 代付失败原因                                                                                                                                          |
+| fee          | int    | false | 订单手续费 ,单位:库鲁什                                                                                                                                      |
+| create_time  | int    | true  | 创建时间                                                                                                                                            |
 | payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CPF,CNPJ,EMAIL,PHONE","account_no":"账号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
-| sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                    |
+| sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                  |
 |utr2|string|false|银行订单号|
 
 - 查询响应示例
@@ -390,12 +380,12 @@
 
 ## 9.2 余额响应
 
-| 名称    | 类型   | 必填 | 描述                        |
-|-------|------|----|---------------------------|
+| 名称    | 类型   | 必填 | 描述                      |
+|-------|------|----|-------------------------|
 | code    | int    | true | 200:查询成功 其他:失败      |
-| msg     | string | true | 失败原因                    |
-| balance | int    | true | 余额,单位:分                |
-| balance_frozen | int    | false | 冻结余额,单位:分                |
+| msg     | string | true | 失败原因                   |
+| balance | int    | true | 余额,单位:库鲁什               |
+| balance_frozen | int    | false | 冻结余额,单位:库鲁什               |
 | sign    | string | true | 签名结果,签名方法在文档顶部 |
 
 -  余额响应示例
@@ -420,72 +410,31 @@
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
-# 10、付款凭证查询接口
+# 10、支付方式 代收字段 pay_method
 
-(请求 ip 需要联系我方加白)
-地址: api_domain/api/v1/payApi/QueryCertificate
+| 字段      | 国家            | 值           | 描述        |
+|-----------|---------------|-------------|------------|
+| pay_method | 土耳其 |    TRYPay   | 土耳其代收       |
 
-## 10.1 付款凭证请求参数
+# 11、银行编码 bank_code
 
-| 名称     | 类型   | 必填 | 描述             |
-|--------|------|----|----------------|
-| trade_no | int    | true | 商户号            |
-| app_id   | int    | true | 商户 appid       |
-| order_no   | string    | false | 商户订单号  与dis_order_no二选一    |
-| dis_order_no   | string    | false | 平台订单号  与order_no二选一    |
-| sign     | string | true | 签名结果,签名方法在文档顶部 |
+| 字段      | 国家            | 值           | 描述                                      |
+|-----------|---------------|-------------|-----------------------------------------|
+| bank_code | 土耳其 |    TGBATRIS   | Türkiye Garanti Bankası A.Ş.            |
+| bank_code | 土耳其 |    AKBKTRIS   | Akbank T.A.S.                           |
+| bank_code | 土耳其 |    HALKBTRIS   | Türkiye Halk Bankası A.Ş.               |
+| bank_code | 土耳其 |    KUVETRIS   | Kuveyt Türk Katılım Bankası A.Ş.        |
+| bank_code | 土耳其 |    INGBTRIS   | ING A.Ş.                                |
+| bank_code | 土耳其 |    TCZBTR2A   | Türkiye Cumhuriyeti Ziraat Bankası A.Ş. |
+| bank_code | 土耳其 |    YAPITRIS   | Yapı ve Kredi Bankası A.Ş.              |
+| bank_code | 土耳其 |    TEBUTRIS   | Türk Ekonomi Bankası A.Ş. (TEB)         |
+| bank_code | 土耳其 |    HSBCTRIS   | HSBC Bank A.Ş.                          |
+| bank_code | 土耳其 |    DENITRIS   | DenizBank A.Ş.                          |
+| bank_code | 土耳其 |    FNNBTRIS   | QNB Finansbank A.Ş.                     |
+| bank_code | 土耳其 |    VAKBTRIS   | VakıfBank A.Ş.                          |
+| bank_code | 土耳其 |    ISBKTRIS   | Türkiye İş Bankası A.Ş.                 |
+| bank_code | 土耳其 |    TRY_BANK   | TRY_BANK    不明确的都用这个                    |
 
-- 付款凭证请求示例
-
-```json
-{
-  "trade_no": 10003,
-  "app_id": 10003,
-  "order_no": "",
-  "dis_order_no": "35011C02gljuf6k0800india1lVY",
-  "sign": "3969f17cd1a551769f85967d0a05b7b6"
-}
-```
-
-## 10.2 付款凭证响应参数
-
-| 名称    | 类型   | 必填 | 描述                        |
-|-------|------|----|---------------------------|
-| code    | int    | true | 200:响应成功 其他:失败      |
-| msg     | string | true | 失败原因                    |
-| img_link | string    | false |凭证链接       |
-| img_base | string    | false |凭证生成的64码                 |
-| sign    | string | true | 签名结果,签名方法在文档顶部 |
-
--  付款凭证响应示例
-   没有付款凭证
-```json
-{
-  "code":200,
-  "msg":"No payment voucher available at the moment",
-  "sign": "",
-  "img_link": "",
-  "img_base": ""
-}
-```
-有付款凭证
-```json
-{
-  "code": 200,
-  "msg": "",
-  "sign": "3969f17cd1a551769f85967d0a05b7b6",
-  "img_link": "http://dsggfgdsf.djdj?ddd=snn",
-  "img_base": "data:image/png;base64,hfhshdhfhfh"
-}
-```
-
-
-# 11、支付方式 代收字段 pay_method
-
-| 字段      | 国家   | 值         | 描述                |
-|-----------|------|-----------|-------------------|
-| pay_method | 巴西   | pix       | PIX二类  -需要用户名、cpf等信息           |
-| pay_method | 巴西   | PIX1       | PIX二类 非实名           |
 
 
 # 12、错误码

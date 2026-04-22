@@ -185,7 +185,7 @@ Example: http://host/api/v1/payApi/CreatePayOutOrder
 | identify_num  | string | true   | Identity number.                                  |
 | pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
 | attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
-| user_ip    | string | true   | Receiving user IP address.                             |
+| user_ip | string | false | Receiving user IP address.  |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.       |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
 
@@ -485,13 +485,8 @@ Address: api_domain/api/v1/payApi/QueryCertificate
 
 | Field   | Country | Value   | Description                   |
 |------------|----------|-----------|-------------------------------------------------|
-| pay_method | India  | india   | India Type II A                 |
-| pay_method | Pakistan | jazzcash | BANK Type II Jazzcash              |
-| pay_method | Pakistan | easypaisa | BANK Type II Easypaisa             |
 | pay_method | Brazil  | pix    | PIX Type II - Requires name, CPF, etc.     |
 | pay_method | Brazil  | PIX1   | PIX Type II - Non-real-name           |
-| pay_method | Philippines | PHP-Payment | Philippines Collection           |
-| pay_method | Mexico  | CLABE   | Mexico CLABE                  |
 
 # 12. Error Codes
 
