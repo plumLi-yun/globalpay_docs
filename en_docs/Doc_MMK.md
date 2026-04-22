@@ -21,9 +21,10 @@
 > 4. Collect the real user IP for user_ip as much as possible; if truly unavailable, leave it blank. Do not use local IPs like 127.0.0.1.
 
 ## 3.2 Callback Related
-> 1. If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
+
+> 1. The callback reception was successful. Please return the text "success". This text must not contain any other characters. Otherwise, the system will no longer push this order information; otherwise, it will push it multiple times.
 > 2. During asynchronous notification interaction, if the received response is not `success`, it is considered a notification failure, and notifications will be re-initiated periodically based on a certain strategy. The notification intervals are: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
-> 3. If the pay_notice_url notification address is empty, it will be assumed that the merchant does not require a callback.
+> 3. If the pay_notice_url notification address is empty, it will be considered that the merchant does not need a callback, and the system will not push a notification.
 
 # 4. Pay-in (Collection) Order Interface
 
