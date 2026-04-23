@@ -519,8 +519,11 @@
 
 
 # 11、银行编码
-| 字段名称      | 编码           | 银行名称                                                                                 |
-| :-------- | :----------- | :----------------------------------------------------------------------------------- |
+
+好的，已将您提供的俄罗斯银行数据转换为与菲律宾银行相同的表格格式。
+
+| 字段名称      | 编码                                    | 银行名称                                  |
+|:--------- |:------------------------------------- |:------------------------------------- |
 | bank_code | SHINHANYND   | NHShinhan(ShinhanBank)                                                               |
 | bank_code | KBankYNDA    | Ngân hàng Đại chúng TNHH Kasikornbank                                                |
 | bank_code | HSBCYND      | Ngân hàng TNHH MTV HSBC (Việt Nam)                                                   |
@@ -627,8 +630,7 @@
 | bank_code | VNCB         | National Citizen Bank                                                                |
 | bank_code | VNHSBC       | HSBC Bank Vietnam Ltd (HSBC)                                                         |
 | bank_code | VRB          | NH LD VIET NGA                                                                       |
-| bank_code | TCB          | TECHCOMBANK                                                                          |
-
+| bank_code | TCB          | TECHCOMBANK  |
 
 # 12、错误码
 

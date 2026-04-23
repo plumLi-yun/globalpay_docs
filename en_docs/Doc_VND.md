@@ -521,7 +521,7 @@ With payment voucher:
 # 11. Bank Codes
 
 | Field Name | Code | Bank Name |
-| :-------- | :----------- | :----------------------------------------------------------------------------------- |
+|:--------- |:----- |:----- |
 | bank_code | SHINHANYND   | NHShinhan(ShinhanBank)                                                               |
 | bank_code | KBankYNDA    | Ngân hàng Đại chúng TNHH Kasikornbank                                                |
 | bank_code | HSBCYND      | Ngân hàng TNHH MTV HSBC (Việt Nam)                                                   |
