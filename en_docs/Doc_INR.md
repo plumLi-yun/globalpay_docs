@@ -102,7 +102,7 @@ Example: http://host/api/v1/payApi/CreatePayInOrder
 | order_no   | string | true   | Merchant order number.                                            |
 | dis_order_no | string | true   | Platform order number.                                            |
 | create_time | int  | true   | Creation time.                                                |
-| pay_info   | string | false  | Payment information JSON string. e.g., {"pay_raw":"Original payment info, merchant can convert to QR code."} |
+| pay_info   | string | false  | Payment information JSON string. e.g., {"pay_raw":"Native payment information, which merchants can convert into a QR code themselves","phone":"phonepe wake-up link","google":"google wake-up link","paytm":"paytm wake-up link","mobik":"mobik wake-up link","bhim":"bhim wake-up link","upi":"upi account"} |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                    |
 
 - Pay-in - Order Response Example
