@@ -9,7 +9,7 @@
 | 墨西哥 | [点击查看 Doc_MXN](./cn_docs/Doc_MXN.md) |
 | 越南 | [点击查看 Doc_VND](./cn_docs/Doc_VND.md) |
 | 土耳其 | [点击查看 Doc_TRY](./cn_docs/Doc_TRY.md) |
-
+| 菲律宾 | [点击查看 Doc_PHP](./cn_docs/Doc_PHP.md) |
 
 # English
 
@@ -22,3 +22,4 @@
 | Mexico  | [Doc Doc_MXN](./en_docs/Doc_MXN.md) |
 | Vietnam | [Doc Doc_VND](./en_docs/Doc_VND.md) |
 | Turkey  | [Doc Doc_TRY](./en_docs/Doc_TRY.md) |
+| Philippines | [Doc Doc_PHP](./en_docs/Doc_PHP.md) |
