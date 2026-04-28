@@ -489,165 +489,85 @@
 
 | 字段名称 | 编码 | 银行名称 |
 | :--- | :--- | :--- |
-| bank_code | PH_RBB | Robinsons Bank Corporation |
-| bank_code | PH_OP | OmniPay, Inc. |
-| bank_code | PH_MCCB | Mindanao Consolidated CoopBank |
-| bank_code | PH_DB | Dungganon Bank |
-| bank_code | PH_SME | CARD SME Bank |
-| bank_code | PH_STP | Starpay |
-| bank_code | PH_SPP | SpeedyPay/eMango Pay |
-| bank_code | MBP | Maybank Philippines |
-| bank_code | IRI | I-Remit / iCASH |
-| bank_code | DBP | Development Bank of the Philippines |
-| bank_code | BK | BanKo, A Subsidiary of BPI |
-| bank_code | WDB | Wealth Development Bank |
-| bank_code | PBB | Philippine Business Bank |
-| bank_code | gcash | GCash |
-| bank_code | USSC | USSC Money Services |
-| bank_code | TDB | Tonik Bank |
-| bank_code | SBC | Security Bank Corporation |
-| bank_code | mbt | Metropolitan Bank and Trust Co |
-| bank_code | Unibank | BDO Unibank |
-| bank_code | PTC | Philippine Trust Company |
-| bank_code | PPS | PalawanPay |
-| bank_code | CTBC | CTBC Bank (Philippines) Corporation |
-| bank_code | CB | Camalig Bank |
-| bank_code | usdt-trc | usdt-trc |
-| bank_code | USB | UCPB Savings Bank |
-| bank_code | RCBC | RCBC/DiskarTech |
-| bank_code | PBC | Philippine Bank of Communications |
-| bank_code | NB | Netbank |
-| bank_code | GOT | GoTyme Bank |
-| bank_code | BRB | Binangonan Rural Bank / BRBDigital |
-| bank_code | SP | ShopeePay |
-| bank_code | Asenso | Rural Bank of Guinobatan / Asenso |
-| bank_code | MYA | Maya Bank, Inc. |
-| bank_code | ERB | Entrepreneur Rural Bank, Inc./ENTRP |
-| bank_code | BM | Bangko Mabuhay |
-| bank_code | UNO | UNO Digital Bank |
-| bank_code | TC | TayoCash |
-| bank_code | EWBC | East West Banking Corporation |
-| bank_code | CPI | CIMB Philippines, Inc. |
-| bank_code | TPI | TraxionPay/DigiCOOP/COOPNET |
-| bank_code | PRB | Partner Rural Bank (Cotabato), Inc. |
-| bank_code | DCDB | Dumaguete City Development Bank |
-| bank_code | Bayad | CIS Bayad Center / Bayad |
-| bank_code | bpi | BPI Bank |
-| bank_code | ERC | USDT-ERC |
-| bank_code | SLB | Sterling Bank of Asia |
-| bank_code | PSB | Philippine Savings Bank |
-| bank_code | LSB | Legazpi Saving Bank |
-| bank_code | Coins | DCPay / COINS.PH |
-| bank_code | UBP | Union Bank of the Philippines |
-| bank_code | SSB | Sun Savings Bank |
-| bank_code | IEM | Infoserve / Nationlink |
-| bank_code | CLB | Cebuana Lhuillier Bank / Cebuana Xpress |
-| bank_code | PMP | PayMaya Philippines |
-| bank_code | VB | Veterans Bank |
-| bank_code | CARD Bank | CARD Bank |
-| bank_code | LDB | Luzon Development Bank |
-| bank_code | LBOB | LANDBANK / OFBank |
-| bank_code | ISLA | ISLA Bank |
-| bank_code | QCRB | Quezon Capital Rural Bank |
-| bank_code | QB | Queenbank |
-| bank_code | MBS | Malayan Bank Savings and Mortgage Bank, Inc. |
-| bank_code | GP | GrabPay |
-| bank_code | Komo | East West Rural Bank / Komo |
-| bank_code | AB | ALLBANK |
-| bank_code | ALIPAY | Alipay / Lazada Wallet |
-| bank_code | UDB | UnionDigital Bank |
-| bank_code | PDB | Producers Bank |
-| bank_code | PNB | Philippine National Bank |
-| bank_code | OWN | Own Bank |
-| bank_code | BNB | BDO NeTwork Bank |
-| bank_code | BCH | Bank of China |
-| bank_code | UCPB | United Coconut Planters Bank (UCPB) |
-| bank_code | PAS | Pacific Ace Savings Bank |
-| bank_code | ESB | Equicom Savings Bank, Inc. |
-| bank_code | CBC | China Banking Corporation |
-| bank_code | AUB | Asia United Bank Corporation |
-| bank_code | JC | Zybi Tech Inc. / JuanCash |
-| bank_code | SB | Seabank |
-| bank_code | CBS | China Bank Savings |
-| bank_code | BC | Bank of Commerce |
-| bank_code | SPP | SpeedyPay/eMango Pay |
-| bank_code | RBB | Robinsons Bank Corporation |
-| bank_code | OP | OmniPay, Inc. |
-| bank_code | PH_DCDB | Dumaguete City Development Bank |
-| bank_code | PH_PVB | Philippine Veterans Bank |
-| bank_code | PH_PBC | Philippine Bank of Communications (PBCOM) |
-| bank_code | PH_SCB | Standard Chartered Bank |
-| bank_code | PH_MPI | Maybank Philippines |
-| bank_code | PH_DCP | DCPAY Philippines |
-| bank_code | PH_CTBC | CTBC Bank (Philippines) Corp. |
-| bank_code | PH_CBS | China Bank Savings |
-| bank_code | PH_PBB | Philippine Business Bank, Inc., A Savings Bank |
-| bank_code | PH_RBG | RURAL BANK OF GUINOBATAN, INC. |
-| bank_code | PH_QB | Queenbank |
-| bank_code | PH_SSB | Sun Savings Bank |
-| bank_code | PH_SPY | Starpay Corporation |
-| bank_code | PH_QCRB | Quezon Capital Rural Bank, Inc |
-| bank_code | PH_ING | ING Bank N.V. |
-| bank_code | PH_DBP | Development Bank of the Philippines |
-| bank_code | PH_BPI | Bank of the Philippine Islands (BPI) |
-| bank_code | PH_BMB | Bangko Mabuhay (A Rural Bank), Inc. |
-| bank_code | PH_RCBC | Rizal Commercial Banking Corporation (RCBC) |
-| bank_code | PH_GCASH | GCash |
-| bank_code | PH_EQB | Equicom Savings Bank, Inc. |
-| bank_code | PH_MET | Metropolitan Bank and Trust Company (Metrobank) |
-| bank_code | PH_QCB | Queen City Development Bank, Inc. |
-| bank_code | PH_UBPEON | UnionBank EON |
-| bank_code | PH_SP | ShopeePay |
-| bank_code | PH_PTC | Philippine Trust Company |
-| bank_code | PH_PAR | Partner Rural Bank (Cotabato), Inc. |
-| bank_code | PH_JC | JuanCash |
-| bank_code | PH_LBP | Land Bank of The Philippines |
-| bank_code | PH_CBC | China Bank |
-| bank_code | PH_BRB | Binangonan Rural Bank (BRBDigital) |
-| bank_code | PH_BOC | Bank of Commerce |
-| bank_code | PH_ABP | AllBank Inc. |
-| bank_code | PH_CSB | Citystate Savings Bank |
-| bank_code | PH_PRB | Producers Bank |
-| bank_code | PH_USSC | USSC Money Services |
-| bank_code | PH_ONB | BDO Network Bank |
-| bank_code | PH_SBA | Sterling Bank of Asia |
-| bank_code | PH_DBI | Dungganon Bank (A Microfinance Rural Bank), Inc. |
-| bank_code | PH_CMG | CAMALIG BANK |
-| bank_code | PH_UCBSB | UCBP Savings bank |
-| bank_code | PH_ISLA | ISLA Bank |
-| bank_code | PH_MCC | Mindanao Consolidated CoopBank |
-| bank_code | PH_PSB | Philippine Savings Bank (PSBank) |
-| bank_code | PH_MSB | Malayan Bank Savings and Mortgage Bank, Inc. |
-| bank_code | PH_SB | Seabank |
-| bank_code | PH_NET | Netbank |
-| bank_code | PH_BPIDB | BPI Direct BanKO, Inc., A Savings Bank |
-| bank_code | PH_UBP | Union Bank of the Philippines (UBP) |
-| bank_code | PH_COINS | Coins.PH |
-| bank_code | PH_WDB | Wealth Development Bank Corporation |
-| bank_code | PH_OMNI | Omnipay, Inc. |
-| bank_code | PH_SEC | Security Bank Corporation |
 | bank_code | PH_TC | TayoCash |
-| bank_code | PH_PNBSB | PNB Savings Bank |
+| bank_code | PH_SP | ShopeePay |
+| bank_code | PH_SB | Seabank |
+| bank_code | PH_QB | Queenbank |
+| bank_code | PH_JC | JuanCash |
+| bank_code | PH_SCB | Standard Chartered Bank |
 | bank_code | PH_BAYAD | Bayad |
-| bank_code | PH_BDO | BDO Unibank |
-| bank_code | PH_GRABPAY | GrabPay |
 | bank_code | PH_EWB | East West Banking Corporation |
-| bank_code | PH_ASENSO | Asenso |
-| bank_code | PH_CEBRUR | Cebuana Lhuillier Rural Bank, Inc. |
-| bank_code | PH_JPM | JP Morgan Chase Bank, N.A. |
-| bank_code | PH_UCPB | United Coconut Planters Bank (UCPB) |
-| bank_code | PH_PAYMAYA | PayMaya |
-| bank_code | PH_EWR | EastWest Rural Bank or Komo |
-| bank_code | PH_PNB | Philippine National Bank (PNB) |
-| bank_code | PH_LSB | Legazpi Savings Bank |
-| bank_code | PH_CRD | CARD Bank |
-| bank_code | PH_YUANSB | Yuanta Savings Bank |
+| bank_code | PH_GRABPAY | GrabPay |
+| bank_code | PH_CSB | Citystate Savings Bank |
+| bank_code | PH_ISLA | ISLA Bank |
+| bank_code | PH_UBPEON | UnionBank EON |
+| bank_code | PH_PAR | Partner Rural Bank (Cotabato), Inc. |
+| bank_code | PH_PRB | Producers Bank |
+| bank_code | PH_QCB | Queen City Development Bank, Inc. |
 | bank_code | PH_ROB | Robinsons Bank |
-| bank_code | PH_CIMB | Commerce International Merchant Bank |
-| bank_code | PH_RSBI | Rcbc Savings Bank Inc. |
-| bank_code | PH_BPISB | BPI / BPI Family Savings Bank |
 | bank_code | PH_AUB | Asia United Bank (AUB) |
-
+| bank_code | PH_BMB | Bangko Mabuhay (A Rural Bank), Inc. |
+| bank_code | PH_BPI | Bank of the Philippine Islands (BPI) |
+| bank_code | PH_COINS | Coins.PH |
+| bank_code | PH_DBP | Development Bank of the Philippines |
+| bank_code | PH_ING | ING Bank N.V. |
+| bank_code | PH_MSB | Malayan Bank Savings and Mortgage Bank, Inc. |
+| bank_code | PH_PBC | Philippine Bank of Communications (PBCOM) |
+| bank_code | PH_PNB | Philippine National Bank (PNB) |
+| bank_code | PH_PSB | Philippine Savings Bank (PSBank) |
+| bank_code | PH_QCRB | Quezon Capital Rural Bank, Inc |
+| bank_code | PH_SEC | Security Bank Corporation |
+| bank_code | PH_SPY | Starpay Corporation |
+| bank_code | PH_YUANSB | Yuanta Savings Bank |
+| bank_code | PH_SSB | Sun Savings Bank |
+| bank_code | PH_UBP | Union Bank of the Philippines (UBP) |
+| bank_code | PH_UCBSB | UCBP Savings bank |
+| bank_code | PH_ABP | AllBank Inc. |
+| bank_code | PH_BOC | Bank of Commerce |
+| bank_code | PH_BRB | Binangonan Rural Bank (BRBDigital) |
+| bank_code | PH_CRD | CARD Bank |
+| bank_code | PH_MET | Metropolitan Bank and Trust Company (Metrobank) |
+| bank_code | PH_OMNI | Omnipay, Inc. |
+| bank_code | PH_PNBSB | PNB Savings Bank |
+| bank_code | PH_PVB | Philippine Veterans Bank |
+| bank_code | PH_RBG | RURAL BANK OF GUINOBATAN, INC. |
+| bank_code | PH_WDB | Wealth Development Bank Corporation |
+| bank_code | PH_CBC | China Bank |
+| bank_code | PH_CMG | CAMALIG BANK |
+| bank_code | PH_DBI | Dungganon Bank (A Microfinance Rural Bank), Inc. |
+| bank_code | PH_EQB | Equicom Savings Bank, Inc. |
+| bank_code | PH_EWR | EastWest Rural Bank or Komo |
+| bank_code | PH_GCASH | GCash |
+| bank_code | PH_LBP | Land Bank of The Philippines |
+| bank_code | PH_PAYMAYA | PayMaya |
+| bank_code | PH_PBB | Philippine Business Bank, Inc., A Savings Bank |
+| bank_code | PH_PTC | Philippine Trust Company |
+| bank_code | PH_RCBC | Rizal Commercial Banking Corporation (RCBC) |
+| bank_code | PH_SBA | Sterling Bank of Asia |
+| bank_code | PH_UCPB | United Coconut Planters Bank (UCPB) |
+| bank_code | PH_JPM | JP Morgan Chase Bank, N.A. |
+| bank_code | PH_BDO | BDO Unibank |
+| bank_code | PH_BPIDB | BPI Direct BanKO, Inc., A Savings Bank |
+| bank_code | PH_BPISB | BPI / BPI Family Savings Bank |
+| bank_code | PH_RSBI | Rcbc Savings Bank Inc. |
+| bank_code | PH_CBS | China Bank Savings |
+| bank_code | PH_CEBRUR | Cebuana Lhuillier Rural Bank, Inc. |
+| bank_code | PH_CTBC | CTBC Bank (Philippines) Corp. |
+| bank_code | PH_DCP | DCPAY Philippines |
+| bank_code | PH_MPI | Maybank Philippines |
+| bank_code | PH_ONB | BDO Network Bank |
+| bank_code | PH_ASENSO | Asenso |
+| bank_code | PH_DCDB | Dumaguete City Development Bank |
+| bank_code | PH_LSB | Legazpi Savings Bank |
+| bank_code | PH_MCC | Mindanao Consolidated CoopBank |
+| bank_code | PH_NET | Netbank |
+| bank_code | PH_CIMB | Commerce International Merchant Bank |
+| bank_code | PH_GTB | Gotyme Bank |
+| bank_code | PH_USSC | USSC Money Services |
+| bank_code | PH_MYB | Maya Bank, Inc. |
+| bank_code | PH_METRO | Metrobank |
+| bank_code | PH_PPSF | PalawanPay |
+| bank_code | ABCRB | Agribusiness Banking Corporation-A Rural Bank |
 
 # 13、错误码
 
