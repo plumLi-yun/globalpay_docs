@@ -514,7 +514,12 @@ Payment voucher available:
 
 | Field      | Country     | Value | Description |
 | ---------- | ----------- | ----- | ----------- |
-| pay_method | Philippines | gcash | gcash       |
+| bayad      | 菲律宾 | PH_BAYAD      | Bayad             |
+| grabpay    | 菲律宾 | PH_GRABPAY    | GrabPay           |
+| coins      | 菲律宾 | PH_COINS      | Coins.PH          |
+| omni       | 菲律宾 | PH_OMNI       | Omnipay, Inc.     |
+| gcash      | 菲律宾 | PH_GCASH      | GCash             |
+| paymaya    | 菲律宾 | PH_PAYMAYA    | PayMaya           |
 
 ---
 
@@ -660,3 +665,7 @@ Request Method: GET
 ```
 
 ---
+# 15、文档更新时间
+```
+2026-04-29 18:11:00
+```

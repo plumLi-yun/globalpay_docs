@@ -479,9 +479,15 @@
 
 # 11、支付方式 代收字段 pay_method
 
-| 字段      | 国家  | 值     | 描述    |
-|-----------|-----|-------|-------|
-| pay_method | 菲律宾 | gcash | gcash |
+
+| pay_method | 国家   | 值            | 描述              |
+|------------|--------|---------------|-------------------|
+| bayad      | 菲律宾 | PH_BAYAD      | Bayad             |
+| grabpay    | 菲律宾 | PH_GRABPAY    | GrabPay           |
+| coins      | 菲律宾 | PH_COINS      | Coins.PH          |
+| omni       | 菲律宾 | PH_OMNI       | Omnipay, Inc.     |
+| gcash      | 菲律宾 | PH_GCASH      | GCash             |
+| paymaya    | 菲律宾 | PH_PAYMAYA    | PayMaya           |
 
 
 
@@ -621,4 +627,8 @@
 ```
 /api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位比索}}&notice_url={{异步通知地址}}
 ```
-
+---
+# 15、文档更新时间
+```
+2026-04-29 18:11:00
+```
