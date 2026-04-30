@@ -51,7 +51,7 @@
 | trade_no       | int    | true  | 商户号                                                                                                                                                                           |
 | app_id         | int    | true  | 商户 appId                                                                                                                                                                      |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                                                                                                 |
-| pay_method     | string | true  | 支付方式 VND-Payment                                                                                                                                                                |
+| pay_method     | string | true  | 支付方式 EGP_BANK                                                                                                                                                                |
 | price          | int    | true  | 下单金额,单位:分 ,整数                                                                                                                                                                 |
 | order_no       | string | true  | 商户订单号                                                                                                                                                                         |
 | success_url    | string | false | 支付成功跳转 url                                                                                                                                                                    |
@@ -98,17 +98,17 @@
 
 ## 4.2 代收-下单响应
 
-| 名称           | 类型     | 必填    | 描述                                          |
-| ------------ | ------ | ----- | ------------------------------------------- |
-| code         | int    | true  | 200:下单成功 其他:下单失败                            |
-| msg          | string | true  | 失败原因                                        |
-| pay_url      | string | false | 付款链接                                        |
-| qr_code      | string | false | pix 二维码字符串                                  |
-| order_no     | string | true  | 商户订单号                                       |
-| dis_order_no | string | true  | 平台订单号                                       |
-| create_time  | int    | true  | 创建时间                                        |
+| 名称           | 类型     | 必填    | 描述                                      |
+| ------------ | ------ | ----- | --------------------------------------- |
+| code         | int    | true  | 200:下单成功 其他:下单失败                        |
+| msg          | string | true  | 失败原因                                    |
+| pay_url      | string | false | 付款链接                                    |
+| qr_code      | string | false | 二维码字符串                                  |
+| order_no     | string | true  | 商户订单号                                   |
+| dis_order_no | string | true  | 平台订单号                                   |
+| create_time  | int    | true  | 创建时间                                    |
 | pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28 |
-| sign         | string | true  | 签名结果,签名方法在文档顶部                              |
+| sign         | string | true  | 签名结果,签名方法在文档顶部                          |
 
 - 代收-下单响应示例
 
@@ -520,115 +520,10 @@
 
 
 # 11、银行编码
-| 字段名称      | 编码           | 银行名称                                                                                 |
-| :-------- | :----------- | :----------------------------------------------------------------------------------- |
-| bank_code | SHINHANYND   | NHShinhan(ShinhanBank)                                                               |
-| bank_code | KBankYNDA    | Ngân hàng Đại chúng TNHH Kasikornbank                                                |
-| bank_code | HSBCYND      | Ngân hàng TNHH MTV HSBC (Việt Nam)                                                   |
-| bank_code | DBSYND       | DBS Bank Ltd - Chi nhánh Thành phố Hồ Chí Minh                                       |
-| bank_code | CITIBANKYND  | Ngân hàng Citibank, N.A. - Chi nhánh Hà Nội                                          |
-| bank_code | ANZYDD       | Ngân hàng TNHH MTV ANZ (Việt Nam)                                                    |
-| bank_code | NKCHCM       | Ngân hàng Kookmin CN Ho Chi Minh                                                     |
-| bank_code | NHB HN       | Ngân hàng Nonghyup - Chi nhánh Hà Nội                                                |
-| bank_code | IBK - HCM    | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh TP.Hồ Chí Minh                            |
-| bank_code | HLBVN        | Ngân hàng TNHH MTV Hong Leong Việt Nam                                               |
-| bank_code | DAB          | Ngân hàng TMCP Đông Á                                                                |
-| bank_code | WOORIHCM     | NHWooriViệtNam(WooriBank)                                                            |
-| bank_code | VIETTELMONEY | ViettelMoney                                                                         |
-| bank_code | VID          | NHPublicViệtNam(PublicBankVietnam)                                                   |
-| bank_code | PVCB         | Ngân hàng TMCP Đại Chúng Việt Nam                                                    |
-| bank_code | LPB          | Ngân hàng TMCP Lộc Phát Việt Nam                                                     |
-| bank_code | KBHN         | Ngân hàng Kookmin - Chi nhánh Hà Nội                                                 |
-| bank_code | VBA          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam                               |
-| bank_code | TIMO         | Ngân hàng số Timo by Ban Viet Bank (Timo by Ban Viet Bank)                           |
-| bank_code | MAFC         | Công ty Tài chính TNHH MTV Mirae Asset (Việt Nam)                                    |
-| bank_code | IBK - HN     | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
-| bank_code | EAB          | NHĐôngÁ(DongABank)                                                                   |
-| bank_code | BID          | NHĐầuTư&PTViệtNam(BIDV)                                                              |
-| bank_code | VCCB         | Ngân hàng TMCP Bản Việt                                                              |
-| bank_code | KEBHANAHCM   | Ngân hàng KEB Hana – Chi nhánh Thành phố Hồ Chí Minh                                 |
-| bank_code | KBHCM        | Ngân hàng Kookmin - Chi nhánh Thành phố Hồ Chí Minh                                  |
-| bank_code | IBK          | NHCôngnghiệpHànQuốcHàNội(IBK-HN)                                                     |
-| bank_code | COOPBANK     | Ngân hàng Hợp tác xã Việt Nam                                                        |
-| bank_code | WVN          | Ngân hàng TNHH MTV Woori Việt Nam                                                    |
-| bank_code | SGICB        | Ngân hàng TMCP Sài Gòn Công Thương                                                   |
-| bank_code | ICB          | Ngân hàng TMCP Công thương Việt Nam                                                  |
-| bank_code | IBKHN        | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
-| bank_code | VNPTMONEY    | VNPT Money                                                                           |
-| bank_code | UOB          | Ngân hàng United Overseas - Chi nhánh TP. Hồ Chí Minh                                |
-| bank_code | PVB          | NHĐạiChúng(PVcomBank)                                                                |
-| bank_code | OCEANBANK    | Ngân hàng Thương mại TNHH MTV Đại Dương                                              |
-| bank_code | CTG          | NHCôngThươngViệtNam(Vietinbank)                                                      |
-| bank_code | VIETBANK     | Ngân hàng TMCP Việt Nam Thương Tín                                                   |
-| bank_code | SCVN         | Ngân hàng TNHH MTV Standard Chartered Bank Việt Nam                                  |
-| bank_code | PVDB         | Ngân hàng TMCP Đại Chúng Việt Nam Ngân hàng số                                       |
-| bank_code | NTMXVN       | Ngân hàng TNHH MTV Xây dựng Viet Nam                                                 |
-| bank_code | IBKHCM       | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Thành phố Hồ Chí Minh                     |
-| bank_code | VBSP         | Ngân hàng Chính sách Xã hội                                                          |
-| bank_code | NTMHLVN      | Ngân hàng TNHH MTV Hong Leong Viet Nam                                               |
-| bank_code | momo         | CTCP Dịch Vụ Di Động Trực Tuyến                                                      |
-| bank_code | KEBHANAHN    | Ngân hàng KEB Hana – Chi nhánh Hà Nội                                                |
-| bank_code | VTLMONEY     | Tổng Công ty Dịch vụ số Viettel - Chi nhánh tập đoàn công nghiệp viễn thông Quân Đội |
-| bank_code | LIOBANK      | Liobank by OCB                                                                       |
-| bank_code | UBANK        | Ubank by VPBank                                                                      |
-| bank_code | CAKE         | Cake by VPBank                                                                       |
-| bank_code | VIKKI        | Vikki Digital Bank                                                                   |
-| bank_code | SAIGONB      | SAIGONBANK                                                                           |
-| bank_code | PBVN         | VIDPublic Bank                                                                       |
-| bank_code | EIB          | NGAN HANG TMCP XUAT NHAP KHAU VIET NAM (EXIMBANK)                                    |
-| bank_code | VTB          | NGAN HANG TMCP CONG THUONG VIET NAM (VIETINBANK)                                     |
-| bank_code | VCAPB        | NHTMCP BAN VIET                                                                      |
-| bank_code | VUOB         | UNITED OVERSEAS BANK                                                                 |
-| bank_code | HDB          | NGAN HANG TMCP PHAT TRIEN TP.HCM (HDBANK)                                            |
-| bank_code | GPB          | Ngân hàng TM TNHH MTV (GPBANK)                                                       |
-| bank_code | BIDV         | NGAN HANG TMCP DAU TU VA PHAT TRIEN VIET NAM (BIDV)                                  |
-| bank_code | DONGA        | Donga Bank                                                                           |
-| bank_code | MSB          | NGAN HANG TMCP HANG HAI VIET NAM (MARITIME BANK)                                     |
-| bank_code | VPB          | NGAN HANG TMCP VIET NAM THINH VUONG (VPBANK)                                         |
-| bank_code | SACOMB       | SACOMBANK                                                                            |
-| bank_code | LVB          | NGAN HANG BUU DIEN LIEN VIET (LIENVIETPOSTBANK)                                      |
-| bank_code | KLB          | Kien Long Joint-stock Commercial Bank (KienLongBank)                                 |
-| bank_code | BAB          | Ngân hàng TMCP Bắc Á (BAC A BANK)                                                    |
-| bank_code | ABB          | NGAN HANG TMCP AN BINH (ABBANK)                                                      |
-| bank_code | VDBS         | DBS                                                                                  |
-| bank_code | NCB          | NH TMCP QUOC DAN                                                                     |
-| bank_code | YOLO         | Ngân hàng số VPDirect                                                                |
-| bank_code | TPB          | TIENPHONG BANK                                                                       |
-| bank_code | SHBVN        | SHINHAN BANK VN                                                                      |
-| bank_code | SCB          | SCB                                                                                  |
-| bank_code | OJB          | OCEANBANK                                                                            |
-| bank_code | VIETB        | VIETBANK                                                                             |
-| bank_code | SGB          | SAIGONBANK                                                                           |
-| bank_code | SEAB         | SEABANK                                                                              |
-| bank_code | NAB          | Ngân hàng TMCP Nam Á (NAM A BANK)                                                    |
-| bank_code | IVB          | NGAN HANG TNHH INDOVINA (INDOVINA BANK)                                              |
-| bank_code | AGR          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (AGRIBANK)                    |
-| bank_code | MBV          | Military Bank                                                                        |
-| bank_code | VIETA        | VietABank                                                                            |
-| bank_code | WOO          | WOORI BANK                                                                           |
-| bank_code | HLB          | NGAN HANG TNHH MTV HONGLEONG VIET NAM (HLBANK)                                       |
-| bank_code | CIMB         | NH MTV CIMB                                                                          |
-| bank_code | OCBV         | OCB Vietnam                                                                          |
-| bank_code | VHSBC        | HSBC                                                                                 |
-| bank_code | VIB          | VIB BANK                                                                             |
-| bank_code | VCPTB        | VIET CAPITAL BANK                                                                    |
-| bank_code | VCB          | VIETCOMBANK                                                                          |
-| bank_code | VAB          | Ngân hàng TMCP Việt Á                                                                |
-| bank_code | SHB          | SHB BANK                                                                             |
-| bank_code | BVB          | BAO VIET BANK (BVB)                                                                  |
-| bank_code | ACB          | NGAN HANG TMCP A CHAU (ACB)                                                          |
-| bank_code | VSTB         | STB                                                                                  |
-| bank_code | STB          | SACOMBANK                                                                            |
-| bank_code | PVCOMB       | PVCOMBANK                                                                            |
-| bank_code | PGB          | PGBANK                                                                               |
-| bank_code | OCB          | PHUONGDONG BANK                                                                      |
-| bank_code | MB           | NGAN HANG TMCP QUAN DOI (MB)                                                         |
-| bank_code | VIETCB       | VietCapitalBank                                                                      |
-| bank_code | CBB          | C B BANK                                                                             |
-| bank_code | VNCB         | National Citizen Bank                                                                |
-| bank_code | VNHSBC       | HSBC Bank Vietnam Ltd (HSBC)                                                         |
-| bank_code | VRB          | NH LD VIET NGA                                                                       |
-| bank_code | TCB          | TECHCOMBANK                                                                          |
+| 字段名称      | 编码            | 银行名称                                                                                 |
+| :-------- |:--------------|:-------------------------------------------------------------------------------------|
+| bank_code | EGPWALLETS_MM | EGPWALLETS(MobileMoney)                                                              |
+| bank_code | Vodafone      | Vodafone                                                                             |
 
 
 # 12、错误码

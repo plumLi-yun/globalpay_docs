@@ -296,7 +296,8 @@
 | order_type | string | true | pay_out:代付,pay_in:代收    |
 | trade_no   | int    | true | 商户号                      |
 | app_id         | int    | true  | 商户 appId                    |
-| dis_order_no | string | true  | 平台订单号                               |
+| dis_order_no | string | false | 平台订单号                |
+| order_no | string | false  | 商户订单号                |
 | sign       | string | true | 签名结果,签名方法在文档顶部 |
 
 - 查询请求示例

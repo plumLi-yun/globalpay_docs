@@ -302,7 +302,8 @@ Query address: api_domain/api/v1/payApi/QueryOrder
 | order_type  | string | true   | pay_out: Disbursement, pay_in: Collection.               |
 | trade_no   | int  | true   | Merchant ID.                              |
 | app_id    | int  | true   | Merchant appId.                             |
-| dis_order_no | string | true   | Platform order number.                         |
+| dis_order_no | string | false   | Platform order number.                         |
+| order_no | string | false  | Merchant  order number.              |
 | sign     | string | true   | Signature result, see the top of the document for the signature method. |
 
 - Query Request Example

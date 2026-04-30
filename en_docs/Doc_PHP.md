@@ -319,7 +319,8 @@ Query URL: `api_domain/api/v1/payApi/QueryOrder`
 | order_type   | string | true     | pay_out: pay-out, pay_in: pay-in                                        |
 | trade_no     | int    | true     | Merchant number                                                         |
 | app_id       | int    | true     | Merchant appId                                                          |
-| dis_order_no | string | true     | Platform order number                                                   |
+| dis_order_no | string | false   | Platform order number.                         |
+| order_no | string | false  | Merchant  order number.              |
 | sign         | string | true     | Signature result, signature method described at the top of the document |
 
 ### Query Request Example
