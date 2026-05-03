@@ -39,8 +39,8 @@
 # 4、代收下单接口
 
 (下单 ip 需要联系我方加白)
-下单地址 api_domain/api/v1/payApi/CreatePayInOrder
-示例 ：http://host/api/v1/payApi/CreatePayInOrder
+下单地址 {api_domain}/api/v1/payApi/CreatePayInOrder
+示例 ：https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 代收-下单请求参数
 
@@ -176,8 +176,8 @@
 # 6、代付下单接口
 
 (下单 ip 需要联系我方加白)
-下单地址 api_domain/api/v1/payApi/CreatePayOutOrder
-示例 ：http://host/api/v1/payApi/CreatePayOutOrder
+下单地址 {api_domain}/api/v1/payApi/CreatePayOutOrder
+示例 ：https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 代付-请求参数
 
@@ -301,7 +301,7 @@
 # 8、查询订单接口 (代收 代付共用)
 
 (请求 ip 需要联系我方加白)
-查询地址: api_domain/api/v1/payApi/QueryOrder
+查询地址: {api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 查询请求参数
 
@@ -380,7 +380,7 @@
 # 9、代付余额查询接口
 
 (请求 ip 需要联系我方加白)
-地址: api_domain/api/v1/payApi/QueryBalance
+地址: {api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 余额请求参数
 
@@ -435,7 +435,7 @@
 # 10、付款凭证查询接口
 
 (请求 ip 需要联系我方加白)
-地址: api_domain/api/v1/payApi/QueryCertificate
+地址: {api_domain}/api/v1/payApi/QueryCertificate
 
 ## 10.1 付款凭证请求参数
 
@@ -553,3 +553,7 @@
 /api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位元}}&notice_url={{异步通知地址}}
 ```
 
+# 14、文档更新时间
+```
+2026-05-04 00:00:08
+```

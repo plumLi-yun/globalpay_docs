@@ -50,8 +50,8 @@
 # 4. Pay-in Order API
 
 (Order IP must be whitelisted by contacting us)
-Order URL: `api_domain/api/v1/payApi/CreatePayInOrder`
-Example: `http://host/api/v1/payApi/CreatePayInOrder`
+Order URL: `{api_domain}/api/v1/payApi/CreatePayInOrder`
+Example: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 
 ## 4.1 Pay-in Order Request Parameters
 
@@ -180,8 +180,8 @@ If the callback is received and processed successfully, please return **success*
 # 6. Pay-out Order API
 
 (Order IP must be whitelisted by contacting us)
-Order URL: `api_domain/api/v1/payApi/CreatePayOutOrder`
-Example: `http://host/api/v1/payApi/CreatePayOutOrder`
+Order URL: `{api_domain}/api/v1/payApi/CreatePayOutOrder`
+Example: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 
 ## 6.1 Pay-out Request Parameters
 
@@ -310,7 +310,7 @@ If the callback is received and processed successfully, please return **success*
 # 8. Order Query API (Shared by Pay-in and Pay-out)
 
 (Request IP must be whitelisted by contacting us)
-Query URL: `api_domain/api/v1/payApi/QueryOrder`
+Query URL: `{api_domain}/api/v1/payApi/QueryOrder`
 
 ## 8.1 Query Request Parameters
 
@@ -391,7 +391,7 @@ Success:
 # 9. Pay-out Balance Query API
 
 (Request IP must be whitelisted by contacting us)
-URL: `api_domain/api/v1/payApi/QueryBalance`
+URL: `{api_domain}/api/v1/payApi/QueryBalance`
 
 ## 9.1 Balance Request Parameters
 
@@ -449,7 +449,7 @@ Success:
 # 10. Payment Voucher Query API
 
 (Request IP must be whitelisted by contacting us)
-URL: `api_domain/api/v1/payApi/QueryCertificate`
+URL: `{api_domain}/api/v1/payApi/QueryCertificate`
 
 ## 10.1 Payment Voucher Request Parameters
 
@@ -666,7 +666,7 @@ Request Method: GET
 ```
 
 ---
-# 15、文档更新时间
+# 15. Document Update Time
 ```
-2026-04-29 18:11:00
+2026-05-04 00:00:08
 ```

@@ -40,8 +40,8 @@
 # 4. Pay-in (Collection) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: api_domain/api/v1/payApi/CreatePayInOrder
-Example: http://host/api/v1/payApi/CreatePayInOrder
+Order address: {api_domain}/api/v1/payApi/CreatePayInOrder
+Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
 
@@ -172,8 +172,8 @@ If the callback is successfully received and processed, please return `success`.
 # 6. Pay-out (Disbursement) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: api_domain/api/v1/payApi/CreatePayOutOrder
-Example: http://host/api/v1/payApi/CreatePayOutOrder
+Order address: {api_domain}/api/v1/payApi/CreatePayOutOrder
+Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
@@ -297,8 +297,8 @@ If the callback is successfully received and processed, please return `success`.
 
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 
-(The request IP needs to be whitelisted by contacting us)
-Query address: api_domain/api/v1/payApi/QueryOrder
+(The (Request IP needs to be whitelisted by contacting us)
+Query address: {api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 Query Request Parameters
 
@@ -376,8 +376,8 @@ Success:
 
 # 9. Pay-out Balance Query Interface
 
-(The request IP needs to be whitelisted by contacting us)
-Address: api_domain/api/v1/payApi/QueryBalance
+(The (Request IP needs to be whitelisted by contacting us)
+Address: {api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 Balance Request Parameters
 
@@ -431,8 +431,8 @@ Success:
 ```
 # 10. Payment Voucher Query Interface
 
-(The request IP needs to be whitelisted by contacting us)
-Address: api_domain/api/v1/payApi/QueryCertificate
+(The (Request IP needs to be whitelisted by contacting us)
+Address: {api_domain}/api/v1/payApi/QueryCertificate
 
 ## 10.1 Payment Voucher Request Parameters
 
@@ -551,4 +551,9 @@ Request Method: GET
 
 ```
 /api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}
+```
+---
+# 14. Document Update Time
+```
+2026-05-04 00:00:08
 ```
