@@ -41,7 +41,7 @@
 # 4. Pay-in (Collection) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayInOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
@@ -182,7 +182,7 @@ If the callback is successfully received and processed, please return `success`.
 # 6. Pay-out (Disbursement) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayOutOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
@@ -312,7 +312,7 @@ If the callback is successfully received and processed, please return `success`.
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 
 (The (Request IP needs to be whitelisted by contacting us)
-Query address: {api_domain}/api/v1/payApi/QueryOrder
+Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 Query Request Parameters
 
@@ -394,7 +394,7 @@ Success:
 # 9. Pay-out Balance Query Interface
 
 (The (Request IP needs to be whitelisted by contacting us)
-Address: {api_domain}/api/v1/payApi/QueryBalance
+Address: https://{api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 Balance Request Parameters
 
@@ -453,7 +453,7 @@ Success:
 # 10. Payment Voucher Query Interface
 
 (The (Request IP needs to be whitelisted by contacting us)
-Address: {api_domain}/api/v1/payApi/QueryCertificate
+Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 ## 10.1 Payment Voucher Request Parameters
 
@@ -523,113 +523,65 @@ With payment voucher:
 
 | Field Name | Code | Bank Name |
 | :-------- | :----------- | :----------------------------------------------------------------------------------- |
-| bank_code | SHINHANYND   | NHShinhan(ShinhanBank)                                                               |
-| bank_code | KBankYNDA    | Ngân hàng Đại chúng TNHH Kasikornbank                                                |
-| bank_code | HSBCYND      | Ngân hàng TNHH MTV HSBC (Việt Nam)                                                   |
-| bank_code | DBSYND       | DBS Bank Ltd - Chi nhánh Thành phố Hồ Chí Minh                                       |
-| bank_code | CITIBANKYND  | Ngân hàng Citibank, N.A. - Chi nhánh Hà Nội                                          |
-| bank_code | ANZYDD       | Ngân hàng TNHH MTV ANZ (Việt Nam)                                                    |
-| bank_code | NKCHCM       | Ngân hàng Kookmin CN Ho Chi Minh                                                     |
-| bank_code | NHB HN       | Ngân hàng Nonghyup - Chi nhánh Hà Nội                                                |
-| bank_code | IBK - HCM    | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh TP.Hồ Chí Minh                            |
-| bank_code | HLBVN        | Ngân hàng TNHH MTV Hong Leong Việt Nam                                               |
-| bank_code | DAB          | Ngân hàng TMCP Đông Á                                                                |
-| bank_code | WOORIHCM     | NHWooriViệtNam(WooriBank)                                                            |
-| bank_code | VIETTELMONEY | ViettelMoney                                                                         |
-| bank_code | VID          | NHPublicViệtNam(PublicBankVietnam)                                                   |
-| bank_code | PVCB         | Ngân hàng TMCP Đại Chúng Việt Nam                                                    |
-| bank_code | LPB          | Ngân hàng TMCP Lộc Phát Việt Nam                                                     |
-| bank_code | KBHN         | Ngân hàng Kookmin - Chi nhánh Hà Nội                                                 |
-| bank_code | VBA          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam                               |
-| bank_code | TIMO         | Ngân hàng số Timo by Ban Viet Bank (Timo by Ban Viet Bank)                           |
-| bank_code | MAFC         | Công ty Tài chính TNHH MTV Mirae Asset (Việt Nam)                                    |
-| bank_code | IBK - HN     | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
-| bank_code | EAB          | NHĐôngÁ(DongABank)                                                                   |
-| bank_code | BID          | NHĐầuTư&PTViệtNam(BIDV)                                                              |
-| bank_code | VCCB         | Ngân hàng TMCP Bản Việt                                                              |
-| bank_code | KEBHANAHCM   | Ngân hàng KEB Hana – Chi nhánh Thành phố Hồ Chí Minh                                 |
-| bank_code | KBHCM        | Ngân hàng Kookmin - Chi nhánh Thành phố Hồ Chí Minh                                  |
-| bank_code | IBK          | NHCôngnghiệpHànQuốcHàNội(IBK-HN)                                                     |
-| bank_code | COOPBANK     | Ngân hàng Hợp tác xã Việt Nam                                                        |
-| bank_code | WVN          | Ngân hàng TNHH MTV Woori Việt Nam                                                    |
-| bank_code | SGICB        | Ngân hàng TMCP Sài Gòn Công Thương                                                   |
-| bank_code | ICB          | Ngân hàng TMCP Công thương Việt Nam                                                  |
-| bank_code | IBKHN        | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Hà Nội                                    |
-| bank_code | VNPTMONEY    | VNPT Money                                                                           |
-| bank_code | UOB          | Ngân hàng United Overseas - Chi nhánh TP. Hồ Chí Minh                                |
-| bank_code | PVB          | NHĐạiChúng(PVcomBank)                                                                |
-| bank_code | OCEANBANK    | Ngân hàng Thương mại TNHH MTV Đại Dương                                              |
-| bank_code | CTG          | NHCôngThươngViệtNam(Vietinbank)                                                      |
-| bank_code | VIETBANK     | Ngân hàng TMCP Việt Nam Thương Tín                                                   |
-| bank_code | SCVN         | Ngân hàng TNHH MTV Standard Chartered Bank Việt Nam                                  |
-| bank_code | PVDB         | Ngân hàng TMCP Đại Chúng Việt Nam Ngân hàng số                                       |
-| bank_code | NTMXVN       | Ngân hàng TNHH MTV Xây dựng Viet Nam                                                 |
-| bank_code | IBKHCM       | Ngân hàng Công nghiệp Hàn Quốc - Chi nhánh Thành phố Hồ Chí Minh                     |
-| bank_code | VBSP         | Ngân hàng Chính sách Xã hội                                                          |
-| bank_code | NTMHLVN      | Ngân hàng TNHH MTV Hong Leong Viet Nam                                               |
-| bank_code | momo         | CTCP Dịch Vụ Di Động Trực Tuyến                                                      |
-| bank_code | KEBHANAHN    | Ngân hàng KEB Hana – Chi nhánh Hà Nội                                                |
-| bank_code | VTLMONEY     | Tổng Công ty Dịch vụ số Viettel - Chi nhánh tập đoàn công nghiệp viễn thông Quân Đội |
-| bank_code | LIOBANK      | Liobank by OCB                                                                       |
-| bank_code | UBANK        | Ubank by VPBank                                                                      |
-| bank_code | CAKE         | Cake by VPBank                                                                       |
-| bank_code | VIKKI        | Vikki Digital Bank                                                                   |
-| bank_code | SAIGONB      | SAIGONBANK                                                                           |
-| bank_code | PBVN         | VIDPublic Bank                                                                       |
-| bank_code | EIB          | NGAN HANG TMCP XUAT NHAP KHAU VIET NAM (EXIMBANK)                                    |
-| bank_code | VTB          | NGAN HANG TMCP CONG THUONG VIET NAM (VIETINBANK)                                     |
-| bank_code | VCAPB        | NHTMCP BAN VIET                                                                      |
-| bank_code | VUOB         | UNITED OVERSEAS BANK                                                                 |
-| bank_code | HDB          | NGAN HANG TMCP PHAT TRIEN TP.HCM (HDBANK)                                            |
-| bank_code | GPB          | Ngân hàng TM TNHH MTV (GPBANK)                                                       |
-| bank_code | BIDV         | NGAN HANG TMCP DAU TU VA PHAT TRIEN VIET NAM (BIDV)                                  |
-| bank_code | DONGA        | Donga Bank                                                                           |
-| bank_code | MSB          | NGAN HANG TMCP HANG HAI VIET NAM (MARITIME BANK)                                     |
-| bank_code | VPB          | NGAN HANG TMCP VIET NAM THINH VUONG (VPBANK)                                         |
-| bank_code | SACOMB       | SACOMBANK                                                                            |
-| bank_code | LVB          | NGAN HANG BUU DIEN LIEN VIET (LIENVIETPOSTBANK)                                      |
-| bank_code | KLB          | Kien Long Joint-stock Commercial Bank (KienLongBank)                                 |
-| bank_code | BAB          | Ngân hàng TMCP Bắc Á (BAC A BANK)                                                    |
-| bank_code | ABB          | NGAN HANG TMCP AN BINH (ABBANK)                                                      |
-| bank_code | VDBS         | DBS                                                                                  |
-| bank_code | NCB          | NH TMCP QUOC DAN                                                                     |
-| bank_code | YOLO         | Ngân hàng số VPDirect                                                                |
-| bank_code | TPB          | TIENPHONG BANK                                                                       |
-| bank_code | SHBVN        | SHINHAN BANK VN                                                                      |
-| bank_code | SCB          | SCB                                                                                  |
-| bank_code | OJB          | OCEANBANK                                                                            |
-| bank_code | VIETB        | VIETBANK                                                                             |
-| bank_code | SGB          | SAIGONBANK                                                                           |
-| bank_code | SEAB         | SEABANK                                                                              |
-| bank_code | NAB          | Ngân hàng TMCP Nam Á (NAM A BANK)                                                    |
-| bank_code | IVB          | NGAN HANG TNHH INDOVINA (INDOVINA BANK)                                              |
-| bank_code | AGR          | Ngân hàng Nông nghiệp và Phát triển Nông thôn Việt Nam (AGRIBANK)                    |
-| bank_code | MBV          | Military Bank                                                                        |
-| bank_code | VIETA        | VietABank                                                                            |
-| bank_code | WOO          | WOORI BANK                                                                           |
-| bank_code | HLB          | NGAN HANG TNHH MTV HONGLEONG VIET NAM (HLBANK)                                       |
-| bank_code | CIMB         | NH MTV CIMB                                                                          |
-| bank_code | OCBV         | OCB Vietnam                                                                          |
-| bank_code | VHSBC        | HSBC                                                                                 |
-| bank_code | VIB          | VIB BANK                                                                             |
-| bank_code | VCPTB        | VIET CAPITAL BANK                                                                    |
-| bank_code | VCB          | VIETCOMBANK                                                                          |
-| bank_code | VAB          | Ngân hàng TMCP Việt Á                                                                |
-| bank_code | SHB          | SHB BANK                                                                             |
-| bank_code | BVB          | BAO VIET BANK (BVB)                                                                  |
-| bank_code | ACB          | NGAN HANG TMCP A CHAU (ACB)                                                          |
-| bank_code | VSTB         | STB                                                                                  |
-| bank_code | STB          | SACOMBANK                                                                            |
-| bank_code | PVCOMB       | PVCOMBANK                                                                            |
-| bank_code | PGB          | PGBANK                                                                               |
-| bank_code | OCB          | PHUONGDONG BANK                                                                      |
-| bank_code | MB           | NGAN HANG TMCP QUAN DOI (MB)                                                         |
-| bank_code | VIETCB       | VietCapitalBank                                                                      |
-| bank_code | CBB          | C B BANK                                                                             |
-| bank_code | VNCB         | National Citizen Bank                                                                |
-| bank_code | VNHSBC       | HSBC Bank Vietnam Ltd (HSBC)                                                         |
-| bank_code | VRB          | NH LD VIET NGA                                                                       |
-| bank_code | TCB          | TECHCOMBANK  |
+| bank_code | PVCB | Vietnam Public Joint Stock Commercial Bank |
+| bank_code | VPB | Vietnam Prosperity Bank |
+| bank_code | VCB | Bank for Foreign Trade of Vietnam |
+| bank_code | CTG | Vietnam Bank for Industry and Trade |
+| bank_code | BIDV | Bank for Investment & Development of Vietnam |
+| bank_code | EIB | Vietnam Export Import Commercial Joint Stock Bank |
+| bank_code | TCB | Vietnam Technological And Commercial Joint Stock Bank |
+| bank_code | TPB | Tien Phong Commercial Joint Stock Bank |
+| bank_code | LPB | Viet Nam Post Joint Stock Commercial Bank |
+| bank_code | PGB | Petrolimex Group Commercial Joint Stock Bank |
+| bank_code | SEAB | Southeast Asia Commercial Joint Stock Bank |
+| bank_code | SGB | Saigon Bank For Industry And Trade |
+| bank_code | VIB | Vietnam International Commercial Joint Stock Bank |
+| bank_code | MBV | Modern Bank of Vietnam |
+| bank_code | HDB | HoChiMinh City Development Joint Stock Commercial Bank |
+| bank_code | GPB | Global Petro Bank |
+| bank_code | BVB | Baoviet Joint Stock Commercial Bank |
+| bank_code | VRB | Vietnam - Russia Joint Venture Bank |
+| bank_code | SHINHAN | SHINHAN Bank |
+| bank_code | WOORI | WOORI BANK |
+| bank_code | MSB | Vietnam Maritime Commercial Joint Stock Bank |
+| bank_code | STB | Saigon Thuong Tin Commercial Joint Stock Bank |
+| bank_code | NASB | North Asia Commercial Joint Stock Bank |
+| bank_code | VAB | Vietnam Asia Commercial Joint Stock Bank |
+| bank_code | ABB | An Binh Commercial Joint Stock Bank |
+| bank_code | ACB | Asia Commercial Bank |
+| bank_code | AGRIBANK | Vietnam Bank For Agriculture and Rural Development |
+| bank_code | MBB | Military Commercial Joint Stock Bank |
+| bank_code | OCB | Orient Commercial Joint Stock Bank |
+| bank_code | SHB | Saigon – Hanoi Commercial Joint Stock Bank |
+| bank_code | NAB | Nam A Commercial Joint Stock Bank |
+| bank_code | SCB | Saigon Commercial Bank |
+| bank_code | KLB | Kien Long Commercial Joint Stock Bank |
+| bank_code | VTTB | Viet Nam Thuong Tin Commercial Joint Stock Bank |
+| bank_code | VCB_CAP | Viet Capital Bank |
+| bank_code | PBVN | Public Bank Vietnam Limited |
+| bank_code | IVB | Indovina Bank LTD |
+| bank_code | UOB | United Overseas Bank |
+| bank_code | VIKKI | Vikki Digital Bank Limited |
+| bank_code | NCB | National Citizen Bank |
+| bank_code | VIETCREDIT | Công Ty Tài Chính Cổ Phần Tín Việt |
+| bank_code | CIMB | TNHH MTV CIMB |
+| bank_code | DBS | DBS Bank (Ho Chi Minh City) |
+| bank_code | UMEE | UMEE by Kienlongbank |
+| bank_code | NONGHYUP | NongHyup Bank Hanoi Branch |
+| bank_code | LIO | Liobank by OCB |
+| bank_code | HSBC | HSBC Vietnam |
+| bank_code | KB | KB Kookmin Bank Ha Noi Branch |
+| bank_code | TIMO | Timo by Viet Capital Bank |
+| bank_code | VNPT | VNPT Fintech |
+| bank_code | MIRAE | Mirae Asset Finance Company (Vietnam) |
+| bank_code | CAKE | Cake by VP Bank |
+| bank_code | VIETTELPAY | Viettel Digital Services Corporation |
+| bank_code | UBANK | Ubank by VPBank |
+| bank_code | VBSP | Vietnam bank for social policies |
+| bank_code | KBANK | Kasikornbank Bank |
+| bank_code | HLB | Hong Leong Bank Vietnam Limited |
+| bank_code | DAB | DongA Bank |
+| bank_code | COOP | Vietnam Cooperative Bank |
 
 # 12. Error Codes
 
