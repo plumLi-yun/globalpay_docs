@@ -541,7 +541,7 @@ With payment voucher:
 | bank_code | GPB | Global Petro Bank |
 | bank_code | BVB | Baoviet Joint Stock Commercial Bank |
 | bank_code | VRB | Vietnam - Russia Joint Venture Bank |
-| bank_code | SHINHAN | SHINHAN Bank |
+| bank_code | VNDSHINHAN | SHINHAN Bank |
 | bank_code | WOORI | WOORI BANK |
 | bank_code | MSB | Vietnam Maritime Commercial Joint Stock Bank |
 | bank_code | STB | Saigon Thuong Tin Commercial Joint Stock Bank |
@@ -638,5 +638,5 @@ Request Method: GET
 ---
 # 14. Document Update Time
 ```
-2026-05-04 00:30:00
+2026-05-08 00:17:00
 ```
