@@ -568,7 +568,7 @@
 | bank_code | UMEE | UMEE by Kienlongbank |
 | bank_code | NONGHYUP | NongHyup Bank Hanoi Branch |
 | bank_code | LIO | Liobank by OCB |
-| bank_code | HSBC | HSBC Vietnam |
+| bank_code | VNDHSBC | HSBC Vietnam |
 | bank_code | KB | KB Kookmin Bank Ha Noi Branch |
 | bank_code | TIMO | Timo by Viet Capital Bank |
 | bank_code | VNPT | VNPT Fintech |
