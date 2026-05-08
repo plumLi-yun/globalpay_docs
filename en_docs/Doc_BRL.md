@@ -41,7 +41,6 @@
 
 (The order placement IP needs to be whitelisted by contacting us)
 Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
-Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
 
@@ -72,7 +71,9 @@ Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ##### attach Example
 ```json
+
 {"name":"Individual name for Brazil individuals, Company name for Brazil companies","identify_type":"Identity type: CPF, CNPJ","identify_num":"CPF (digits only) for Brazil individuals, CNPJ (digits only) for Brazil companies"}
+
 ```
 
 - Pay-in - Order Request Example
@@ -178,7 +179,6 @@ If the callback is successfully received and processed, please return `success`.
 
 (The order placement IP needs to be whitelisted by contacting us)
 Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
-Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
@@ -557,5 +557,5 @@ Request Method: GET
 ---
 # 14. Document Update Time
 ```
-2026-05-08 00:17:00
+2026-05-08 19:04:00
 ```

@@ -42,7 +42,6 @@
 
 (下单 ip 需要联系我方加白)
 下单地址 https://{api_domain}/api/v1/payApi/CreatePayInOrder
-示例 ：https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 代收-下单请求参数
 
@@ -183,7 +182,6 @@
 
 (下单 ip 需要联系我方加白)  
 下单地址 https://{api_domain}/api/v1/payApi/CreatePayOutOrder  
-示例 ：https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 代付-请求参数
 
@@ -638,5 +636,5 @@
 
 # 14、文档更新时间
 ```
-2026-05-08 00:17:00
+2026-05-08 19:04:00
 ```

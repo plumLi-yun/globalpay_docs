@@ -40,7 +40,6 @@
 
 (下单 ip 需要联系我方加白)
 下单地址 https://{api_domain}/api/v1/payApi/CreatePayInOrder
-示例 ：https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 代收-下单请求参数
 
@@ -172,7 +171,6 @@
 
 (下单 ip 需要联系我方加白)
 下单地址 https://{api_domain}/api/v1/payApi/CreatePayOutOrder
-示例 ：https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 代付-请求参数
 
@@ -500,7 +498,97 @@
 | pay_method | 墨西哥   |CLABE       | 墨西哥CLABE             |
 
 
-# 12、错误码
+# 12、银行编码
+
+| 字段名称 | 编码 | 银行名称 |
+|:---------|:-----|:---------|
+| bank_code | CB_INTERCAM | CB INTERCAM |
+| bank_code | MULTIVA_BANCO | MULTIVA BANCO |
+| bank_code | LIBERTAD | LIBERTAD |
+| bank_code | ARCUS | ARCUS |
+| bank_code | NAFIN | NAFIN |
+| bank_code | MASARI | MASARI |
+| bank_code | CI_BOLSA | CI BOLSA |
+| bank_code | BANORTE | BANORTE |
+| bank_code | BANOBRAS | BANOBRAS |
+| bank_code | BANCREA | BANCREA |
+| bank_code | AKALA | AKALA |
+| bank_code | BANCOMEXT | BANCOMEXT |
+| bank_code | VOLKSWAGEN | VOLKSWAGEN |
+| bank_code | VE_POR_MAS | VE POR MAS |
+| bank_code | MERCADO_PAGO_W | Mercado Pago W |
+| bank_code | INTERCAM_BANCO | INTERCAM BANCO |
+| bank_code | CAJA_TELEFONIST | CAJA TELEFONIST |
+| bank_code | CAJA_POP_MEXICA | CAJA POP MEXICA |
+| bank_code | BANJERCITO | BANJERCITO |
+| bank_code | ACTINVER | ACTINVER |
+| bank_code | PROFUTURO | PROFUTURO |
+| bank_code | HIPOTECARIA_FED | HIPOTECARIA FED |
+| bank_code | CoDi_Valida | CoDi Valida |
+| bank_code | BANCOPPEL | BANCOPPEL |
+| bank_code | TESORED | TESORED |
+| bank_code | INDEVAL | INDEVAL |
+| bank_code | INBURSA | INBURSA |
+| bank_code | CRISTOBAL_COLON | CRISTOBAL COLON |
+| bank_code | BAJIO | BAJIO |
+| bank_code | BANXICO | BANK OF MEXICO |
+| bank_code | KUSPIT | KUSPIT |
+| bank_code | CREDIT_SUISSE | CREDIT SUISSE |
+| bank_code | AZTECA | AZTECA |
+| bank_code | AFIRME | AFIRME |
+| bank_code | CIBANCO | CIBANCO |
+| bank_code | BARCLAYS | BARCLAYS |
+| bank_code | SPINOXXO | Spin in OXXO |
+| bank_code | VALUE | VALUE |
+| bank_code | VALMEX | VALMEX |
+| bank_code | REFORMA | REFORMA |
+| bank_code | PAGATODO | PAGATODO |
+| bank_code | MULTIVA_CBOLSA | MULTIVA CBOLSA |
+| bank_code | COMPARTAMOS | COMPARTAMOS |
+| bank_code | JP_MORGAN | JP MORGAN |
+| bank_code | EVERCORE | EVERCORE |
+| bank_code | CREDICAPITAL | CREDICAPITAL |
+| bank_code | BANSI | BANSI |
+| bank_code | BANREGIO | BANREGIO |
+| bank_code | BANKAOOL | BANKAOOL |
+| bank_code | BANK_OF_AMERICA | BANK OF AMERICA |
+| bank_code | ABC_CAPITAL | ABC CAPITAL |
+| bank_code | TRANSFER | TRANSFER |
+| bank_code | STP | STP |
+| bank_code | FONDO_FIRA) | FONDO (FIRA) |
+| bank_code | FOMPED | FOMPED |
+| bank_code | BANCO_S3 | BANCO S3 |
+| bank_code | AUTOFIN | AUTOFIN |
+| bank_code | UNAGRA | UNAGRA |
+| bank_code | HSBC | HSBC |
+| bank_code | DONDE | DONDE |
+| bank_code | CONSUBANCO | CONSUBANCO |
+| bank_code | BMONEX | BMONEX |
+| bank_code | MONEXCB | MONEXCB |
+| bank_code | BBVA_MEXICO | BBVA MEXICO |
+| bank_code | BANSEFI | BANSEFI |
+| bank_code | BANCO_FINTERRA | BANCO FINTERRA |
+| bank_code | BANAMEX | BANAMEX |
+| bank_code | ASP_INTEGRA_OPC | ASP INTEGRA OPC |
+| bank_code | SANTANDER | SANTANDER |
+| bank_code | INVEX | INVEX |
+| bank_code | MIFEL | MIFEL |
+| bank_code | INVERCAP | INVERCAP |
+| bank_code | GBM | GBM |
+| bank_code | VECTOR | VECTOR |
+| bank_code | SHINHAN | SHINHAN |
+| bank_code | SCOTIABANK | SCOTIABANK |
+| bank_code | SABADELL | SABADELL |
+| bank_code | MIZUHO_BANK | MIZUHO BANK |
+| bank_code | INMOBILIARIO | INMOBILIARIO |
+| bank_code | BBASE | BBASE |
+| bank_code | MUFG | MUFG |
+| bank_code | FINCOMUN | FINCOMUN |
+| bank_code | FINAMEX | FINAMEX |
+
+
+
+# 13、错误码
 
 | 状态码  | 描述                |
 |------|-------------------|
@@ -533,7 +621,7 @@
 | 9999 | 其他错误              |
 |3000|系统升级维护中，暂停下单，请稍后尝试|
 
-# 13、代收收银台接口
+# 14、代收收银台接口
 
 地址: /api/v1/cashApi/CashIn.html
 请求方式: GET
@@ -553,7 +641,7 @@
 /api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位元}}&notice_url={{异步通知地址}}
 ```
 
-# 14、文档更新时间
+# 15、文档更新时间
 ```
-2026-05-08 00:17:00
+2026-05-08 19:04:00
 ```

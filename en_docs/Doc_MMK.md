@@ -41,7 +41,6 @@
 
 (The order placement IP needs to be whitelisted by contacting us)
 Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
-Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
 
@@ -133,7 +132,6 @@ Success:
 ## 4.3 Pay-in UTR Reporting -- Myanmar
 > `Order valid within 10 minutes`. Exceeding this may result in judgment failure.
 > Request address: https://{api_domain}/api/v1/payApi/BackUtr
-> Example: https://{api_domain}/api/v1/payApi/BackUtr
 
 - Pay-in UTR Reporting Request Parameters
 
@@ -208,7 +206,6 @@ If the callback is successfully received and processed, please return `success`.
 
 (The order placement IP needs to be whitelisted by contacting us)
 Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
-Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
@@ -591,5 +588,5 @@ Request Method: GET
 ---
 # 16、Document Update Time
 ```
-2026-05-08 00:17:00
+2026-05-08 19:04:00
 ```
