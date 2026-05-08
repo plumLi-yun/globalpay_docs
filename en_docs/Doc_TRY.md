@@ -40,7 +40,7 @@
 # 4. Pay-in (Collection) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayInOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
@@ -66,8 +66,11 @@ Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
-| name | string | false | Payer's name |
-| email | string | false | Payer's email |
+| name | string | false    | Payer's name |
+| email | string | false    | Payer's email |
+| first_name | string | true     | Payer's first name |
+| last_name | string | true   | Payer's last name |
+
 
 - Collection Order Request Example
 
@@ -171,27 +174,27 @@ If the callback is successfully received and processed, please return `success`.
 # 6. Pay-out (Disbursement) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayOutOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| trade_no | int | true | Merchant ID |
-| order_no | string | true | Merchant order number |
-| app_id | int | true | Merchant appId |
-| pay_code    | int  | true   | Product code, obtained from our operations.                     |
-| price | int | true | Order amount, unit: kurus, integer. 1 Lira = 100 Kurus |
-| account_no   | string | true   | Receiving account number.                              |
-| account_type | string | true | Account type: BANK |
-| account_name | string | true | Name |
-| bank_code | string | true | Fixed value: Refer to bank code dictionary |
-| pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
-| attach | string | false | Additional parameters {"email":"Email"} |
-| user_ip | string | false | Receiving user IP address.  |
-| sign      | string | true   | Signature result, see the top of the document for the signature method.       |
-| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
+| Name | Type | Required | Description                                                             |
+|------|------|----------|-------------------------------------------------------------------------|
+| trade_no | int | true | Merchant ID                                                             |
+| order_no | string | true | Merchant order number                                                   |
+| app_id | int | true | Merchant appId                                                          |
+| pay_code    | int  | true   | Product code, obtained from our operations.                             |
+| price | int | true | Order amount, unit: kurus, integer. 1 Lira = 100 Kurus                  |
+| account_no   | string | true   | Receiving account number.                                               |
+| account_type | string | true | Account type: BANK                                                      |
+| account_name | string | true | Name                                                                    |
+| bank_code | string | true | Fixed value: Refer to bank code dictionary                              |
+| pay_notice_url | string | false  | Notification URL for successful pay-out.                                |
+| attach | string | false | Additional parameters {"email":"Email","first_name":"First","last_name":"Last"} |
+| user_ip | string | false | Receiving user IP address.                                              |
+| sign      | string | true   | Signature result, see the top of the document for the signature method. |
+| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                        |
 
 - Pay-out - Request Parameter Example
 
@@ -203,7 +206,7 @@ Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "",
+  "attach": "{\"first_name\":\"张\",\"last_name\":\"三\",\"email\":\"zhangsan@example.com\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "BANK",
@@ -293,7 +296,7 @@ If the callback is successfully received and processed, please return `success`.
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 
 (The (Request IP needs to be whitelisted by contacting us)
-Query address: {api_domain}/api/v1/payApi/QueryOrder
+Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 Query Request Parameters
 
@@ -372,7 +375,7 @@ Success:
 # 9. Pay-out Balance Query Interface
 
 (The (Request IP needs to be whitelisted by contacting us)
-Address: {api_domain}/api/v1/payApi/QueryBalance
+Address: https://{api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 Balance Request Parameters
 
@@ -505,5 +508,5 @@ Request Method: GET
 
 # 14. Document Update Time
 ```
-2026-05-04 00:30:00
+2026-05-08 00:17:00
 ```

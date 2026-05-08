@@ -39,35 +39,36 @@
 # 4、代收下单接口
 
 (下单 ip 需要联系我方加白)
-下单地址 {api_domain}/api/v1/payApi/CreatePayInOrder
+下单地址 https://{api_domain}/api/v1/payApi/CreatePayInOrder
 示例 ：https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 代收-下单请求参数
 
-| 名称             | 类型   | 必填  | 描述                                                                                                                                                                                  |
-|----------------|------|-----|--------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                          |
-| app_id         | int    | true  | 商户 appId                                                                     |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                |
-| pay_method     | string    | true  | 支付方式   参照支付方式字典                                                              |
-| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                                    |
-| order_no       | string | true  | 商户订单号                                                                        |
-| success_url    | string | false | 支付成功跳转 url                                                                   |
-| fail_url       | string | false | 支付失败跳转 url                                                                   |
-| pay_notice_url | string | false | 支付成功通知 url                                                                   |
-| user_id        | string | true  | 付款人在商户平台的 ID       |
-| user_ip        | string | false | 付款人 IP                   |
-| attach         | string | true | 附加参数json字符串{"name":"真实姓名","email":"邮箱"}                    |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                     |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S |
+| 名称             | 类型   | 必填  | 描述                                             |
+|----------------|------|-----|------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                            |
+| app_id         | int    | true  | 商户 appId                                       |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                  |
+| pay_method     | string    | true  | 支付方式   参照支付方式字典                                |
+| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                  |
+| order_no       | string | true  | 商户订单号                                          |
+| success_url    | string | false | 支付成功跳转 url                                     |
+| fail_url       | string | false | 支付失败跳转 url                                     |
+| pay_notice_url | string | false | 支付成功通知 url                                     |
+| user_id        | string | true  | 付款人在商户平台的 ID                                   |
+| user_ip        | string | false | 付款人 IP                                         |
+| attach         | string | true | 附加参数json字符串{"first_name":"名","last_name":"姓","email":"邮箱"} |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                 |
+|timestamp|string|false| 下单时间戳 10位时间戳单位S                                |
 
 -  代收-attach 附加参数字段说明
 
-| 名称           | 类型     | 必填  | 描述                                            |
-|--------------|--------|-----|-----------------------------------------------|
-| name       | string | false  | 付款人姓名 |
-| email         | string    | false  | 付款人邮箱                     |
-
+| 名称         | 类型      | 必填    | 描述    |
+|------------|---------|-------|-------|
+| name       | string  | false | 付款人姓名 |
+| email      | string  | false | 付款人邮箱 |
+| first_name | string  | true  | 付款人名  |
+| last_name  | string  | true  | 付款人姓  |
 
 - 代收-下单请求示例
 
@@ -79,7 +80,7 @@
   "pay_code": 0,
   "price": 10099,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "",
+  "attach": "{\"first_name\":\"张\",\"last_name\":\"三\",\"email\":\"zhangsan@example.com\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
@@ -170,7 +171,7 @@
 # 6、代付下单接口
 
 (下单 ip 需要联系我方加白)
-下单地址 {api_domain}/api/v1/payApi/CreatePayOutOrder
+下单地址 https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 示例 ：https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 代付-请求参数
@@ -187,7 +188,7 @@
 | account_name   | string | true  | 姓名                                                    |
 | bank_code      | string | true  | 固定填写：参照银行编码字典                                |
 | pay_notice_url | string | false | 代付成功通知 url                                            |
-| attach         | string | false | 附加参数   {"email":"邮箱"} |
+| attach         | string | false | 附加参数   {"first_name":"名","last_name":"姓","email":"邮箱"} |
 | user_ip        | string | false  | 收款用户 IP                                               |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                        |
 |timestamp|string|false| 下单时间戳 10位时间戳单位S                                       |
@@ -202,7 +203,7 @@
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "",
+  "attach": "{\"first_name\":\"张\",\"last_name\":\"三\",\"email\":\"zhangsan@example.com\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "BANK",
@@ -291,7 +292,7 @@
 # 8、查询订单接口 (代收 代付共用)
 
 (请求 ip 需要联系我方加白)
-查询地址: {api_domain}/api/v1/payApi/QueryOrder
+查询地址: https://{api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 查询请求参数
 
@@ -370,7 +371,7 @@
 # 9、代付余额查询接口
 
 (请求 ip 需要联系我方加白)
-地址: {api_domain}/api/v1/payApi/QueryBalance
+地址: https://{api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 余额请求参数
 
@@ -504,5 +505,5 @@
 
 # 14、文档更新时间
 ```
-2026-05-04 00:30:00
+2026-05-08 00:17:00
 ```

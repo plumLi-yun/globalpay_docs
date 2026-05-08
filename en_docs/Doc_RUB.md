@@ -41,7 +41,7 @@
 # 4. Pay-in (Collection) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayInOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 ## 4.1 Pay-in - Order Request Parameters
@@ -180,7 +180,7 @@ If the callback is successfully received and processed, please return `success`.
 # 6. Pay-out (Disbursement) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
-Order address: {api_domain}/api/v1/payApi/CreatePayOutOrder
+Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 Example: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
@@ -306,7 +306,7 @@ If the callback is successfully received and processed, please return `success`.
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 
 (The (Request IP needs to be whitelisted by contacting us)
-Query address: {api_domain}/api/v1/payApi/QueryOrder
+Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 
 ## 8.1 Query Request Parameters
 
@@ -385,7 +385,7 @@ Success:
 # 9. Pay-out Balance Query Interface
 
 (The (Request IP needs to be whitelisted by contacting us)
-Address: {api_domain}/api/v1/payApi/QueryBalance
+Address: https://{api_domain}/api/v1/payApi/QueryBalance
 
 ## 9.1 Balance Request Parameters
 
@@ -441,7 +441,7 @@ Success:
 # 10. Payment Voucher Query Interface
 
 (The (Request IP needs to be whitelisted by contacting us)
-Address: {api_domain}/api/v1/payApi/QueryCertificate
+Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 ## 10.1 Payment Voucher Request Parameters
 
@@ -784,5 +784,5 @@ Request Method: GET
 ---
 # 14. Document Update Time
 ```
-2026-05-04 00:30:00
+2026-05-08 00:17:00
 ```
