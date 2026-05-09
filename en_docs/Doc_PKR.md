@@ -52,67 +52,72 @@
 (Order IP must be whitelisted by contacting us)
 Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 
-## 4.1 Pay-in Order Request Parameters
 
-| Name           | Type   | Required | Description                                                                       |
-| -------------- | ------ | -------- | --------------------------------------------------------------------------------- |
-| trade_no       | int    | true     | Merchant number                                                                   |
-| app_id         | int    | true     | Merchant appId                                                                    |
-| pay_code       | int    | true     | Product code, obtain from our operations team                                     |
-| pay_method     | string | true     | Payment method, refer to the payment method dictionary                            |
-| price          | int    | true     | Order amount, unit: centavos, integer. 1 peso = 100 centavos                      |
-| order_no       | string | true     | Merchant order number                                                             |
-| success_url    | string | true     | Redirect URL after successful payment                                             |
-| fail_url       | string | true     | Redirect URL after failed payment                                                 |
-| pay_notice_url | string | true     | Payment success notification URL                                                  |
-| user_id        | string | true     | System user ID                                                                    |
-| user_ip        | string | true     | Payer IP                                                                          |
-| attach         | string | true     | Additional parameter JSON string: {"name":"Name","phone":"Phone","email":"Email"} |
-| sign           | string | true     | Signature result, signature method described at the top of the document           |
-| timestamp      | string | false    | Order timestamp, 10-digit timestamp in seconds                                    |
+## 4.1 Pay-in Order Request Parameters
+| Name           | Type   | Required  | Description                                                                                                    |
+| -------------- | ------ | ----- |----------------------------------------------------------------------------------------------------------------|
+| trade_no       | int    | true  | Merchant number                                                                                                |
+| app_id         | int    | true  | erchant appId                                                                                                  |
+| pay_code       | int    | true  | Product code, obtain from our operations team                                                                  |
+| pay_method     | string    | true  | Payment method, refer to the payment method dictionary                                                         |
+| price          | int    | true  | Order amount, unit: centavos, integer. 1 peso = 100 centavos                                                   |
+| order_no       | string | true  | Merchant order number                                                                                          |
+| success_url    | string | false | Redirect URL after successful payment                                                                          |
+| fail_url       | string | false | Redirect URL after failed payment                                                                              |
+| pay_notice_url | string | false | Payment success notification URL                                                                               |
+| user_id        | string | true  | System user ID                                                                                                 |
+| user_ip        | string | false | Payer IP                                                                                                       |
+| attach         | string | false | Additional parameter JSON string:{"name":"Named ","phone":"Phone","identify_type":"CNIC","identify_num":"Identification Number"} |
+| sign           | string | true  | Signature result, signature method described at the top of the document                                                                                                 |
+|timestamp|string|false| Order timestamp, 10-digit timestamp in seconds                                                                                                   |
 
 ### Pay-in Order Request Example
 
 ```json
 {
-  "trade_no": 10003,
-  "order_no": "p7158412025RAprmNz7lR",
-  "app_id": 10002,
-  "pay_code": 0,
-  "price": 10099,
-  "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "",
-  "sign": "3d6dea05a7c08564911b9922e16455c2",
-  "user_ip": "87.200.59.100",
+  "trade_no": 165,
+  "order_no": "p71584121t1693047656571",
+  "app_id": 51,
+  "pay_code": 91145,
+  "price": 10000,
   "success_url": "",
   "fail_url": "",
-  "user_id": "2677343"
+  "pay_notice_url": "http://www.test.com",
+  "pay_remind_url": "",
+  "attach": "{\"phone\":\"123456789\"} ",
+  "user_ip": "87.200.59.188",
+  "user_id": "2677323",
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 
 ## 4.2 Pay-in Order Response
 
-| Name         | Type   | Required | Description                                                                                       |
-| ------------ | ------ | -------- | ------------------------------------------------------------------------------------------------- |
-| code         | int    | true     | 200: order created successfully, others: failed                                                   |
-| msg          | string | true     | Failure reason                                                                                    |
-| pay_url      | string | false    | Payment link                                                                                      |
-| qr_code      | string | false    | PIX QR code string                                                                                |
-| order_no     | string | true     | Merchant order number                                                                             |
-| dis_order_no | string | true     | Platform order number                                                                             |
-| create_time  | int    | true     | Create time                                                                                       |
-| pay_info     | string | false    | Payment info JSON string, e.g. {"pay_raw":"Native payment info, merchant can convert to QR code"} |
-| sign         | string | true     | Signature result, signature method described at the top of the document                           |
+| Name         | Type   | Required | Description                        |
+| ------------ | ------ | ---- | --------------------------- |
+| code         | int    | true | 200: order created successfully, others: failed    |
+| msg          | string | true | Failure reason                     |
+| pay_url      | string | true | Payment link                      |
+| qr_code      | string | true | PIX QR code string                           |
+| order_no     | string | true | Merchant order number                  |
+| dis_order_no | string | true | Platform order number                  |
+| create_time  | int    | true | Create time                    |
+| pay_info  | string    | false | Payment info JSON string, e.g. {"pay_raw":"Native payment info, merchant can convert to QR code"} |
+| sign         | string | true | Signature result, signature method described at the top of the document |
 
 ### Pay-in Order Response Example
-
 Failure:
 
 ```json
 {
-  "code": 1005,
-  "msg": "Merchant not found",
-  "sign": ""
+  "code": 10009,
+  "msg": "IP is not in the merchant's IP whitelist, ip:158.28.87.267",
+  "sign": "db3406277185f9660b3b928d6adc7bc4",
+  "pay_url": "",
+  "qr_code": "",
+  "order_no": "",
+  "dis_order_no": "",
+  "create_time": 0
 }
 ```
 
@@ -121,18 +126,17 @@ Success:
 ```json
 {
   "code": 200,
-  "msg": "",
-  "sign": "b449b4b6907204a683ec6c50bff92b01",
-  "order_no": "p7158412025J2dZjXLmz0",
-  "dis_order_no": "2025071130770572062498816india1oushe",
-  "create_time": 1752825512,
-  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+  "msg": "success",
+  "pay_url": "https://fourpay-intest2.ncjimmy.com/payApi/PayApi/CallBack/3_97091602d4501dbffce038ca6419e176",
+  "qr_code": "TNVPdaYdXnUxADTfLcKvkam4836B2vkKT5",
+  "order_no": "47210116924681604173",
+  "dis_order_no": "lufei169246816001692",
+  "sign": "db3406277185f9660b3b928d6adc7bc4",
+  "create_time": 1695317066
 }
 ```
 
----
-
-# 5. Pay-in Callback Notification (POST/JSON)
+# 5. Pay-in Callback Notification (POST/JSON) 
 
 Push URL: the pay_notice_url provided by the merchant when placing the order
 Callback IP: `call_back_server_ip`, please add our IP into the callback whitelist
@@ -151,22 +155,24 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 | payer        | string | false    | JSON string of payer information {"name":"Name","account":"Account","bank":"User bank code","utr2":"Bank transaction number","email":"Email","phone":"Phone number","identify_type":"ID type","identify_num":"CPF,CNPJ"}. In addition to the example fields, this parameter will integrate payer-related fields from the attach provided by the merchant. |
 | pay_info     | string | false    | Payment info JSON string, e.g. collection/payment raw info, card number, name, bank, etc.                                                                                                                                                                                                                                                                 |
 | create_time  | int    | true     | Create time                                                                                                                                                                                                                                                                                                                                               |
-| sign         | string | true     | Signature result, signature method described at the top of the document                                                                                                                                                                                                                                                                                   |
+| sign         | string | true     | Signature result, signature method described at the top of the document                                        |
 
 ### Pay-in Callback Request Example
 
 ```json
 {
-  "trade_no": 10003,
-  "status": 3,
-  "order_no": "p71584120256SlWlKkymb",
-  "dis_order_no": "2025071130460153942908928india1sKQbX",
-  "order_price": 10099,
+  "trade_no": 165,
+  "status": 2,
+  "order_no": "p71584121t1693047656571",
+  "dis_order_no": "lufei169246816001692",
+  "order_price": 10000,
   "real_price": 10000,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
-  "nti_time": 1752826164,
-  "create_time": 1752751502,
-  "sign": "eba7f27e0f49581d8784294ef29f994d"
+  "fee": 10,
+  "nti_time": 1693057443,
+  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\"}",
+  "attach": "",
+  "create_time": 1695317066,
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 
@@ -174,7 +180,6 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 
 If the callback is received and processed successfully, please return **success**. The system will stop pushing this order information, otherwise it will push repeatedly multiple times.
 
----
 
 # 6. Pay-out Order API
 
@@ -204,21 +209,19 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 
 ```json
 {
-  "trade_no": 10003,
-  "order_no": "p7158412025MsJydJqT7b",
-  "app_id": 10002,
-  "pay_code": 1,
-  "price": 10001,
-  "pay_notice_url": "http://host/api/v1/mer/cbtest",
+  "trade_no": 165,
+  "order_no": "p71584121t1693047656571",
+  "app_id": 51,
+  "pay_code": 91145,
+  "price": 10000,
+  "account_type": "BANK",
+  "account_no": "012345678910111213",
+  "account_name": "TEST",
+  "identify_num":"1234567890123",
+  "bank_code": "BKKB",
+  "pay_notice_url": "http://www.test.com",
   "attach": "",
-  "sign": "12f74d71fa929087af79b5083567c453",
-  "user_ip": "87.200.59.100",
-  "account_type": "PHONE",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "PMP",
-  "identify_type": "",
-  "identify_num": ""
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 
@@ -233,6 +236,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | status       | int    | true     | Order status: 2 = success, 3 = failure, 7 = rejected, 9 = reversed, 10 = processing |
 | create_time  | int    | true     | Create time                                                                         |
 | sign         | string | true     | Signature result, signature method described at the top of the document             |
+
 
 ### Pay-out Order Response Example
 
@@ -260,15 +264,12 @@ Success:
 }
 ```
 
----
-
 # 7. Pay-out Callback Notification
 
 Push URL: the pay_notice_url provided by the merchant when placing the order
 Callback IP: `call_back_server_ip`, please add our IP into the callback whitelist
 
 ## 7.1 Pay-out Callback Request Parameters
-
 | Name         | Type   | Required | Description                                                             |
 | ------------ | ------ | -------- | ----------------------------------------------------------------------- |
 | trade_no     | int    | true     | Merchant number                                                         |
@@ -287,15 +288,17 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 
 ```json
 {
-  "trade_no": 10000,
+  "trade_no": 165,
   "status": 2,
-  "order_no": "20060354339090013",
-  "dis_order_no": "Meg2352644o2nmjo0800indiaYZ2A",
-  "order_price": 11000,
-  "nti_time": 1776665229,
-  "create_time": 1776665034,
-  "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",
-  "pay_info": ""
+  "order_no": "p71584121t1693047656571",
+  "dis_order_no": "lufei169246816001692",
+  "order_price": 10000,
+  "real_price": 10000,
+  "fee": 10,
+  "attach": "",
+  "remark": "",
+  "create_time": 1695317066,
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 
@@ -327,8 +330,7 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 {
   "order_type": "pay_in",
   "trade_no": 165,
-  "app_id": 165,
-  "dis_order_no": "p7158277185f96603047656571",
+  "order_no": "p71584121t1693047656571",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -359,12 +361,12 @@ Failure:
 
 ```json
 {
-  "code": 1017,
+  "code": 10009,
   "msg": "Order does not exist"
 }
 ```
 
-Success:
+成功:
 
 ```json
 {
@@ -379,12 +381,10 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
-
----
 
 # 9. Pay-out Balance Query API
 
@@ -404,11 +404,10 @@ URL: `https://{api_domain}/api/v1/payApi/QueryBalance`
 ```json
 {
   "trade_no": 165,
-  "app_id": 281,
-  "sign": "db3406277185f9660b3b928d6adc115"
+  "app_id": 28,
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
-
 ## 9.2 Balance Response
 
 | Name           | Type   | Required | Description                                                             |
@@ -437,234 +436,120 @@ Success:
   "code": 200,
   "msg": "success",
   "balance": 10000,
-  "balance_frozen": 1000,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 
----
+# 10、Payment Methods - Collection Field pay_method
+| Field | Country | Value                 | Description         |
+|-----------|------|-----------------------|---------------------|
+| pay_method | Pakistan | easypaisa or jazzcash | Pakistan Collection |
 
-# 10. Payment Voucher Query API
 
-(Request IP must be whitelisted by contacting us)
-URL: `https://{api_domain}/api/v1/payApi/QueryCertificate`
+# 11、Bank Codes bank_code
 
-## 10.1 Payment Voucher Request Parameters
+| Field | Country | Value | Description |
+|-----------|--------|-------------|------------------------------|
+| bank_code | Pakistan | PKRABL | Allied Bank Limited |
+| bank_code | Pakistan | PKRADVANS | Advans Pakistan Microfinance Bank Limited |
+| bank_code | Pakistan | PKRAIBPL | Albaraka Islamic Bank Pakistan Limited |
+| bank_code | Pakistan | PKRALFALAH | Bank Alfalah Limited |
+| bank_code | Pakistan | PKRAPNA MFB | Apna Microfinance Bank Limited |
+| bank_code | Pakistan | PKRASKARI | Askari Bank Limited |
+| bank_code | Pakistan | PKRBAHL | Bank Al Habib Limited |
+| bank_code | Pakistan | PKRBIPL | Bank Islami Pakistan Limited |
+| bank_code | Pakistan | PKRBOK | The Bank of Khyber |
+| bank_code | Pakistan | PKRBOP | The Bank of Punjab |
+| bank_code | Pakistan | PKRCITI | Citibank N.A. Pakistan |
+| bank_code | Pakistan | PKRDIBPL | Dubai Islamic Bank Pakistan Limited |
+| bank_code | Pakistan | PKREASYPAISA | Easypaisa |
+| bank_code | Pakistan | PKRFAYSAL | Faysal Bank Limited |
+| bank_code | Pakistan | PKRFINCA | FINCA Microfinance Bank Limited |
+| bank_code | Pakistan | PKRFINJA | Finja Private Limited |
+| bank_code | Pakistan | PKRFWBL | First Women Bank Limited |
+| bank_code | Pakistan | PKRHBL | Habib Bank Limited |
+| bank_code | Pakistan | PKRHBL MFB | HBL Microfinance Bank Limited |
+| bank_code | Pakistan | PKRHMBL | Habib Metropolitan Bank Limited |
+| bank_code | Pakistan | PKRICBC | Industrial and Commercial Bank of China Limited Pakistan |
+| bank_code | Pakistan | PKRJAZZCASH | JazzCash |
+| bank_code | Pakistan | PKRJSBL | JS Bank Limited |
+| bank_code | Pakistan | PKRKHUSHHALI | Khushhali Microfinance Bank Limited |
+| bank_code | Pakistan | PKRKONNECT | Konnect by Bank Alfalah |
+| bank_code | Pakistan | PKRMCB | MCB Bank Limited |
+| bank_code | Pakistan | PKRMCBAH | MCB Arif Habib Limited |
+| bank_code | Pakistan | PKRMCB ISLAMIC | MCB Islamic Bank Limited |
+| bank_code | Pakistan | PKRMEEZAN | Meezan Bank Limited |
+| bank_code | Pakistan | PKRNAYAPAY | NayaPay |
+| bank_code | Pakistan | PKRNBP | National Bank of Pakistan |
+| bank_code | Pakistan | PKRNBP FUNDS | NBP Funds Management Limited |
+| bank_code | Pakistan | PKRNRSP | NRSP Microfinance Bank Limited |
+| bank_code | Pakistan | PKRSADAPAY | SadaPay |
+| bank_code | Pakistan | PKRSAMBA | Samba Bank Limited |
+| bank_code | Pakistan | PKRSCB | Standard Chartered Bank Pakistan Limited |
+| bank_code | Pakistan | PKRSILK | Silk Bank Limited |
+| bank_code | Pakistan | PKRSINDH | Sindh Bank Limited |
+| bank_code | Pakistan | PKRSONERI | Soneri Bank Limited |
+| bank_code | Pakistan | PKRSUMMIT | Summit Bank Limited |
+| bank_code | Pakistan | PKRTMB | Telenor Microfinance Bank Limited |
+| bank_code | Pakistan | PKRUBL | United Bank Limited |
+| bank_code | Pakistan | PKRUMFB | U Microfinance Bank Limited |
+| bank_code | Pakistan | PKRUPAISA | Upaisa |
 
-| Name         | Type   | Required | Description                                                             |
-| ------------ | ------ | -------- | ----------------------------------------------------------------------- |
-| trade_no     | int    | true     | Merchant number                                                         |
-| app_id       | int    | true     | Merchant appid                                                          |
-| order_no     | string | false    | Merchant order number, choose one between order_no and dis_order_no     |
-| dis_order_no | string | false    | Platform order number, choose one between order_no and dis_order_no     |
-| sign         | string | true     | Signature result, signature method described at the top of the document |
 
-### Payment Voucher Request Example
+# 12. Error Codes
 
-```json
-{
-  "trade_no": 10003,
-  "app_id": 10003,
-  "order_no": "",
-  "dis_order_no": "35011C02gljuf6k0800india1lVY",
-  "sign": "3969f17cd1a551769f85967d0a05b7b6"
-}
-```
+| Status Code | Description                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| 200     | Success                                                                |
+| 1000    | Internal Error                                                             |
+| 1001    | IP not in merchant IP whitelist.                                                    |
+| 1002    | Parameter Error                                                            |
+| 1003    | Signature Error                                                            |
+| 1004    | Interface currently unavailable for the merchant (Contact operations to verify: Merchant or App (Not exist\|Closed\|Product not configured)) |
+| 1005    | Merchant does not exist.                                                        |
+| 1006    | Current user IP is in the blacklist.                                                  |
+| 1007    | Current user is in the blacklist.                                                   |
+| 1008    | Merchant App does not exist.                                                      |
+| 1009    | Payment product does not exist.                                                    |
+| 1010    | Payment channel does not exist.                                                    |
+| 1011    | Payment channel development not completed, temporarily unavailable.                                  |
+| 1012    | Payment channel exception, please try again later.                                           |
+| 1013    | High order volume, please try again later.                                               |
+| 1014    | Duplicate order number.                                                        |
+| 1015    | Insufficient app balance.                                                       |
+| 1016    | Frequent order placement by the same user, please try again later.                                   |
+| 1017    | Order record does not exist.                                                      |
+| 1018    | Current amount not supported.                                                     |
+| 1019    | Pay-in not enabled for the app's country.                                               |
+| 1020    | Pay-out not enabled for the app's country.                                               |
+| 1021    | Failure                                                                |
+| 1036    | Interface not yet open.                                                        |
+| 1037    | Currency not supported.                                                        |
+| 1038    | Pay-in utr reporting error.                                                      |
+| 9999    | Other errors.                                                             |
+| 3000    | System maintenance, order placement suspended, please try again later.                                 |
 
-## 10.2 Payment Voucher Response Parameters
+# 13. Pay-in Checkout Interface
 
-| Name     | Type   | Required | Description                                                             |
-| -------- | ------ | -------- | ----------------------------------------------------------------------- |
-| code     | int    | true     | 200: response success, others: failure                                  |
-| msg      | string | true     | Failure reason                                                          |
-| img_link | string | false    | Voucher link                                                            |
-| img_base | string | false    | Base64 code generated for voucher                                       |
-| sign     | string | true     | Signature result, signature method described at the top of the document |
-
-### Payment Voucher Response Example
-
-No payment voucher:
-
-```json
-{
-  "code":200,
-  "msg":"No payment voucher available at the moment",
-  "sign": "",
-  "img_link": "",
-  "img_base": ""
-}
-```
-
-Payment voucher available:
-
-```json
-{
-  "code": 200,
-  "msg": "",
-  "sign": "3969f17cd1a551769f85967d0a05b7b6",
-  "img_link": "http://dsggfgdsf.djdj?ddd=snn",
-  "img_base": "data:image/png;base64,hfhshdhfhfh"
-}
-```
-
----
-
-# 11. Payment Method (Pay-in Field: pay_method)
-
-| Field      | Country     | Value | Description |
-| ---------- | ----------- | ----- | ----------- |
-| bayad      | 菲律宾 | PH_BAYAD      | Bayad             |
-| grabpay    | 菲律宾 | PH_GRABPAY    | GrabPay           |
-| coins      | 菲律宾 | PH_COINS      | Coins.PH          |
-| omni       | 菲律宾 | PH_OMNI       | Omnipay, Inc.     |
-| gcash      | 菲律宾 | PH_GCASH      | GCash             |
-| paymaya    | 菲律宾 | PH_PAYMAYA    | PayMaya           |
-
----
-
-# 12. Bank Codes
-
-| Field Name | Code       | Bank Name                                        |
-| ---------- | ---------- | ------------------------------------------------ |
-| bank_code | PH_TC | TayoCash |
-| bank_code | PH_SP | ShopeePay |
-| bank_code | PH_SB | Seabank |
-| bank_code | PH_QB | Queenbank |
-| bank_code | PH_JC | JuanCash |
-| bank_code | PH_SCB | Standard Chartered Bank |
-| bank_code | PH_BAYAD | Bayad |
-| bank_code | PH_EWB | East West Banking Corporation |
-| bank_code | PH_GRABPAY | GrabPay |
-| bank_code | PH_CSB | Citystate Savings Bank |
-| bank_code | PH_ISLA | ISLA Bank |
-| bank_code | PH_UBPEON | UnionBank EON |
-| bank_code | PH_PAR | Partner Rural Bank (Cotabato), Inc. |
-| bank_code | PH_PRB | Producers Bank |
-| bank_code | PH_QCB | Queen City Development Bank, Inc. |
-| bank_code | PH_ROB | Robinsons Bank |
-| bank_code | PH_AUB | Asia United Bank (AUB) |
-| bank_code | PH_BMB | Bangko Mabuhay (A Rural Bank), Inc. |
-| bank_code | PH_BPI | Bank of the Philippine Islands (BPI) |
-| bank_code | PH_COINS | Coins.PH |
-| bank_code | PH_DBP | Development Bank of the Philippines |
-| bank_code | PH_ING | ING Bank N.V. |
-| bank_code | PH_MSB | Malayan Bank Savings and Mortgage Bank, Inc. |
-| bank_code | PH_PBC | Philippine Bank of Communications (PBCOM) |
-| bank_code | PH_PNB | Philippine National Bank (PNB) |
-| bank_code | PH_PSB | Philippine Savings Bank (PSBank) |
-| bank_code | PH_QCRB | Quezon Capital Rural Bank, Inc |
-| bank_code | PH_SEC | Security Bank Corporation |
-| bank_code | PH_SPY | Starpay Corporation |
-| bank_code | PH_YUANSB | Yuanta Savings Bank |
-| bank_code | PH_SSB | Sun Savings Bank |
-| bank_code | PH_UBP | Union Bank of the Philippines (UBP) |
-| bank_code | PH_UCBSB | UCBP Savings bank |
-| bank_code | PH_ABP | AllBank Inc. |
-| bank_code | PH_BOC | Bank of Commerce |
-| bank_code | PH_BRB | Binangonan Rural Bank (BRBDigital) |
-| bank_code | PH_CRD | CARD Bank |
-| bank_code | PH_MET | Metropolitan Bank and Trust Company (Metrobank) |
-| bank_code | PH_OMNI | Omnipay, Inc. |
-| bank_code | PH_PNBSB | PNB Savings Bank |
-| bank_code | PH_PVB | Philippine Veterans Bank |
-| bank_code | PH_RBG | RURAL BANK OF GUINOBATAN, INC. |
-| bank_code | PH_WDB | Wealth Development Bank Corporation |
-| bank_code | PH_CBC | China Bank |
-| bank_code | PH_CMG | CAMALIG BANK |
-| bank_code | PH_DBI | Dungganon Bank (A Microfinance Rural Bank), Inc. |
-| bank_code | PH_EQB | Equicom Savings Bank, Inc. |
-| bank_code | PH_EWR | EastWest Rural Bank or Komo |
-| bank_code | PH_GCASH | GCash |
-| bank_code | PH_LBP | Land Bank of The Philippines |
-| bank_code | PH_PAYMAYA | PayMaya |
-| bank_code | PH_PBB | Philippine Business Bank, Inc., A Savings Bank |
-| bank_code | PH_PTC | Philippine Trust Company |
-| bank_code | PH_RCBC | Rizal Commercial Banking Corporation (RCBC) |
-| bank_code | PH_SBA | Sterling Bank of Asia |
-| bank_code | PH_UCPB | United Coconut Planters Bank (UCPB) |
-| bank_code | PH_JPM | JP Morgan Chase Bank, N.A. |
-| bank_code | PH_BDO | BDO Unibank |
-| bank_code | PH_BPIDB | BPI Direct BanKO, Inc., A Savings Bank |
-| bank_code | PH_BPISB | BPI / BPI Family Savings Bank |
-| bank_code | PH_RSBI | Rcbc Savings Bank Inc. |
-| bank_code | PH_CBS | China Bank Savings |
-| bank_code | PH_CEBRUR | Cebuana Lhuillier Rural Bank, Inc. |
-| bank_code | PH_CTBC | CTBC Bank (Philippines) Corp. |
-| bank_code | PH_DCP | DCPAY Philippines |
-| bank_code | PH_MPI | Maybank Philippines |
-| bank_code | PH_ONB | BDO Network Bank |
-| bank_code | PH_ASENSO | Asenso |
-| bank_code | PH_DCDB | Dumaguete City Development Bank |
-| bank_code | PH_LSB | Legazpi Savings Bank |
-| bank_code | PH_MCC | Mindanao Consolidated CoopBank |
-| bank_code | PH_NET | Netbank |
-| bank_code | PH_CIMB | Commerce International Merchant Bank |
-| bank_code | PH_GTB | Gotyme Bank |
-| bank_code | PH_USSC | USSC Money Services |
-| bank_code | PH_MYB | Maya Bank, Inc. |
-| bank_code | PH_METRO | Metrobank |
-| bank_code | PH_PPSF | PalawanPay |
-| bank_code | ABCRB | Agribusiness Banking Corporation-A Rural Bank |
-
----
-
-# 13. Error Codes
-
-| Status Code | Description                                                                                                                                                   |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 200         | Success                                                                                                                                                       |
-| 1000        | Internal error                                                                                                                                                |
-| 1001        | IP is not in the merchant IP whitelist                                                                                                                        |
-| 1002        | Parameter error                                                                                                                                               |
-| 1003        | Signature error                                                                                                                                               |
-| 1004        | This API is not enabled for the current merchant (contact operations to confirm: merchant or App does not exist / is closed / payment product not configured) |
-| 1005        | Merchant does not exist                                                                                                                                       |
-| 1006        | Current user IP is blacklisted                                                                                                                                |
-| 1007        | Current user is blacklisted                                                                                                                                   |
-| 1008        | Merchant App does not exist                                                                                                                                   |
-| 1009        | Payment product does not exist                                                                                                                                |
-| 1010        | Payment channel does not exist                                                                                                                                |
-| 1011        | Payment channel is not yet developed and is temporarily unavailable                                                                                           |
-| 1012        | Payment channel exception, please try again later                                                                                                             |
-| 1013        | Too many orders currently, please try again later                                                                                                             |
-| 1014        | Duplicate order number                                                                                                                                        |
-| 1015        | Insufficient app balance                                                                                                                                      |
-| 1016        | The same user is placing orders too frequently, please try again later                                                                                        |
-| 1017        | Order record does not exist                                                                                                                                   |
-| 1018        | Current amount is not supported                                                                                                                               |
-| 1019        | Payment order is not available in the country of the current app                                                                                              |
-| 1020        | Pay-out order is not available in the country of the current app                                                                                              |
-| 1021        | Failed                                                                                                                                                        |
-| 1036        | API is not open yet                                                                                                                                           |
-| 1037        | Currency not supported                                                                                                                                        |
-| 1038        | Pay-in callback utr exception                                                                                                                                 |
-| 9999        | Other error                                                                                                                                                   |
-| 3000        | System upgrade/maintenance in progress, ordering is suspended, please try again later                                                                         |
-
----
-
-# 14. Pay-in Cashier API
-
-URL: `/api/v1/cashApi/CashIn.html`
+Address: /api/v1/cashApi/CashIn.html
 Request Method: GET
 
-### Parameters
+### Parameters:
 
-| Name       | Type   | Required | Description                   |
-| ---------- | ------ | -------- | ----------------------------- |
-| app_id     | string | true     | Merchant app_id               |
-| order_no   | string | true     | Merchant order number         |
-| amount     | string | true     | Merchant amount (unit: peso)  |
-| notice_url | string | false    | Asynchronous notification URL |
+| Name    | Type  | Required | Description                        |
+|------------|--------|----------|------------------------------------|
+| app_id   | string | true   | Merchant app_id.                   |
+| order_no  | string | true   | Merchant order number.             |
+| amount   | string | true   | Merchant Amount (Unit: Lira)       |
+| notice_url | string | false  | Asynchronous notification address. |
 
 #### Example
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{merchant_order_no}}&amount={{merchant_amount_in_peso}}&notice_url={{async_notification_url}}
+/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}
 ```
 
----
-# 15. Document Update Time
+# 14. Document Update Time
 ```
 2026-05-09 19:18:00
 ```
