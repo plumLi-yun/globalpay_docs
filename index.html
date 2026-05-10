@@ -118,7 +118,8 @@
                     'vnd': '越南',
                     'try': '土耳其',
                     "php": "菲律宾",
-                    "pkr": "巴基斯坦"
+                    "pkr": "巴基斯坦",
+                    "idr": "印尼"
                 }
             },
             'en': {
@@ -139,7 +140,8 @@
                     'vnd': 'Vietnam',
                     'try': 'Turkey',
                     "php": "Philippines",
-                    "pkr": "Pakistan"
+                    "pkr": "Pakistan",
+                    "idr": "Indonesia"
                 }
             }
         };
@@ -151,7 +153,7 @@
             const _a='\x76\x68\x66\x48\x58\x75\x6d\x42\x59\x74\x45\x52\x57\x69\x4b\x50\x6a\x65';
             const P=_6||_a;
             let L='cn';
-            const D=[{n:'brl',f:'Doc_BRL.md'},{n:'mmk',f:'Doc_MMK.md'},{n:'rub',f:'Doc_RUB.md'},{n:'inr',f:'Doc_INR.md'},{n:'mxn',f:'Doc_MXN.md'},{n:'vnd',f:'Doc_VND.md'},{n:'try',f:'Doc_TRY.md'},{n:'php',f:'Doc_PHP.md'},{n:'pkr',f:'Doc_PKR.md'}];
+            const D=[{n:'brl',f:'Doc_BRL.md'},{n:'mmk',f:'Doc_MMK.md'},{n:'rub',f:'Doc_RUB.md'},{n:'inr',f:'Doc_INR.md'},{n:'mxn',f:'Doc_MXN.md'},{n:'vnd',f:'Doc_VND.md'},{n:'try',f:'Doc_TRY.md'},{n:'php',f:'Doc_PHP.md'},{n:'pkr',f:'Doc_PKR.md'},{n:'idr',f:'Doc_IDR.md'}];
             const P_MAP={'cn':'cn_docs/','en':'en_docs/'};
             window.switchLang=function(l){if(L===l)return;L=l;document.getElementById('lang-select').value=l;U();R();};
             function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
