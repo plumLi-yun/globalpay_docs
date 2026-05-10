@@ -827,8 +827,8 @@ Request method: GET
 /api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{merchant_order_no}}&amount={{merchant_amount}}&notice_url={{async_notification_url}}
 ```
 
-# 17. Document Last Updated
+# 17. Document Update Time
 
 ```
-2026-05-09 19:18:00
+2026-05-10 19:25:00
 ```
