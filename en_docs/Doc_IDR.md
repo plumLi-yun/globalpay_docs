@@ -519,125 +519,125 @@ Payment voucher available:
 
 # 12. Pay-In Bank Codes – Field `attach.bank_code`
 
-| Field Name | Code | Bank Name |
-|:---------|:-----|:---------|
-| bank_code | MEGA | Bank Mega |
-| bank_code | BANK_SRI_PARTHA | Bank Sri Partha |
-| bank_code | PRIMA_MASTER | Prima Master Bank |
-| bank_code | OVO | OVO E-Wallet |
-| bank_code | BTPN_SYARIAH | Bank Purba Danarta |
-| bank_code | CENTRATAMA | Centratama Nasional Bank |
-| bank_code | PANIN | Bank Panin |
-| bank_code | LINKAJA | LINKAJA E-Wallet |
-| bank_code | BANK_AGRIS | Bank Agris |
-| bank_code | BNC | Bank BNC |
-| bank_code | NATIONALNOBU | Bank Alfindo (Bank National Nobu) |
-| bank_code | ARTHA | Bank Artha Graha Internasional |
-| bank_code | JENIUS | JENIUS |
-| bank_code | BNI | Bank BNI |
-| bank_code | BANK_JATENG | Bank Jateng |
-| bank_code | BPD_KALTENG | Bank Kalteng |
-| bank_code | BANK_OF_INDIA | Bank of India Indonesia |
-| bank_code | BANK_AKITA | Bank Akita |
-| bank_code | DANA | DANA E-Wallet |
-| bank_code | BANK_ING | ING Indonesia Bank |
-| bank_code | BNP_PARIBAS | Bank BNP Paribas Indonesia |
-| bank_code | BJB_SYR | Bank BJB Syariah |
-| bank_code | OCBC | Bank Dipo International (Bank Sahabat Sampoerna) |
-| bank_code | ARTOS | Bank Artos IND |
-| bank_code | MITSUI | Bank Sumitomo Mitsui Indonesia |
-| bank_code | DKI | Bank DKI |
-| bank_code | DOMPETKU | Indosat Dompetku |
-| bank_code | BAML | Bank of America, N.A |
-| bank_code | CAPITAL | Bank Capital Indonesia |
-| bank_code | BANK_EKONOMI | Bank Ekonomi |
-| bank_code | BANK_SULTRA | Bank Sultra |
-| bank_code | CCB | Bank Windu Kentjana |
-| bank_code | BCA_SYR | Bank BCA Syariah |
-| bank_code | MULTI_ARTA_SENTOSA | Bank Multi Arta Sentosa |
-| bank_code | BANK_YUDHA | Bank Yudha Bhakti / BANK NEO COMMERCE |
-| bank_code | BANK_INDOMONEX | Bank Indomonex (Bank SBI Indonesia) |
+| Field Name | Code                       | Bank Name |
+|:---------|:---------------------------|:---------|
+| bank_code | MEGA                       | Bank Mega |
+| bank_code | BANK_SRI_PARTHA            | Bank Sri Partha |
+| bank_code | PRIMA_MASTER               | Prima Master Bank |
+| bank_code | OVO                        | OVO E-Wallet |
+| bank_code | BTPN_SYARIAH               | Bank Purba Danarta |
+| bank_code | CENTRATAMA                 | Centratama Nasional Bank |
+| bank_code | PANIN                      | Bank Panin |
+| bank_code | LINKAJA                    | LINKAJA E-Wallet |
+| bank_code | BANK_AGRIS                 | Bank Agris |
+| bank_code | BNC                        | Bank BNC |
+| bank_code | NATIONALNOBU               | Bank Alfindo (Bank National Nobu) |
+| bank_code | ARTHA                      | Bank Artha Graha Internasional |
+| bank_code | JENIUS                     | JENIUS |
+| bank_code | BNI                        | Bank BNI |
+| bank_code | BANK_JATENG                | Bank Jateng |
+| bank_code | BPD_KALTENG                | Bank Kalteng |
+| bank_code | BANK_OF_INDIA              | Bank of India Indonesia |
+| bank_code | BANK_AKITA                 | Bank Akita |
+| bank_code | DANA                       | DANA E-Wallet |
+| bank_code | BANK_ING                   | ING Indonesia Bank |
+| bank_code | BNP_PARIBAS                | Bank BNP Paribas Indonesia |
+| bank_code | BJB_SYR                    | Bank BJB Syariah |
+| bank_code | OCBC                       | Bank Dipo International (Bank Sahabat Sampoerna) |
+| bank_code | ARTOS                      | Bank Artos IND |
+| bank_code | MITSUI                     | Bank Sumitomo Mitsui Indonesia |
+| bank_code | DKI                        | Bank DKI |
+| bank_code | DOMPETKU                   | Indosat Dompetku |
+| bank_code | BAML                       | Bank of America, N.A |
+| bank_code | IDRCAPITAL                 | Bank Capital Indonesia |
+| bank_code | BANK_EKONOMI               | Bank Ekonomi |
+| bank_code | BANK_SULTRA                | Bank Sultra |
+| bank_code | CCB                        | Bank Windu Kentjana |
+| bank_code | BCA_SYR                    | Bank BCA Syariah |
+| bank_code | MULTI_ARTA_SENTOSA         | Bank Multi Arta Sentosa |
+| bank_code | BANK_YUDHA                 | Bank Yudha Bhakti / BANK NEO COMMERCE |
+| bank_code | BANK_INDOMONEX             | Bank Indomonex (Bank SBI Indonesia) |
 | bank_code | BANK_KESEJAHTERAAN_EKONOMI | Bank Kesejahteraan Ekonomi (Bank Seabank Indonesia) |
-| bank_code | BANK_DANAMON | Korea Exchange Bank Danamon |
-| bank_code | BANK_JATIM | Bank Jatim |
-| bank_code | MALUKU | Bank Maluku Malut |
-| bank_code | CHINATRUST | Bank CTBC (China Trust) Indonesia |
-| bank_code | MANDIRI | Bank Mandiri |
-| bank_code | BANK_LIPPO | Bank Lippo |
-| bank_code | DAERAH_ISTIMEWA | BPD DIY |
-| bank_code | SINARMAS_UUS | Bank Sinarmas |
-| bank_code | MASPION | Bank Maspion Indonesia |
-| bank_code | AGRONIAGA | Bank BRI Agro |
-| bank_code | BANK_TOKYO | The Bank of Tokyo Mitsubishi UFJ LTD |
-| bank_code | RESONA | Bank Resona Perdania |
-| bank_code | MAYAPADA | Bank Mayapada |
-| bank_code | BANK_HAGAKITA | Bank Hagakita |
-| bank_code | JAMBI | BPD Jambi |
-| bank_code | FAMA | Bank Fama Internasional |
-| bank_code | KALIMANTAN_BARAT | Bank Kalimantan Barat |
-| bank_code | MEGA_SYR | Bank Syariah Mega |
-| bank_code | BANK_JABAR | Bank Jabar dan Banten (BJB) |
-| bank_code | BRI | Bank BRI |
-| bank_code | BANK_PERSY | Bank Persyarikatan Indonesia |
-| bank_code | BANK_IFI | Bank IFI |
-| bank_code | SUMSEL_DAN_BABEL_SULUT | Bank Sulut Gorontalo |
-| bank_code | BISNIS_INTERNASIONAL | Bank Bisnis Internasional |
-| bank_code | HARDA_INTERNASIONAL | Bank Harda |
-| bank_code | GOPAY | GOPAY E-Wallet |
-| bank_code | DBS | Bank DBS Indonesia |
-| bank_code | BANK_ANTAR | Bank Antardaerah |
-| bank_code | BALI | BPD Bali |
-| bank_code | EXIMBANK | Bank Ekspor Indonesia |
-| bank_code | RIAU_DAN_KEPRI | Bank Riau |
-| bank_code | JASA_JAKARTA | Bank Jasa Jakarta |
-| bank_code | BANK_LIMAN | Liman International Bank |
-| bank_code | CITIBANK | Citibank |
-| bank_code | PERMATA | Permata Bank |
-| bank_code | BANK_C_AGR | Bank Credit Agricole Indosuez |
-| bank_code | NUSANTARA_PARAHYANGAN | Bank Nusantara Parahyangan |
-| bank_code | BANK_ANGLOMAS | Anglomas Internasional Bank |
-| bank_code | NISP | Bank OCBC NISP |
-| bank_code | INDEX_SELINDO | Bank Index Selindo |
-| bank_code | MIZUHO | Bank Mizuho Indonesia |
-| bank_code | LAMPUNG | Bank Lampung |
-| bank_code | PAPUA | Bank Papua |
-| bank_code | BANK_SWAGUNA | Bank Swaguna |
-| bank_code | ROYAL | Bank Royal Indonesia |
-| bank_code | JPMORGAN | JP. Morgan Chase Bank, N.A |
-| bank_code | BANK_ABN | Bank ABN Amro |
-| bank_code | GANESHA | Bank Ganesha |
-| bank_code | BANK_HIM | Bank Himpunan Saudara 1906 |
-| bank_code | BANK_MERIN | Bank Merincorp |
-| bank_code | DANAMON | Bank Danamon |
-| bank_code | DEUTSCHE | Deutsche Bank AG. |
-| bank_code | BUMI_ARTA | Bank Bumi Arta |
-| bank_code | MESTIKA_DHARMA | Bank Mestika Dharma |
-| bank_code | QNB_INDONESIA | Bank QNB Kesawan (Bank QNB Indonesia) |
-| bank_code | BANK_HARFA | Bank Harfa |
-| bank_code | BANK_BUANA | Bank UOB Indonesia |
-| bank_code | STANDARD_CHARTERED | Standard Chartered Bank |
-| bank_code | BANK_KEPPEL | Bank Keppel Tatlee Buana |
-| bank_code | SULAWESI | Bank Sulawesi Tengah |
-| bank_code | BANK_HARM | Bank Harmoni International |
-| bank_code | BANK_COMP | The Bangkok Bank Comp. LTD |
-| bank_code | BANK_HAGA | Bank Haga |
-| bank_code | MANDIRI_TASPEN | Bank Mandiri Taspen Pos |
-| bank_code | BANK_WOOR | Bank Woori Indonesia |
-| bank_code | BANK_NTT | Bank NTT |
-| bank_code | BANK_BINTANG | Bank Bintang Manunggal |
-| bank_code | BANK_BUMIPUTERA | Bank MNC / Bank Bumiputera |
-| bank_code | BANK_INA | Bank Ina Perdana |
-| bank_code | BANK_MAYBANK | Bank Maybank Indocorp |
-| bank_code | BTN | Bank Tabungan Negara (BTN) |
-| bank_code | BCA | Bank BCA |
-| bank_code | SHOPEEPAY | SHOPEEPAY E-Wallet |
-| bank_code | BANK_ANZ | Bank ANZ Indonesia |
-| bank_code | BOC | Bank OF China |
-| bank_code | BUKOPIN | Bank Bukopin |
-| bank_code | BPR_KS | BPR KS |
-| bank_code | JTRUST | Bank JTRUST |
-| bank_code | MAYORA | Bank Mayora Indonesia |
-| bank_code | MANDIRI_SYR | Bank Syariah Mandiri (BSI) Bank Syariah Indonesia |
+| bank_code | BANK_DANAMON               | Korea Exchange Bank Danamon |
+| bank_code | BANK_JATIM                 | Bank Jatim |
+| bank_code | MALUKU                     | Bank Maluku Malut |
+| bank_code | CHINATRUST                 | Bank CTBC (China Trust) Indonesia |
+| bank_code | MANDIRI                    | Bank Mandiri |
+| bank_code | BANK_LIPPO                 | Bank Lippo |
+| bank_code | DAERAH_ISTIMEWA            | BPD DIY |
+| bank_code | SINARMAS_UUS               | Bank Sinarmas |
+| bank_code | MASPION                    | Bank Maspion Indonesia |
+| bank_code | AGRONIAGA                  | Bank BRI Agro |
+| bank_code | BANK_TOKYO                 | The Bank of Tokyo Mitsubishi UFJ LTD |
+| bank_code | RESONA                     | Bank Resona Perdania |
+| bank_code | MAYAPADA                   | Bank Mayapada |
+| bank_code | BANK_HAGAKITA              | Bank Hagakita |
+| bank_code | JAMBI                      | BPD Jambi |
+| bank_code | FAMA                       | Bank Fama Internasional |
+| bank_code | KALIMANTAN_BARAT           | Bank Kalimantan Barat |
+| bank_code | MEGA_SYR                   | Bank Syariah Mega |
+| bank_code | BANK_JABAR                 | Bank Jabar dan Banten (BJB) |
+| bank_code | BRI                        | Bank BRI |
+| bank_code | BANK_PERSY                 | Bank Persyarikatan Indonesia |
+| bank_code | BANK_IFI                   | Bank IFI |
+| bank_code | SUMSEL_DAN_BABEL_SULUT     | Bank Sulut Gorontalo |
+| bank_code | BISNIS_INTERNASIONAL       | Bank Bisnis Internasional |
+| bank_code | HARDA_INTERNASIONAL        | Bank Harda |
+| bank_code | GOPAY                      | GOPAY E-Wallet |
+| bank_code | DBS                        | Bank DBS Indonesia |
+| bank_code | BANK_ANTAR                 | Bank Antardaerah |
+| bank_code | BALI                       | BPD Bali |
+| bank_code | EXIMBANK                   | Bank Ekspor Indonesia |
+| bank_code | RIAU_DAN_KEPRI             | Bank Riau |
+| bank_code | JASA_JAKARTA               | Bank Jasa Jakarta |
+| bank_code | BANK_LIMAN                 | Liman International Bank |
+| bank_code | CITIBANK                   | Citibank |
+| bank_code | PERMATA                    | Permata Bank |
+| bank_code | BANK_C_AGR                 | Bank Credit Agricole Indosuez |
+| bank_code | NUSANTARA_PARAHYANGAN      | Bank Nusantara Parahyangan |
+| bank_code | BANK_ANGLOMAS              | Anglomas Internasional Bank |
+| bank_code | NISP                       | Bank OCBC NISP |
+| bank_code | INDEX_SELINDO              | Bank Index Selindo |
+| bank_code | MIZUHO                     | Bank Mizuho Indonesia |
+| bank_code | LAMPUNG                    | Bank Lampung |
+| bank_code | PAPUA                      | Bank Papua |
+| bank_code | BANK_SWAGUNA               | Bank Swaguna |
+| bank_code | ROYAL                      | Bank Royal Indonesia |
+| bank_code | JPMORGAN                   | JP. Morgan Chase Bank, N.A |
+| bank_code | BANK_ABN                   | Bank ABN Amro |
+| bank_code | GANESHA                    | Bank Ganesha |
+| bank_code | BANK_HIM                   | Bank Himpunan Saudara 1906 |
+| bank_code | BANK_MERIN                 | Bank Merincorp |
+| bank_code | DANAMON                    | Bank Danamon |
+| bank_code | DEUTSCHE                   | Deutsche Bank AG. |
+| bank_code | BUMI_ARTA                  | Bank Bumi Arta |
+| bank_code | MESTIKA_DHARMA             | Bank Mestika Dharma |
+| bank_code | QNB_INDONESIA              | Bank QNB Kesawan (Bank QNB Indonesia) |
+| bank_code | BANK_HARFA                 | Bank Harfa |
+| bank_code | BANK_BUANA                 | Bank UOB Indonesia |
+| bank_code | STANDARD_CHARTERED         | Standard Chartered Bank |
+| bank_code | BANK_KEPPEL                | Bank Keppel Tatlee Buana |
+| bank_code | SULAWESI                   | Bank Sulawesi Tengah |
+| bank_code | BANK_HARM                  | Bank Harmoni International |
+| bank_code | BANK_COMP                  | The Bangkok Bank Comp. LTD |
+| bank_code | BANK_HAGA                  | Bank Haga |
+| bank_code | MANDIRI_TASPEN             | Bank Mandiri Taspen Pos |
+| bank_code | BANK_WOOR                  | Bank Woori Indonesia |
+| bank_code | BANK_NTT                   | Bank NTT |
+| bank_code | BANK_BINTANG               | Bank Bintang Manunggal |
+| bank_code | BANK_BUMIPUTERA            | Bank MNC / Bank Bumiputera |
+| bank_code | BANK_INA                   | Bank Ina Perdana |
+| bank_code | BANK_MAYBANK               | Bank Maybank Indocorp |
+| bank_code | BTN                        | Bank Tabungan Negara (BTN) |
+| bank_code | BCA                        | Bank BCA |
+| bank_code | SHOPEEPAY                  | SHOPEEPAY E-Wallet |
+| bank_code | BANK_ANZ                   | Bank ANZ Indonesia |
+| bank_code | IDRBOC                     | Bank OF China |
+| bank_code | BUKOPIN                    | Bank Bukopin |
+| bank_code | BPR_KS                     | BPR KS |
+| bank_code | JTRUST                     | Bank JTRUST |
+| bank_code | MAYORA                     | Bank Mayora Indonesia |
+| bank_code | MANDIRI_SYR                | Bank Syariah Mandiri (BSI) Bank Syariah Indonesia |
 
 
 # 13. Pay-Out Payment Methods – Field `attach.pay_type`
@@ -654,125 +654,125 @@ Payment voucher available:
 
 # 14. Pay-Out Bank Codes – Field `attach.bank_code`
 
-| Field Name | Code | Bank Name |
-|:---------|:-----|:---------|
-| bank_code | MEGA | Bank Mega |
-| bank_code | BANK_SRI_PARTHA | Bank Sri Partha |
-| bank_code | PRIMA_MASTER | Prima Master Bank |
-| bank_code | OVO | OVO E-Wallet |
-| bank_code | BTPN_SYARIAH | Bank Purba Danarta |
-| bank_code | CENTRATAMA | Centratama Nasional Bank |
-| bank_code | PANIN | Bank Panin |
-| bank_code | LINKAJA | LINKAJA E-Wallet |
-| bank_code | BANK_AGRIS | Bank Agris |
-| bank_code | BNC | Bank BNC |
-| bank_code | NATIONALNOBU | Bank Alfindo (Bank National Nobu) |
-| bank_code | ARTHA | Bank Artha Graha Internasional |
-| bank_code | JENIUS | JENIUS |
-| bank_code | BNI | Bank BNI |
-| bank_code | BANK_JATENG | Bank Jateng |
-| bank_code | BPD_KALTENG | Bank Kalteng |
-| bank_code | BANK_OF_INDIA | Bank of India Indonesia |
-| bank_code | BANK_AKITA | Bank Akita |
-| bank_code | DANA | DANA E-Wallet |
-| bank_code | BANK_ING | ING Indonesia Bank |
-| bank_code | BNP_PARIBAS | Bank BNP Paribas Indonesia |
-| bank_code | BJB_SYR | Bank BJB Syariah |
-| bank_code | OCBC | Bank Dipo International (Bank Sahabat Sampoerna) |
-| bank_code | ARTOS | Bank Artos IND |
-| bank_code | MITSUI | Bank Sumitomo Mitsui Indonesia |
-| bank_code | DKI | Bank DKI |
-| bank_code | DOMPETKU | Indosat Dompetku |
-| bank_code | BAML | Bank of America, N.A |
-| bank_code | CAPITAL | Bank Capital Indonesia |
-| bank_code | BANK_EKONOMI | Bank Ekonomi |
-| bank_code | BANK_SULTRA | Bank Sultra |
-| bank_code | CCB | Bank Windu Kentjana |
-| bank_code | BCA_SYR | Bank BCA Syariah |
-| bank_code | MULTI_ARTA_SENTOSA | Bank Multi Arta Sentosa |
-| bank_code | BANK_YUDHA | Bank Yudha Bhakti / BANK NEO COMMERCE |
-| bank_code | BANK_INDOMONEX | Bank Indomonex (Bank SBI Indonesia) |
+| Field Name | Code                       | Bank Name |
+|:---------|:---------------------------|:---------|
+| bank_code | MEGA                       | Bank Mega |
+| bank_code | BANK_SRI_PARTHA            | Bank Sri Partha |
+| bank_code | PRIMA_MASTER               | Prima Master Bank |
+| bank_code | OVO                        | OVO E-Wallet |
+| bank_code | BTPN_SYARIAH               | Bank Purba Danarta |
+| bank_code | CENTRATAMA                 | Centratama Nasional Bank |
+| bank_code | PANIN                      | Bank Panin |
+| bank_code | LINKAJA                    | LINKAJA E-Wallet |
+| bank_code | BANK_AGRIS                 | Bank Agris |
+| bank_code | BNC                        | Bank BNC |
+| bank_code | NATIONALNOBU               | Bank Alfindo (Bank National Nobu) |
+| bank_code | ARTHA                      | Bank Artha Graha Internasional |
+| bank_code | JENIUS                     | JENIUS |
+| bank_code | BNI                        | Bank BNI |
+| bank_code | BANK_JATENG                | Bank Jateng |
+| bank_code | BPD_KALTENG                | Bank Kalteng |
+| bank_code | BANK_OF_INDIA              | Bank of India Indonesia |
+| bank_code | BANK_AKITA                 | Bank Akita |
+| bank_code | DANA                       | DANA E-Wallet |
+| bank_code | BANK_ING                   | ING Indonesia Bank |
+| bank_code | BNP_PARIBAS                | Bank BNP Paribas Indonesia |
+| bank_code | BJB_SYR                    | Bank BJB Syariah |
+| bank_code | OCBC                       | Bank Dipo International (Bank Sahabat Sampoerna) |
+| bank_code | ARTOS                      | Bank Artos IND |
+| bank_code | MITSUI                     | Bank Sumitomo Mitsui Indonesia |
+| bank_code | DKI                        | Bank DKI |
+| bank_code | DOMPETKU                   | Indosat Dompetku |
+| bank_code | BAML                       | Bank of America, N.A |
+| bank_code | IDRCAPITAL                 | Bank Capital Indonesia |
+| bank_code | BANK_EKONOMI               | Bank Ekonomi |
+| bank_code | BANK_SULTRA                | Bank Sultra |
+| bank_code | CCB                        | Bank Windu Kentjana |
+| bank_code | BCA_SYR                    | Bank BCA Syariah |
+| bank_code | MULTI_ARTA_SENTOSA         | Bank Multi Arta Sentosa |
+| bank_code | BANK_YUDHA                 | Bank Yudha Bhakti / BANK NEO COMMERCE |
+| bank_code | BANK_INDOMONEX             | Bank Indomonex (Bank SBI Indonesia) |
 | bank_code | BANK_KESEJAHTERAAN_EKONOMI | Bank Kesejahteraan Ekonomi (Bank Seabank Indonesia) |
-| bank_code | BANK_DANAMON | Korea Exchange Bank Danamon |
-| bank_code | BANK_JATIM | Bank Jatim |
-| bank_code | MALUKU | Bank Maluku Malut |
-| bank_code | CHINATRUST | Bank CTBC (China Trust) Indonesia |
-| bank_code | MANDIRI | Bank Mandiri |
-| bank_code | BANK_LIPPO | Bank Lippo |
-| bank_code | DAERAH_ISTIMEWA | BPD DIY |
-| bank_code | SINARMAS_UUS | Bank Sinarmas |
-| bank_code | MASPION | Bank Maspion Indonesia |
-| bank_code | AGRONIAGA | Bank BRI Agro |
-| bank_code | BANK_TOKYO | The Bank of Tokyo Mitsubishi UFJ LTD |
-| bank_code | RESONA | Bank Resona Perdania |
-| bank_code | MAYAPADA | Bank Mayapada |
-| bank_code | BANK_HAGAKITA | Bank Hagakita |
-| bank_code | JAMBI | BPD Jambi |
-| bank_code | FAMA | Bank Fama Internasional |
-| bank_code | KALIMANTAN_BARAT | Bank Kalimantan Barat |
-| bank_code | MEGA_SYR | Bank Syariah Mega |
-| bank_code | BANK_JABAR | Bank Jabar dan Banten (BJB) |
-| bank_code | BRI | Bank BRI |
-| bank_code | BANK_PERSY | Bank Persyarikatan Indonesia |
-| bank_code | BANK_IFI | Bank IFI |
-| bank_code | SUMSEL_DAN_BABEL_SULUT | Bank Sulut Gorontalo |
-| bank_code | BISNIS_INTERNASIONAL | Bank Bisnis Internasional |
-| bank_code | HARDA_INTERNASIONAL | Bank Harda |
-| bank_code | GOPAY | GOPAY E-Wallet |
-| bank_code | DBS | Bank DBS Indonesia |
-| bank_code | BANK_ANTAR | Bank Antardaerah |
-| bank_code | BALI | BPD Bali |
-| bank_code | EXIMBANK | Bank Ekspor Indonesia |
-| bank_code | RIAU_DAN_KEPRI | Bank Riau |
-| bank_code | JASA_JAKARTA | Bank Jasa Jakarta |
-| bank_code | BANK_LIMAN | Liman International Bank |
-| bank_code | CITIBANK | Citibank |
-| bank_code | PERMATA | Permata Bank |
-| bank_code | BANK_C_AGR | Bank Credit Agricole Indosuez |
-| bank_code | NUSANTARA_PARAHYANGAN | Bank Nusantara Parahyangan |
-| bank_code | BANK_ANGLOMAS | Anglomas Internasional Bank |
-| bank_code | NISP | Bank OCBC NISP |
-| bank_code | INDEX_SELINDO | Bank Index Selindo |
-| bank_code | MIZUHO | Bank Mizuho Indonesia |
-| bank_code | LAMPUNG | Bank Lampung |
-| bank_code | PAPUA | Bank Papua |
-| bank_code | BANK_SWAGUNA | Bank Swaguna |
-| bank_code | ROYAL | Bank Royal Indonesia |
-| bank_code | JPMORGAN | JP. Morgan Chase Bank, N.A |
-| bank_code | BANK_ABN | Bank ABN Amro |
-| bank_code | GANESHA | Bank Ganesha |
-| bank_code | BANK_HIM | Bank Himpunan Saudara 1906 |
-| bank_code | BANK_MERIN | Bank Merincorp |
-| bank_code | DANAMON | Bank Danamon |
-| bank_code | DEUTSCHE | Deutsche Bank AG. |
-| bank_code | BUMI_ARTA | Bank Bumi Arta |
-| bank_code | MESTIKA_DHARMA | Bank Mestika Dharma |
-| bank_code | QNB_INDONESIA | Bank QNB Kesawan (Bank QNB Indonesia) |
-| bank_code | BANK_HARFA | Bank Harfa |
-| bank_code | BANK_BUANA | Bank UOB Indonesia |
-| bank_code | STANDARD_CHARTERED | Standard Chartered Bank |
-| bank_code | BANK_KEPPEL | Bank Keppel Tatlee Buana |
-| bank_code | SULAWESI | Bank Sulawesi Tengah |
-| bank_code | BANK_HARM | Bank Harmoni International |
-| bank_code | BANK_COMP | The Bangkok Bank Comp. LTD |
-| bank_code | BANK_HAGA | Bank Haga |
-| bank_code | MANDIRI_TASPEN | Bank Mandiri Taspen Pos |
-| bank_code | BANK_WOOR | Bank Woori Indonesia |
-| bank_code | BANK_NTT | Bank NTT |
-| bank_code | BANK_BINTANG | Bank Bintang Manunggal |
-| bank_code | BANK_BUMIPUTERA | Bank MNC / Bank Bumiputera |
-| bank_code | BANK_INA | Bank Ina Perdana |
-| bank_code | BANK_MAYBANK | Bank Maybank Indocorp |
-| bank_code | BTN | Bank Tabungan Negara (BTN) |
-| bank_code | BCA | Bank BCA |
-| bank_code | SHOPEEPAY | SHOPEEPAY E-Wallet |
-| bank_code | BANK_ANZ | Bank ANZ Indonesia |
-| bank_code | BOC | Bank OF China |
-| bank_code | BUKOPIN | Bank Bukopin |
-| bank_code | BPR_KS | BPR KS |
-| bank_code | JTRUST | Bank JTRUST |
-| bank_code | MAYORA | Bank Mayora Indonesia |
-| bank_code | MANDIRI_SYR | Bank Syariah Mandiri (BSI) Bank Syariah Indonesia |
+| bank_code | BANK_DANAMON               | Korea Exchange Bank Danamon |
+| bank_code | BANK_JATIM                 | Bank Jatim |
+| bank_code | MALUKU                     | Bank Maluku Malut |
+| bank_code | CHINATRUST                 | Bank CTBC (China Trust) Indonesia |
+| bank_code | MANDIRI                    | Bank Mandiri |
+| bank_code | BANK_LIPPO                 | Bank Lippo |
+| bank_code | DAERAH_ISTIMEWA            | BPD DIY |
+| bank_code | SINARMAS_UUS               | Bank Sinarmas |
+| bank_code | MASPION                    | Bank Maspion Indonesia |
+| bank_code | AGRONIAGA                  | Bank BRI Agro |
+| bank_code | BANK_TOKYO                 | The Bank of Tokyo Mitsubishi UFJ LTD |
+| bank_code | RESONA                     | Bank Resona Perdania |
+| bank_code | MAYAPADA                   | Bank Mayapada |
+| bank_code | BANK_HAGAKITA              | Bank Hagakita |
+| bank_code | JAMBI                      | BPD Jambi |
+| bank_code | FAMA                       | Bank Fama Internasional |
+| bank_code | KALIMANTAN_BARAT           | Bank Kalimantan Barat |
+| bank_code | MEGA_SYR                   | Bank Syariah Mega |
+| bank_code | BANK_JABAR                 | Bank Jabar dan Banten (BJB) |
+| bank_code | BRI                        | Bank BRI |
+| bank_code | BANK_PERSY                 | Bank Persyarikatan Indonesia |
+| bank_code | BANK_IFI                   | Bank IFI |
+| bank_code | SUMSEL_DAN_BABEL_SULUT     | Bank Sulut Gorontalo |
+| bank_code | BISNIS_INTERNASIONAL       | Bank Bisnis Internasional |
+| bank_code | HARDA_INTERNASIONAL        | Bank Harda |
+| bank_code | GOPAY                      | GOPAY E-Wallet |
+| bank_code | DBS                        | Bank DBS Indonesia |
+| bank_code | BANK_ANTAR                 | Bank Antardaerah |
+| bank_code | BALI                       | BPD Bali |
+| bank_code | EXIMBANK                   | Bank Ekspor Indonesia |
+| bank_code | RIAU_DAN_KEPRI             | Bank Riau |
+| bank_code | JASA_JAKARTA               | Bank Jasa Jakarta |
+| bank_code | BANK_LIMAN                 | Liman International Bank |
+| bank_code | CITIBANK                   | Citibank |
+| bank_code | PERMATA                    | Permata Bank |
+| bank_code | BANK_C_AGR                 | Bank Credit Agricole Indosuez |
+| bank_code | NUSANTARA_PARAHYANGAN      | Bank Nusantara Parahyangan |
+| bank_code | BANK_ANGLOMAS              | Anglomas Internasional Bank |
+| bank_code | NISP                       | Bank OCBC NISP |
+| bank_code | INDEX_SELINDO              | Bank Index Selindo |
+| bank_code | MIZUHO                     | Bank Mizuho Indonesia |
+| bank_code | LAMPUNG                    | Bank Lampung |
+| bank_code | PAPUA                      | Bank Papua |
+| bank_code | BANK_SWAGUNA               | Bank Swaguna |
+| bank_code | ROYAL                      | Bank Royal Indonesia |
+| bank_code | JPMORGAN                   | JP. Morgan Chase Bank, N.A |
+| bank_code | BANK_ABN                   | Bank ABN Amro |
+| bank_code | GANESHA                    | Bank Ganesha |
+| bank_code | BANK_HIM                   | Bank Himpunan Saudara 1906 |
+| bank_code | BANK_MERIN                 | Bank Merincorp |
+| bank_code | DANAMON                    | Bank Danamon |
+| bank_code | DEUTSCHE                   | Deutsche Bank AG. |
+| bank_code | BUMI_ARTA                  | Bank Bumi Arta |
+| bank_code | MESTIKA_DHARMA             | Bank Mestika Dharma |
+| bank_code | QNB_INDONESIA              | Bank QNB Kesawan (Bank QNB Indonesia) |
+| bank_code | BANK_HARFA                 | Bank Harfa |
+| bank_code | BANK_BUANA                 | Bank UOB Indonesia |
+| bank_code | STANDARD_CHARTERED         | Standard Chartered Bank |
+| bank_code | BANK_KEPPEL                | Bank Keppel Tatlee Buana |
+| bank_code | SULAWESI                   | Bank Sulawesi Tengah |
+| bank_code | BANK_HARM                  | Bank Harmoni International |
+| bank_code | BANK_COMP                  | The Bangkok Bank Comp. LTD |
+| bank_code | BANK_HAGA                  | Bank Haga |
+| bank_code | MANDIRI_TASPEN             | Bank Mandiri Taspen Pos |
+| bank_code | BANK_WOOR                  | Bank Woori Indonesia |
+| bank_code | BANK_NTT                   | Bank NTT |
+| bank_code | BANK_BINTANG               | Bank Bintang Manunggal |
+| bank_code | BANK_BUMIPUTERA            | Bank MNC / Bank Bumiputera |
+| bank_code | BANK_INA                   | Bank Ina Perdana |
+| bank_code | BANK_MAYBANK               | Bank Maybank Indocorp |
+| bank_code | BTN                        | Bank Tabungan Negara (BTN) |
+| bank_code | BCA                        | Bank BCA |
+| bank_code | SHOPEEPAY                  | SHOPEEPAY E-Wallet |
+| bank_code | BANK_ANZ                   | Bank ANZ Indonesia |
+| bank_code | IDRBOC                     | Bank OF China |
+| bank_code | BUKOPIN                    | Bank Bukopin |
+| bank_code | BPR_KS                     | BPR KS |
+| bank_code | JTRUST                     | Bank JTRUST |
+| bank_code | MAYORA                     | Bank Mayora Indonesia |
+| bank_code | MANDIRI_SYR                | Bank Syariah Mandiri (BSI) Bank Syariah Indonesia |
 
 # 15. Error Codes
 
