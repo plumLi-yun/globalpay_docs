@@ -616,7 +616,7 @@ With payment voucher:
 
 # 13. Pay-in Checkout Interface
 
-Address: /api/v1/cashApi/CashIn.html 
+Address: https://{api_domain}/api/v1/cashApi/CashIn.html
 Request Method: GET
 
 ### Parameters:
@@ -627,11 +627,12 @@ Request Method: GET
 | order_no  | string | true   | Merchant order number.       |
 | amount   | string | true   | Merchant Amount (Unit: Dong) |
 | notice_url | string | false  | Asynchronous notification address. |
+|pay_code|int|true|Product Code|
 
 #### Example
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}} 
+https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}&pay_code={{ProductCode}}
 ```
 ---
 # 14. Document Update Time

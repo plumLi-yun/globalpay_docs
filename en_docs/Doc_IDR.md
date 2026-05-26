@@ -809,22 +809,23 @@ Payment voucher available:
 
 # 16. Pay-In Cashier API
 
-URL: `/api/v1/cashApi/CashIn.html`
-Request method: GET
+Address: https://{api_domain}/api/v1/cashApi/CashIn.html
+Request Method: GET
 
 ### Parameters:
 
-| Name       | Type   | Required | Description                           |
-|--------------|--------|-------|---------------------------|
-| app_id       | string | true  | Merchant app_id                       |
-| order_no     | string | true  | Merchant order number                 |
-| amount       | string | true  | Merchant amount (unit: Yuan)          |
-| notice_url   | string | false | Asynchronous notification URL         |
+| Name    | Type  | Required | Description            |
+|------------|--------|----------|------------------------------------|
+| app_id   | string | true   | Merchant app_id.          |
+| order_no  | string | true   | Merchant order number.       |
+| amount   | string | true   | Merchant Amount (Unit: Indonesian Rupiah) |
+| notice_url | string | false  | Asynchronous notification address. |
+|pay_code|int|true|Product Code|
 
 #### Example
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{merchant_order_no}}&amount={{merchant_amount}}&notice_url={{async_notification_url}}
+https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}&pay_code={{ProductCode}}
 ```
 
 # 17. Document Update Time

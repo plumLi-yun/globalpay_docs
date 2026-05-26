@@ -1,7 +1,7 @@
 # 中文
 
-| 国家 | 文档                                 |
-|------|------------------------------------|
+| 国家 | 文档                                   |
+|------|--------------------------------------|
 | 巴西 | [点击查看 Doc_BRL](./cn_docs/Doc_BRL.md) |
 | 缅甸 | [点击查看 Doc_MMK](./cn_docs/Doc_MMK.md) |
 | 俄罗斯 | [点击查看 Doc_RUB](./cn_docs/Doc_RUB.md) |
@@ -10,6 +10,9 @@
 | 越南 | [点击查看 Doc_VND](./cn_docs/Doc_VND.md) |
 | 土耳其 | [点击查看 Doc_TRY](./cn_docs/Doc_TRY.md) |
 | 菲律宾 | [点击查看 Doc_PHP](./cn_docs/Doc_PHP.md) |
+| 埃及 | [点击查看 Doc_EGP](./cn_docs/Doc_EGP.md) |
+| 印尼 | [点击查看 Doc_IDR](./cn_docs/Doc_IDR.md) |
+| 巴基斯坦 | [点击查看 Doc_PKR](./cn_docs/Doc_PKR.md) |
 
 # English
 
@@ -23,3 +26,6 @@
 | Vietnam | [Doc Doc_VND](./en_docs/Doc_VND.md) |
 | Turkey  | [Doc Doc_TRY](./en_docs/Doc_TRY.md) |
 | Philippines | [Doc Doc_PHP](./en_docs/Doc_PHP.md) |
+| Egypt | [Doc Doc_EGP](./en_docs/Doc_EGP.md) |
+| Indonesia | [Doc Doc_IDR](./en_docs/Doc_IDR.md) |
+| Pakistan | [Doc Doc_PKR](./en_docs/Doc_PKR.md) |

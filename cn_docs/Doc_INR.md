@@ -534,22 +534,23 @@
 
 # 12、代收收银台接口
 
-地址: /api/v1/cashApi/CashIn.html
+地址: https://{api_domain}/api/v1/cashApi/CashIn.html
 请求方式: GET
 
 ### 参数:
 
 | 名称           | 类型     | 必填    | 描述                        |
 |--------------|--------|-------|---------------------------|
-| app_id       | string    | true  | 商户app_id                     |
-| order_no       | string    | true  | 商户订单号                     |
-| amount       | string    | true  | 商户金额单位元                     |
-| notice_url       | string    | false | 异步通知地址                     |
+| app_id       | string | true  | 商户app_id                    |
+| order_no       | string | true  | 商户订单号                     |
+| amount       | string | true  | 商户金额单位印度卢比                     |
+| notice_url       | string | false | 异步通知地址                     |
+| pay_code       | int    | true | 产品编码                     |
 
 #### 示例
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额单位元}}&notice_url={{异步通知地址}}
+https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额}}&notice_url={{异步通知地址}}&pay_code={{产品编码}}
 ```
 
 # 13、代付支付方式 代付字段 attach.pay_type
