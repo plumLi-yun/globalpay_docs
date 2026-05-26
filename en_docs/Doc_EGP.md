@@ -183,24 +183,22 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
-| Name      | Type  | Required | Description                                                                       |
-|----------------|--------|----------|-----------------------------------------------------------------------------------|
-| trade_no    | int  | true   | Merchant ID.                                                                      |
-| order_no    | string | true   | Merchant order number.                                                            |
-| app_id     | int  | true   | Merchant appId.                                                                   |
-| pay_code    | int  | true   | Product code, obtained from our operations.                                       |
-| price     | int  | true   | Order amount, unit: Centavoss, integer. 1 BRL = 100 Centavos.                     |
-| account_no   | string | true   | Receiving account number.                                                         |
-| account_type  | string | true   | Account type: NID, EMAIL, PHONE.                                              |
-| account_name  | string | true   | Name.                                                                             |
-| bank_code   | string | true   | Fixed: PIXPAY.                                                                    |
-| identify_type | string | true   | Identity type: Brazil (CPF, CNPJ).                                                |
-| identify_num  | string | true   | Identity number.                                                                  |
-| pay_notice_url | string | false  | Notification URL for successful pay-out.                                          |
+| Name      | Type  | Required | Description                                                                         |
+|----------------|--------|----------|-------------------------------------------------------------------------------------|
+| trade_no    | int  | true   | Merchant ID.                                                                        |
+| order_no    | string | true   | Merchant order number.                                                              |
+| app_id     | int  | true   | Merchant appId.                                                                     |
+| pay_code    | int  | true   | Product code, obtained from our operations.                                         |
+| price     | int  | true   | Order amount, unit: Centavoss, integer. 1 BRL = 100 Centavos.                       |
+| account_no   | string | true   | Receiving account number.                                                           |
+| account_type  | string | true   | Account type:  PHONE,BANK.                                                          |
+| account_name  | string | true   | Name.                                                                               |
+| bank_code   | string | true   | Fixed: PIXPAY.                                                                      |
+| pay_notice_url | string | false  | Notification URL for successful pay-out.                                            |
 | attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
-| user_ip | string | false | Receiving user IP address.                                                        |
-| sign      | string | true   | Signature result, see the top of the document for the signature method.           |
-| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                                  |
+| user_ip | string | false | Receiving user IP address.                                                          |
+| sign      | string | true   | Signature result, see the top of the document for the signature method.             |
+| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                                    |
 
 - Pay-out - Request Parameter Example
 
@@ -554,7 +552,7 @@ With payment voucher:
 
 # 13. Pay-in Checkout Interface
 
-Address: /api/v1/cashApi/CashIn.html
+Address: https://{api_domain}/api/v1/cashApi/CashIn.html
 Request Method: GET
 
 ### Parameters:
@@ -563,13 +561,14 @@ Request Method: GET
 |------------|--------|----------|------------------------------------|
 | app_id   | string | true   | Merchant app_id.          |
 | order_no  | string | true   | Merchant order number.       |
-| amount   | string | true   | Merchant Amount (Unit: Real) |
+| amount   | string | true   | Merchant Amount (Unit: Egyptian Pound) |
 | notice_url | string | false  | Asynchronous notification address. |
+|pay_code|int|true|Product Code|
 
 #### Example
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}
+https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}&pay_code={{ProductCode}}
 ```
 
 ---
