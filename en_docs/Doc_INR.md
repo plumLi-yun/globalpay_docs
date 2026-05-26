@@ -191,10 +191,24 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | identify_type | string | true   | Identity type: India (IFSC). Required when bank_code=INR_BANK.           |
 | identify_num  | string | true   | Identity number: IFSC Number. Required when bank_code=INR_BANK.           |
 | pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
-| attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
+| attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name","pay_type":"payment method"}. |
 | user_ip    | string | false  | Receiving user IP address.                             |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.       |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
+
+- Pay-Out – `attach` Additional Parameter Field Description
+
+``
+{"email":"email address","phone":"phone number","bank_name":"Bank Name","pay_type":"payment method"}
+``
+
+| Name     | Type   | Required | Description                                           |
+|----------|--------|------|----------------|
+| phone    | string | true | Payee's mobile number                                 |
+| email    | string | true | Email address                                         |
+| bank_name    | string | true | Bank name                                         |
+| pay_type | string | true | Payment method. See the Pay-Out payment method list below. |
+
 
 - Pay-out - Request Parameter Example
 
@@ -523,7 +537,7 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 # 12. Pay-in Checkout Interface
 
-Address: /api/v1/cashApi/CashIn.html
+Address: https://{api_domain}/api/v1/cashApi/CashIn.html
 Request Method: GET
 
 ### Parameters:
@@ -532,17 +546,26 @@ Request Method: GET
 |------------|--------|----------|------------------------------------|
 | app_id   | string | true   | Merchant app_id.          |
 | order_no  | string | true   | Merchant order number.       |
-| amount   | string | true   | Merchant Amount (Unit: Rupee) |
+| amount   | string | true   | Merchant Amount (Unit: Indian Rupee) |
 | notice_url | string | false  | Asynchronous notification address. |
+|pay_code|int|true|Product Code|
 
 #### Example
 
 ```
-/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}
+https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{MerchantOrderNumber}}&amount={{MerchantAmount}}&notice_url={{AsynchronousNotificationAddress}}&pay_code={{ProductCode}}
 ```
 
+# 13. Pay-Out Payment Methods – Field `attach.pay_type`
+
+| Field    | Value         | Description            |
+|-----------|------------------|------------------------|
+| pay_type | 1           | Bank card             |
+| pay_type | 8           | UPI             |
+
+
 ---
-# 13. Document Update Time
+# 14. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-05-22 17:06:00
 ```
