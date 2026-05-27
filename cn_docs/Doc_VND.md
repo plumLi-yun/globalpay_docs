@@ -1,21 +1,21 @@
 # 1、接入流程
 
 > 1、商务洽谈开户，沟通相关费率。
-> 
+>
 > 2、联系运营创建商户号、密钥、商户appId、产品编码、apiUrl。
-> 
+>
 > 3、当开发完成，双方进行联调测试，验证请求、上报等信息完整。
 
 # 2、Md5 签名算法
 
 > 1、所有参数按键对数组(key1=value1)进行升序排序(参数值为空时不参与签名)
-> 
+>
 > 2、按照 key1=value1&key2=value2 进行组合
-> 
+>
 > 3、加上商户秘钥 key1=value1&key2=value2...&key=商户秘钥
-> 
+>
 > 3、sign=md5(上一步组装待签名字的符串) 签名结果 32 位小写
-> 
+>
 > 4、签名密钥,请在商户后台->基础信息 查看,或者询问我方客服
 
 # 3、注意事项
@@ -23,19 +23,19 @@
 ## 3.1 接口相关
 
 > 1、本文档中的所有接口，均采用 HTTP 标准通信协议，POST提交，请求和响应的 Content-type 均为 application/json，字符编码统一为 UTF-8。
-> 
+>
 > 2、金额单位为分。
-> 
+>
 > 3、请求接口的 IP 需要加白。
-> 
+>
 > 4、user_ip 尽量收集用户真实ip，确实没有就留空，不要使用127.0.0.1这种本地ip
 
 ## 3.2 回调相关
 
 > 1、回调接收处理成功，请返回文本success不能含有其他任何字符，系统将不再推送此订单信息，否则还会重复推送多次
-> 
+>
 > 2、在进行异步通知交互时，如果收到的应答不是 success ，会认为通知失败，会通过一定的策略定期重新发起通知。通知的间隔频率为：1m、1m、4m、10m、10m、1h、2h、6h、15h。
-> 
+>
 > 3、pay_notice_url通知地址如果为空，会视为商家不需要回调，系统不会推送通知。
 
 # 4、代收下单接口
@@ -63,9 +63,9 @@
 | timestamp      | string | false | 下单时间戳 10位时间戳单位S                                                                                                                                                               |
 
 - 代收-attach 附加参数字段说明
-  
+
   | 名称            | 类型     | 必填    | 描述                                               |
-  | ------------- | ------ | ----- |--------------------------------------------------|
+    | ------------- | ------ | ----- |--------------------------------------------------|
   | name          | string | false | 付款人姓名                                            |
   | email         | string | false | 付款人邮箱                                            |
   | phone         | string | false | 付款人手机号                                           |
@@ -75,7 +75,7 @@
   | bank_name     | string | false | 银行名称                                             |
 
 - 代收-下单请求示例
-  
+
   ```json
   {
   "trade_no": 10003,
@@ -130,9 +130,21 @@
   "order_no": "p7158412025J2dZjXLmz0",
   "dis_order_no": "2025071130770572062498816india1oushe",
   "create_time": 1752825512,
-  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5",
+  "pay_info": "{\"acc_no\":\"96311*****2701\",\"bank\":\"BIDV\",\"memo\":\"B4VGR8dfkdalds\",\"name\":\"POT TRAN****** VAN DU\",\"pay_raw\":\"00020101021238580010A00000072701280006970418011496311435212701**************************\"}"
 }
 ```
+
+- 代收-pay_info 附加参数字段说明
+
+  | 名称      | 类型     | 必填    | 描述                 |
+          |---------|--------|-------|--------------------|
+  | acc_no  | string | false | 收款账户               |
+  | bank    | string | false | 银行信息               |  
+  | memo    | string | false | 收款描述               |  
+  | name    | string | false | 收款人                |  
+  | pay_raw | string | false | 支付原生信息，商户可自行转化为二维码 |
+
 
 # 5、代收回调通知 post/json
 
@@ -179,7 +191,7 @@
 # 6、代付下单接口
 
 (下单 ip 需要联系我方加白)  
-下单地址 https://{api_domain}/api/v1/payApi/CreatePayOutOrder  
+下单地址 https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 代付-请求参数
 
@@ -464,11 +476,11 @@
 ```json
 
 {
-    "trade_no": 10003,
-    "app_id": 10003,
-    "order_no": "",
-    "dis_order_no": "35011C02gljuf6k0800india1lVY",
-    "sign": "3969f17cd1a551769f85967d0a05b7b6"
+  "trade_no": 10003,
+  "app_id": 10003,
+  "order_no": "",
+  "dis_order_no": "35011C02gljuf6k0800india1lVY",
+  "sign": "3969f17cd1a551769f85967d0a05b7b6"
 }
 ```
 
@@ -489,11 +501,11 @@
 ```json
 
 {
-"code":200,
-"msg":"No payment voucher available at the moment",
-"sign": "",
-"img_link": "",
-"img_base": ""
+  "code":200,
+  "msg":"No payment voucher available at the moment",
+  "sign": "",
+  "img_link": "",
+  "img_base": ""
 }
 ```
 
@@ -504,11 +516,11 @@
 ```json
 
 {
-"code": 200,
-"msg": "",
-"sign": "3969f17cd1a551769f85967d0a05b7b6",
-"img_link": "http://dsggfgdsf.djdj?ddd=snn",
-"img_base": "data:image/png;base64,hfhshdhfhfh"
+  "code": 200,
+  "msg": "",
+  "sign": "3969f17cd1a551769f85967d0a05b7b6",
+  "img_link": "http://dsggfgdsf.djdj?ddd=snn",
+  "img_base": "data:image/png;base64,hfhshdhfhfh"
 }
 ```
 

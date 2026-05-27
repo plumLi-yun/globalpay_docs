@@ -1,21 +1,21 @@
 # 1. Integration Process
 
 > 1. Business negotiation for account opening and communication regarding relevant rates.
-> 
+>
 > 2. Contact operations to create Merchant ID, Secret Key, Merchant AppId, Product Code, and apiUrl.
-> 
+>
 > 3. Upon completion of development, both parties conduct joint debugging and testing to verify the integrity of requests, reporting, and other information.
 
 # 2. Md5 Signature Algorithm
 
 > 1. Sort all parameters in ascending order as key-value pairs (key1=value1) (empty parameter values are not included in the signature).
-> 
+>
 > 2. Combine them in the format key1=value1&key2=value2.
-> 
+>
 > 3. Append the merchant secret key: key1=value1&key2=value2...&key=MerchantSecretKey.
-> 
+>
 > 4. sign=md5(the string assembled in the previous step). The signature result is a 32-bit lowercase string.
-> 
+>
 > 5. The signature key can be found in the Merchant Backend -> Basic Information, or by inquiring with our customer service.
 
 # 3. Precautions
@@ -23,19 +23,19 @@
 ## 3.1 Interface Related
 
 > 1. All interfaces in this document use standard HTTP communication protocols, submitted via POST. Both request and response Content-type are application/json, and the character encoding is unified as UTF-8.
-> 
+>
 > 2. The currency unit is Xu.
-> 
+>
 > 3. The IP address for requesting the interface needs to be whitelisted.
-> 
+>
 > 4. Collect the real user IP for user_ip as much as possible; if truly unavailable, leave it blank. Do not use local IPs like 127.0.0.1.
 
 ## 3.2 Callback Related
 
 > 1. The callback reception was successful. Please return the text "success". This text must not contain any other characters. Otherwise, the system will no longer push this order information; otherwise, it will push it multiple times.
-> 
+>
 > 2. During asynchronous notification interaction, if the received response is not `success`, it is considered a notification failure, and notifications will be re-initiated periodically based on a certain strategy. The notification intervals are: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
-> 
+>
 > 3. If the pay_notice_url notification address is empty, it will be considered that the merchant does not need a callback, and the system will not push a notification.
 
 # 4. Pay-in (Collection) Order Interface
@@ -130,9 +130,23 @@ Success:
  "order_no": "p7158412025J2dZjXLmz0",
  "dis_order_no": "2025071130770572062498816india1oushe",
  "create_time": 1752825512,
- "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+ "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5", 
+ "pay_info": "{\"acc_no\":\"96311*****2701\",\"bank\":\"BIDV\",\"memo\":\"B4VGR8dfkdalds\",\"name\":\"POT TRAN****** VAN DU\",\"pay_raw\":\"00020101021238580010A00000072701280006970418011496311435212701**************************\"}"
 }
 ```
+
+
+- Collection - pay_info Additional Parameters
+
+| Parameter | Type | Required | Description         |
+|-----------|------|----------|---------------------|
+| acc_no | string | false | Recipient Account   |
+| bank | string | false | Bank Information    |
+| memo | string | false | Payment Description |
+| name | string | false | Payee Name          |
+| pay_raw | string | false | Payment Original Information |
+
+
 
 # 5. Pay-in Callback Notification (post/json)
 
@@ -484,7 +498,7 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 | sign   | string | true   | Signature result, see the top of the document for the signature method. |
 
 - Payment Voucher Response Example
- No payment voucher:
+  No payment voucher:
 
 ```json
 
