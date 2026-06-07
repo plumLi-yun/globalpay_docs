@@ -168,6 +168,59 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 ## 5.2 Pay-in Callback - Response Description
 If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
 
+## 5.3 Repeated QR Code Callback for Pay-in
+
+Applicable scenario:
+
+- The user pays again using a previously generated QR code.
+- The merchant does not submit a new pay-in order.
+- The merchant may later receive another successful callback for the same merchant order number.
+
+In this scenario, the merchant will receive a new successful pay-in callback.
+
+Callback rules:
+
+- `order_no` remains the original merchant order number.
+- `dis_order_no` is the platform order number for this callback.
+- `status` reflects the payment result of this callback. For a successful payment, the value is `2`.
+- `order_price` is the merchant's original order amount.
+- `real_price` is the actual paid amount for this payment.
+
+Merchant handling recommendations:
+
+- Treat `dis_order_no` as the unique platform-side order number.
+- If multiple successful callbacks are received for the same `order_no`, use `dis_order_no` for idempotency handling and reconciliation.
+- When querying an order, it is recommended to use `dis_order_no` first.
+
+Example:
+
+```text
+First order:
+  Merchant order number order_no     = M001
+  Platform order number dis_order_no = SN20260607000001
+
+When another successful callback is received later:
+  Merchant order number order_no     = M001
+  New platform order number dis_order_no = SN20260607000002
+```
+
+Repeated QR code successful callback example:
+
+```json
+{
+ "trade_no": 10003,
+ "status": 2,
+ "order_no": "M001",
+ "dis_order_no": "SN20260607000002",
+ "order_price": 10099,
+ "real_price": 10099,
+ "payer": "{\"name\":\"Name\",\"account\":\"Account\",\"bank\":\"Bank Code\",\"utr2\":\"Bank Serial Number\"}",
+ "nti_time": 1752826164,
+ "create_time": 1752751502,
+ "sign": "eba7f27e0f49581d8784294ef29f994d"
+}
+```
+
 # 6. Pay-out (Disbursement) Order Interface
 
 (The order placement IP needs to be whitelisted by contacting us)
@@ -644,5 +697,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 ---
 # 15. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-06-08 10:00:00
 ```
