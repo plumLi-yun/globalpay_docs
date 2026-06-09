@@ -184,18 +184,16 @@
 | order_no       | string | true  | 商户订单号                                                |
 | app_id         | int    | true  | 商户 appId                                             |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                        |
-| price          | int    | true  | 下单金额，单位：派萨，整型。1 卢比 = 100 派萨                          |
+| price          | int    | true  | 下单金额，单位：分（SEN），整型。1 印尼盾 = 100 分                     |
 | account_no     | string | true  | 收款账号                                                 |
-| account_type   | string | true  | 账号类型:UPI(印度Upi),BANK(银行帐号)                           |
+| account_type   | string | true  | 账号类型:PHONE(电子钱包手机号),BANK(银行帐号)                    |
 | account_name   | string | true  | 姓名                                                   |
-| bank_code      | string | true  | 固定值 （INR_UPI 或者 INR_BANK  ）                          |
-| identify_type  | string | true  | 证件类型:印度（IFSC）  bank_code=INR_BANK 时必需                |
-| identify_num   | string | true  | 证件号码 IFSC号码  bank_code=INR_BANK 时必需                  |
+| bank_code      | string | true  | 收款银行/钱包编码，见下方代付银行编码                                  |
 | pay_notice_url | string | false | 代付成功通知 url                                           |
-| attach         | string | false | 附加参数  {"email":"邮箱","phone":"手机号","pay_type":"支付方式"} |
-| user_ip        | string | false  | 收款用户 IP                                              |
+| attach         | string | true  | 附加参数  {"email":"邮箱","phone":"手机号","pay_type":"支付方式"} |
+| user_ip        | string | false | 收款用户 IP                                              |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                       |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                      
+|timestamp|string| false | 下单时间戳 10位时间戳单位S                                      
 
 -  代付-attach 附加参数字段说明
 
@@ -206,8 +204,8 @@
 | 名称       | 类型     | 必填   | 描述             |
 |----------|--------|------|----------------|
 | phone    | string    | true | 收款人手机号         |
-| email    | string    | true | 邮箱地址           |
-| pay_type |string| true | 支付方式,见下方代付支付方式 |
+| email    | string    | true  | 邮箱地址           |
+| pay_type | string    | true  | 支付方式,见下方代付支付方式 |
 
 - 代付-请求参数示例
 
@@ -219,15 +217,13 @@
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"1392@qq.com\",\"phone\":\"3211234567\",\"pay_type\":\"PAY\"}",
+  "attach": "{\"email\":\"1392@qq.com\",\"phone\":\"3211234567\",\"pay_type\":\"IDRDANA\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
   "account_no": "123456789",
   "account_name": "test",
-  "bank_code": "INR_UPI",
-  "identify_type": "",
-  "identify_num": ""
+  "bank_code": "DANA"
 }
 ```
 

@@ -188,13 +188,11 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | order_no       | string | true  | Merchant order number                                                       |
 | app_id         | int    | true  | Merchant appId                                                              |
 | pay_code       | int    | true  | Product code. Contact our operations team to obtain.                        |
-| price          | int    | true  | Order amount, unit: Paisa. Integer type. 1 Rupiah = 100 Paisa               |
+| price          | int    | true  | Order amount, unit: sen. Integer type. 1 Rupiah = 100 sen                   |
 | account_no     | string | true  | Payee account number                                                        |
-| account_type   | string | true  | Account type: UPI (India UPI), BANK (bank account)                          |
+| account_type   | string | true  | Account type: PHONE (e-wallet mobile number), BANK (bank account)           |
 | account_name   | string | true  | Full name                                                                   |
-| bank_code      | string | true  | Fixed value: `INR_UPI` or `INR_BANK`                                        |
-| identify_type  | string | true  | ID document type: India (IFSC). Required when `bank_code=INR_BANK`.         |
-| identify_num   | string | true  | ID document number (IFSC code). Required when `bank_code=INR_BANK`.         |
+| bank_code      | string | true  | Payee bank / wallet code. Refer to the Pay-Out bank code list below.        |
 | pay_notice_url | string | false | Payout success notification URL                                             |
 | attach         | string | false | Additional parameters: `{"email":"email address","phone":"phone number","pay_type":"payment method"}` |
 | user_ip        | string | false | Payee's IP address                                                          |
@@ -223,15 +221,13 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"1392@qq.com\",\"phone\":\"3211234567\",\"pay_type\":\"PAY\"}",
+  "attach": "{\"email\":\"1392@qq.com\",\"phone\":\"3211234567\",\"pay_type\":\"IDRDANA\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
   "account_no": "123456789",
   "account_name": "test",
-  "bank_code": "INR_UPI",
-  "identify_type": "",
-  "identify_num": ""
+  "bank_code": "DANA"
 }
 ```
 
