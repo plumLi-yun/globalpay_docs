@@ -1,0 +1,490 @@
+# 1. Integration Process
+
+> 1. Business negotiation and account opening, discuss relevant rates.
+> 2. Contact operations to create merchant ID, secret key, merchant appId, product code, and apiUrl.
+> 3. After development is complete, conduct joint debugging and testing to verify request, notification and other information integrity.
+
+# 2. MD5 Signature Algorithm
+
+> 1. Sort all parameters as key-value pairs (key1=value1) in ascending order (empty parameter values are not included in the signature).
+> 2. Concatenate as `key1=value1&key2=value2`.
+> 3. Append the merchant secret key: `key1=value1&key2=value2...&key=MerchantSecretKey`.
+> 4. `sign = MD5(above concatenated string)` – signature result is 32-bit lowercase.
+> 5. The signature secret key can be found in Merchant Backend -> Basic Information, or ask our customer service.
+
+# 3. Important Notes
+
+## 3.1 Interface Related
+> 1. All interfaces in this document use HTTP standard protocol, POST submission. Request and response `Content-Type` are both `application/json`, character encoding is UTF-8.
+> 2. The amount unit is <span style="color:red;">cent</span>.
+> 3. The IP address calling the interface needs to be whitelisted.
+> 4. `user_ip` – try to collect the user's real IP; if not available, leave it blank. Do not use local IPs like `127.0.0.1`.
+
+## 3.2 Callback Related
+> 1. If the callback is successfully processed, return the plain text `success` without any other characters. The system will not push this order again; otherwise, it will retry multiple times.
+> 2. During async notification interaction, if the response is not `success`, the notification is considered failed and will be retried periodically. Retry intervals: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
+> 3. If `pay_notice_url` is empty, it means the merchant does not require a callback, and the system will not push notifications.
+
+# 4. Collection Order Creation Interface
+
+> (Order creation IP needs to be whitelisted by us)  
+> Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
+
+## 4.1 Collection – Order Request Parameters
+
+| Name            | Type   | Required | Description                                                                                                         |
+|-----------------|--------|----------|---------------------------------------------------------------------------------------------------------------------|
+| trade_no        | int    | true     | Merchant number                                                                                                     |
+| app_id          | int    | true     | Merchant appId                                                                                                      |
+| pay_code        | int    | true     | Product code, contact our operations to obtain                                                                     |
+| price           | int    | true     | Order amount, unit: cent, integer                                                                                  |
+| pay_type        | string | true     | Payment method: `WALLET`, `CASH`, `TC` (Credit Card), `TD` (Debit Card), `NET_BANKING_CLP` (Bank transfer)         |
+| order_no        | string | true     | Merchant order number                                                                                               |
+| success_url     | string | false    | Payment success redirect URL                                                                                        |
+| fail_url        | string | false    | Payment failure redirect URL                                                                                        |
+| pay_notice_url  | string | false    | Payment success notification URL                                                                                    |
+| user_id         | string | false    | User ID                                                                                                             |
+| user_ip         | string | false    | Payer IP                                                                                                            |
+| identify_type   | string | false    | ID type: `RUT` (Tax ID), `PP` (Passport)                                                                            |
+| identify_num    | string | false    | ID number: RUT (9 digits: 8 digits + check digit), PP (9 to 16 characters)                                          |
+| attach          | string | false    | Additional parameters JSON string: `{"identify_type":"ID type: RUT or PP","identify_num":"RUT (9 digits) or PP (9-16 chars)","name":"User name","phone":"Phone number 9 digits, no area code","email":"adfsdafeww@gmail.com"}` |
+| sign            | string | true     | Signature result, see signature method at top of document                                                           |
+
+- **Collection – Order Request Example**
+
+```json
+{
+  "trade_no": 165,
+  "order_no": "p71584121t1693047656571",
+  "app_id": 51,
+  "pay_code": 91145,
+  "price": 10000,
+  "pay_type": "NET_BANKING_CLP",
+  "success_url": "",
+  "fail_url": "",
+  "pay_notice_url": "http://www.test.com",
+  "pay_remind_url": "",
+  "attach": "",
+  "user_ip": "87.200.59.188",
+  "user_id": "2677323",
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+## 4.1 Collection – Order Response
+| Name            | Type   | Required | Description  |
+|-----------------|--------|----------|---------------------------------------------------------------------------------------------------------------------| 
+|code	            | int	   |  true	  | 200: success, others: failure|
+||msg	            | string |	true	  | Failure reason|
+|pay_url          |	string |	true	  | Payment URL|
+|qr_code          |	string |	true	  | QR code string|
+|order_no         |	string |	true	  | Merchant order number|
+|dis_order_no     |	string |	true	  | Platform order number|
+|create_time      |	int	   |  true	  | Creation time|
+|sign	            |string  |	true    |	Signature result, see signature method at top|
+
+- **Response Example**
+Failure:
+
+```json
+{
+  "code": 10009,
+  "msg": "ip not in merchant whitelist, ip:158.28.87.267",
+  "sign": "db3406277185f9660b3b928d6adc7bc4",
+  "pay_url": "",
+  "qr_code": "",
+  "order_no": "",
+  "dis_order_no": "",
+  "create_time": 0
+}
+```
+Success:
+
+```json
+{
+  "code": 200,
+  "msg": "success",
+  "pay_url": "https://fourpay-intest2.ncjimmy.com/payApi/PayApi/CallBack/3_97091602d4501dbffce038ca6419e176",
+  "qr_code": "TNVPdaYdXnUxADTfLcKvkam4836B2vkKT5",
+  "order_no": "47210116924681604173",
+  "dis_order_no": "lufei169246816001692",
+  "sign": "db3406277185f9660b3b928d6adc7bc4",
+  "create_time": 1695317066
+}
+```
+
+# 5. Pay-in Callback Notification (post/json)
+Push URL: pay_notice_url provided by merchant in order creation.
+Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
+
+## 5.1 Collection Callback – Request Parameters
+| Name            | Type   | Required | Description  |
+|-----------------|--------|----------|---------------------------------------------------------------------------------------------------------------------| 
+| trade_no   | int  | true   | Merchant ID.                                                                                                                             |
+| status    | int  | true   | Order status: 2. Success, 3. Failure.                                                                                                                 |
+| order_no   | string | true   | Merchant order number.                                                                                                                        |
+| dis_order_no | string | true   | Platform order number.                                                                                                                        |
+| order_price | int  | true   | Order amount, unit: Centavos.                                                                                                                      |
+| real_price  | int  | true   | Actual amount paid by the user, unit: Centavoss.                                                                                                             |
+| nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
+| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}. Also includes payer-related fields from `attach`. |
+| pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
+| create_time | int  | true   | Creation time.                                                                                                                            |
+| sign     | string | true   | Signature result, see the top of the document for the signature method.
+
+```json
+{
+  "trade_no": 165,
+  "status": 2,
+  "order_no": "p71584121t1693047656571",
+  "dis_order_no": "lufei169246816001692",
+  "order_price": 10000,
+  "real_price": 10000,
+  "fee": 10,
+  "nti_time": 1693057443,
+  "payer": "{\"name\":\"name\",\"email\":\"email\",\"phone\":\"phone\",\"identify_type\":\"ID type\",\"identify_num\":\"CPF,CNPJ\"}",
+  "attach": "",
+  "create_time": 1695317066,
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+
+## 5.2 Collection Callback – Response Instructions
+If the callback is successfully processed, return success. The system will not push this order again; otherwise, it will retry multiple times.
+
+# 6. Payout Order Creation Interface
+(Order creation IP needs to be whitelisted by us)
+Order URL: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
+
+## 6.1 Payout – Request Parameters
+| Name      | Type  | Required | Description                                                                         |
+|----------------|--------|----------|-------------------------------------------------------------------------------------|
+| trade_no    | int  | true   | Merchant ID.                                                                        |
+| order_no    | string | true   | Merchant order number.                                                              |
+| app_id     | int  | true   | Merchant appId.                                                                     |
+| pay_code    | int  | true   | Product code, obtained from our operations.                                         |
+| price     | int  | true   | Order amount, unit: Centavoss, integer. 1 BRL = 100 Centavos.                       |
+| account_no   | string | true   | Receiving account number.                                                           |
+| account_type  | string | true   | Account type: CHECKING, SAVINGS, RUT, VISTA                                                        |
+| account_name  | string | true   | Name.                                                                               |
+| bank_code   | string | true   | Fixed: PIXPAY.                                                                      |
+| identify_type	| string	| false	ID type: RUT (Tax ID), PP (Passport)
+| identify_num	| string	| false	ID number
+| pay_notice_url | string | false  | Notification URL for successful pay-out.                                            |
+| attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
+| user_ip | string | false | Receiving user IP address.                                                          |
+| sign      | string | true   | Signature result, see the top of the document for the signature method.             |                            
+
+- Pay-out - Request Parameter Example
+
+```json
+{
+  "trade_no": 165,
+  "order_no": "p71584121t1693047656571",
+  "app_id": 51,
+  "pay_code": 91145,
+  "price": 10000,
+  "account_type": "EMAIL",
+  "account_no": "asda12321@gmail.com",
+  "account_name": "TEST",
+  "bank_code": "PIX",
+  "identify_type": "CPF",
+  "identify_num": "10703569562",
+  "pay_notice_url": "http://www.test.com",
+  "attach": "",
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+## 6.2 Payout – Order Response
+| Name     | Type  | Required | Description                                  |
+|--------------|--------|----------|-------------------------------------------------------------------------------|
+| code     | int  | true   | 200: Success; Others: Failure.                        |
+| msg     | string | true   | Failure reason.                                |
+| dis_order_no | string | true   | Platform order number.                            |
+| order_no   | string | true   | Merchant order number.                            |
+| status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal, 10. Processing. |
+| create_time | int  | true   | Creation time.                                |
+| sign     | string | true   | Signature result, see the top of the document for the signature method.    |
+
+- Pay-out - Order Response Example
+
+Failure:
+
+```json
+
+{
+  "code": 1005,
+  "msg": "Merchant not found",
+  "sign": ""
+} 
+```
+
+Success:
+
+```json
+
+{
+  "code": 200,
+  "msg": "",
+  "sign": "d3ec1fa0f45bc44218d5fb63bb1beb61",
+  "order_no": "p7158412025MsJydJqT7b",
+  "dis_order_no": "2025071130776296733810688india1Dhr7H",
+  "create_time": 1752826877,
+  "status": 10
+}
+```
+# 7. Payout Callback Notification
+
+Push address: The `pay_notice_url` provided by the merchant during order placement. Callback IP: `call_back_server_ip`. Please add our IP to your callback whitelist.
+## 7.1 Pay-out Callback Request Parameters
+
+| Name     | Type  | Required | Description                                |
+|--------------|--------|----------|---------------------------------------------------------------------------|
+| trade_no   | int  | true   | Merchant ID.                               |
+| order_no   | string | true   | Merchant order number.                          |
+| dis_order_no | string | true   | Platform order number.                          |
+| order_price | int  | true   | Order amount, unit: Centavos.                        |
+| fee     | int  | false  | Order fee, unit: Centavos.                          |
+| status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
+| pay_info   | string | false  | Payment information.                           |
+| remark    | string | false  | Failure reason.                              |
+| create_time | int  | true   | Creation time.                              |
+| sign     | string | true   | Signature result, see the top of the document for the signature method.  |
+| nti_time   | int  | true   | Notification initiation time.                       |
+
+- Pay-out Callback Request Example
+
+```json
+{
+  "trade_no": 10003,
+  "status": 3,
+  "order_price": 10000,
+  "order_no": "p71584120257igU8n8FII",
+  "dis_order_no": "2025071130700746140950528india15rLVI",
+  "nti_time": 1752808888,
+  "create_time": 1752808865,
+  "remark": "Payment failed",
+  "fee": 10,
+  "pay_info": "",
+  "sign": "746140950528indi"
+}
+```
+## 7.2 Pay-out Callback Response Description
+If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
+
+# 8. Query Order Interface (Common for Pay-in and Pay-out)
+(Request IP needs to be whitelisted by us)
+Query URL: https://{api_domain}/api/v1/payApi/QueryOrder
+
+## 8.1 Query Request Parameters
+| Name     | Type  | Required | Description                               |
+|--------------|--------|----------|-------------------------------------------------------------------------|
+| order_type  | string | true   | pay_out: Disbursement, pay_in: Collection.               |
+| trade_no   | int  | true   | Merchant ID.                              |
+| app_id    | int  | true   | Merchant appId.                             |
+| dis_order_no | string | false   | Platform order number.                         |
+| order_no | string | false  | Merchant  order number.              |
+| sign     | string | true   | Signature result, see the top of the document for the signature method. |
+
+- Query Request Example
+
+```json
+{
+ "order_type": "pay_in",
+ "trade_no": 165,
+ "app_id": 165,
+ "dis_order_no": "p7158277185f96603047656571",
+ "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+## 8.2 Query Response
+
+| Name     | Type  | Required | Description                                                                                                 |
+|--------------|--------|----------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| code     | int  | true   | 200: Query successful; Others: Failure.                                                                                   |
+| msg     | string | true   | Query failure reason.                                                                                            |
+| trade_no   | int  | true   | Merchant ID.                                                                                                 |
+| real_price  | int  | true   | Actual amount paid, unit: Centavoss.                                                                                       |
+| status    | int  | true   | Order status: 1. Unpaid, 2. Success, 3. Failure, 7. Rejected, 9. Reversal, 10. Processing.                                                          |
+| success_time | int  | true   | Success timestamp.                                                                                              |
+| order_no   | string | true   | Merchant order number.                                                                                            |
+| dis_order_no | string | true   | Platform order number.                                                                                            |
+| remark    | string | true   | Reason for pay-out failure.                                                                                         |
+| fee     | int  | false  | Order fee, unit: Centavos.                                                                                           |
+| create_time | int  | true   | Creation time.                                                                                                |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CPF, CNPJ, EMAIL, PHONE", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}.       |
+| pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
+| sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
+| utr2     | string | false  | Bank order number.                                                                                              |
+Failure:
+
+```json
+{
+ "code": 1017,
+ "msg": "Order does not exist"
+}
+```
+
+Success:
+
+```json
+{
+ "code": 200,
+ "msg": "success",
+ "trade_no": 123,
+ "real_price": 10000,
+ "status": 2,
+ "success_time": 1693057443,
+ "order_no": "47210116924681604173",
+ "dis_order_no": "lufei169246816001692",
+ "remark": "",
+ "fee": 10,
+ "create_time": 1695317066,
+ "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+
+
+# 9. Pay-out Balance Query Interface
+The Request IP needs to be whitelisted by contacting us
+Address: https://{api_domain}/api/v1/payApi/QueryBalance
+
+## 9.1 Balance Request Parameters
+
+| Name   | Type  | Required | Description                               |
+|----------|--------|----------|-------------------------------------------------------------------------|
+| trade_no | int  | true   | Merchant ID.                              |
+| app_id  | int  | true   | Merchant appid.                             |
+| sign   | string | true   | Signature result, see the top of the document for the signature method. |
+
+- Balance Request Example
+
+```json
+{
+ "trade_no": 165,
+ "app_id": 281,
+ "sign": "db3406277185f9660b3b928d6adc115"
+}
+```
+## 9.2 Balance Response
+
+| Name      | Type  | Required | Description                               |
+|----------------|--------|----------|-------------------------------------------------------------------------|
+| code      | int  | true   | 200: Query successful; Others: Failure.                 |
+| msg      | string | true   | Failure reason.                             |
+| balance    | int  | true   | Balance, unit: Centavoss.                          |
+| balance_frozen | int  | false  | Frozen balance, unit: Centavoss.                      |
+| sign      | string | true   | Signature result, see the top of the document for the signature method. |
+
+- Balance Response Example
+
+Failure:
+
+```json
+{
+ "code": 10001,
+ "msg": "Merchant does not exist"
+}
+```
+
+Success:
+
+```json
+{
+ "code": 200,
+ "msg": "success",
+ "balance": 10000,
+ "balance_frozen": 1000,
+ "sign": "db3406277185f9660b3b928d6adc7bc4"
+}
+```
+# 10. Error Codes
+| Status Code | Description                                                              |
+|-------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| 200     | Success                                                                |
+| 1000    | Internal Error                                                             |
+| 1001    | IP not in merchant IP whitelist.                                                    |
+| 1002    | Parameter Error                                                            |
+| 1003    | Signature Error                                                            |
+| 1004    | Interface currently unavailable for the merchant (Contact operations to verify: Merchant or App (Not exist\|Closed\|Product not configured)) |
+| 1005    | Merchant does not exist.                                                        |
+| 1006    | Current user IP is in the blacklist.                                                  |
+| 1007    | Current user is in the blacklist.                                                   |
+| 1008    | Merchant App does not exist.                                                      |
+| 1009    | Payment product does not exist.                                                    |
+| 1010    | Payment channel does not exist.                                                    |
+| 1011    | Payment channel development not completed, temporarily unavailable.                                  |
+| 1012    | Payment channel exception, please try again later.                                           |
+| 1013    | High order volume, please try again later.                                               |
+| 1014    | Duplicate order number.                                                        |
+| 1015    | Insufficient app balance.                                                       |
+| 1016    | Frequent order placement by the same user, please try again later.                                   |
+| 1017    | Order record does not exist.                                                      |
+| 1018    | Current amount not supported.                                                     |
+| 1019    | Pay-in not enabled for the app's country.                                               |
+| 1020    | Pay-out not enabled for the app's country.                                               |
+| 1021    | Failure                                                                |
+| 1036    | Interface not yet open.                                                        |
+| 1037    | Currency not supported.                                                        |
+| 1038    | Pay-in utr reporting error.                                                      |
+| 9999    | Other errors.                                                             |
+| 3000    | System maintenance, order placement suspended, please try again later.                                 |
+
+# 11. Bank Codes
+```json
+{
+    "100%Banco": "100%Banco",
+    "Activo": "Banco Activo",
+    "Bancamiga": "Bancamiga",
+    "Banco de La Nacion Argentina": "Banco de La Nacion Argentina",
+    "Banco del Desarrollo": "Banco del Desarrollo",
+    "Banco do Brasil": "Banco do Brasil",
+    "Banco Internacional": "Banco Internacional",
+    "Banco Nuevo": "Banco Nuevo",
+    "Banco Ptg Pactual": "Banco Ptg Pactual",
+    "Banco Santander": "Banco Santander",
+    "Banco Santiago": "Banco Santiago",
+    "Banesco": "Banesco",
+    "Banplus": "Banplus",
+    "BBPC": "Banco BTG Pactual Chile",
+    "BBVA (Bco Bilbao Vizcaya Arg)": "BBVA (Bco Bilbao Vizcaya Arg)",
+    "BCI": "BCI",
+    "Bice": "Banco Bice",
+    "Bicentenario": "Banco Bicentenario",
+    "CajaLH": "Caja Los Heroes",
+    "Caroní": "Banco Caroní",
+    "Chile": "Banco de Chile",
+    "CLP_BANK": "CLP_BANK",
+    "CLPScotiabank": "Scotiabank",
+    "Consorcio": "Banco Consorcio",
+    "Coopeuch": "Coopeuch",
+    "del_Caribe": "Banco del Caribe",
+    "del_Tesoro": "Banco del Tesoro",
+    "Deutsche Bank": "Deutsche Bank",
+    "Estado": "Banco Estado",
+    "Exterior": "Banco Exterior",
+    "Fondo_Común": "Banco Fondo Común",
+    "Hsbc Bank": "Hsbc Bank",
+    "HSBCBC": "HSBC Bank Chile",
+    "Itau Chile": "Itau Chile",
+    "Itau-Corpbanca": "Itau-Corpbanca",
+    "JP Morgan Chase Bank N.A.": "JP Morgan Chase Bank N.A.",
+    "Los_Andes": "Los Andes",
+    "Mercado_Pago": "Mercado Pago",
+    "Mercantil": "Banco Mercantil",
+    "Nacional_de_Crédito": "Banco Nacional de Crédito",
+    "Paris": "Banco Paris",
+    "Penta": "Banco Penta",
+    "Plaza": "Banco Plaza",
+    "Prepago Los Heroes": "Prepago Los Heroes",
+    "Provincial": "Banco Provincial",
+    "Rabobank": "Rabobank",
+    "Rabobank_Chile": "Rabobank Chile",
+    "Security": "Banco Security",
+    "Tenpo": "Tenpo",
+    "Tokio-Mitsubishi": "The bank of Tokio-Mitsubishi UFJ, LTD",
+    "Venezolano_de_Crédito": "Banco Venezolano de Crédito",
+    "Venezuela": "Banco de Venezuela"
+}
+```
+
