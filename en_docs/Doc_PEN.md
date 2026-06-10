@@ -574,7 +574,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 | pay_type | CHECKOUT | Checkout |
 | pay_type | Peru | Cash |
 
-# 15. Pay-Out Bank Codes - Field `attach.bank_code`
+# 15. Pay-Out Bank Codes - Field `bank_code`
 
 | Field Name | Code | Bank Name |
 |:-----------|:-----|:----------|

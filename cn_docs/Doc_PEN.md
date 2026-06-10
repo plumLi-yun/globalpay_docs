@@ -570,7 +570,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 | pay_type | PLIN          | Plin 钱包   |
 
 
-# 15、代付银行编码 代付字段 attach.bank_code
+# 15、代付银行编码 代付字段 bank_code
 
 | 字段名称 | 编码 | 银行名称 |
 |:---------|:-----|:---------|
