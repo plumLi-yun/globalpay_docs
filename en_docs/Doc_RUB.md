@@ -24,7 +24,7 @@
 
 > 1. All interfaces in this document use standard HTTP communication protocols, submitted via POST. Both request and response Content-type are application/json, and the character encoding is unified as UTF-8.
 > 
-> 2. The currency unit is Kopek.
+> 2. The currency unit is <span style="color:red;"> Kopek </span>.
 > 
 > 3. The IP address for requesting the interface needs to be whitelisted.
 > 

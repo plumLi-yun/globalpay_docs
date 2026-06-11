@@ -24,7 +24,7 @@
 
 > 1. All interfaces in this document use the HTTP standard communication protocol with POST submissions. The Content-Type for both requests and responses is `application/json`, and the character encoding is UTF-8 throughout.
 >
-> 2. The currency unit is Indonesian Rupiah (Sen).
+> 2. The currency unit is <span style="color:red;"> Indonesian Rupiah (Sen) </span>.
 >
 > 3. The IP address used to call the API must be whitelisted.
 >

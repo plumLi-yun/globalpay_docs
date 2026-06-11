@@ -23,7 +23,7 @@
 ## 3.1 接口相关
 > 1、本文档中的所有接口，均采用 HTTP 标准通信协议，POST提交，请求和响应的 Content-type 均为 application/json，字符编码统一为 UTF-8。
 > 
-> 2、金额单位为生丁。
+> 2、金额单位为<span style="color:red;"> 分（生丁） </span>。
 > 
 > 3、请求接口的 IP 需要加白。
 > 

@@ -31,7 +31,7 @@
 
 > 1. All APIs in this document use the HTTP standard communication protocol. Requests are submitted via POST. Both request and response Content-Type are application/json, and the encoding is UTF-8.
 >
-> 2. The amount unit is centavos.
+> 2. The amount unit is <span style="color:red;"> centavos </span>.
 >
 > 3. The requesting IP must be whitelisted.
 >
