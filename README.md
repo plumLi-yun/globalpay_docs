@@ -13,6 +13,9 @@
 | 埃及 | [点击查看 Doc_EGP](./cn_docs/Doc_EGP.md) |
 | 印尼 | [点击查看 Doc_IDR](./cn_docs/Doc_IDR.md) |
 | 巴基斯坦 | [点击查看 Doc_PKR](./cn_docs/Doc_PKR.md) |
+| 阿根廷 | [点击查看 Doc_ARS](./cn_docs/Doc_ARS.md) |
+| 秘鲁 | [点击查看 Doc_PEN](./cn_docs/Doc_PEN.md) |
+| 智利 | [点击查看 Doc_CLP](./cn_docs/Doc_CLP.md) |
 
 # English
 
@@ -29,3 +32,6 @@
 | Egypt | [Doc Doc_EGP](./en_docs/Doc_EGP.md) |
 | Indonesia | [Doc Doc_IDR](./en_docs/Doc_IDR.md) |
 | Pakistan | [Doc Doc_PKR](./en_docs/Doc_PKR.md) |
+| Argentina | [Doc Doc_ARS](./en_docs/Doc_ARS.md) |
+| Peru | [Doc Doc_PEN](./en_docs/Doc_PEN.md) |
+| Chile | [Doc Doc_CLP](./en_docs/Doc_CLP.md) |
