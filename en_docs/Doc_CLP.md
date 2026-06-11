@@ -16,7 +16,7 @@
 
 ## 3.1 Interface Related
 > 1. All interfaces in this document use HTTP standard protocol, POST submission. Request and response `Content-Type` are both `application/json`, character encoding is UTF-8.
-> 2. The amount unit is <span style="color:red;">cent</span>.
+> 2. The amount unit is <span style="color:red;">cent （centavo） 1 peso = 100 centavos</span>.
 > 3. The IP address calling the interface needs to be whitelisted.
 > 4. `user_ip` – try to collect the user's real IP; if not available, leave it blank. Do not use local IPs like `127.0.0.1`.
 
