@@ -186,24 +186,24 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 
 ## 6.1 Pay-Out — Request Parameters
 
-| Name             | Type   | Required | Description                                                                                                  |
-|------------------|--------|----------|--------------------------------------------------------------------------------------------------------------|
-| trade_no         | int    | true     | Merchant ID                                                                                                  |
-| order_no         | string | true     | Merchant order number                                                                                        |
-| app_id           | int    | true     | Merchant appId                                                                                               |
-| pay_code         | int    | true     | Product code — contact our operations team to obtain                                                         |
-| price            | int    | true     | Order amount in <span style="color:red;">Centavo</span> (integer)                                    |
-| account_no       | string | true     | Recipient account number `CVU/CBU/BANK account`                                                              |
-| account_type     | string | true     | Account type: CBU, CVU, BANK                                                                                 |
-| account_name     | string | true     | Account holder name                                                                                          |
-| bank_code        | string | true     | Bank code — refer to the bank code dictionary                                                                |
-| identify_type    | string | true     | ID document type: `DNI` (National ID — 8 digits) `CUIL` (Social security — 11 digits) `RUC` (Tax card — 11 digits) `PAS` (Passport — up to 15 digits) |
-| identify_num     | string | true     | ID number                                                                                                    |
-| pay_notice_url   | string | false    | Payout success notification URL                                                                              |
-| attach           | string | false    | Additional parameters: `{"email":"email address","phone":"phone number"}`                                    |
-| user_ip          | string | false    | Recipient user IP — `recommended; do not use the same IP for multiple requests to avoid rate limiting`       |
-| sign             | string | true     | Signature result — see signing method at the top of this document                                            |
-| timestamp        | string | false    | Order timestamp — 10-digit Unix timestamp in seconds `recommended`                                           |
+| Name             | Type   | Required | Description                                                                                                                                          |
+|------------------|--------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------|
+| trade_no         | int    | true     | Merchant ID                                                                                                                                          |
+| order_no         | string | true     | Merchant order number                                                                                                                                |
+| app_id           | int    | true     | Merchant appId                                                                                                                                       |
+| pay_code         | int    | true     | Product code — contact our operations team to obtain                                                                                                 |
+| price            | int    | true     | Order amount in <span style="color:red;">Centavo</span> (integer)                                                                                    |
+| account_no       | string | true     | Recipient account number `CVU/CBU/BANK account`                                                                                                      |
+| account_type     | string | true     | Account type: CBU, CVU, BANK                                                                                                                         |
+| account_name     | string | true     | Account holder name                                                                                                                                  |
+| bank_code        | string | true     | Bank code — refer to the bank code dictionary                                                                                                        |
+| identify_type    | string | true     | ID document type: `DNI` (National ID — 8 digits) `CUIL` (Social security — 11 digits) `RUC` (Tax card — 11 digits) `PP` (Passport — up to 15 digits) |
+| identify_num     | string | true     | ID number                                                                                                                                            |
+| pay_notice_url   | string | false    | Payout success notification URL                                                                                                                      |
+| attach           | string | false    | Additional parameters: `{"email":"email address","phone":"phone number"}`                                                                            |
+| user_ip          | string | false    | Recipient user IP — `recommended; do not use the same IP for multiple requests to avoid rate limiting`                                               |
+| sign             | string | true     | Signature result — see signing method at the top of this document                                                                                    |
+| timestamp        | string | false    | Order timestamp — 10-digit Unix timestamp in seconds `recommended`                                                                                   |
 
 - Pay-Out — `attach` Additional Parameter Field Description
 

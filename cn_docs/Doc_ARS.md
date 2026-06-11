@@ -184,24 +184,24 @@
 
 ## 6.1 代付-请求参数
 
-| 名称             | 类型   | 必填    | 描述                                                  |
-|----------------|------|-------|-----------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                 |
-| order_no       | string | true  | 商户订单号                                               |
-| app_id         | int    | true  | 商户 appId                                            |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                       |
-| price          | int    | true  | 下单金额，单位：<span style="color:red;">分（Centavo）</span> ，整型 |
-| account_no     | string | true  | 收款账号 `CVU/CBU/BANK 账号`                              |
-| account_type   | string | true  | 账号类型: CBU ,CVU, BANK                                |
-| account_name   | string | true  | 姓名                                                  |
-| bank_code      | string | true  | 银行编码   参照银行编码字典                                             |
-| identify_type  | string | true  | 证件类型: DNI（个人身份证-8位数字) CUIL(社保卡-11位数字) RUC(税卡-11位数) PAS(护照:最长15位数字)    |
-| identify_num   | string | true  | 证件号码                          |
-| pay_notice_url | string | false | 代付成功通知 url                                          |
-| attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号"}                 |
-| user_ip        | string | false  | 收款用户 IP    `建议填写，不能使用同一个ip避免出现限流`                   |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                      |
-|timestamp|string| false | 下单时间戳 10位时间戳单位S   `建议填写`                            |
+| 名称             | 类型   | 必填    | 描述                                                                |
+|----------------|------|-------|-------------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                               |
+| order_no       | string | true  | 商户订单号                                                             |
+| app_id         | int    | true  | 商户 appId                                                          |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                     |
+| price          | int    | true  | 下单金额，单位：<span style="color:red;">分（Centavo）</span> ，整型            |
+| account_no     | string | true  | 收款账号 `CVU/CBU/BANK 账号`                                            |
+| account_type   | string | true  | 账号类型: CBU ,CVU, BANK                                              |
+| account_name   | string | true  | 姓名                                                                |
+| bank_code      | string | true  | 银行编码   参照银行编码字典                                                   |
+| identify_type  | string | true  | 证件类型: DNI（个人身份证-8位数字) CUIL(社保卡-11位数字) RUC(税卡-11位数) PP(护照:最长15位数字) |
+| identify_num   | string | true  | 证件号码                                                              |
+| pay_notice_url | string | false | 代付成功通知 url                                                        |
+| attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号"}                               |
+| user_ip        | string | false  | 收款用户 IP    `建议填写，不能使用同一个ip避免出现限流`                                 |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                                    |
+|timestamp|string| false | 下单时间戳 10位时间戳单位S   `建议填写`                                          |
 
 -  代付-attach 附加参数字段说明
 
