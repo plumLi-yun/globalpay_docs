@@ -431,60 +431,58 @@ Success:
 | 3000    | System maintenance, order placement suspended, please try again later.                                 |
 
 # 11. Bank Codes
-```json
-{
-    "100%Banco": "100%Banco",
-    "Activo": "Banco Activo",
-    "Bancamiga": "Bancamiga",
-    "Banco de La Nacion Argentina": "Banco de La Nacion Argentina",
-    "Banco del Desarrollo": "Banco del Desarrollo",
-    "Banco do Brasil": "Banco do Brasil",
-    "Banco Internacional": "Banco Internacional",
-    "Banco Nuevo": "Banco Nuevo",
-    "Banco Ptg Pactual": "Banco Ptg Pactual",
-    "Banco Santander": "Banco Santander",
-    "Banco Santiago": "Banco Santiago",
-    "Banesco": "Banesco",
-    "Banplus": "Banplus",
-    "BBPC": "Banco BTG Pactual Chile",
-    "BBVA (Bco Bilbao Vizcaya Arg)": "BBVA (Bco Bilbao Vizcaya Arg)",
-    "BCI": "BCI",
-    "Bice": "Banco Bice",
-    "Bicentenario": "Banco Bicentenario",
-    "CajaLH": "Caja Los Heroes",
-    "Caroní": "Banco Caroní",
-    "Chile": "Banco de Chile",
-    "CLP_BANK": "CLP_BANK",
-    "CLPScotiabank": "Scotiabank",
-    "Consorcio": "Banco Consorcio",
-    "Coopeuch": "Coopeuch",
-    "del_Caribe": "Banco del Caribe",
-    "del_Tesoro": "Banco del Tesoro",
-    "Deutsche Bank": "Deutsche Bank",
-    "Estado": "Banco Estado",
-    "Exterior": "Banco Exterior",
-    "Fondo_Común": "Banco Fondo Común",
-    "Hsbc Bank": "Hsbc Bank",
-    "HSBCBC": "HSBC Bank Chile",
-    "Itau Chile": "Itau Chile",
-    "Itau-Corpbanca": "Itau-Corpbanca",
-    "JP Morgan Chase Bank N.A.": "JP Morgan Chase Bank N.A.",
-    "Los_Andes": "Los Andes",
-    "Mercado_Pago": "Mercado Pago",
-    "Mercantil": "Banco Mercantil",
-    "Nacional_de_Crédito": "Banco Nacional de Crédito",
-    "Paris": "Banco Paris",
-    "Penta": "Banco Penta",
-    "Plaza": "Banco Plaza",
-    "Prepago Los Heroes": "Prepago Los Heroes",
-    "Provincial": "Banco Provincial",
-    "Rabobank": "Rabobank",
-    "Rabobank_Chile": "Rabobank Chile",
-    "Security": "Banco Security",
-    "Tenpo": "Tenpo",
-    "Tokio-Mitsubishi": "The bank of Tokio-Mitsubishi UFJ, LTD",
-    "Venezolano_de_Crédito": "Banco Venezolano de Crédito",
-    "Venezuela": "Banco de Venezuela"
-}
-```
+| Field Name | Code       | Bank Name |
+| :--- | :--- | :--- |
+| bank_code | 100%Banco | 100%Banco |
+| bank_code | Activo | Banco Activo |
+| bank_code | Bancamiga | Bancamiga |
+| bank_code | Banco de La Nacion Argentina | Banco de La Nacion Argentina |
+| bank_code | Banco del Desarrollo | Banco del Desarrollo |
+| bank_code | Banco do Brasil | Banco do Brasil |
+| bank_code | Banco Internacional | Banco Internacional |
+| bank_code | Banco Nuevo | Banco Nuevo |
+| bank_code | Banco Ptg Pactual | Banco Ptg Pactual |
+| bank_code | Banco Santander | Banco Santander |
+| bank_code | Banco Santiago | Banco Santiago |
+| bank_code | Banesco | Banesco |
+| bank_code | Banplus | Banplus |
+| bank_code | BBPC | Banco BTG Pactual Chile |
+| bank_code | BBVA (Bco Bilbao Vizcaya Arg) | BBVA (Bco Bilbao Vizcaya Arg) |
+| bank_code | BCI | BCI |
+| bank_code | Bice | Banco Bice |
+| bank_code | Bicentenario | Banco Bicentenario |
+| bank_code | CajaLH | Caja Los Heroes |
+| bank_code | Caroní | Banco Caroní |
+| bank_code | Chile | Banco de Chile |
+| bank_code | CLP_BANK | CLP_BANK |
+| bank_code | CLPScotiabank | Scotiabank |
+| bank_code | Consorcio | Banco Consorcio |
+| bank_code | Coopeuch | Coopeuch |
+| bank_code | del_Caribe | Banco del Caribe |
+| bank_code | del_Tesoro | Banco del Tesoro |
+| bank_code | Deutsche Bank | Deutsche Bank |
+| bank_code | Estado | Banco Estado |
+| bank_code | Exterior | Banco Exterior |
+| bank_code | Fondo_Común | Banco Fondo Común |
+| bank_code | Hsbc Bank | Hsbc Bank |
+| bank_code | HSBCBC | HSBC Bank Chile |
+| bank_code | Itau Chile | Itau Chile |
+| bank_code | Itau-Corpbanca | Itau-Corpbanca |
+| bank_code | JP Morgan Chase Bank N.A. | JP Morgan Chase Bank N.A. |
+| bank_code | Los_Andes | Los Andes |
+| bank_code | Mercado_Pago | Mercado Pago |
+| bank_code | Mercantil | Banco Mercantil |
+| bank_code | Nacional_de_Crédito | Banco Nacional de Crédito |
+| bank_code | Paris | Banco Paris |
+| bank_code | Penta | Banco Penta |
+| bank_code | Plaza | Banco Plaza |
+| bank_code | Prepago Los Heroes | Prepago Los Heroes |
+| bank_code | Provincial | Banco Provincial |
+| bank_code | Rabobank | Rabobank |
+| bank_code | Rabobank_Chile | Rabobank Chile |
+| bank_code | Security | Banco Security |
+| bank_code | Tenpo | Tenpo |
+| bank_code | Tokio-Mitsubishi | The bank of Tokio-Mitsubishi UFJ, LTD |
+| bank_code | Venezolano_de_Crédito | Banco Venezolano de Crédito |
+| bank_code | Venezuela | Banco de Venezuela |
 
