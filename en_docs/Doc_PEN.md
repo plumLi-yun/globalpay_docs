@@ -63,14 +63,14 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 
 - Pay-in - attach additional parameter field description
 
-| Name     | Type  | Required | Description                         |
-|---------------|--------|----------|--------------------------------------------------------------|
-| name     | string | false  | Payer name.                         |
-| identify_type | string | false  | Identity type.                     |
-| identify_num | string | false  | Identity number.                |
-| account_no  | string | false  | Payer account number.                    |
-| account_type | string | false  | Account type: To be provided.     |
-
+| Name          | Type  | Required | Description                   |
+|---------------|--------|----------|-------------------------------|
+| name          | string | true     | Payer name.                   |
+| identify_type | string | true     | Identity type.                |
+| identify_num  | string | true     | Identity number.              |
+| account_no    | string | true     | Payer account number.         |
+| account_type  | string | true     | Account type: To be provided. |
+| product_name  | string | false    | GoodsName                     |
 - Pay-in - Order Request Example
 
 ```json

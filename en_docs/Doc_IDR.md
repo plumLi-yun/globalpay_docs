@@ -24,7 +24,7 @@
 
 > 1. All interfaces in this document use the HTTP standard communication protocol with POST submissions. The Content-Type for both requests and responses is `application/json`, and the character encoding is UTF-8 throughout.
 >
-> 2. The currency unit is Paisa (Sen).
+> 2. The currency unit is Indonesian Rupiah (Sen).
 >
 > 3. The IP address used to call the API must be whitelisted.
 >
@@ -51,7 +51,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 | app_id         | int    | true  | Merchant appId                                                                                                                                        |
 | pay_code       | int    | true  | Product code. Contact our operations team to obtain.                                                                                                  |
 | pay_method     | string    | true  | Payment method                                                                                                                                        |
-| price          | int    | true  | Order amount, unit: Sen (Paisa). Integer type. 1 Indonesian Rupiah = 100 Sen                                                                          |
+| price          | int    | true  | Order amount, unit: Sen (Indonesian Rupiah). Integer type. 1 Indonesian Rupiah = 100 Sen                                                                          |
 | order_no       | string | true  | Merchant order number                                                                                                                                 |
 | success_url    | string | false | Redirect URL on payment success                                                                                                                       |
 | fail_url       | string | false | Redirect URL on payment failure                                                                                                                       |

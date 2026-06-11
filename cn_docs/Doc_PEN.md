@@ -62,14 +62,14 @@
 
 -  代收-attach 附加参数字段说明
 
-| 名称            | 类型     | 必填   | 描述                                                                      |
-|---------------|--------|------|-------------------------------------------------------------------------|
-| name          | string | true | 付款人姓名                                                                   |
-| identify_type | string    | true | 证件类型支持（DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照" |
-| identify_num  | string    | true | 证件号码                                                                    |
-| phone         | string    | true | 手机号                                                                     |
-| email         | string    | true | 邮箱                                                                      |
-| product_name  | string    | true | 产品                                                                      |
+| 名称            | 类型     | 必填    | 描述                                                                     |
+|---------------|--------|-------|------------------------------------------------------------------------|
+| name          | string | true  | 付款人姓名                                                                  |
+| identify_type | string    | true  | 证件类型支持（DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照" |
+| identify_num  | string    | true  | 证件号码                                                                   |
+| phone         | string    | true  | 手机号                                                                    |
+| email         | string    | true  | 邮箱                                                                     |
+| product_name  | string    | false | 商品名                                                                    |
 - 代收-下单请求示例
 
 ```json
@@ -80,7 +80,7 @@
   "pay_code": 0,
   "price": 10099,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"name\":\"张三\",\"identify_type\":\"DNI\",\"identify_num\":\"44030419900101001X\",\"phone\":\"13800000000\",\"email\":\"zhangsan@example.com\"}",
+  "attach": "{\"name\":\"张三\",\"identify_type\":\"DNI\",\"identify_num\":\"44030419900101001X\",\"phone\":\"13800000000\",\"email\":\"zhangsan@example.com\",\"product_name\":\"测试产品\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
