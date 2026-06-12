@@ -498,10 +498,16 @@
 
 # 11、代收支付方式 代收字段 pay_method
 
-| 字段      |  值    | 描述             |
-|-----------|-------|----------------|
-| pay_method |   QRIS_IDR   | Qris         |
+| 字段      |  值    | 描述   |
+|-----------|-------|------|
+| pay_method |   QRIS_IDR   | Qris |
 | pay_method |  DANA_IDR| DANA |
+| pay_method |  VA_IDR   | VA   |
+| pay_method |  IDROVO| OVO wallet |
+| pay_method |   IDRDANA   | DANA wallet |
+| pay_method |  IDRLINKAJA| LINKAJA wallet |
+| pay_method |   IDRSHOPEEPAY   | SHOPEEPAY wallet |
+| pay_method |  IDRGOPAY| GOPAY wallet|
 
 
 # 12、代收银行编码 代收字段 attach.bank_code
@@ -637,7 +643,7 @@
 | pay_type | IDRLINKAJA       | LINKAJA wallet         |
 | pay_type | IDRSHOPEEPAY     | SHOPEEPAY wallet       |
 | pay_type | IDRGOPAY         | GOPAY wallet           |
-
+| pay_type | VA_IDR        | VA_IDR           |
 
 # 14、代付银行编码 代付字段 attach.bank_code
 

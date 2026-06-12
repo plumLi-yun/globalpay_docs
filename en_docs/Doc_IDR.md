@@ -51,7 +51,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 | app_id         | int    | true  | Merchant appId                                                                                                                                        |
 | pay_code       | int    | true  | Product code. Contact our operations team to obtain.                                                                                                  |
 | pay_method     | string    | true  | Payment method                                                                                                                                        |
-| price          | int    | true  | Order amount, unit: Sen (Indonesian Rupiah). Integer type. 1 Indonesian Rupiah = 100 Sen                                                                          |
+| price          | int    | true  | Order amount, unit: Sen, integer type. `1 Indonesian Rupiah (IDR) = 100 Sen`                                                                                      |
 | order_no       | string | true  | Merchant order number                                                                                                                                 |
 | success_url    | string | false | Redirect URL on payment success                                                                                                                       |
 | fail_url       | string | false | Redirect URL on payment failure                                                                                                                       |
@@ -64,9 +64,9 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 
 - Pay-In – `attach` Additional Parameter Field Description
 
-``
+```json
 {"name":"Leo Raj","account_no":"1234456789","bank_code":"Pay","phone":"3211234567"}
-``
+```
 
 | Name         | Type   | Required | Description                                  |
 |-------------|--------|------|----------------|
@@ -101,11 +101,11 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 | code         | int    | true | 200: Order placed successfully. Other values: Order failed.                                                                                                                                       |
 | msg          | string | true | Reason for failure                                                                                                                                                                                |
 | pay_url      | string | false | Payment link                                                                                                                                                                                      |
-| qr_code      | string | false | PIX QR code string                                                                                                                                                                                |
+| qr_code      | string | false | QR code string                                                                                                                                                                                    |
 | order_no     | string | true | Merchant order number                                                                                                                                                                             |
 | dis_order_no | string | true | Platform order number                                                                                                                                                                             |
 | create_time  | int    | true | Creation time                                                                                                                                                                                     |
-| pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, etc. `{"pay_raw":"Raw payment data (merchant can convert to QR code)","phone":"PhonePe wake-up link","google":"Google Pay wake-up link","paytm":"Paytm wake-up link","mobik":"Mobikwik wake-up link","bhim":"BHIM wake-up link","upi":"upiLink"}` |
+| pay_info     | string | false | Payment information JSON string, for example: native payment info, redirect URL, payer account, name, bank, etc. `{"pay_raw":"Native payment info","redirect_url":"Payment redirect URL"}` |
 | sign         | string | true | Signature result. See signature method at the top of this document.                                                                                                                               |
 
 - Pay-In – Order Response Example
@@ -128,9 +128,9 @@ Success:
   "msg": "",
   "sign": "b449b4b6907204a683ec6c50bff92b01",
   "order_no": "p7158412025J2dZjXLmz0",
-  "dis_order_no": "2025071130770572062498816india1oushe",
+  "dis_order_no": "2025071130770572062498816idr1oushe",
   "create_time": 1752825512,
-  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+  "pay_url": "https://{api_domain}/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
 }
 ```
 
@@ -146,11 +146,11 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 | status       | int    | true  | Order status: 2 = Success, 3 = Failed                                                                                                                                                                                               |
 | order_no     | string | true  | Merchant order number                                                                                                                                                                                                               |
 | dis_order_no | string | true  | Platform order number                                                                                                                                                                                                               |
-| order_price  | int    | true  | Order amount, unit: Paisa                                                                                                                                                                                                           |
-| real_price   | int    | true  | Actual amount paid by the user, unit: Paisa                                                                                                                                                                                         |
+| order_price  | int    | true  | Order amount, unit: Sen                                                                                                                                                                                                             |
+| real_price   | int    | true  | Actual amount paid by the user, unit: Sen                                                                                                                                                                                           |
 | nti_time     | int    | false | Time the notification was initiated                                                                                                                                                                                                 |
-| payer        | string | false | JSON string with payer information: `{"name":"Full name","account":"Account","bank":"Payer's bank code","utr2":"Bank transaction number","email":"Email","phone":"Phone number","identify_type":"ID type","identify_num":"CPF, CNPJ"}`. In addition to the example fields, this parameter also integrates payer-related fields passed by the merchant in `attach`. |
-| pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, etc. (Updated 25-10-28)                                                                                                                       |
+| payer        | string | false | JSON string with payer information: `{"name":"Full name","account_no":"Account","account_type":"Account type","bank_code":"Payer bank or wallet code","utr2":"Bank reference number","email":"Email","phone":"Phone number"}`. In addition to the example fields, this parameter may also include payer-related fields passed by the merchant in `attach`. |
+| pay_info     | string | false | Payment information JSON string, for example: native payment info, redirect URL, payer account, name, bank, etc.                                                                                                                     |
 | create_time  | int    | true  | Creation time                                                                                                                                                                                                                       |
 | sign         | string | true  | Signature result. See signature method at the top of this document.                                                                                                                                                                 |
 
@@ -161,11 +161,11 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
   "trade_no": 10238,
   "status": 2,
   "order_no": "RCG0126042435820040804784",
-  "dis_order_no": "Meg1352644s0800indianVMR",
+  "dis_order_no": "Meg1352644s0800idrnVMR",
   "order_price": 10000,
   "real_price": 10000,
   "nti_time": 1776680622,
-  "payer": "{\"account_no\":\"1392@qq.com\",\"account_type\":\"EMAIL\",\"identify_num\":\"UTIB03609\",\"identify_type\":\"IFSC\",\"req_api_ip\":\"\",\"utr2\":\"9901108391\"}",
+  "payer": "{\"account_no\":\"081234567890\",\"account_type\":\"PHONE\",\"bank_code\":\"DANA\",\"req_api_ip\":\"\",\"utr2\":\"9901108391\"}",
   "create_time": 1776680593,
   "sign": "7b23565a3dc790b6e55f29f0f0cf5f1a"
 }
@@ -188,7 +188,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | order_no       | string | true  | Merchant order number                                                       |
 | app_id         | int    | true  | Merchant appId                                                              |
 | pay_code       | int    | true  | Product code. Contact our operations team to obtain.                        |
-| price          | int    | true  | Order amount, unit: sen. Integer type. 1 Rupiah = 100 sen                   |
+| price          | int    | true  | Order amount, unit: Sen, integer type. `1 Indonesian Rupiah (IDR) = 100 Sen` |
 | account_no     | string | true  | Payee account number                                                        |
 | account_type   | string | true  | Account type: PHONE (e-wallet mobile number), BANK (bank account)           |
 | account_name   | string | true  | Full name                                                                   |
@@ -201,9 +201,9 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 
 - Pay-Out – `attach` Additional Parameter Field Description
 
-``
+```json
 {"email":"email address","phone":"phone number","pay_type":"payment method"}
-``
+```
 
 | Name     | Type   | Required | Description                                           |
 |----------|--------|------|----------------|
@@ -263,7 +263,7 @@ Success:
   "msg": "",
   "sign": "d3ec1fa0f45bc44218d5fb63bb1beb61",
   "order_no": "p7158412025MsJydJqT7b",
-  "dis_order_no": "2025071130776296733810688india1Dhr7H",
+  "dis_order_no": "2025071130776296733810688idr1Dhr7H",
   "create_time": 1752826877,
   "status": 10
 }
@@ -280,8 +280,8 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 | trade_no     | int    | true  | Merchant number                                                                             |
 | order_no     | string | true  | Merchant order number                                                                       |
 | dis_order_no | string | true  | Platform order number                                                                       |
-| order_price  | int    | true  | Order amount, unit: Paisa                                                                   |
-| fee          | int    | false | Order handling fee, unit: Paisa                                                             |
+| order_price  | int    | true  | Order amount, unit: Sen                                                                     |
+| fee          | int    | false | Order handling fee, unit: Sen                                                               |
 | status       | int    | true  | Order status: 2 = Payout successful, 3 = Payout failed, 7 = Rejected, 9 = Reversal         |
 | pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, utr2, etc. |
 | remark       | string | false | Reason for failure                                                                          |
@@ -296,7 +296,7 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
   "trade_no": 10000,
   "status": 2,
   "order_no": "20060354339090013",
-  "dis_order_no": "Meg2352644o2nmjo0800indiaYZ2A",
+  "dis_order_no": "Meg2352644o2nmjo0800idrYZ2A",
   "order_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
@@ -344,16 +344,16 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | code         | int    | true  | 200: Query successful. Other values: Failed.                                                                                                                   |
 | msg          | string | true  | Reason for query failure                                                                                                                                       |
 | trade_no     | int    | true  | Merchant number                                                                                                                                               |
-| real_price   | int    | true  | Actual amount paid, unit: Paisa                                                                                                                               |
+| real_price   | int    | true  | Actual amount paid, unit: Sen                                                                                                                                 |
 | status       | int    | true  | Order status: 1 = Unpaid, 2 = Success, 3 = Failed, 7 = Rejected, 9 = Reversal, 10 = Processing                                                               |
 | success_time | int    | true  | Success timestamp                                                                                                                                             |
 | order_no     | string | true  | Merchant order number                                                                                                                                         |
 | dis_order_no | string | true  | Platform order number                                                                                                                                         |
 | remark       | string | true  | Reason for payout failure                                                                                                                                     |
-| fee          | int    | false | Order handling fee, unit: Paisa                                                                                                                               |
+| fee          | int    | false | Order handling fee, unit: Sen                                                                                                                                 |
 | create_time  | int    | true  | Creation time                                                                                                                                                 |
-| payer        | string | false | JSON string with payer information: `{"account_name":"Full name","account_type":"Account type: CPF, CNPJ, EMAIL, PHONE","account_no":"Account","identify_type":"ID type","identify_num":"CPF, CNPJ"}` |
-| pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, etc. (Updated 25-10-28)                                                 |
+| payer        | string | false | JSON string with payer information: `{"account_name":"Full name","account_type":"Account type: PHONE,BANK","account_no":"Account","bank_code":"Bank or wallet code"}` |
+| pay_info     | string | false | Payment information JSON string, for example: native payment info, redirect URL, payer account, name, bank, etc.                                               |
 | sign         | string | true  | Signature result. See signature method at the top of this document.                                                                                           |
 | utr2         | string | false | Bank order number                                                                                                                                             |
 
@@ -383,7 +383,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"Full name\",\"email\":\"Email\",\"phone\":\"Phone number\",\"identify_type\":\"ID type\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Full name\",\"account_type\":\"PHONE\",\"account_no\":\"081234567890\",\"bank_code\":\"DANA\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -417,8 +417,8 @@ URL: `https://{api_domain}/api/v1/payApi/QueryBalance`
 |-------|------|----|---------------------------|
 | code           | int    | true | 200: Query successful. Other values: Failed.           |
 | msg            | string | true | Reason for failure                                     |
-| balance        | int    | true | Balance, unit: Paisa                                   |
-| balance_frozen | int    | false | Frozen balance, unit: Paisa                            |
+| balance        | int    | true | Balance, unit: Sen                                     |
+| balance_frozen | int    | false | Frozen balance, unit: Sen                              |
 | sign           | string | true | Signature result. See signature method at the top of this document. |
 
 - Balance Response Example
@@ -466,7 +466,7 @@ URL: `https://{api_domain}/api/v1/payApi/QueryCertificate`
   "trade_no": 10003,
   "app_id": 10003,
   "order_no": "",
-  "dis_order_no": "35011C02gljuf6k0800india1lVY",
+  "dis_order_no": "35011C02gljuf6k0800idr1lVY",
   "sign": "3969f17cd1a551769f85967d0a05b7b6"
 }
 ```
@@ -511,7 +511,12 @@ Payment voucher available:
 |-----------|-------|----------------|
 | pay_method | QRIS_IDR | Qris           |
 | pay_method | DANA_IDR | DANA           |
-
+| pay_method |  VA_IDR   | VA   |
+| pay_method |  IDROVO| OVO wallet |
+| pay_method |   IDRDANA   | DANA wallet |
+| pay_method |  IDRLINKAJA| LINKAJA wallet |
+| pay_method |   IDRSHOPEEPAY   | SHOPEEPAY wallet |
+| pay_method |  IDRGOPAY| GOPAY wallet|
 
 # 12. Pay-In Bank Codes – Field `attach.bank_code`
 
@@ -646,7 +651,7 @@ Payment voucher available:
 | pay_type | IDRLINKAJA       | LINKAJA wallet         |
 | pay_type | IDRSHOPEEPAY     | SHOPEEPAY wallet       |
 | pay_type | IDRGOPAY         | GOPAY wallet           |
-
+| pay_type | VA_IDR        | VA_IDR           |
 
 # 14. Pay-Out Bank Codes – Field `attach.bank_code`
 
@@ -814,7 +819,7 @@ Request Method: GET
 |------------|--------|----------|------------------------------------|
 | app_id   | string | true   | Merchant app_id.          |
 | order_no  | string | true   | Merchant order number.       |
-| amount   | string | true   | Merchant Amount (Unit: Indonesian Rupiah) |
+| amount   | string | true   | Merchant amount, unit: Indonesian Rupiah (`IDR`) |
 | notice_url | string | false  | Asynchronous notification address. |
 |pay_code|int|true|Product Code|
 
@@ -827,5 +832,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 # 17. Document Update Time
 
 ```
-2026-05-10 19:25:00
+2026-06-11 01:00:00
 ```

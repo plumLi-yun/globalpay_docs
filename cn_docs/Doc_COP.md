@@ -14,16 +14,16 @@
 > 
 > 3、加上商户秘钥 key1=value1&key2=value2...&key=商户秘钥
 > 
-> 3、sign=md5(上一步组装待签名字的符串) 签名结果 32 位小写
+> 4、sign=md5(上一步组装待签名的字符串) 签名结果 32 位小写
 > 
-> 4、签名密钥,请在商户后台->基础信息 查看,或者询问我方客服
+> 5、签名密钥,请在商户后台->基础信息 查看,或者询问我方客服
 
 # 3、注意事项
 
 ## 3.1 接口相关
 > 1、本文档中的所有接口，均采用 HTTP 标准通信协议，POST提交，请求和响应的 Content-type 均为 application/json，字符编码统一为 UTF-8。
 > 
-> 2、金额单位为<span style="color:red;"> 分（centimos） </span>。
+> 2、金额单位为<span style="color:red;"> 分（centavos） </span>。
 > 
 > 3、请求接口的 IP 需要加白。
 > 
@@ -49,7 +49,7 @@
 | app_id         | int    | true  | 商户 appId                                                                                                |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                           |
 | pay_method     | string    | true  | 支付方式,见下方支付方式                                                                                            |
-| price          | int    | true  | 下单金额，单位：分（Centimos），整型。1 秘鲁索尔 = 100 分                                                                   |
+| price          | int    | true  | 下单金额，单位：分（Centavos），整型。1 哥伦比亚比索（COP） = 100 Centavos                                                       |
 | order_no       | string | true  | 商户订单号                                                                                                   |
 | success_url    | string | false | 支付成功跳转 url                                                                                              |
 | fail_url       | string | false | 支付失败跳转 url                                                                                              |
@@ -62,14 +62,15 @@
 
 -  代收-attach 附加参数字段说明
 
-| 名称            | 类型     | 必填    | 描述                                                                      |
-|---------------|--------|-------|-------------------------------------------------------------------------|
-| name          | string | true  | 付款人姓名                                                                   |
-| identify_type | string    | true  | 证件类型支持（DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照" |
-| identify_num  | string    | true  | 证件号码                                                                    |
-| phone         | string    | false | 手机号(尽量传真实手机号，没有可填充)                                                     |
-| email         | string    | false | 邮箱(尽量传真实邮箱，没有可填充)                                                       |
-| product_name  | string    | false | 商品名                                                                     |
+| 名称            | 类型     | 必填    | 描述                                       |
+|---------------|--------|-------|------------------------------------------|
+| name          | string | true  | 付款人姓名                                    |
+| identify_type | string    | true  | 证件类型支持（CC,NIT）"CC":"公民身份证","NIT":"税务识别号" |
+| identify_num  | string    | true  | 证件号码                                     |
+| phone         | string    | false | 手机号                                      |
+| email         | string    | false | 邮箱                                       |
+| product_url   | string    | true  | 产品链接                                     |
+| bank_code     | string    | false | 代收银行编码——支付方式为NET_BANKING时候必传             |
 - 代收-下单请求示例
 
 ```json
@@ -80,7 +81,7 @@
   "pay_code": 0,
   "price": 10099,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"name\":\"张三\",\"identify_type\":\"DNI\",\"identify_num\":\"44030419900101001X\",\"phone\":\"13800000000\",\"email\":\"zhangsan@example.com\",\"product_name\":\"测试产品\"}",
+  "attach": "{\"name\":\"张三\",\"identify_type\":\"CC\",\"identify_num\":\"44030419900101001X\",\"phone\":\"13800000000\",\"email\":\"zhangsan@gmail.com\",\"product_url\":\"https://example.com/product/1\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
@@ -123,9 +124,9 @@
   "msg": "",
   "sign": "b449b4b6907204a683ec6c50bff92b01",
   "order_no": "p7158412025J2dZjXLmz0",
-  "dis_order_no": "2025071130770572062498816peru1oushe",
+  "dis_order_no": "2025071130770572062498816col1oushe",
   "create_time": 1752825512,
-  "pay_url": "https://api.sunpaypen.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+  "pay_url": "https://{api_domain}/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
 }
 ```
 
@@ -141,8 +142,8 @@
 | status       | int    | true  | 订单状态, 2.成功, 3.失败                                                                                       |
 | order_no     | string | true  | 商户订单号                                                                                                  |
 | dis_order_no | string | true  | 平台订单号                                                                                                  |
-| order_price  | int    | true  | 订单金额,单位:分（Centimos）                                                                                              |
-| real_price   | int    | true  | 用户真实付款金额 ,单位:分（Centimos）                                                                                         |
+| order_price  | int    | true  | 订单金额,单位:分（Centavos）                                                                                              |
+| real_price   | int    | true  | 用户真实付款金额 ,单位:分（Centavos）                                                                                         |
 | nti_time     | int    | false | 发起通知时间                                                                                                 |
 | payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"证件号码"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
@@ -156,7 +157,7 @@
   "trade_no": 10238,
   "status": 2,
   "order_no": "RCG0126042435820040804784",
-  "dis_order_no": "Meg1352644s0800perunVMR",
+  "dis_order_no": "Meg1352644s0800colnVMR",
   "order_price": 10000,
   "real_price": 10000,
   "nti_time": 1776680622,
@@ -175,37 +176,37 @@
 
 ## 6.1 代付-请求参数
 
-| 名称             | 类型     | 必填    | 描述                                                                      |
-|----------------|--------|-------|-------------------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                     |
-| order_no       | string | true  | 商户订单号                                                                   |
-| app_id         | int    | true  | 商户 appId                                                                |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                           |
-| price          | int    | true  | 下单金额，单位：分（Centimos），整型。1 秘鲁索尔 = 100 分                                   |
-| account_no     | string | true  | 收款账号（CCI账号）                                                             |
-| account_type   | string | true  | 账号类型 (CA,SA) "CA":"活期账户","SA":"储蓄账户"                                    |
-| account_name   | string | true  | 姓名                                                                      |
-| bank_code      | string | true  | 银行编码                                                                    |
-| identify_type  | string | true  | 证件类型 （DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照"  |
-| identify_num   | string | true  | 证件号码                                                                    |
-| pay_notice_url | string | false | 代付成功通知 url                                                              |
-| attach         | string | true  | 附加参数  {"email":"邮箱","phone":"手机号","bank_code":"银行号码","pay_type":"支付方式"} |
-| user_ip        | string | false | 收款用户 IP                                                                 |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                                          |
-| timestamp      | string | false | 下单时间戳 10位时间戳单位S秒                                                        |
+| 名称             | 类型     | 必填    | 描述                                                                                      |
+|----------------|--------|-------|-----------------------------------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                                                     |
+| order_no       | string | true  | 商户订单号                                                                                   |
+| app_id         | int    | true  | 商户 appId                                                                                |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                           |
+| price          | int    | true  | 下单金额，单位：分（Centavos），整型。1 哥伦比亚比索（COP） = 100 Centavos                                 |
+| account_no     | string | true  | 收款账号（银行卡号/银行账户号）                                                                        |
+| account_type   | string | true  | 账号类型 (CA,SA) "CA":"活期账户","SA":"储蓄账户"                                                    |
+| account_name   | string | true  | 姓名                                                                                      |
+| bank_code      | string | true  | 银行编码                                                                                    |
+| identify_type  | string | true  | 证件类型 （CC,CE,NIT,PP,TI）"CC":"公民身份证","CE":"外国人居留证","NIT":"税务识别号","PP":"护照","TI":"未成年人身份证" |
+| identify_num   | string | true  | 证件号码                                                                                    |
+| pay_notice_url | string | false | 代付成功通知 url                                                                              |
+| attach         | string | true  | 附加参数  {"email":"邮箱","phone":"手机号","pay_type":"支付方式"}                                       |
+| user_ip        | string | false | 收款用户 IP                                                                                 |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                          |
+| timestamp      | string | false | 下单时间戳 10位时间戳单位S秒                                                                        |
 
 -  代付-attach 附加参数字段说明
 
-``
-{"email":"邮箱","phone":"手机号","bank_code":"银行号码","pay_type":"支付方式"}
-``
+```json
+{"email":"邮箱","phone":"手机号","pay_type":"支付方式"}
+```
 
-| 名称        | 类型     | 必填   | 描述             |
-|-----------|--------|------|----------------|
-| phone     | string    | true | 收款人手机号         |
-| email     | string    | true | 邮箱地址           |
-| pay_type  |string| true | 支付方式,见下方代付支付方式 |
-| bank_code |string| true | 用户收款银行号码       |
+| 名称        | 类型     | 必填    | 描述             |
+|-----------|--------|-------|----------------|
+| phone     | string    | false | 收款人手机号         |
+| email     | string    | false | 邮箱地址           |
+| pay_type  |string| true  | 支付方式,见下方代付支付方式 |
+
 
 - 代付-请求参数示例
 
@@ -217,15 +218,15 @@
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"邮箱\",\"phone\":\"手机号\",\"bank_code\":\"银行号码\",\"pay_type\":\"支付方式\"}",
+  "attach": "{\"email\":\"test@example.com\",\"phone\":\"3001234567\",\"pay_type\":\"NET_BANKING\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "BANK",
+  "account_type": "SA",
   "account_no": "123456789",
   "account_name": "test",
-  "bank_code": "",
-  "identify_type": "",
-  "identify_num": ""
+  "bank_code": "BANCOLOMBIA",
+  "identify_type": "CC",
+  "identify_num": "1020304050"
 }
 ```
 
@@ -261,7 +262,7 @@
   "msg": "",
   "sign": "d3ec1fa0f45bc44218d5fb63bb1beb61",
   "order_no": "p7158412025MsJydJqT7b",
-  "dis_order_no": "2025071130776296733810688peru1Dhr7H",
+  "dis_order_no": "2025071130776296733810688col1Dhr7H",
   "create_time": 1752826877,
   "status": 10
 }
@@ -278,8 +279,8 @@
 | trade_no     | int    | true  | 商户号                                           |
 | order_no     | string | true  | 商户订单号                                         |
 | dis_order_no | string | true  | 平台订单号                                         |
-| order_price        | int    | true  | 订单金额,单位:分（Centimos）                                     |
-| fee          | int    | false | 订单手续费 ,单位:分（Centimos）                         |
+| order_price        | int    | true  | 订单金额,单位:分（Centavos）                                     |
+| fee          | int    | false | 订单手续费 ,单位:分（Centavos）                         |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正               |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行、utr2等 |
 | remark       | string | false | 失败原因                                          |
@@ -294,7 +295,7 @@
   "trade_no": 10000,
   "status": 2,
   "order_no": "20060354339090013",
-  "dis_order_no": "Meg2352644o2nmjo0800peruYZ2A",
+  "dis_order_no": "Meg2352644o2nmjo0800colYZ2A",
   "order_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
@@ -340,13 +341,13 @@
 | code         | int    | true  | 200:查询成功 其他:失败                                                                                                                                    |
 | msg          | string | true  | 查询失败原因                                                                                                                                            |
 | trade_no     | int    | true  | 商户号                                                                                                                                               |
-| real_price   | int    | true  | 真实付款金额 ,单位:分（Centimos）                                                                                                                              |
+| real_price   | int    | true  | 真实付款金额 ,单位:分（Centavos）                                                                                                                              |
 | status       | int    | true  | 订单状态, 1.未支付, 2.成功, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                                       |
 | success_time | int    | true  | 成功时间戳                                                                                                                                             |
 | order_no     | string | true  | 商户订单号                                                                                                                                             |
 | dis_order_no | string | true  | 平台订单号                                                                                                                                             |
 | remark       | string | true  | 代付失败原因                                                                                                                                            |
-| fee          | int    | false | 订单手续费 ,单位:分（Centimos）                                                                                                                               |
+| fee          | int    | false | 订单手续费 ,单位:分（Centavos）                                                                                                                               |
 | create_time  | int    | true  | 创建时间                                                                                                                                              |
 | payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型","account_no":"账号","identify_type":"证件类型","identify_num":"证件号码"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
@@ -413,8 +414,8 @@
 |-------|------|----|---------------------------|
 | code    | int    | true | 200:查询成功 其他:失败      |
 | msg     | string | true | 失败原因                    |
-| balance | int    | true | 余额,单位:分（Centimos）       |
-| balance_frozen | int    | false | 冻结余额,单位:分（Centimos） |
+| balance | int    | true | 余额,单位:分（Centavos）       |
+| balance_frozen | int    | false | 冻结余额,单位:分（Centavos） |
 | sign    | string | true | 签名结果,签名方法在文档顶部 |
 
 -  余额响应示例
@@ -461,7 +462,7 @@
   "trade_no": 10003,
   "app_id": 10003,
   "order_no": "",
-  "dis_order_no": "35011C02gljuf6k0800peru1lVY",
+  "dis_order_no": "35011C02gljuf6k0800col1lVY",
   "sign": "3969f17cd1a551769f85967d0a05b7b6"
 }
 ```
@@ -542,7 +543,7 @@
 |--------------|--------|-------|---------------------------|
 | app_id       | string | true  | 商户app_id                    |
 | order_no       | string | true  | 商户订单号                     |
-| amount       | string | true  | 商户金额单位秘鲁索尔                     |
+| amount       | string | true  | 商户金额，单位为哥伦比亚比索（COP）              |
 | notice_url       | string | false | 异步通知地址                     |
 | pay_code       | int    | true | 产品编码                     |
 
@@ -554,57 +555,145 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 
 # 13、代收支付方式 代收字段 pay_method
 
-| 字段名称      |  值    | 描述   |
-|-----------|-------|------|
-| pay_method         | BANK_TRANSFER     | 银行转账 |
-| pay_method         | QR     | 扫码   |
-| pay_method         | CHECKOUT     | 结账   |
-| pay_method         | Peru     | 现金   |
-
-# 14、代付支付方式 代付字段 attach.pay_type
-
-| 字段名称       | 值             | 描述   |
-|------------|---------------|------|
-| pay_type   | BANK_TRANSFER | 银行转账 |
-| pay_type | YAPE          | Yape |
-| pay_type | PLIN          | Plin 钱包   |
+| 字段名称       |  值    | 描述   |
+|------------|-------|------|
+| pay_method | NET_BANKING | 网银转账 |
+| pay_method | COPPay | 哥伦比亚收银台 |
+| pay_method | BRE_KEY | BRE Key |
+| pay_method | NEQUI | Nequi 钱包 |
+| pay_method | BRE_B | BRE_B |
+| pay_method | TRANSFIYA | Transfiya |
 
 
-# 15、代付银行编码 代付字段 bank_code
+# 14、代收银行编码 代收字段 attach.bank_code
 
 | 字段名称 | 编码 | 银行名称 |
 |:---------|:-----|:---------|
-| bank_code | Citibank_Pen | Citibank |
-| bank_code | SCOTIABANK_Pen | SCOTIABANK |
-| bank_code | ICBC_Pen | ICBC PERU BANK |
-| bank_code | Azteca_Pen | Banco Azteca |
-| bank_code | Santander_Pen | Banco Santander |
-| bank_code | Mi | Mi Banco |
-| bank_code | Trujillo | Caja Trujillo |
-| bank_code | Sullana | Caja Sullana |
-| bank_code | Municipal_Ica | Caja Municipal Ica |
-| bank_code | GNB | Banco GNB |
-| bank_code | Continental | Banco Continental |
-| bank_code | Ripley | Banco Ripley |
-| bank_code | Interbank | Interbank |
-| bank_code | Huancayo | Caja Huancayo |
-| bank_code | BanBif | Banco Interamericano de Finanzas (BanBif) |
-| bank_code | Falabella | Banco Falabella |
+| bank_code | NEQUI | NEQUI |
+| bank_code | BRE-B | BRE-B |
+| bank_code | BANCAMIA | BANCAMIA |
+| bank_code | AGRARIO | BANCO AGRARIO |
+| bank_code | AV_VILLAS | BANCO AV VILLAS |
 | bank_code | BBVA | BBVA |
-| bank_code | BCP | BCP |
-| bank_code | Metropolitana | Caja Metropolitana |
-| bank_code | Pichincha | Banco Pichincha |
-| bank_code | Financiero | Banco Financiero |
-| bank_code | Tacna | Caja Tacna |
-| bank_code | Maynas | Caja Maynas |
-| bank_code | Cusco | Caja Cusco |
-| bank_code | Nation | Banco de la Nación |
-| bank_code | Cencosud | Banco Cencosud |
-| bank_code | Comercio | Banco de Comercio |
-| bank_code | Credito | Banco de Credito |
+| bank_code | CAJA | BANCO CAJA SOCIAL |
+| bank_code | COOPERATIVO | BANCO COOPERATIVO COOPCENTRAL |
+| bank_code | CREDIFINANCIERA | BANCO CREDIFINANCIERA |
+| bank_code | DAVIVIENDA | DAVIVIENDA |
+| bank_code | DE_BOGOTA | BANCO DE BOGOTA |
+| bank_code | DE_OCCIDENTE | BANCO DE OCCIDENTE |
+| bank_code | FALABELLA | BANCO FALABELLA |
+| bank_code | GNB | BANCO_GNB_SUDAMERIS |
+| bank_code | ITAU | ITAU |
+| bank_code | PICHINCHA | PICHINCHA |
+| bank_code | POPULAR | BANCO POPULAR |
+| bank_code | SANTANDER | BANCO SANTANDER COLOMBIA |
+| bank_code | SERFINANZA | BANCO SERFINANZA |
+| bank_code | BANCO_UNION | BANCO UNION antes GIROS |
+| bank_code | BANCOLOMBIA | BANCOLOMBIA |
+| bank_code | BANCOOMEVA | BANCOOMEVA |
+| bank_code | CFA_COOPERATIVA | CFA COOPERATIVA FINANCIERA |
+| bank_code | CITIBANK | CITIBANK |
+| bank_code | COLTEFINANCIERA | COLTEFINANCIERA |
+| bank_code | CONFIAR_COOPERATIVA | CONFIAR COOPERATIVA FINANCIERA |
+| bank_code | COOFINEP_COOPERATIVA | COOFINEP |
+| bank_code | COTRAFA | COTRAFA |
+| bank_code | DALE | DALE |
+| bank_code | DAVIPLATA | DAVIPLATA |
+| bank_code | IRIS | IRIS |
+| bank_code | LULO | LULO BANK |
+| bank_code | MOVII | MOVII |
+| bank_code | SCOTIABANK | SCOTIABANK COLPATRIA |
+| bank_code | MIBANCO | Mibanco S.A. |
+| bank_code | FINANDINA_S.A | Banco Finandina |
+| bank_code | MULTI_S.A | Banco Multibank S.A. |
+| bank_code | PROCREDIT_COLOMBIA | Banco Procredit Colombia |
+| bank_code | W_S.A | Banco W S.A |
+| bank_code | BANCOLDEX_S.A | Bancóldex S.A. |
+| bank_code | FJ_S.A | Financiara Juriscoop S.A. Compañía de Financiamiento |
+| bank_code | HELM | Itaú* (Helm bank) |
+| bank_code | JPM_S.A | Banco J.P. Morgan Colombia S.A. |
+| bank_code | MUNDO_MUJER | Banco Mundo Mujer |
+| bank_code | BCSC | BCSC |
+| bank_code | CORPBANCA | Corpbanca |
+| bank_code | BSDNC_S.A | Banco Santander de Negocios Colombia S.A. |
+| bank_code | FINANDINA | Banco Finandina |
+| bank_code | ITAU_CORPBANCA | Banco Itaú Corpbanca |
+| bank_code | UALA | Banco Uala |
+| bank_code | RAPPIPAY_DAVIPLATA | Rappipay Daviplata |
+| bank_code | RAPPIPAY | Rappipay |
+| bank_code | NU_COLOMBIA | NU COLOMBIA |
+
+# 15、代付支付方式 代付字段 attach.pay_type
+
+| 字段名称       |  值    | 描述   |
+|------------|-------|------|
+| pay_type | NET_BANKING | 网银转账 |
+| pay_type | BRE_KEY | BRE Key |
+| pay_type | NEQUI | Nequi 钱包 |
+| pay_type | BRE_B | BRE_B |
+| pay_type | TRANSFIYA | Transfiya |
 
 
-# 16、文档更新时间
+# 16、代付银行编码 代付字段 bank_code
+
+| 字段名称 | 编码 | 银行名称 |
+|:---------|:-----|:---------|
+| bank_code | NEQUI | NEQUI |
+| bank_code | BRE-B | BRE-B |
+| bank_code | BANCAMIA | BANCAMIA |
+| bank_code | AGRARIO | BANCO AGRARIO |
+| bank_code | AV_VILLAS | BANCO AV VILLAS |
+| bank_code | BBVA | BBVA |
+| bank_code | CAJA | BANCO CAJA SOCIAL |
+| bank_code | COOPERATIVO | BANCO COOPERATIVO COOPCENTRAL |
+| bank_code | CREDIFINANCIERA | BANCO CREDIFINANCIERA |
+| bank_code | DAVIVIENDA | DAVIVIENDA |
+| bank_code | DE_BOGOTA | BANCO DE BOGOTA |
+| bank_code | DE_OCCIDENTE | BANCO DE OCCIDENTE |
+| bank_code | FALABELLA | BANCO FALABELLA |
+| bank_code | GNB | BANCO_GNB_SUDAMERIS |
+| bank_code | ITAU | ITAU |
+| bank_code | PICHINCHA | PICHINCHA |
+| bank_code | POPULAR | BANCO POPULAR |
+| bank_code | SANTANDER | BANCO SANTANDER COLOMBIA |
+| bank_code | SERFINANZA | BANCO SERFINANZA |
+| bank_code | BANCO_UNION | BANCO UNION antes GIROS |
+| bank_code | BANCOLOMBIA | BANCOLOMBIA |
+| bank_code | BANCOOMEVA | BANCOOMEVA |
+| bank_code | CFA_COOPERATIVA | CFA COOPERATIVA FINANCIERA |
+| bank_code | CITIBANK | CITIBANK |
+| bank_code | COLTEFINANCIERA | COLTEFINANCIERA |
+| bank_code | CONFIAR_COOPERATIVA | CONFIAR COOPERATIVA FINANCIERA |
+| bank_code | COOFINEP_COOPERATIVA | COOFINEP |
+| bank_code | COTRAFA | COTRAFA |
+| bank_code | DALE | DALE |
+| bank_code | DAVIPLATA | DAVIPLATA |
+| bank_code | IRIS | IRIS |
+| bank_code | LULO | LULO BANK |
+| bank_code | MOVII | MOVII |
+| bank_code | SCOTIABANK | SCOTIABANK COLPATRIA |
+| bank_code | MIBANCO | Mibanco S.A. |
+| bank_code | FINANDINA_S.A | Banco Finandina |
+| bank_code | MULTI_S.A | Banco Multibank S.A. |
+| bank_code | PROCREDIT_COLOMBIA | Banco Procredit Colombia |
+| bank_code | W_S.A | Banco W S.A |
+| bank_code | BANCOLDEX_S.A | Bancóldex S.A. |
+| bank_code | FJ_S.A | Financiara Juriscoop S.A. Compañía de Financiamiento |
+| bank_code | HELM | Itaú* (Helm bank) |
+| bank_code | JPM_S.A | Banco J.P. Morgan Colombia S.A. |
+| bank_code | MUNDO_MUJER | Banco Mundo Mujer |
+| bank_code | BCSC | BCSC |
+| bank_code | CORPBANCA | Corpbanca |
+| bank_code | BSDNC_S.A | Banco Santander de Negocios Colombia S.A. |
+| bank_code | FINANDINA | Banco Finandina |
+| bank_code | ITAU_CORPBANCA | Banco Itaú Corpbanca |
+| bank_code | UALA | Banco Uala |
+| bank_code | RAPPIPAY_DAVIPLATA | Rappipay Daviplata |
+| bank_code | RAPPIPAY | Rappipay |
+| bank_code | NU_COLOMBIA | NU COLOMBIA |
+
+
+# 17、文档更新时间
 ```
-2026-05-22 17:03:00
+2026-06-11 00:30:00
 ```
