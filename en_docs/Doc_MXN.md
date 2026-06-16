@@ -634,6 +634,8 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 | bank_code | MUFG | MUFG |
 | bank_code | FINCOMUN | FINCOMUN |
 | bank_code | FINAMEX | FINAMEX |
+| bank_code | CITI_MEXICO | CITI MEXICO |
+| bank_code | NU_MEXICO | Nu México Financiera |
 
 # 13. Error Codes
 

@@ -182,7 +182,7 @@
 | app_id         | int    | true  | 商户 appId                                                                |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                                           |
 | price          | int    | true  | 下单金额，单位：分（Centimos），整型。1 秘鲁索尔 = 100 分                                   |
-| account_no     | string | true  | 收款账号（CCI账号）                                                             |
+| account_no     | string | true  | 收款账号                                                             |
 | account_type   | string | true  | 账号类型 (CA,SA) "CA":"活期账户","SA":"储蓄账户"                                    |
 | account_name   | string | true  | 姓名                                                                      |
 | bank_code      | string | true  | 银行编码                                                                    |
@@ -200,12 +200,12 @@
 {"email":"邮箱","phone":"手机号","bank_code":"银行号码","pay_type":"支付方式"}
 ``
 
-| 名称        | 类型     | 必填   | 描述             |
-|-----------|--------|------|----------------|
-| phone     | string    | true | 收款人手机号         |
-| email     | string    | true | 邮箱地址           |
-| pay_type  |string| true | 支付方式,见下方代付支付方式 |
-| bank_code |string| true | 用户收款银行号码       |
+| 名称       | 类型     | 必填   | 描述             |
+|----------|--------|------|----------------|
+| phone    | string    | true | 收款人手机号         |
+| email    | string    | true | 邮箱地址           |
+| pay_type |string| true | 支付方式,见下方代付支付方式 |
+| cci      |string| true | cci账号          |
 
 - 代付-请求参数示例
 
