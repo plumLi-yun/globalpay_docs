@@ -184,7 +184,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | app_id | int | true | Merchant appId                                                          |
 | pay_code    | int  | true   | Product code, obtained from our operations.                             |
 | price | int | true | Order amount, unit: kurus, integer. 1 Lira = 100 Kurus                  |
-| account_no   | string | true   | Receiving account number.                                               |
+| account_no   | string | true   | Receiving account number.   Complete bank account example: TR700001009011105858305001                                            |
 | account_type | string | true | Account type: BANK                                                      |
 | account_name | string | true | Name                                                                    |
 | bank_code | string | true | Fixed value: Refer to bank code dictionary                              |
@@ -450,6 +450,9 @@ Success:
 | bank_code | Turkey | VAKBTRIS | VakıfBank A.Ş. |
 | bank_code | Turkey | ISBKTRIS | Türkiye İş Bankası A.Ş. |
 | bank_code | Turkey | TRY_BANK | TRY_BANK - Use this for unspecified banks |
+| bank_code | Turkey |    FIBABANKA   | Fibabanka                      |
+| bank_code | Turkey |    ODEABANK   | OdeaBank                      |
+| bank_code | Turkey |    PAPARA   | Papara                      |
 
 # 12. Error Codes
 
