@@ -543,12 +543,6 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 | Field   | Country | Value   | Description                   |
 |------------|----------|-----------|-------------------------------------------------|
-| pay_method | India  | india   | India Type II A                 |
-| pay_method | Pakistan | jazzcash | BANK Type II Jazzcash              |
-| pay_method | Pakistan | easypaisa | BANK Type II Easypaisa             |
-| pay_method | Brazil  | pix    | PIX Type II - Requires name, CPF, etc.     |
-| pay_method | Brazil  | PIX1   | PIX Type II - Non-real-name           |
-| pay_method | Philippines | PHP-Payment | Philippines Collection           |
 | pay_method | Mexico  | CLABE   | Mexico CLABE                  |
 
 

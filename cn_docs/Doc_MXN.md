@@ -542,12 +542,6 @@
 
 | 字段      | 国家   | 值         | 描述                |
 |-----------|------|-----------|-------------------|
-| pay_method | 印度   | india     | 印度二类A             |
-| pay_method | 巴基斯坦 | jazzcash  | BANK二类  Jazzcash  |
-| pay_method | 巴基斯坦 | easypaisa | BANK二类  Easypaisa |
-| pay_method | 巴西   | pix       | PIX二类  -需要用户名、cpf等信息           |
-| pay_method | 巴西   | PIX1       | PIX二类 非实名           |
-| pay_method | 菲律宾   | PHP-Payment       | 菲律宾代收             |
 | pay_method | 墨西哥   |CLABE       | 墨西哥CLABE             |
 
 

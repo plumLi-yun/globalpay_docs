@@ -498,8 +498,8 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 | Field   | Country | Value   | Description                   |
 |------------|----------|-----------|-------------------------------------------------|
-| pay_method | Brazil  | pix    | PIX Type II - Requires name, CPF, etc.     |
-| pay_method | Brazil  | PIX1   | PIX Type II - Non-real-name           |
+| pay_method | Brazil  | pix    | PIX Type  - Requires name, CPF, etc.     |
+| pay_method | Brazil  | PIX1   | PIX Type  - Non-real-name           |
 
 # 12. Error Codes
 
