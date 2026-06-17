@@ -530,8 +530,8 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 | Field Name | Code    | Description |
 |------------|-------------|-------------|
-| bank_code | KBZpay_MMK | KBZpay   |
-| bank_code | WavePay_MMK | WavePay   |
+| bank_code  | KBZpay_BANK     | KBZpay            |
+|bank_code | WavePay_BANK  | WavePay  |
 
 # 13. Error Codes
 

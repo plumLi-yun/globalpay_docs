@@ -530,8 +530,8 @@
 
 | 字段名称     | 编码  | 说明                        |
 |----------|----|---------------------------|
-| bank_code  | KBZpay_MMK     | KBZpay            |
-|bank_code | WavePay_MMK  | WavePay  |
+| bank_code  | KBZpay_BANK     | KBZpay            |
+|bank_code | WavePay_BANK  | WavePay  |
 
 # 13、错误码
 
