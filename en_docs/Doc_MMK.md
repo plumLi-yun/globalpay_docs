@@ -242,7 +242,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
  "account_type": "PHONE",
  "account_no": "123456789",
  "account_name": "test",
- "bank_code": "PKREAYPAISA"
+ "bank_code": "KBZpay_MMK"
 }
 ```
 

@@ -241,7 +241,7 @@
   "account_type": "PHONE",
   "account_no": "123456789",
   "account_name": "test",
-  "bank_code": "PKREAYPAISA"
+  "bank_code": "KBZpay_MMK"
 }
 ```
 
