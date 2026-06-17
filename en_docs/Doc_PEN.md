@@ -184,7 +184,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | app_id | int | true | Merchant `appId` |
 | pay_code | int | true | Product code, please contact our operations team |
 | price | int | true | Order amount, unit: centimos, integer. `1 Peruvian Sol = 100 centimos` |
-| account_no | string | true | Recipient account number (`CCI` account) |
+| account_no | string | true | Recipient account number  |
 | account_type | string | true | Account type `(CA,SA)` `"CA":"Checking account","SA":"Savings account"` |
 | account_name | string | true | Recipient name |
 | bank_code | string | true | Bank code |
@@ -202,12 +202,12 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 {"email":"Email","phone":"Phone","bank_code":"Bank code","pay_type":"Payment method"}
 ```
 
-| Name | Type | Required | Description |
-|-----------|--------|------|----------------|
-| phone | string | true | Recipient mobile number |
-| email | string | true | Email address |
+| Name     | Type | Required | Description |
+|----------|--------|------|---------------|
+| phone    | string | true | Recipient mobile number |
+| email    | string | true | Email address |
 | pay_type | string | true | Payment method, see the pay-out payment methods below |
-| bank_code | string | true | Recipient bank code |
+| cci      | string | true | `CCI` account |
 
 - Pay-out request example
 
