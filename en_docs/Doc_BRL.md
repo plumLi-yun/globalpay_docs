@@ -275,7 +275,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | order_price | int  | true   | Order amount, unit: Centavos.                        |
 | fee     | int  | false  | Order fee, unit: Centavos.                          |
 | status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
-| pay_info   | string | false  | Payment information.                           |
+| pay_info   | string | false  | Payment information.    {"utr2":"*****"}                       |
 | remark    | string | false  | Failure reason.                              |
 | create_time | int  | true   | Creation time.                              |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.  |
