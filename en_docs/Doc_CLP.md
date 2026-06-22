@@ -47,8 +47,18 @@
 | user_ip         | string | false    | Payer IP                                                                                                            |
 | identify_type   | string | false    | ID type: `RUT` (Tax ID), `PP` (Passport)                                                                            |
 | identify_num    | string | false    | ID number: RUT (9 digits: 8 digits + check digit), PP (9 to 16 characters)                                          |
-| attach          | string | false    | Additional parameters JSON string: `{"identify_type":"ID type: RUT or PP","identify_num":"RUT (9 digits) or PP (9-16 chars)","name":"User name","phone":"Phone number 9 digits, no area code","email":"adfsdafeww@gmail.com"}` |
+| attach          | string | true     | Additional parameters JSON string                                                                                  |
 | sign            | string | true     | Signature result, see signature method at top of document                                                           |
+
+- **Collection – attach Additional Parameter Field Description**
+
+| Name            | Type   | Required | Description                                                    |
+|-----------------|--------|----------|----------------------------------------------------------------|
+| name            | string | true     | Payer name                                                     |
+| identify_type   | string | true     | ID type: `RUT` (Tax ID), `PP` (Passport)                       |
+| identify_num    | string | true     | ID number: RUT (9 digits: 8 digits + check digit), PP (9 to 16 characters) |
+| phone           | string | false    | Phone number (provide real phone number if possible, can be filled if not available) |
+| email           | string | false    | Email (provide real email if possible, can be filled if not available) |
 
 - **Collection – Order Request Example**
 
@@ -70,17 +80,17 @@
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
-## 4.1 Collection – Order Response
-| Name            | Type   | Required | Description  |
-|-----------------|--------|----------|---------------------------------------------------------------------------------------------------------------------| 
-|code	            | int	   |  true	  | 200: success, others: failure|
-||msg	            | string |	true	  | Failure reason|
-|pay_url          |	string |	true	  | Payment URL|
-|qr_code          |	string |	true	  | QR code string|
-|order_no         |	string |	true	  | Merchant order number|
-|dis_order_no     |	string |	true	  | Platform order number|
-|create_time      |	int	   |  true	  | Creation time|
-|sign	            |string  |	true    |	Signature result, see signature method at top|
+## 4.2 Collection – Order Response
+ | Name         | Type   | Required | Description                                        |
+| ------------ | ------ | -------- | -------------------------------------------------- |
+| code         | int    | true     | 200: order created successfully, others: failure   |
+| msg          | string | true     | Failure reason                                     |
+| pay_url      | string | true     | Payment URL                                        |
+| qr_code      | string | true     | QR code string                                     |
+| order_no     | string | true     | Merchant order number                              |
+| dis_order_no | string | true     | Platform order number                              |
+| create_time  | int    | true     | Creation time                                      |
+| sign         | string | true     | Signature result, see signature method at top      |
 
 - **Response Example**
 Failure:
@@ -124,9 +134,10 @@ Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
 | order_no   | string | true   | Merchant order number.                                                                                                                        |
 | dis_order_no | string | true   | Platform order number.                                                                                                                        |
 | order_price | int  | true   | Order amount, unit: Centavos.                                                                                                                      |
-| real_price  | int  | true   | Actual amount paid by the user, unit: Centavoss.                                                                                                             |
+| real_price  | int  | true   | Actual amount paid by the user, unit: Centavos.                                                                                                             |
+| fee          | int  | false  | Order fee, unit: Centavos.                                                                                                                      |
 | nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
-| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}. Also includes payer-related fields from `attach`. |
+| payer    | string | false  | JSON string, payer info: {"name":"Name","email":"Email","phone":"Phone","identify_type":"ID Type","identify_num":"RUT ID"}. |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
 | create_time | int  | true   | Creation time.                                                                                                                            |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.
@@ -141,7 +152,7 @@ Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
   "real_price": 10000,
   "fee": 10,
   "nti_time": 1693057443,
-  "payer": "{\"name\":\"name\",\"email\":\"email\",\"phone\":\"phone\",\"identify_type\":\"ID type\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"RUT ID\"}",
   "attach": "",
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
@@ -166,12 +177,11 @@ Order URL: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | account_no   | string | true   | Receiving account number.                                                           |
 | account_type  | string | true   | Account type: CHECKING, SAVINGS, RUT, VISTA                                                        |
 | account_name  | string | true   | Name.                                                                               |
-| bank_code   | string | true   | Fixed: PIXPAY.                                                                      |
-| identify_type	| string	| false	ID type: RUT (Tax ID), PP (Passport)
-| identify_num	| string	| false	ID number
-| pay_notice_url | string | false  | Notification URL for successful pay-out.                                            |
+| bank_code   | string | true   | Bank code, see end of document                                                      |
+| identify_type | string | false  | ID type: `RUT` (Tax ID), `PP` (Passport)                                            |
+| identify_num  | string | false  | ID number                                                                           |
+| pay_notice_url | string | false  | Payout success notification URL                                                     |
 | attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
-| user_ip | string | false | Receiving user IP address.                                                          |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.             |                            
 
 - Pay-out - Request Parameter Example
@@ -201,7 +211,7 @@ Order URL: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | msg     | string | true   | Failure reason.                                |
 | dis_order_no | string | true   | Platform order number.                            |
 | order_no   | string | true   | Merchant order number.                            |
-| status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal, 10. Processing. |
+| status    | int  | true   | Order status: 2. Payout success, 3. Payout failure, 7. Rejected, 8. Reversal, others: Processing. |
 | create_time | int  | true   | Creation time.                                |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.    |
 
@@ -210,26 +220,23 @@ Order URL: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 Failure:
 
 ```json
-
 {
-  "code": 1005,
-  "msg": "Merchant not found",
-  "sign": ""
-} 
+  "code": 10009,
+  "msg": "Order creation failed"
+}
 ```
 
 Success:
 
 ```json
-
 {
   "code": 200,
-  "msg": "",
-  "sign": "d3ec1fa0f45bc44218d5fb63bb1beb61",
-  "order_no": "p7158412025MsJydJqT7b",
-  "dis_order_no": "2025071130776296733810688india1Dhr7H",
-  "create_time": 1752826877,
-  "status": 10
+  "msg": "success",
+  "status": 1,
+  "order_no": "47210116924681604173",
+  "dis_order_no": "lufei169246816001692",
+  "create_time": 1695317066,
+  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
 # 7. Payout Callback Notification
@@ -485,4 +492,3 @@ Success:
 | bank_code | Tokio-Mitsubishi | The bank of Tokio-Mitsubishi UFJ, LTD |
 | bank_code | Venezolano_de_Crédito | Banco Venezolano de Crédito |
 | bank_code | Venezuela | Banco de Venezuela |
-

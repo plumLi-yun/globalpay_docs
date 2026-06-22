@@ -44,8 +44,8 @@
 
 ## 4.1 代收-下单请求参数
 
-| 名称           | 类型   | 必填  | 描述                        |
-| -------------- | ------ | ----- | --------------------------- |
+| 名称           | 类型   | 必填    | 描述                        |
+| -------------- | ------ |-------| --------------------------- |
 | trade_no       | int    | true  | 商户号                      |
 | app_id         | int    | true  | 商户 appId                  |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取   |
@@ -59,8 +59,18 @@
 | user_ip        | string | false | 付款人 IP                   |
 | identify_type  | string | false | 证件类型: RUT（税号）,PP（护照） |
 | identify_num   | string | false | 证件号码  RUT（9 位（8 位数字 + 校验位））,PP（9 到 16 位字符）    |
-| attach         | string | false | 附加参数json字符串{"identify_type":"证件类型: RUT（税号）,PP（护照）","identify_num":"RUT（9 位（8 位数字 + 校验位））,PP（9 到 16 位字符）","name":"用户姓名","phone":"电话号码9位数,不包含区号","email":"adfsdafeww@gmail.com"} |
+| attach         | string | true  | 附加参数json字符串|
 | sign           | string | true  | 签名结果,签名方法在文档顶部 |
+
+-  代收-attach 附加参数字段说明
+
+| 名称            | 类型     | 必填    | 描述                    |
+|---------------|--------|-------|-----------------------|
+| name          | string | true  | 付款人姓名                 |
+| identify_type | string    | true  | 证件类型支持 RUT（税号）,PP（护照） |
+| identify_num  | string    | true  | 证件号码 RUT（9 位（8 位数字 + 校验位））,PP（9 到 16 位字符）                 |
+| phone         | string    | false | 手机号(尽量传真实手机号，没有可填充)   |
+| email         | string    | false | 邮箱(尽量传真实邮箱，没有可填充)     |
 
 - 代收-下单请求示例
 

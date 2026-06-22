@@ -56,7 +56,7 @@
 | pay_notice_url | string | false | 支付成功通知 url                                                                                              |
 | user_id        | string | false | 商家用户ID                                                                                                  |
 | user_ip        | string | false | 付款人 IP                                                                                                  |
-|attach|string|true| 附加参数 json字符串 付款人信息{"name":"姓名","identify_type":"证件类型","identify_num":"证件号码","phone":"手机号","email":"邮箱"} |
+|attach|string|true| 附加参数 json字符串 付款人信息 |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                          |
 |timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                                         |
 
@@ -70,6 +70,8 @@
 | phone         | string    | false | 手机号(尽量传真实手机号，没有可填充)                                                     |
 | email         | string    | false | 邮箱(尽量传真实邮箱，没有可填充)                                                       |
 | product_name  | string    | false | 商品名                                                                     |
+
+
 - 代收-下单请求示例
 
 ```json
@@ -175,30 +177,27 @@
 
 ## 6.1 代付-请求参数
 
-| 名称             | 类型     | 必填    | 描述                                                                      |
-|----------------|--------|-------|-------------------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                     |
-| order_no       | string | true  | 商户订单号                                                                   |
-| app_id         | int    | true  | 商户 appId                                                                |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                           |
-| price          | int    | true  | 下单金额，单位：分（Centimos），整型。1 秘鲁索尔 = 100 分                                   |
-| account_no     | string | true  | 收款账号                                                             |
-| account_type   | string | true  | 账号类型 (CA,SA) "CA":"活期账户","SA":"储蓄账户"                                    |
-| account_name   | string | true  | 姓名                                                                      |
-| bank_code      | string | true  | 银行编码                                                                    |
-| identify_type  | string | true  | 证件类型 （DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照"  |
-| identify_num   | string | true  | 证件号码                                                                    |
-| pay_notice_url | string | false | 代付成功通知 url                                                              |
-| attach         | string | true  | 附加参数  {"email":"邮箱","phone":"手机号","bank_code":"银行号码","pay_type":"支付方式"} |
-| user_ip        | string | false | 收款用户 IP                                                                 |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                                          |
-| timestamp      | string | false | 下单时间戳 10位时间戳单位S秒                                                        |
+| 名称             | 类型     | 必填    | 描述                                                                     |
+|----------------|--------|-------|------------------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                                    |
+| order_no       | string | true  | 商户订单号                                                                  |
+| app_id         | int    | true  | 商户 appId                                                               |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                          |
+| price          | int    | true  | 下单金额，单位：分（Centimos），整型。1 秘鲁索尔 = 100 分                                  |
+| account_no     | string | true  | 收款账号                                                                   |
+| account_type   | string | true  | 账号类型 (CA,SA) "CA":"活期账户","SA":"储蓄账户"                                   |
+| account_name   | string | true  | 姓名                                                                     |
+| bank_code      | string | true  | 银行编码                                                                   |
+| identify_type  | string | true  | 证件类型 （DNI,CE,RUC,PAS）"DNI":"身份证","CE":"外国居民证","RUC":"税务识别号","PAS":"护照" |
+| identify_num   | string | true  | 证件号码                                                                   |
+| pay_notice_url | string | false | 代付成功通知 url                                                             |
+| attach         | string | true  | 附加参数 json字符串                                                           |
+| user_ip        | string | false | 收款用户 IP                                                                |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                                         |
+| timestamp      | string | false | 下单时间戳 10位时间戳单位S秒                                                       |
 
 -  代付-attach 附加参数字段说明
 
-``
-{"email":"邮箱","phone":"手机号","bank_code":"银行号码","pay_type":"支付方式"}
-``
 
 | 名称       | 类型     | 必填   | 描述             |
 |----------|--------|------|----------------|
@@ -217,7 +216,7 @@
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"邮箱\",\"phone\":\"手机号\",\"bank_code\":\"银行号码\",\"pay_type\":\"支付方式\"}",
+  "attach": "{\"email\":\"邮箱\",\"phone\":\"手机号\",\"cci\":\"cci号码\",\"pay_type\":\"支付方式\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "BANK",

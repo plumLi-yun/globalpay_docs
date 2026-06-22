@@ -177,24 +177,24 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 
 ## 6.1 Pay-out Request Parameters
 
-| Name | Type | Required | Description |
-|----------------|--------|-------|-------------------------------------------------------------------------|
-| trade_no | int | true | Merchant ID |
-| order_no | string | true | Merchant order number |
-| app_id | int | true | Merchant `appId` |
-| pay_code | int | true | Product code, please contact our operations team |
-| price | int | true | Order amount, unit: centimos, integer. `1 Peruvian Sol = 100 centimos` |
-| account_no | string | true | Recipient account number  |
-| account_type | string | true | Account type `(CA,SA)` `"CA":"Checking account","SA":"Savings account"` |
-| account_name | string | true | Recipient name |
-| bank_code | string | true | Bank code |
+| Name | Type | Required | Description                                                                                                      |
+|----------------|--------|-------|------------------------------------------------------------------------------------------------------------------|
+| trade_no | int | true | Merchant ID                                                                                                      |
+| order_no | string | true | Merchant order number                                                                                            |
+| app_id | int | true | Merchant `appId`                                                                                                 |
+| pay_code | int | true | Product code, please contact our operations team                                                                 |
+| price | int | true | Order amount, unit: centimos, integer. `1 Peruvian Sol = 100 centimos`                                           |
+| account_no | string | true | Recipient account number                                                                                         |
+| account_type | string | true | Account type `(CA,SA)` `"CA":"Checking account","SA":"Savings account"`                                          |
+| account_name | string | true | Recipient name                                                                                                   |
+| bank_code | string | true | Bank code                                                                                                        |
 | identify_type | string | true | ID types `(DNI,CE,RUC,PAS)` `"DNI":"National ID","CE":"Foreigner Resident Card","RUC":"Tax ID","PAS":"Passport"` |
-| identify_num | string | true | ID number |
-| pay_notice_url | string | false | Pay-out success callback URL |
-| attach | string | true | Additional parameters: `{"email":"Email","phone":"Phone","bank_code":"Bank code","pay_type":"Payment method"}` |
-| user_ip | string | false | Recipient IP |
-| sign | string | true | Signature result, see the signature method at the top of the document |
-| timestamp | string | false | Order timestamp, 10-digit Unix timestamp in seconds |
+| identify_num | string | true | ID number                                                                                                        |
+| pay_notice_url | string | false | Pay-out success callback URL                                                                                     |
+| attach | string | true | Additional parameters JSON string                                                                                |
+| user_ip | string | false | Recipient IP                                                                                                     |
+| sign | string | true | Signature result, see the signature method at the top of the document                                            |
+| timestamp | string | false | Order timestamp, 10-digit Unix timestamp in seconds                                                              |
 
 - Pay-out `attach` field description
 
@@ -219,7 +219,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"Email\",\"phone\":\"Phone\",\"bank_code\":\"Bank code\",\"pay_type\":\"Payment method\"}",
+  "attach": "{\"email\":\"Email\",\"phone\":\"Phone\",\"cci\":\"CCI number\",\"pay_type\":\"Payment method\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "BANK",
