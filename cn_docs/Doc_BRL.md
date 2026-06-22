@@ -44,34 +44,34 @@
 
 ## 4.1 代收-下单请求参数
 
-| 名称             | 类型   | 必填  | 描述                                                                                                                                                                                   |
-|----------------|------|-----|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                                                                                                                                  |
-| app_id         | int    | true  | 商户 appId                                                                                                                                                                             |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                                                                                                        |
-| pay_method     | string    | true  | 支付方式   参照支付方式字典                                                                                                                                                                      |
-| price          | int    | true  | 下单金额，单位：分，整型。1 雷亚尔 = 100 分                                                                                                                                           |
-| order_no       | string | true  | 商户订单号                                                                                                                                                                                |
-| success_url    | string | false | 支付成功跳转 url                                                                                                                                                                           |
-| fail_url       | string | false | 支付失败跳转 url                                                                                                                                                                           |
-| pay_notice_url | string | false | 支付成功通知 url                                                                                                                                                                           |
-| user_id        | string | true | 系统用户ID                                                                                                                                                                               |
-| user_ip        | string | true | 付款人 IP                                                                                                                                                                               |
-|attach|string|true| 附加参数 json字符串  {\"name\":\"bob james\"，\"identify_type\":\"CPF\",\"identify_num\":\"61035067358\"}  |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                                                       |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S |
+| 名称             | 类型   | 必填  | 描述                                                                                                                        |
+|----------------|------|-----|---------------------------------------------------------------------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                                                                                       |
+| app_id         | int    | true  | 商户 appId                                                                                                                  |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                                             |
+| pay_method     | string    | true  | 支付方式   参照支付方式字典                                                                                                           |
+| price          | int    | true  | 下单金额，单位：分，整型。1 雷亚尔 = 100 分                                                                                                |
+| order_no       | string | true  | 商户订单号                                                                                                                     |
+| success_url    | string | false | 支付成功跳转 url                                                                                                                |
+| fail_url       | string | false | 支付失败跳转 url                                                                                                                |
+| pay_notice_url | string | false | 支付成功通知 url                                                                                                                |
+| user_id        | string | true | 系统用户ID                                                                                                                    |
+| user_ip        | string | true | 付款人 IP                                                                                                                    |
+|attach|string|true| 附加参数 json字符串  {\"name\":\"bob james\"，\"identify_type\":\"CPF\",\"identify_num\":\"61035067358\"} `pay_method=PIX 需要用户名、证件信息` |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                                            |
+|timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                                                           |
 
 -  代收-attach 附加参数字段说明
 
-| 名称           | 类型     | 必填  | 描述                                            |
-|--------------|--------|-----|-----------------------------------------------|
+| 名称           | 类型     | 必填  | 描述                                          |
+|--------------|--------|-----|---------------------------------------------|
 | name       | string | false  | 付款人姓名  巴西个人传个人姓名, 巴西公司传公司名称 |
-| identify_type       | string    | false  | 证件类型 CPF、CNPJ、EVP                             |
-| identify_num       | string    | false  | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字),巴西支付服务商识别码(EVP) |
+| identify_type       | string    | false  | 证件类型 CPF、CNPJ                            |
+| identify_num       | string    | false  | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字) |
 
 ##### attach 示例
 ```json
-{"name":"巴西个人传个人姓名, 巴西公司传公司名称","identify_type":"证件类型 CPF、CNPJ、EVP","identify_num":" 巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字),巴西支付服务商识别码(EVP)"}
+{"name":"巴西个人传个人姓名, 巴西公司传公司名称","identify_type":"证件类型 CPF、CNPJ","identify_num":" 巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)"}
 ```
 
 
@@ -189,10 +189,10 @@
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                          |
 | price          | int    | true  | 下单金额，单位：分，整型。1 雷亚尔 = 100 分                             |
 | account_no     | string | true  | 收款账号                                                   |
-| account_type   | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE                              |
+| account_type   | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE,EVP(巴西支付服务商识别码)                        |
 | account_name   | string | true  | 姓名                                                     |
-| bank_code      | string | true  | 固定填写： PIXPAY                                  |
-| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ.EVP）                                     |
+| bank_code      | string | true  | 固定填写： PIXPAY                                           |
+| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ）                                     |
 | identify_num   | string | true  | 证件号码                                                   |
 | pay_notice_url | string | false | 代付成功通知 url                                             |
 | attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |

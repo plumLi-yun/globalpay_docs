@@ -57,22 +57,22 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | pay_notice_url | string | false  | Notification URL for successful payment.                                                                                               |
 | user_id    | string | true   | System user ID.                                                                                                            |
 | user_ip    | string | true   | Payer IP address.                                                                                                           |
-| attach     | string | true   | Additional parameters in JSON string format. e.g., {\"name\":\"bob james\", \"identify_type\":\"CPF\", \"identify_num\":\"61035067358\"}                                               |
+| attach     | string | true   | Additional parameters in JSON string format. e.g., {\"name\":\"bob james\", \"identify_type\":\"CPF\", \"identify_num\":\"61035067358\"}   `pay_method=PIX requires a username and identification details.`                                            |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.                                                                                |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                                                                                           |
 
 - Pay-in - attach additional parameter field description
 
 | Name     | Type  | Required | Description                                                    |
-|---------------|--------|----------|--------------------------------------------------------------------------------------------------------------------|
-| name     | string | false  | Payer name. For Brazil individuals, provide individual name; for Brazil companies, provide company name.      |
-| identify_type | string | false  | Identity type: CPF, CNPJ, EVP.                                             |
+|---------------|--------|----------|------------------------------------------------------------------------------------------------------------------|
+| name     | string | false  | Payer name. For Brazil individuals, provide individual name; for Brazil companies, provide company name.    |
+| identify_type | string | false  | Identity type: CPF, CNPJ.                                             |
 | identify_num | string | false  | Identity number. For Brazil individuals, provide CPF (digits only); for Brazil companies, provide CNPJ (digits only). |
 
 ##### attach Example
 ```json
 
-{"name":"Individual name for Brazil individuals, Company name for Brazil companies","identify_type":"Identity type: CPF, CNPJ,EVP","identify_num":"CPF (digits only) for Brazil individuals, CNPJ (digits only) for Brazil companies,(EVP)Brazilian Payment Service Provider Identifier"}
+{"name":"Individual name for Brazil individuals, Company name for Brazil companies","identify_type":"Identity type: CPF, CNPJ","identify_num":"CPF (digits only) for Brazil individuals, CNPJ (digits only) for Brazil companies"}
 
 ```
 
@@ -182,24 +182,24 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 ## 6.1 Pay-out - Request Parameters
 
-| Name      | Type  | Required | Description                                     |
+| Name      | Type  | Required | Description                                                                         |
 |----------------|--------|----------|-------------------------------------------------------------------------------------|
-| trade_no    | int  | true   | Merchant ID.                                    |
-| order_no    | string | true   | Merchant order number.                               |
-| app_id     | int  | true   | Merchant appId.                                   |
-| pay_code    | int  | true   | Product code, obtained from our operations.                     |
-| price     | int  | true   | Order amount, unit: Centavoss, integer. 1 BRL = 100 Centavos.               |
-| account_no   | string | true   | Receiving account number.                              |
-| account_type  | string | true   | Account type: CPF, CNPJ, EMAIL, PHONE.                       |
-| account_name  | string | true   | Name.                                        |
-| bank_code   | string | true   | Fixed: PIXPAY.                                   |
-| identify_type | string | true   | Identity type: Brazil (CPF, CNPJ).                         |
-| identify_num  | string | true   | Identity number.                                  |
-| pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
+| trade_no    | int  | true   | Merchant ID.                                                                        |
+| order_no    | string | true   | Merchant order number.                                                              |
+| app_id     | int  | true   | Merchant appId.                                                                     |
+| pay_code    | int  | true   | Product code, obtained from our operations.                                         |
+| price     | int  | true   | Order amount, unit: Centavoss, integer. 1 BRL = 100 Centavos.                       |
+| account_no   | string | true   | Receiving account number.                                                           |
+| account_type  | string | true   | Account type: CPF, CNPJ, EMAIL, PHONE,EVP(Brazilian Payment Service Provider Identification Code).                                        |
+| account_name  | string | true   | Name.                                                                               |
+| bank_code   | string | true   | Fixed: PIXPAY.                                                                      |
+| identify_type | string | true   | Identity type: Brazil (CPF, CNPJ).                                                  |
+| identify_num  | string | true   | Identity number.                                                                    |
+| pay_notice_url | string | false  | Notification URL for successful pay-out.                                            |
 | attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
-| user_ip | string | false | Receiving user IP address.  |
-| sign      | string | true   | Signature result, see the top of the document for the signature method.       |
-| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
+| user_ip | string | false | Receiving user IP address.                                                          |
+| sign      | string | true   | Signature result, see the top of the document for the signature method.             |
+| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                                    |
 
 - Pay-out - Request Parameter Example
 
