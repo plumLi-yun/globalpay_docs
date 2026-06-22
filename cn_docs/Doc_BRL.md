@@ -66,12 +66,12 @@
 | 名称           | 类型     | 必填  | 描述                                            |
 |--------------|--------|-----|-----------------------------------------------|
 | name       | string | false  | 付款人姓名  巴西个人传个人姓名, 巴西公司传公司名称 |
-| identify_type       | string    | false  | 证件类型 CPF、CNPJ                             |
-| identify_num       | string    | false  | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字) |
+| identify_type       | string    | false  | 证件类型 CPF、CNPJ、EVP                             |
+| identify_num       | string    | false  | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字),巴西支付服务商识别码(EVP) |
 
 ##### attach 示例
 ```json
-{"name":"巴西个人传个人姓名, 巴西公司传公司名称","identify_type":"证件类型 CPF、CNPJ","identify_num":" 巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)"}
+{"name":"巴西个人传个人姓名, 巴西公司传公司名称","identify_type":"证件类型 CPF、CNPJ、EVP","identify_num":" 巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字),巴西支付服务商识别码(EVP)"}
 ```
 
 
@@ -192,7 +192,7 @@
 | account_type   | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE                              |
 | account_name   | string | true  | 姓名                                                     |
 | bank_code      | string | true  | 固定填写： PIXPAY                                  |
-| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ）                                     |
+| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ.EVP）                                     |
 | identify_num   | string | true  | 证件号码                                                   |
 | pay_notice_url | string | false | 代付成功通知 url                                             |
 | attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |

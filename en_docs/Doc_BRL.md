@@ -66,13 +66,13 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | Name     | Type  | Required | Description                                                    |
 |---------------|--------|----------|--------------------------------------------------------------------------------------------------------------------|
 | name     | string | false  | Payer name. For Brazil individuals, provide individual name; for Brazil companies, provide company name.      |
-| identify_type | string | false  | Identity type: CPF, CNPJ.                                             |
+| identify_type | string | false  | Identity type: CPF, CNPJ, EVP.                                             |
 | identify_num | string | false  | Identity number. For Brazil individuals, provide CPF (digits only); for Brazil companies, provide CNPJ (digits only). |
 
 ##### attach Example
 ```json
 
-{"name":"Individual name for Brazil individuals, Company name for Brazil companies","identify_type":"Identity type: CPF, CNPJ","identify_num":"CPF (digits only) for Brazil individuals, CNPJ (digits only) for Brazil companies"}
+{"name":"Individual name for Brazil individuals, Company name for Brazil companies","identify_type":"Identity type: CPF, CNPJ,EVP","identify_num":"CPF (digits only) for Brazil individuals, CNPJ (digits only) for Brazil companies,(EVP)Brazilian Payment Service Provider Identifier"}
 
 ```
 
