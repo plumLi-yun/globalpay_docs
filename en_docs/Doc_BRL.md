@@ -275,7 +275,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | order_price | int  | true   | Order amount, unit: Centavos.                        |
 | fee     | int  | false  | Order fee, unit: Centavos.                          |
 | status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
-| pay_info   | string | false  | Payment information.                           |
+| pay_info   | string | false  | Payment information.    {"utr2":"*****"}                       |
 | remark    | string | false  | Failure reason.                              |
 | create_time | int  | true   | Creation time.                              |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.  |
@@ -498,8 +498,8 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 | Field   | Country | Value   | Description                   |
 |------------|----------|-----------|-------------------------------------------------|
-| pay_method | Brazil  | pix    | PIX Type II - Requires name, CPF, etc.     |
-| pay_method | Brazil  | PIX1   | PIX Type II - Non-real-name           |
+| pay_method | Brazil  | pix    | PIX Type  - Requires name, CPF, etc.     |
+| pay_method | Brazil  | PIX1   | PIX Type  - Non-real-name           |
 
 # 12. Error Codes
 

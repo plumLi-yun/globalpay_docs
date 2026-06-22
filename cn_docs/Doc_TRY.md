@@ -174,22 +174,22 @@
 
 ## 6.1 代付-请求参数
 
-| 名称             | 类型   | 必填    | 描述                                                    |
-|----------------|------|-------|-------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                   |
-| order_no       | string | true  | 商户订单号                                                 |
-| app_id         | int    | true  | 商户 appId                                              |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                         |
-| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                         |
-| account_no     | string | true  | 收款账号                                                  |
-| account_type   | string | true  | 账号类型:BANK                              |
-| account_name   | string | true  | 姓名                                                    |
-| bank_code      | string | true  | 固定填写：参照银行编码字典                                |
-| pay_notice_url | string | false | 代付成功通知 url                                            |
+| 名称             | 类型   | 必填    | 描述                                                     |
+|----------------|------|-------|--------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                    |
+| order_no       | string | true  | 商户订单号                                                  |
+| app_id         | int    | true  | 商户 appId                                               |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                          |
+| price          | int    | true  | 下单金额，单位：库鲁什，整型。1 里拉 = 100 库鲁什                          |
+| account_no     | string | true  | 收款账号 完整的银行账号示例：TR700001009011105858305001    |
+| account_type   | string | true  | 账号类型:BANK                                              |
+| account_name   | string | true  | 姓名                                                     |
+| bank_code      | string | true  | 固定填写：参照银行编码字典                                          |
+| pay_notice_url | string | false | 代付成功通知 url                                             |
 | attach         | string | false | 附加参数   {"first_name":"名","last_name":"姓","email":"邮箱"} |
-| user_ip        | string | false  | 收款用户 IP                                               |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                        |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                       |
+| user_ip        | string | false  | 收款用户 IP                                                |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                         |
+|timestamp|string|false| 下单时间戳 10位时间戳单位S                                        |
 
 - 代付-请求参数示例
 
@@ -429,22 +429,25 @@
 
 # 11、银行编码 bank_code
 
-| 字段      | 国家            | 值           | 描述                                      |
-|-----------|---------------|-------------|-----------------------------------------|
-| bank_code | 土耳其 |    TGBATRIS   | Türkiye Garanti Bankası A.Ş.            |
-| bank_code | 土耳其 |    AKBKTRIS   | Akbank T.A.S.                           |
-| bank_code | 土耳其 |    HALKBTRIS   | Türkiye Halk Bankası A.Ş.               |
-| bank_code | 土耳其 |    KUVETRIS   | Kuveyt Türk Katılım Bankası A.Ş.        |
-| bank_code | 土耳其 |    INGBTRIS   | ING A.Ş.                                |
+| 字段      | 国家            | 值           | 描述                                    |
+|-----------|---------------|-------------|---------------------------------------|
+| bank_code | 土耳其 |    TGBATRIS   | Türkiye Garanti Bankası A.Ş.          |
+| bank_code | 土耳其 |    AKBKTRIS   | Akbank T.A.S.                         |
+| bank_code | 土耳其 |    HALKBTRIS   | Türkiye Halk Bankası A.Ş.             |
+| bank_code | 土耳其 |    KUVETRIS   | Kuveyt Türk Katılım Bankası A.Ş.      |
+| bank_code | 土耳其 |    INGBTRIS   | ING A.Ş.                              |
 | bank_code | 土耳其 |    TCZBTR2A   | Türkiye Cumhuriyeti Ziraat Bankası A.Ş. |
-| bank_code | 土耳其 |    YAPITRIS   | Yapı ve Kredi Bankası A.Ş.              |
-| bank_code | 土耳其 |    TEBUTRIS   | Türk Ekonomi Bankası A.Ş. (TEB)         |
-| bank_code | 土耳其 |    HSBCTRIS   | HSBC Bank A.Ş.                          |
-| bank_code | 土耳其 |    DENITRIS   | DenizBank A.Ş.                          |
-| bank_code | 土耳其 |    FNNBTRIS   | QNB Finansbank A.Ş.                     |
-| bank_code | 土耳其 |    VAKBTRIS   | VakıfBank A.Ş.                          |
-| bank_code | 土耳其 |    ISBKTRIS   | Türkiye İş Bankası A.Ş.                 |
-| bank_code | 土耳其 |    TRY_BANK   | TRY_BANK    不明确的都用这个                    |
+| bank_code | 土耳其 |    YAPITRIS   | Yapı ve Kredi Bankası A.Ş.            |
+| bank_code | 土耳其 |    TEBUTRIS   | Türk Ekonomi Bankası A.Ş. (TEB)       |
+| bank_code | 土耳其 |    HSBCTRIS   | HSBC Bank A.Ş.                        |
+| bank_code | 土耳其 |    DENITRIS   | DenizBank A.Ş.                        |
+| bank_code | 土耳其 |    FNNBTRIS   | QNB Finansbank A.Ş.                   |
+| bank_code | 土耳其 |    VAKBTRIS   | VakıfBank A.Ş.                        |
+| bank_code | 土耳其 |    ISBKTRIS   | Türkiye İş Bankası A.Ş.               |
+| bank_code | 土耳其 |    TRY_BANK   | TRY_BANK    不明确的都用这个                  |
+| bank_code | 土耳其 |    FIBABANKA   | Fibabanka                      |
+| bank_code | 土耳其 |    ODEABANK   | OdeaBank                      |
+| bank_code | 土耳其 |    PAPARA   | Papara                      |
 
 
 

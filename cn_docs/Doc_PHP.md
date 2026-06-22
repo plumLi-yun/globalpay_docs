@@ -479,15 +479,15 @@
 # 11、支付方式 代收字段 pay_method
 
 
-| pay_method | 国家   | 值            | 描述              |
-|------------|--------|---------------|-------------------|
-| bayad      | 菲律宾 | PH_BAYAD      | Bayad             |
-| grabpay    | 菲律宾 | PH_GRABPAY    | GrabPay           |
-| coins      | 菲律宾 | PH_COINS      | Coins.PH          |
-| omni       | 菲律宾 | PH_OMNI       | Omnipay, Inc.     |
-| gcash      | 菲律宾 | PH_GCASH      | GCash             |
-| paymaya    | 菲律宾 | PH_PAYMAYA    | PayMaya           |
-
+| pay_method | 国家   | 值          | 描述            |
+|------------|--------|------------|---------------|
+| bayad      | 菲律宾 | PH_BAYAD   | Bayad         |
+| grabpay    | 菲律宾 | PH_GRABPAY | GrabPay       |
+| coins      | 菲律宾 | PH_COINS   | Coins.PH      |
+| omni       | 菲律宾 | PH_OMNI    | Omnipay, Inc. |
+| gcash      | 菲律宾 | PH_GCASH   | GCash         |
+| paymaya    | 菲律宾 | PH_PAYMAYA | PayMaya       |
+| qrhx       | 菲律宾 | PH_QRPH    | QR            |
 
 
 # 12、银行编码
