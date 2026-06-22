@@ -120,7 +120,9 @@
 	"order_no": "",
 	"dis_order_no": "",
 	"create_time":0
-}```
+}
+
+```
 
 成功:
 ```json
@@ -186,8 +188,8 @@
 
 ## 6.1 代付-请求参数
 
-| 名称           | 类型   | 必填  | 描述                                            |
-| -------------- | ------ | ----- | ----------------------------------------------- |
+| 名称           | 类型   | 必填    | 描述                                            |
+| -------------- | ------ |-------| ----------------------------------------------- |
 | trade_no       | int    | true  | 商户号                                          |
 | order_no       | string | true  | 商户订单号                                      |
 | app_id         | int    | true  | 商户 appId                                      |
@@ -197,11 +199,25 @@
 | account_type   | string | true  | 账号类型: CHECKING ,SAVINGS,RUT,VISTA                  |
 | account_name   | string | true  | 姓名                                            |
 | bank_code      | string | true  | 银行编码在末尾                                     |
-| identify_type  | string | false | 证件类型: RUT（税号）,PP（护照） |
-| identify_num   | string | false | 证件号码            |
+| identify_type  | string | true  | 证件类型: RUT（税号）,PP（护照） |
+| identify_num   | string | true  | 证件号码            |
 | pay_notice_url | string | false | 代付成功通知 url                                |
-| attach         | string | false | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |
+| attach         | string | true  | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                     |
+
+
+-  代付-attach 附加参数字段说明
+
+```json
+{"email":"邮箱","phone":"手机号","bank_name":"银行名称"}
+```
+
+| 名称        | 类型     | 必填    | 描述             |
+|-----------|--------|-------|----------------|
+| phone     | string    | false | 收款人手机号         |
+| email     | string    | false | 邮箱地址           |
+| bank_name  | string    | true  | 银行名称 |
+
 
 - 代付-请求参数示例
 
