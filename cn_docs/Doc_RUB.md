@@ -58,7 +58,7 @@
 | pay_notice_url | string | false | 支付成功通知 url                                                                                                                                                                    |
 | user_id        | string | true  | 系统用户ID                                                                                                                                                                        |
 | user_ip        | string | true  | 付款人 IP                                                                                                                                                                        |
-| attach         | string | true  | 附加参数 json字符串 付款人信息（建议填写例如巴西、巴基斯坦必须）{"account_no":"","account_type":"","name":"姓名","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ,IFSC,BANK_CODE"} |
+| attach         | string | false  | 附加参数 json字符串 付款人信息(建议填写){"account_no":"","account_type":"","name":"姓名","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"证件号"} |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                                                |
 | timestamp      | string | false | 下单时间戳 10位时间戳单位S                                                                                                                                                               |
 
@@ -66,14 +66,14 @@
 
 | 名称            | 类型     | 必填    | 描述                                               |
 | ------------- | ------ | ----- | ------------------------------------------------ |
-| name          | string | false | 付款人姓名   （建议填写例如巴基斯坦必须）     巴西个人传个人姓名, 巴西公司传公司名称  |
-| email         | string | false | 付款人邮箱   （建议填写例如巴基斯坦必须）                           |
-| phone         | string | false | 付款人手机号  （建议填写例如巴基斯坦必须 03开头的11位数字（真实有效））          |
-| identify_type | string | false | 证件类型 CPF、CNPJ、IFSC                               |
-| identify_num  | string | false | 证件号码     巴西个人传CPF(纯数字), 巴西公司传CNPJ(纯数字)  印度（IFSC） |
-| account_no    | string | true  | 付款账号                                             |
-| account_type  | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE,UPI(印度Upi),BANK(银行帐号)  |
-| bank_code     | string | false | 银行代码（泰国必须）                                       |
+| name          | string | false | 付款人姓名     |
+| email         | string | false | 付款人邮箱                             |
+| phone         | string | false | 付款人手机号  （真实有效）          |
+| identify_type | string | false | 证件类型                               |
+| identify_num  | string | false | 证件号码      |
+| account_no    | string | false  | 付款账号                                             |
+| account_type  | string | false  | 账号类型:  |
+| bank_code     | string | false | 银行代码                                      |
 | bank_name     | string | false | 银行名称                                             |
 
 - 代收-下单请求示例
@@ -150,7 +150,7 @@
 | order_price  | int    | true  | 订单金额,单位:分                                                                                                                                                                                    |
 | real_price   | int    | true  | 用户真实付款金额 ,单位:分                                                                                                                                                                               |
 | nti_time     | int    | false | 发起通知时间                                                                                                                                                                                       |
-| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段 |
+| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"证件号码"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段 |
 | pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28                                                                                                                                                  |
 | create_time  | int    | true  | 创建时间                                                                                                                                                                                         |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                                                               |
@@ -165,7 +165,7 @@
   "dis_order_no": "2025071130460153942908928india1sKQbX",
   "order_price": 10099,
   "real_price": 10000,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"证件号码\"}",
   "nti_time": 1752826164,
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -191,10 +191,10 @@
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                              |
 | price          | int    | true  | 下单金额,单位:分 ,整数 转元后不能有小数点                                    |
 | account_no     | string | true  | 收款账号                                                       |
-| account_type   | string | true  | 账号类型:CPF,CNPJ,EMAIL,PHONE,UPI(印度Upi),BANK(银行帐号),CLABE(墨西哥) |
+| account_type   | string | true  | 账号类型 |
 | account_name   | string | true  | 姓名                                                         |
 | bank_code      | string | true  | 收款银行代码 参照银行编码                                              |
-| identify_type  | string | true  | 证件类型: 巴西（CPF,CNPJ）、巴基斯坦（CNIC）印度（IFSC,BANK_CODE）            |
+| identify_type  | string | true  | 证件类型            |
 | identify_num   | string | true  | 证件号码                                                       |
 | pay_notice_url | string | false | 代付成功通知 url                                                 |
 | attach         | string | false | 附加参数 {"email":"邮箱","phone":"手机号","bank_name":"银行名称"}       |
@@ -344,7 +344,7 @@
 | remark       | string | true  | 代付失败原因                                                                                                                                            |
 | fee          | int    | false | 订单手续费 ,单位:分                                                                                                                                       |
 | create_time  | int    | true  | 创建时间                                                                                                                                              |
-| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CPF,CNPJ,EMAIL,PHONE","account_no":"账号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型","account_no":"账号","identify_type":"证件类型","identify_num":"证件号码"} |
 | pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28                                                                                                       |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                    |
 | utr2         | string | false | 银行订单号                                                                                                                                             |
@@ -375,7 +375,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"证件号码\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -500,7 +500,6 @@
 
 # 11、银行编码
 
-好的，已将您提供的俄罗斯银行数据转换为与菲律宾银行相同的表格格式。
 
 | 字段名称      | 编码                                    | 银行名称                                  |
 |:--------- |:------------------------------------- |:------------------------------------- |

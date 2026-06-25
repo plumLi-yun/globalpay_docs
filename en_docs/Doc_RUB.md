@@ -58,7 +58,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | pay_notice_url | string | false  | Notification URL for successful payment.                                                                                                               |
 | user_id    | string | true   | System user ID.                                                                                                                            |
 | user_ip    | string | true   | Payer IP address.                                                                                                                           |
-| attach     | string | true   | Additional parameters in JSON string format: {"account_no":"","account_type":"","name":"Name","email":"Email","phone":"Phone","identify_type":"Identity Type","identify_num":"CPF,CNPJ,IFSC,BANK_CODE"} (Recommended for Brazil, Pakistan). |
+| attach     | string | false   | Additional parameters in JSON string format: {"account_no":"","account_type":"","name":"Name","email":"Email","phone":"Phone","identify_type":"Identity Type","identify_num":"Identity Num"} (Recommended for Brazil, Pakistan). |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.                                                                                                |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                                                                                                           |
 
@@ -69,10 +69,10 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | name     | string | false  | Payer name. (Recommended, mandatory for Pakistan). For Brazil individuals, provide individual name; for Brazil companies, company name. |
 | email     | string | false  | Payer email. (Recommended, mandatory for Pakistan).                                           |
 | phone     | string | false  | Payer phone. (Mandatory for Pakistan, must be 11 digits starting with 03).                               |
-| identify_type | string | false  | Identity type: CPF, CNPJ, IFSC.                                                     |
-| identify_num | string | false  | Identity number. Brazil: CPF (digits), CNPJ (digits). India: IFSC.                                   |
-| account_no  | string | true   | Payment account number.                                                         |
-| account_type | string | true   | Account type: CPF, CNPJ, EMAIL, PHONE, UPI (India UPI), BANK (Bank Account).                              |
+| identify_type | string | false  | Identity type                                                     |
+| identify_num | string | false  | Identity number                                   |
+| account_no  | string | false   | Payment account number.                                                         |
+| account_type | string | false   | Account type                              |
 | bank_code   | string | false  | Bank code (Mandatory for Thailand).                                                   |
 | bank_name   | string | false  | Bank name.                                                               |
 
@@ -150,7 +150,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | order_price | int  | true   | Order amount, unit: Kopek.                                                                                                                      |
 | real_price  | int  | true   | Actual amount paid by the user, unit: Kopek.                                                                                                             |
 | nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
-| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}. Also includes payer-related fields from `attach`. |
+| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"Identity Num"}. Also includes payer-related fields from `attach`. |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
 | create_time | int  | true   | Creation time.                                                                                                                            |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                                                |
