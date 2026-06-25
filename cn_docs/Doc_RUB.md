@@ -106,7 +106,7 @@
 | order_no     | string | true  | 商户订单号                                       |
 | dis_order_no | string | true  | 平台订单号                                       |
 | create_time  | int    | true  | 创建时间                                        |
-| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28 |
+| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                              |
 
 - 代收-下单响应示例
@@ -276,7 +276,7 @@
 | order_price  | int    | true  | 订单金额,单位:分                                   |
 | fee          | int    | false | 订单手续费 ,单位:分                                 |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正             |
-| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28 |
+| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |
 | remark       | string | false | 失败原因                                        |
 | create_time  | int    | true  | 创建时间                                        |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                              |
@@ -731,7 +731,7 @@
 # 12、错误码
 
 | 状态码 | 描述  |
-| --- | --- | --- | --- |
+| --- | --- | 
 | 200 | 成功  |
 | 1000 | 内部错误 |
 | 1001 | ip不在商户ip白名单 |
