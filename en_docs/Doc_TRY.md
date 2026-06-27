@@ -189,10 +189,22 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | account_name | string | true | Name                                                                    |
 | bank_code | string | true | Fixed value: Refer to bank code dictionary                              |
 | pay_notice_url | string | false  | Notification URL for successful pay-out.                                |
-| attach | string | false | Additional parameters {"email":"Email","first_name":"First","last_name":"Last"} |
+| attach | string | true | Additional parameters in JSON string format |
 | user_ip | string | false | Receiving user IP address.                                              |
 | sign      | string | true   | Signature result, see the top of the document for the signature method. |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                        |
+
+- Pay-out `attach` additional parameter field description
+
+```
+{"first_name":"First name","last_name":"Last name","email":"Email address"}
+```
+
+| Name | Type | Required | Description |
+|----------|--------|------|----------------|
+| first_name | string | true | First name |
+| last_name | string | true | Last name |
+| email | string | false | Email address |
 
 - Pay-out - Request Parameter Example
 

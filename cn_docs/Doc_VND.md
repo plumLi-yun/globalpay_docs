@@ -95,17 +95,17 @@
 
 ## 4.2 代收-下单响应
 
-| 名称           | 类型     | 必填    | 描述                                          |
-| ------------ | ------ | ----- | ------------------------------------------- |
-| code         | int    | true  | 200:下单成功 其他:下单失败                            |
-| msg          | string | true  | 失败原因                                        |
-| pay_url      | string | false | 付款链接                                        |
-| qr_code      | string | false | pix 二维码字符串                                  |
-| order_no     | string | true  | 商户订单号                                       |
-| dis_order_no | string | true  | 平台订单号                                       |
-| create_time  | int    | true  | 创建时间                                        |
-| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28 |
-| sign         | string | true  | 签名结果,签名方法在文档顶部                              |
+| 名称           | 类型     | 必填    | 描述                                         |
+| ------------ | ------ | ----- | ------------------------------------------ |
+| code         | int    | true  | 200:下单成功 其他:下单失败                           |
+| msg          | string | true  | 失败原因                                       |
+| pay_url      | string | false | 付款链接                                       |
+| qr_code      | string | false | 二维码字符串                                 |
+| order_no     | string | true  | 商户订单号                                      |
+| dis_order_no | string | true  | 平台订单号                                      |
+| create_time  | int    | true  | 创建时间                                       |
+| pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |
+| sign         | string | true  | 签名结果,签名方法在文档顶部                             |
 
 - 代收-下单响应示例
 
