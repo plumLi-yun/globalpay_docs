@@ -239,8 +239,8 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | account_type  | string | true   | Account type: CLABE, BANK.                             |
 | account_name  | string | true   | Name.                                        |
 | bank_code   | string | true   | Receiving bank code, refer to bank codes.                      |
-| identify_type | string | true   | Identity type: Mexico (RFC, CURP).                         |
-| identify_num  | string | true   | Identity number.                                  |
+| identify_type | string | false   | Identity type: Mexico (RFC, CURP).                         |
+| identify_num  | string | false   | Identity number.                                  |
 | pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
 | attach     | string | true   | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
 | user_ip    | string | true   | Receiving user IP address.                             |

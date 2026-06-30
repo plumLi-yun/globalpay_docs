@@ -238,8 +238,8 @@
 | account_type   | string | true  | 账号类型:CLABE（clabe号）、BANK(银行账号)                         |
 | account_name   | string | true  | 姓名                                                    |
 | bank_code      | string | true  | 收款银行代码  参照银行编码                                          |
-| identify_type  | string | true  | 证件类型: 墨西哥（RFC,CURP）                                   |
-| identify_num   | string | true  | 证件号码                                                  |
+| identify_type  | string | false | 证件类型: 墨西哥（RFC,CURP）                                   |
+| identify_num   | string | false | 证件号码                                                  |
 | pay_notice_url | string | false | 代付成功通知 url                                            |
 | attach         | string | true  | 附加参数   {"email":"邮箱","phone":"手机号","bank_name":"银行名称"} |
 | user_ip        | string | true  | 收款用户 IP                                               |
