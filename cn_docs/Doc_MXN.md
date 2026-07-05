@@ -634,6 +634,7 @@
 | bank_code | FINAMEX         | FINAMEX |
 | bank_code | CITI_MEXICO     | CITI MEXICO |
 | bank_code | NU_MEXICO       | Nu México Financiera |
+| bank_code  |  KLAR_MXN               |    Klar Technologies       | 
 
 
 # 13、错误码

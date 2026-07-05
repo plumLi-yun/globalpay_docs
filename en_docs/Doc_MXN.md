@@ -550,125 +550,126 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 # 12. Bank Code
 
 | Field Name | Code            | Bank Name |
-|:---------|:----------------|:---------|
-| bank_code | CB_INTERCAM     | CB INTERCAM |
-| bank_code | MULTIVA_BANCO   | MULTIVA BANCO |
-| bank_code | LIBERTAD        | LIBERTAD |
-| bank_code | ARCUS           | ARCUS |
-| bank_code | NAFIN           | NAFIN |
-| bank_code | MASARI          | MASARI |
-| bank_code | CI_BOLSA        | CI BOLSA |
-| bank_code | BANORTE         | BANORTE |
-| bank_code | BANOBRAS        | BANOBRAS |
-| bank_code | BANCREA         | BANCREA |
-| bank_code | AKALA           | AKALA |
-| bank_code | BANCOMEXT       | BANCOMEXT |
-| bank_code | VOLKSWAGEN      | VOLKSWAGEN |
-| bank_code | VE_POR_MAS      | VE POR MAS |
-| bank_code | MERCADO_PAGO_W  | Mercado Pago W |
-| bank_code | INTERCAM_BANCO  | INTERCAM BANCO |
-| bank_code | CAJA_TELEFONIST | CAJA TELEFONIST |
-| bank_code | CAJA_POP_MEXICA | CAJA POP MEXICA |
-| bank_code | BANJERCITO      | BANJERCITO |
-| bank_code | ACTINVER        | ACTINVER |
-| bank_code | PROFUTURO       | PROFUTURO |
-| bank_code | HIPOTECARIA_FED | HIPOTECARIA FED |
-| bank_code | CoDi_Valida     | CoDi Valida |
-| bank_code | BANCOPPEL       | BANCOPPEL |
-| bank_code | TESORED         | TESORED |
-| bank_code | INDEVAL         | INDEVAL |
-| bank_code | INBURSA         | INBURSA |
-| bank_code | CRISTOBAL_COLON | CRISTOBAL COLON |
-| bank_code | BAJIO           | BAJIO |
-| bank_code | BANXICO         | BANK OF MEXICO |
-| bank_code | KUSPIT          | KUSPIT |
-| bank_code | CREDIT_SUISSE   | CREDIT SUISSE |
-| bank_code | AZTECA          | AZTECA |
-| bank_code | AFIRME          | AFIRME |
-| bank_code | CIBANCO         | CIBANCO |
-| bank_code | BARCLAYS        | BARCLAYS |
-| bank_code | SPINOXXO        | Spin in OXXO |
-| bank_code | VALUE           | VALUE |
-| bank_code | VALMEX          | VALMEX |
-| bank_code | REFORMA         | REFORMA |
-| bank_code | PAGATODO        | PAGATODO |
-| bank_code | MULTIVA_CBOLSA  | MULTIVA CBOLSA |
-| bank_code | COMPARTAMOS     | COMPARTAMOS |
-| bank_code | JP_MORGAN       | JP MORGAN |
-| bank_code | EVERCORE        | EVERCORE |
-| bank_code | CREDICAPITAL    | CREDICAPITAL |
-| bank_code | BANSI           | BANSI |
-| bank_code | BANREGIO        | BANREGIO |
-| bank_code | BANKAOOL        | BANKAOOL |
-| bank_code | BANK_OF_AMERICA | BANK OF AMERICA |
-| bank_code | ABC_CAPITAL     | ABC CAPITAL |
-| bank_code | TRANSFER        | TRANSFER |
-| bank_code | STP             | STP |
-| bank_code | FONDO_FIRA      | FONDO (FIRA) |
-| bank_code | FOMPED          | FOMPED |
-| bank_code | BANCO_S3        | BANCO S3 |
-| bank_code | AUTOFIN         | AUTOFIN |
-| bank_code | UNAGRA          | UNAGRA |
-| bank_code | HSBC            | HSBC |
-| bank_code | DONDE           | DONDE |
-| bank_code | CONSUBANCO      | CONSUBANCO |
-| bank_code | BMONEX          | BMONEX |
-| bank_code | MONEXCB         | MONEXCB |
-| bank_code | BBVA_MEXICO     | BBVA MEXICO |
-| bank_code | BANSEFI         | BANSEFI |
-| bank_code | BANCO_FINTERRA  | BANCO FINTERRA |
-| bank_code | BANAMEX         | BANAMEX |
-| bank_code | ASP_INTEGRA_OPC | ASP INTEGRA OPC |
-| bank_code | SANTANDER       | SANTANDER |
-| bank_code | INVEX           | INVEX |
-| bank_code | MIFEL           | MIFEL |
-| bank_code | INVERCAP        | INVERCAP |
-| bank_code | GBM             | GBM |
-| bank_code | VECTOR          | VECTOR |
-| bank_code | SHINHAN         | SHINHAN |
-| bank_code | SCOTIABANK      | SCOTIABANK |
-| bank_code | SABADELL        | SABADELL |
-| bank_code | MIZUHO_BANK     | MIZUHO BANK |
-| bank_code | INMOBILIARIO    | INMOBILIARIO |
-| bank_code | BBASE           | BBASE |
-| bank_code | MUFG            | MUFG |
-| bank_code | FINCOMUN        | FINCOMUN |
-| bank_code | FINAMEX         | FINAMEX |
-| bank_code | CITI_MEXICO     | CITI MEXICO |
-| bank_code | NU_MEXICO       | Nu México Financiera |
+|:-----------|:----------------|:---------|
+| bank_code  | CB_INTERCAM     | CB INTERCAM |
+| bank_code  | MULTIVA_BANCO   | MULTIVA BANCO |
+| bank_code  | LIBERTAD        | LIBERTAD |
+| bank_code  | ARCUS           | ARCUS |
+| bank_code  | NAFIN           | NAFIN |
+| bank_code  | MASARI          | MASARI |
+| bank_code  | CI_BOLSA        | CI BOLSA |
+| bank_code  | BANORTE         | BANORTE |
+| bank_code  | BANOBRAS        | BANOBRAS |
+| bank_code  | BANCREA         | BANCREA |
+| bank_code  | AKALA           | AKALA |
+| bank_code  | BANCOMEXT       | BANCOMEXT |
+| bank_code  | VOLKSWAGEN      | VOLKSWAGEN |
+| bank_code  | VE_POR_MAS      | VE POR MAS |
+| bank_code  | MERCADO_PAGO_W  | Mercado Pago W |
+| bank_code  | INTERCAM_BANCO  | INTERCAM BANCO |
+| bank_code  | CAJA_TELEFONIST | CAJA TELEFONIST |
+| bank_code  | CAJA_POP_MEXICA | CAJA POP MEXICA |
+| bank_code  | BANJERCITO      | BANJERCITO |
+| bank_code  | ACTINVER        | ACTINVER |
+| bank_code  | PROFUTURO       | PROFUTURO |
+| bank_code  | HIPOTECARIA_FED | HIPOTECARIA FED |
+| bank_code  | CoDi_Valida     | CoDi Valida |
+| bank_code  | BANCOPPEL       | BANCOPPEL |
+| bank_code  | TESORED         | TESORED |
+| bank_code  | INDEVAL         | INDEVAL |
+| bank_code  | INBURSA         | INBURSA |
+| bank_code  | CRISTOBAL_COLON | CRISTOBAL COLON |
+| bank_code  | BAJIO           | BAJIO |
+| bank_code  | BANXICO         | BANK OF MEXICO |
+| bank_code  | KUSPIT          | KUSPIT |
+| bank_code  | CREDIT_SUISSE   | CREDIT SUISSE |
+| bank_code  | AZTECA          | AZTECA |
+| bank_code  | AFIRME          | AFIRME |
+| bank_code  | CIBANCO         | CIBANCO |
+| bank_code  | BARCLAYS        | BARCLAYS |
+| bank_code  | SPINOXXO        | Spin in OXXO |
+| bank_code  | VALUE           | VALUE |
+| bank_code  | VALMEX          | VALMEX |
+| bank_code  | REFORMA         | REFORMA |
+| bank_code  | PAGATODO        | PAGATODO |
+| bank_code  | MULTIVA_CBOLSA  | MULTIVA CBOLSA |
+| bank_code  | COMPARTAMOS     | COMPARTAMOS |
+| bank_code  | JP_MORGAN       | JP MORGAN |
+| bank_code  | EVERCORE        | EVERCORE |
+| bank_code  | CREDICAPITAL    | CREDICAPITAL |
+| bank_code  | BANSI           | BANSI |
+| bank_code  | BANREGIO        | BANREGIO |
+| bank_code  | BANKAOOL        | BANKAOOL |
+| bank_code  | BANK_OF_AMERICA | BANK OF AMERICA |
+| bank_code  | ABC_CAPITAL     | ABC CAPITAL |
+| bank_code  | TRANSFER        | TRANSFER |
+| bank_code  | STP             | STP |
+| bank_code  | FONDO_FIRA      | FONDO (FIRA) |
+| bank_code  | FOMPED          | FOMPED |
+| bank_code  | BANCO_S3        | BANCO S3 |
+| bank_code  | AUTOFIN         | AUTOFIN |
+| bank_code  | UNAGRA          | UNAGRA |
+| bank_code  | HSBC            | HSBC |
+| bank_code  | DONDE           | DONDE |
+| bank_code  | CONSUBANCO      | CONSUBANCO |
+| bank_code  | BMONEX          | BMONEX |
+| bank_code  | MONEXCB         | MONEXCB |
+| bank_code  | BBVA_MEXICO     | BBVA MEXICO |
+| bank_code  | BANSEFI         | BANSEFI |
+| bank_code  | BANCO_FINTERRA  | BANCO FINTERRA |
+| bank_code  | BANAMEX         | BANAMEX |
+| bank_code  | ASP_INTEGRA_OPC | ASP INTEGRA OPC |
+| bank_code  | SANTANDER       | SANTANDER |
+| bank_code  | INVEX           | INVEX |
+| bank_code  | MIFEL           | MIFEL |
+| bank_code  | INVERCAP        | INVERCAP |
+| bank_code  | GBM             | GBM |
+| bank_code  | VECTOR          | VECTOR |
+| bank_code  | SHINHAN         | SHINHAN |
+| bank_code  | SCOTIABANK      | SCOTIABANK |
+| bank_code  | SABADELL        | SABADELL |
+| bank_code  | MIZUHO_BANK     | MIZUHO BANK |
+| bank_code  | INMOBILIARIO    | INMOBILIARIO |
+| bank_code  | BBASE           | BBASE |
+| bank_code  | MUFG            | MUFG |
+| bank_code  | FINCOMUN        | FINCOMUN |
+| bank_code  | FINAMEX         | FINAMEX |
+| bank_code  | CITI_MEXICO     | CITI MEXICO |
+| bank_code  | NU_MEXICO       | Nu México Financiera |
+| bank_code  |  KLAR_MXN               |    Klar Technologies       | 
 
 # 13. Error Codes
 
 | Status Code | Description                                                              |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| 200     | Success                                                                |
-| 1000    | Internal Error                                                             |
-| 1001    | IP not in merchant IP whitelist.                                                    |
-| 1002    | Parameter Error                                                            |
-| 1003    | Signature Error                                                            |
-| 1004    | Interface currently unavailable for the merchant (Contact operations to verify: Merchant or App (Not exist\|Closed\|Product not configured)) |
-| 1005    | Merchant does not exist.                                                        |
-| 1006    | Current user IP is in the blacklist.                                                  |
-| 1007    | Current user is in the blacklist.                                                   |
-| 1008    | Merchant App does not exist.                                                      |
-| 1009    | Payment product does not exist.                                                    |
-| 1010    | Payment channel does not exist.                                                    |
-| 1011    | Payment channel development not completed, temporarily unavailable.                                  |
-| 1012    | Payment channel exception, please try again later.                                           |
-| 1013    | High order volume, please try again later.                                               |
-| 1014    | Duplicate order number.                                                        |
-| 1015    | Insufficient app balance.                                                       |
-| 1016    | Frequent order placement by the same user, please try again later.                                   |
-| 1017    | Order record does not exist.                                                      |
-| 1018    | Current amount not supported.                                                     |
-| 1019    | Pay-in not enabled for the app's country.                                               |
-| 1020    | Pay-out not enabled for the app's country.                                               |
-| 1021    | Failure                                                                |
-| 1036    | Interface not yet open.                                                        |
-| 1037    | Currency not supported.                                                        |
-| 1038    | Pay-in utr reporting error.                                                      |
-| 9999    | Other errors.                                                             |
-| 3000    | System maintenance, order placement suspended, please try again later.                                 |
+| 200         | Success                                                                |
+| 1000        | Internal Error                                                             |
+| 1001        | IP not in merchant IP whitelist.                                                    |
+| 1002        | Parameter Error                                                            |
+| 1003        | Signature Error                                                            |
+| 1004        | Interface currently unavailable for the merchant (Contact operations to verify: Merchant or App (Not exist\|Closed\|Product not configured)) |
+| 1005        | Merchant does not exist.                                                        |
+| 1006        | Current user IP is in the blacklist.                                                  |
+| 1007        | Current user is in the blacklist.                                                   |
+| 1008        | Merchant App does not exist.                                                      |
+| 1009        | Payment product does not exist.                                                    |
+| 1010        | Payment channel does not exist.                                                    |
+| 1011        | Payment channel development not completed, temporarily unavailable.                                  |
+| 1012        | Payment channel exception, please try again later.                                           |
+| 1013        | High order volume, please try again later.                                               |
+| 1014        | Duplicate order number.                                                        |
+| 1015        | Insufficient app balance.                                                       |
+| 1016        | Frequent order placement by the same user, please try again later.                                   |
+| 1017        | Order record does not exist.                                                      |
+| 1018        | Current amount not supported.                                                     |
+| 1019        | Pay-in not enabled for the app's country.                                               |
+| 1020        | Pay-out not enabled for the app's country.                                               |
+| 1021        | Failure                                                                |
+| 1036        | Interface not yet open.                                                        |
+| 1037        | Currency not supported.                                                        |
+| 1038        | Pay-in utr reporting error.                                                      |
+| 9999        | Other errors.                                                             |
+| 3000        | System maintenance, order placement suspended, please try again later.                                 |
 
 # 14. Pay-in Checkout Interface
 
