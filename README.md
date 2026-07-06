@@ -19,6 +19,7 @@
 | 孟加拉  | [点击查看 Doc_BDT](./cn_docs/Doc_BDT.md) |
 | 美国   | [点击查看 Doc_USD](./cn_docs/Doc_USD.md) |
 | 泰国   | [点击查看 Doc_THB](./cn_docs/Doc_THB.md) |
+| 马来西亚 | [点击查看 Doc_MYR](./cn_docs/Doc_MYR.md) |
 
 
 # English
@@ -42,3 +43,4 @@
 | Bengal | [Doc Doc_BDT](./en_docs/Doc_BDT.md) |
 | United States | [Doc Doc_USD](./en_docs/Doc_USD.md) |
 | Thailand | [Doc Doc_THB](./en_docs/Doc_THB.md) |
+| Malaysia | [Doc Doc_MYR](./en_docs/Doc_MYR.md) |
