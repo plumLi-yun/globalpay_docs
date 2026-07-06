@@ -547,8 +547,8 @@
 
 # 12、银行编码
 
-| 字段名称 | 编码              | 银行名称 |
-|:---------|:----------------|:---------|
+| 字段名称      | 编码              | 银行名称 |
+|:----------|:----------------|:---------|
 | bank_code | CB_INTERCAM     | CB INTERCAM |
 | bank_code | MULTIVA_BANCO   | MULTIVA BANCO |
 | bank_code | LIBERTAD        | LIBERTAD |
@@ -634,7 +634,8 @@
 | bank_code | FINAMEX         | FINAMEX |
 | bank_code | CITI_MEXICO     | CITI MEXICO |
 | bank_code | NU_MEXICO       | Nu México Financiera |
-| bank_code  |  KLAR_MXN               |    Klar Technologies       | 
+| bank_code |  KLAR_MXN               |    Klar Technologies       | 
+| bank_code |   FONDEADORA              |  Fondeadora    |
 
 
 # 13、错误码

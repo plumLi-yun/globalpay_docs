@@ -637,6 +637,7 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 | bank_code  | CITI_MEXICO     | CITI MEXICO |
 | bank_code  | NU_MEXICO       | Nu México Financiera |
 | bank_code  |  KLAR_MXN               |    Klar Technologies       | 
+| bank_code |   FONDEADORA              |  Fondeadora    |
 
 # 13. Error Codes
 
