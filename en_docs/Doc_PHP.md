@@ -55,16 +55,16 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 ## 4.1 Pay-in Order Request Parameters
 
 | Name           | Type   | Required | Description                                                                       |
-| -------------- | ------ | -------- | --------------------------------------------------------------------------------- |
+| -------------- | ------ |----------| --------------------------------------------------------------------------------- |
 | trade_no       | int    | true     | Merchant number                                                                   |
 | app_id         | int    | true     | Merchant appId                                                                    |
 | pay_code       | int    | true     | Product code, obtain from our operations team                                     |
 | pay_method     | string | true     | Payment method, refer to the payment method dictionary                            |
 | price          | int    | true     | Order amount, unit: centavos, integer. 1 peso = 100 centavos                      |
 | order_no       | string | true     | Merchant order number                                                             |
-| success_url    | string | true     | Redirect URL after successful payment                                             |
-| fail_url       | string | true     | Redirect URL after failed payment                                                 |
-| pay_notice_url | string | true     | Payment success notification URL                                                  |
+| success_url    | string | false    | Redirect URL after successful payment                                             |
+| fail_url       | string | false    | Redirect URL after failed payment                                                 |
+| pay_notice_url | string | false    | Payment success notification URL                                                  |
 | user_id        | string | true     | System user ID                                                                    |
 | user_ip        | string | true     | Payer IP                                                                          |
 | attach         | string | true     | Additional parameter JSON string: {"name":"Name","phone":"Phone","email":"Email"} |

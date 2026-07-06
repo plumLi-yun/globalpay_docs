@@ -51,9 +51,9 @@
 | pay_method     | string    | true  | 支付方式   参照支付方式字典                                                                                   |
 | price          | int    | true  | 下单金额，单位：生丁，整型。1 比索 = 100 生丁                                                                       |
 | order_no       | string | true  | 商户订单号                                                                                             |
-| success_url    | string | true  | 支付成功跳转 url                                                                                        |
-| fail_url       | string | true  | 支付失败跳转 url                                                                                        |
-| pay_notice_url | string | true  | 支付成功通知 url                                                                                        |
+| success_url    | string | false | 支付成功跳转 url                                                                                        |
+| fail_url       | string | false | 支付失败跳转 url                                                                                        |
+| pay_notice_url | string | false | 支付成功通知 url                                                                                        |
 | user_id        | string | true  | 系统用户ID                                                                                            |
 | user_ip        | string | true  | 付款人 IP                                                                                            |
 |attach|string| true  | 附加参数 json字符串  {”name”:”姓名”,"phone":"电话","email":"邮箱"} |
