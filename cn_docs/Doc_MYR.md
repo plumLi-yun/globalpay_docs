@@ -550,7 +550,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 
 | 字段名称   | 值       | 描述     |
 | ---------- | -------- | -------- |
-| pay_method | MYR-Pay   | 马来西亚代收 |
+| pay_method | MYR-Payment   | 马来西亚代收 |
 
 # 14、代付银行编码 代付字段 bank_code
 

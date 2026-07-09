@@ -550,7 +550,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 
 | Field Name | Value    | Description |
 | ---------- | -------- | ----------- |
-| pay_method | MYR-Pay  | Malaysia pay-in |
+| pay_method | MYR-Payment  | Malaysia pay-in |
 
 # 14. Pay-out Bank Codes `bank_code`
 
