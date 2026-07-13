@@ -636,6 +636,7 @@
 | bank_code | NU_MEXICO       | Nu México Financiera |
 | bank_code |  KLAR_MXN               |    Klar Technologies       | 
 | bank_code |   FONDEADORA              |  Fondeadora    |
+| bank_code |   HEY_BANCO              | HEY BANCO     |
 
 
 # 13、错误码
