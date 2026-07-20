@@ -179,22 +179,22 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 
 | Name      | Type  | Required | Description                                     |
 |----------------|--------|----------|-------------------------------------------------------------------------------------|
-| trade_no    | int  | true   | Merchant ID.                                    |
-| order_no    | string | true   | Merchant order number.                               |
-| app_id     | int  | true   | Merchant appId.                                   |
-| pay_code    | int  | true   | Product code, obtained from our operations.                     |
-| price     | int  | true   | Order amount, unit: Paise, integer. 1 Rupee = 100 paise.              |
-| account_no   | string | true   | Receiving account number.                              |
-| account_type  | string | true   | Account type: UPI (India UPI), BANK (Bank Account).                 |
-| account_name  | string | true   | Name.                                        |
-| bank_code   | string | true   | Fixed value: INR_UPI or INR_BANK.                          |
-| identify_type | string | true   | Identity type: India (IFSC). Required when bank_code=INR_BANK.           |
-| identify_num  | string | true   | Identity number: IFSC Number. Required when bank_code=INR_BANK.           |
-| pay_notice_url | string | false  | Notification URL for successful pay-out.                      |
-| attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name","pay_type":"payment method"}. |
-| user_ip    | string | false  | Receiving user IP address.                             |
-| sign      | string | true   | Signature result, see the top of the document for the signature method.       |
-| timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
+| trade_no    | int  | true     | Merchant ID.                                    |
+| order_no    | string | true     | Merchant order number.                               |
+| app_id     | int  | true     | Merchant appId.                                   |
+| pay_code    | int  | true     | Product code, obtained from our operations.                     |
+| price     | int  | true     | Order amount, unit: Paise, integer. 1 Rupee = 100 paise.              |
+| account_no   | string | true     | Receiving account number.                              |
+| account_type  | string | true     | Account type: UPI (India UPI), BANK (Bank Account).                 |
+| account_name  | string | true     | Name.                                        |
+| bank_code   | string | true     | Fixed value: INR_UPI or INR_BANK.                          |
+| identify_type | string | true     | Identity type: India (IFSC). Required when bank_code=INR_BANK.           |
+| identify_num  | string | true     | Identity number: IFSC Number. Required when bank_code=INR_BANK.           |
+| pay_notice_url | string | false    | Notification URL for successful pay-out.                      |
+| attach     | string | true     | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name","pay_type":"payment method"}. |
+| user_ip    | string | false    | Receiving user IP address.                             |
+| sign      | string | true     | Signature result, see the top of the document for the signature method.       |
+| timestamp   | string | false    | Order timestamp (10-digit timestamp in seconds).                  |
 
 - Pay-Out – `attach` Additional Parameter Field Description
 

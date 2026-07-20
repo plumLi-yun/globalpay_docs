@@ -189,10 +189,10 @@
 | identify_type  | string | true  | 证件类型:印度（IFSC）  bank_code=INR_BANK 时必需                 |
 | identify_num   | string | true  | 证件号码 IFSC号码  bank_code=INR_BANK 时必需                   |
 | pay_notice_url | string | false | 代付成功通知 url                                            |
-| attach         | string | false | 附加参数  {"email":"邮箱","phone":"手机号","bank_name":"银行名称","pay_type":"支付方式"} |
-| user_ip        | string | false  | 收款用户 IP                                               |
+| attach         | string | true  | 附加参数  {"email":"邮箱","phone":"手机号","bank_name":"银行名称","pay_type":"支付方式"} |
+| user_ip        | string | false | 收款用户 IP                                               |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                        |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                       
+|timestamp|string| false | 下单时间戳 10位时间戳单位S                                       
 
 -  代付-attach 附加参数字段说明
 
