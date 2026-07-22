@@ -593,6 +593,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 | bank_code | RHB        | RHB Bank |
 | bank_code | MCIMB      | CIMB Bank |
 | bank_code | MAY        | Maybank |
+| bank_code | RYT       | RYT Bank |
 
 # 15. Document Update Time
 

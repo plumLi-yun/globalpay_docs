@@ -554,45 +554,46 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 
 # 14、代付银行编码 代付字段 bank_code
 
-| 字段名称  | 编码       | 银行名称 |
-| :-------- | :--------- | :------- |
-| bank_code | SUMITOMO   | SUMITOMO MITSUI CORPORATION Bank |
-| bank_code | MBSB       | MBSB Bank |
-| bank_code | FINEXUS    | FINEXUS CARDS Bank |
-| bank_code | MUOB       | UOB |
-| bank_code | BIMB       | Bank Islam Malaysia |
-| bank_code | MJPMORGAN  | J.P. MORGAN CHASE Bank |
-| bank_code | MBOC       | OF CHINA Bank |
-| bank_code | RAKYAT     | KERJASAMA RAKYAT MALAYSIA Bank |
-| bank_code | AGRO       | AGRO |
-| bank_code | MHSBC      | HSBC |
-| bank_code | MCITI      | CITI Bank |
-| bank_code | BI         | ISLAM Bank |
-| bank_code | ICBC       | INDUSTRIAL AND COMMERCIAL OF CHINA (ICBC) Bank |
-| bank_code | PBE        | Public Bank Berhad |
-| bank_code | MSCB       | STANDARD CHARTERED Bank |
-| bank_code | MCB        | MIZUHO CORPORATE Bank |
-| bank_code | KFH        | KUWAIT FINANCE HOUSE Bank |
-| bank_code | MBNP       | BNP PARIBAS MALAYSIA Bank |
-| bank_code | MOCBC      | OCBC |
-| bank_code | BIGPAY     | BIGPAY Bank |
-| bank_code | BKK        | BANGKOK Bank |
-| bank_code | BMMB       | Bank Muamalate |
-| bank_code | AM         | AmBank |
-| bank_code | GX         | GXbank |
-| bank_code | MBOA       | OF AMERICA Bank |
-| bank_code | BSN        | BSN |
-| bank_code | BKRM       | Bank Rakyat |
-| bank_code | ALLIANCE   | Alliance Bank Malaysia Berhad |
-| bank_code | TNG        | TOUCH N GO EWALLET Bank |
-| bank_code | MUFGB      | MUFG Bank |
-| bank_code | MCCB       | CHINA CONSTRUCTION (CCB) Bank |
-| bank_code | RAJHI      | AL-RAJHI Bank |
-| bank_code | AFFIN      | Affin Bank |
-| bank_code | MHLB       | Hong Leong Bank |
-| bank_code | RHB        | RHB Bank |
-| bank_code | MCIMB      | CIMB Bank |
-| bank_code | MAY        | Maybank |
+| 字段名称      | 编码        | 银行名称 |
+|:----------|:----------| :------- |
+| bank_code | SUMITOMO  | SUMITOMO MITSUI CORPORATION Bank |
+| bank_code | MBSB      | MBSB Bank |
+| bank_code | FINEXUS   | FINEXUS CARDS Bank |
+| bank_code | MUOB      | UOB |
+| bank_code | BIMB      | Bank Islam Malaysia |
+| bank_code | MJPMORGAN | J.P. MORGAN CHASE Bank |
+| bank_code | MBOC      | OF CHINA Bank |
+| bank_code | RAKYAT    | KERJASAMA RAKYAT MALAYSIA Bank |
+| bank_code | AGRO      | AGRO |
+| bank_code | MHSBC     | HSBC |
+| bank_code | MCITI     | CITI Bank |
+| bank_code | BI        | ISLAM Bank |
+| bank_code | ICBC      | INDUSTRIAL AND COMMERCIAL OF CHINA (ICBC) Bank |
+| bank_code | PBE       | Public Bank Berhad |
+| bank_code | MSCB      | STANDARD CHARTERED Bank |
+| bank_code | MCB       | MIZUHO CORPORATE Bank |
+| bank_code | KFH       | KUWAIT FINANCE HOUSE Bank |
+| bank_code | MBNP      | BNP PARIBAS MALAYSIA Bank |
+| bank_code | MOCBC     | OCBC |
+| bank_code | BIGPAY    | BIGPAY Bank |
+| bank_code | BKK       | BANGKOK Bank |
+| bank_code | BMMB      | Bank Muamalate |
+| bank_code | AM        | AmBank |
+| bank_code | GX        | GXbank |
+| bank_code | MBOA      | OF AMERICA Bank |
+| bank_code | BSN       | BSN |
+| bank_code | BKRM      | Bank Rakyat |
+| bank_code | ALLIANCE  | Alliance Bank Malaysia Berhad |
+| bank_code | TNG       | TOUCH N GO EWALLET Bank |
+| bank_code | MUFGB     | MUFG Bank |
+| bank_code | MCCB      | CHINA CONSTRUCTION (CCB) Bank |
+| bank_code | RAJHI     | AL-RAJHI Bank |
+| bank_code | AFFIN     | Affin Bank |
+| bank_code | MHLB      | Hong Leong Bank |
+| bank_code | RHB       | RHB Bank |
+| bank_code | MCIMB     | CIMB Bank |
+| bank_code | MAY       | Maybank |
+| bank_code | RYT       | RYT Bank |
 
 # 15、文档更新时间
 
