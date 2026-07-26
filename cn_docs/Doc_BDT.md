@@ -497,10 +497,11 @@
 
 # 11、支付方式字典 代收字段 pay_method
 
-| 字段名称 | 值         | 描述                   |
-|------|-----------|----------------------|
-| pay_method     | BKASH       | bKash |
-| pay_method     | NAGAD | Nagad |
+| 字段名称       | 值         | 描述     |
+|------------|-----------|--------|
+| pay_method | BKASH       | bKash  |
+| pay_method | NAGAD | Nagad  |
+| pay_method       |     ROCKET      | rocket |
 
 
 # 12、银行编码字典 代付字段 bank_code
@@ -508,7 +509,9 @@
 | 字段名称 | 值 | 描述 |
 |------|-----------|-----------------------|
 | bank_code     | BKASH       | bKash |
-| bank_code     | NAGAD | Nagad |
+| bank_code | NAGAD | Nagad |
+| bank_code       | rocket | rocket |
+
 
 # 13、错误码
 
