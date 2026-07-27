@@ -54,22 +54,34 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 
 
 ## 4.1 Pay-in Order Request Parameters
-| Name           | Type   | Required  | Description                                                                                                    |
-| -------------- | ------ | ----- |----------------------------------------------------------------------------------------------------------------|
-| trade_no       | int    | true  | Merchant number                                                                                                |
-| app_id         | int    | true  | erchant appId                                                                                                  |
-| pay_code       | int    | true  | Product code, obtain from our operations team                                                                  |
-| pay_method     | string    | true  | Payment method, refer to the payment method dictionary                                                         |
-| price          | int    | true  | Order amount, unit: centavos, integer. 1 peso = 100 centavos                                                   |
-| order_no       | string | true  | Merchant order number                                                                                          |
-| success_url    | string | false | Redirect URL after successful payment                                                                          |
-| fail_url       | string | false | Redirect URL after failed payment                                                                              |
-| pay_notice_url | string | false | Payment success notification URL                                                                               |
-| user_id        | string | true  | System user ID                                                                                                 |
-| user_ip        | string | false | Payer IP                                                                                                       |
-| attach         | string | false | Additional parameter JSON string:{"name":"Named ","phone":"Phone","identify_type":"CNIC","identify_num":"Identification Number"} |
-| sign           | string | true  | Signature result, signature method described at the top of the document                                                                                                 |
-|timestamp|string|false| Order timestamp, 10-digit timestamp in seconds                                                                                                   |
+| Name           | Type   | Required | Description                                                                                                    |
+| -------------- | ------ |----------|----------------------------------------------------------------------------------------------------------------|
+| trade_no       | int    | true     | Merchant number                                                                                                |
+| app_id         | int    | true     | erchant appId                                                                                                  |
+| pay_code       | int    | true     | Product code, obtain from our operations team                                                                  |
+| pay_method     | string    | true     | Payment method, refer to the payment method dictionary                                                         |
+| price          | int    | true     | Order amount, unit: centavos, integer. 1 peso = 100 centavos                                                   |
+| order_no       | string | true     | Merchant order number                                                                                          |
+| success_url    | string | false    | Redirect URL after successful payment                                                                          |
+| fail_url       | string | false    | Redirect URL after failed payment                                                                              |
+| pay_notice_url | string | false    | Payment success notification URL                                                                               |
+| user_id        | string | true     | System user ID                                                                                                 |
+| user_ip        | string | false    | Payer IP                                                                                                       |
+| attach         | string | true     | Additional parameter JSON string |
+| sign           | string | true     | Signature result, signature method described at the top of the document                                                                                                 |
+|timestamp|string| false    | Order timestamp, 10-digit timestamp in seconds                                                                                                   |
+
+
+
+- Pay-in attach additional parameter field description
+
+| Name           | Type   | Required | Description                                                  |
+|---------------|--------|----------|--------------------------------------------------------------|
+| name          | string | true     | Payer name                                                   |
+| phone         | string | true     | Phone number, 11 digits starting with 03 or 10 digits starting with 3 |
+| email         | string | false    | Email                                                        |
+| identify_type | string | false    | CNIC                                                         |
+| identify_num  | string | false    | Identification number                                        |
 
 ### Pay-in Order Request Example
 

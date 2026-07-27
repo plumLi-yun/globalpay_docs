@@ -42,8 +42,8 @@
 
 
 ## 4.1 代收-下单请求参数
-| 名称           | 类型   | 必填  | 描述                                                                                 |
-| -------------- | ------ | ----- |------------------------------------------------------------------------------------|
+| 名称           | 类型   | 必填    | 描述                                                                                 |
+| -------------- | ------ |-------|------------------------------------------------------------------------------------|
 | trade_no       | int    | true  | 商户号                                                                                |
 | app_id         | int    | true  | 商户 appId                                                                           |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                      |
@@ -55,9 +55,22 @@
 | pay_notice_url | string | false | 支付成功通知 url                                                                         |
 | user_id        | string | true  | 付款人在商户平台的 ID                                                                       |
 | user_ip        | string | false | 付款人 IP                                                                             |
-| attach         | string | false | 附加参数json字符串{"name":"姓名","phone":"手机号","identify_type":"CNIC","identify_num":"证件号"} |
+| attach         | string | true  | 附加参数json字符串 |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                                                     |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                    |
+|timestamp|string| false | 下单时间戳 10位时间戳单位S                                                                    |
+
+
+-  代收-attach 附加参数字段说明
+| 名称            | 类型     | 必填    | 描述                       |
+|---------------|--------|-------|--------------------------|
+| name          | string | true  | 付款人姓名                    |
+| phone         | string    | true  | 手机号  03开头的十一位数或者3开头的10位数 |
+| email         | string    | false | 邮箱                       |
+| identify_type | string | false | CNIC                     |
+| identify_num  | string | false | 识别号码                     |
+
+
+
 
 请求参数示例
 
