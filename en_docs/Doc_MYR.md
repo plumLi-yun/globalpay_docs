@@ -552,7 +552,51 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 | ---------- | -------- | ----------- |
 | pay_method | MYR-Payment  | Malaysia pay-in |
 
-# 14. Pay-out Bank Codes `bank_code`
+
+# 14. Pay-in Bank Codes `attach.bank_code`
+
+| Field Name | Code | Description |
+|:-----------------|:----------| :------- |
+| attach.bank_code | SUMITOMO  | SUMITOMO MITSUI CORPORATION Bank |
+| attach.bank_code        | MBSB      | MBSB Bank |
+| attach.bank_code        | FINEXUS   | FINEXUS CARDS Bank |
+| attach.bank_code        | MUOB      | UOB |
+| attach.bank_code        | BIMB      | Bank Islam Malaysia |
+| attach.bank_code        | MJPMORGAN | J.P. MORGAN CHASE Bank |
+| attach.bank_code        | MBOC      | OF CHINA Bank |
+| attach.bank_code        | RAKYAT    | KERJASAMA RAKYAT MALAYSIA Bank |
+| attach.bank_code        | AGRO      | AGRO |
+| attach.bank_code        | MHSBC     | HSBC |
+| attach.bank_code        | MCITI     | CITI Bank |
+| attach.bank_code        | BI        | ISLAM Bank |
+| attach.bank_code        | ICBC      | INDUSTRIAL AND COMMERCIAL OF CHINA (ICBC) Bank |
+| attach.bank_code        | PBE       | Public Bank Berhad |
+| attach.bank_code        | MSCB      | STANDARD CHARTERED Bank |
+| attach.bank_code        | MCB       | MIZUHO CORPORATE Bank |
+| attach.bank_code        | KFH       | KUWAIT FINANCE HOUSE Bank |
+| attach.bank_code        | MBNP      | BNP PARIBAS MALAYSIA Bank |
+| attach.bank_code        | MOCBC     | OCBC |
+| attach.bank_code        | BIGPAY    | BIGPAY Bank |
+| attach.bank_code        | BKK       | BANGKOK Bank |
+| attach.bank_code        | BMMB      | Bank Muamalate |
+| attach.bank_code        | AM        | AmBank |
+| attach.bank_code        | GX        | GXbank |
+| attach.bank_code        | MBOA      | OF AMERICA Bank |
+| attach.bank_code        | BSN       | BSN |
+| attach.bank_code        | BKRM      | Bank Rakyat |
+| attach.bank_code        | ALLIANCE  | Alliance Bank Malaysia Berhad |
+| attach.bank_code        | TNG       | TOUCH N GO EWALLET Bank |
+| attach.bank_code        | MUFGB     | MUFG Bank |
+| attach.bank_code        | MCCB      | CHINA CONSTRUCTION (CCB) Bank |
+| attach.bank_code        | RAJHI     | AL-RAJHI Bank |
+| attach.bank_code        | AFFIN     | Affin Bank |
+| attach.bank_code        | MHLB      | Hong Leong Bank |
+| attach.bank_code        | RHB       | RHB Bank |
+| attach.bank_code        | MCIMB     | CIMB Bank |
+| attach.bank_code        | MAY       | Maybank |
+| attach.bank_code        | RYT       | RYT Bank |
+
+# 15. Pay-out Bank Codes `bank_code`
 
 | Field Name | Code      | Bank Name |
 | :--------- | :-------- | :-------- |
@@ -595,7 +639,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 | bank_code | MAY        | Maybank |
 | bank_code | RYT       | RYT Bank |
 
-# 15. Document Update Time
+# 16. Document Update Time
 
 ```
 2026-06-11 00:30:00
