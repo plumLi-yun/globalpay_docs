@@ -179,10 +179,8 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
   "real_price": 10000,
-  "fee": 10,
   "nti_time": 1693057443,
   "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\"}",
-  "attach": "",
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
@@ -305,10 +303,10 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
-  "real_price": 10000,
   "fee": 10,
-  "attach": "",
+  "pay_info": "",
   "remark": "",
+  "nti_time": 1693057443,
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }

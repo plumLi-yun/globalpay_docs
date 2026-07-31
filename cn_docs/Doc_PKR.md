@@ -167,10 +167,8 @@
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
   "real_price": 10000,
-  "fee": 10,
   "nti_time": 1693057443,
   "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\"}",
-  "attach": "",
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
@@ -270,7 +268,7 @@
 | trade_no     | int    | true  | 商户号                                   |
 | order_no     | string | true  | 商户订单号                               |
 | dis_order_no | string | true  | 平台订单号                               |
-| price        | int    | true  | 订单金额,单位:分                         |
+| order_price        | int    | true  | 订单金额,单位:分                         |
 | fee          | int    | false | 订单手续费 ,单位:分                      |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正 |
 | pay_info  | string    | false | 付款信息                          |
@@ -288,10 +286,10 @@
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
-  "real_price": 10000,
   "fee": 10,
-  "attach": "",
+  "pay_info": "",
   "remark": "",
+  "nti_time": 1693057443,
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }

@@ -135,7 +135,6 @@ Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
 | dis_order_no | string | true   | Platform order number.                                                                                                                        |
 | order_price | int  | true   | Order amount, unit: Centavos.                                                                                                                      |
 | real_price  | int  | true   | Actual amount paid by the user, unit: Centavos.                                                                                                             |
-| fee          | int  | false  | Order fee, unit: Centavos.                                                                                                                      |
 | nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
 | payer    | string | false  | JSON string, payer info: {"name":"Name","email":"Email","phone":"Phone","identify_type":"ID Type","identify_num":"RUT ID"}. |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
@@ -150,10 +149,8 @@ Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
   "real_price": 10000,
-  "fee": 10,
   "nti_time": 1693057443,
   "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"RUT ID\"}",
-  "attach": "",
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
@@ -262,13 +259,14 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | trade_no     | int    | true     | Merchant ID                                                         |
 | order_no     | string | true     | Merchant order number                                               |
 | dis_order_no | string | true     | Platform order number                                               |
-| price        | int    | true     | Order amount, unit: Centavos                                        |
+| order_price  | int    | true     | Order amount, unit: Centavos                                        |
 | fee          | int    | false    | Order fee, unit: Centavos                                           |
-| status       | int    | true     | Order status: 2. Payout success, 3. Payout failure, 7. Rejected, 8. Reversal |
-| attach       | string | false    | Additional parameters                                               |
+| status       | int    | true     | Order status: 2. Payout success, 3. Payout failure, 7. Rejected, 9. Reversal |
+| pay_info     | string | false    | Payment information                                                 |
 | remark       | string | false    | Failure reason                                                      |
 | create_time  | int    | true     | Creation time                                                       |
 | sign         | string | true     | Signature result, see the top of the document for the signature method |
+| nti_time     | int    | true     | Notification initiation time                                        |
 
 - Pay-out Callback Request Example
 
@@ -279,10 +277,10 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
-  "real_price": 10000,
   "fee": 10,
-  "attach": "",
+  "pay_info": "",
   "remark": "",
+  "nti_time": 1693057443,
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }

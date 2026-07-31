@@ -152,7 +152,6 @@
 | dis_order_no | string | true  | 平台订单号                                                                                                                 |
 | order_price  | int    | true  | 订单金额,单位:分                                                                                                           |
 | real_price   | int    | true  | 用户真实付款金额 ,单位:分                                                                                                  |
-| fee          | int    | false | 订单手续费 ,单位:分                                                                                                        |
 | nti_time     | int    | false | 发起通知时间                                                                                                               |
 | payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"RUT ID"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |                                                                                                                  |
@@ -169,10 +168,8 @@
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
   "real_price": 10000,
-  "fee": 10,
   "nti_time": 1693057443,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
-  "attach": "",
+  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"RUT ID\"}",
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
@@ -290,13 +287,14 @@
 | trade_no     | int    | true  | 商户号                                   |
 | order_no     | string | true  | 商户订单号                               |
 | dis_order_no | string | true  | 平台订单号                               |
-| price        | int    | true  | 订单金额,单位:分                         |
+| order_price  | int    | true  | 订单金额,单位:分                         |
 | fee          | int    | false | 订单手续费 ,单位:分                      |
-| status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 8.冲正  |
-| attach       | string | false | 附加参数                                 |
+| status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正  |
+| pay_info     | string | false | 付款信息                                 |
 | remark       | string | false | 失败原因                                 |
 | create_time  | int    | true  | 创建时间                                 |
 | sign         | string | true  | 签名结果,签名方法在文档顶部              |
+| nti_time     | int    | true  | 发起通知时间                             |
 
 - 代付回调请求示例
 
@@ -307,10 +305,10 @@
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
-  "real_price": 10000,
   "fee": 10,
-  "attach": "",
+  "pay_info": "",
   "remark": "",
+  "nti_time": 1693057443,
   "create_time": 1695317066,
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
