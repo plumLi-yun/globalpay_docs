@@ -430,9 +430,11 @@
 ```
 # 10、支付方式 代收字段 pay_method
 
-| 字段      | 国家   | 值                  | 描述     |
-|-----------|------|--------------------|--------|
-| pay_method | 巴基斯坦 | easypaisa或jazzcash | 巴基斯坦代收 |
+| 字段         | 国家   | 值                  | 描述     |
+|------------|------|--------------------|--------|
+| pay_method | 巴基斯坦 | easypaisa | Easypaisa巴基斯坦代收 |
+| pay_method | 巴基斯坦 | jazzcash | Jazzcash巴基斯坦代收 |
+| pay_method | 巴基斯坦     | QR-PKR                 | QR巴基斯坦扫码 |
 
 
 # 11、银行编码 bank_code

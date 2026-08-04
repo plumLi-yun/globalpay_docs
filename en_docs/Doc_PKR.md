@@ -451,10 +451,11 @@ Success:
 ```
 
 # 10、Payment Methods - Collection Field pay_method
-| Field | Country | Value                 | Description         |
-|-----------|------|-----------------------|---------------------|
-| pay_method | Pakistan | easypaisa or jazzcash | Pakistan Collection |
-
+| Field      | Country | Value     | Description |
+|------------|---------|-----------|-------------|
+| pay_method | Pakistan     | easypaisa | Easypaisa   |
+| pay_method | Pakistan    | jazzcash  | Jazzcash    |
+| pay_method | Pakistan   | QR-PKR    | QR          |
 
 # 11、Bank Codes bank_code
 
