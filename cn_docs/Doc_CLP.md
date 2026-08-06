@@ -352,7 +352,7 @@
 | msg          | string | true  | 查询失败原因                                                      |
 | trade_no     | int    | true  | 商户号                                                                                                                     |
 | real_price   | int    | true  | 真实付款金额 ,单位:分                                                                                                      |
-| status       | int    | true  | 订单状态:1.未支付, 2.成功, 3.失败, 7.驳回 8.冲正                                                                                          |
+| status       | int    | true  | 订单状态, 1.未支付, 2.成功, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                       |
 | success_time | int    | true  | 成功时间戳                                                                                                                 |
 | order_no     | string | true  | 商户订单号                                                                                                                 |
 | dis_order_no | string | true  | 平台订单号                                                                                                                 |

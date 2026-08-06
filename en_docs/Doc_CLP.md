@@ -318,7 +318,7 @@ Query URL: https://{api_domain}/api/v1/payApi/QueryOrder
 | msg     | string | true   | Query failure reason.                                                                                            |
 | trade_no   | int  | true   | Merchant ID.                                                                                                 |
 | real_price  | int  | true   | Actual amount paid, unit: Centavos.                                                                                       |
-| status    | int  | true   | Order status: 1. Unpaid, 2. Success, 3. Failure, 7. Rejected, 8. Reversal                                                          |
+| status    | int  | true   |  Order status: `1` unpaid, `2` success, `3` failed, `7` rejected, `9` reversed, `10` processing                                                       |
 | success_time | int  | true   | Success timestamp.                                                                                              |
 | order_no   | string | true   | Merchant order number.                                                                                            |
 | dis_order_no | string | true   | Platform order number.                                                                                            |
