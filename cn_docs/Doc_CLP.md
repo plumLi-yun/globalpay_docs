@@ -44,13 +44,13 @@
 
 ## 4.1 代收-下单请求参数
 
-| 名称           | 类型   | 必填    | 描述                        |
-| -------------- | ------ |-------| --------------------------- |
+| 名称             | 类型   | 必填    | 描述                        |
+|----------------| ------ |-------| --------------------------- |
 | trade_no       | int    | true  | 商户号                      |
 | app_id         | int    | true  | 商户 appId                  |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取   |
 | price          | int    | true  | 下单金额,单位:分 ,整数      |
-| pay_type       | string | true  | 支付方式: WALLET(钱包),CASH(现金),TC(信用卡),TD(储蓄卡),NET_BANKING_CLP(银行转账)                 |
+| pay_method     | string | true  | 支付方式: WALLET(钱包),CASH(现金),TC(信用卡),TD(储蓄卡),NET_BANKING_CLP(银行转账)                 |
 | order_no       | string | true  | 商户订单号                  |
 | success_url    | string | false | 支付成功跳转 url            |
 | fail_url       | string | false | 支付失败跳转 url            |
@@ -81,7 +81,7 @@
   "app_id": 51,
   "pay_code": 91145,
   "price": 10000,
-  "pay_type":"NET_BANKING_CLP",
+  "pay_method":"NET_BANKING_CLP",
   "success_url": "",
   "fail_url": "",
   "pay_notice_url": "http://www.test.com",
@@ -480,6 +480,7 @@
 |3000|系统升级维护中，暂停下单，请稍后尝试|
 
 # 11、银行编码
+
 
 | 字段名称 | 编码 | 银行名称 |
 | :--- | :--- | :--- |

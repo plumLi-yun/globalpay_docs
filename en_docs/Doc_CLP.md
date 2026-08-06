@@ -38,7 +38,7 @@
 | app_id          | int    | true     | Merchant appId                                                                                                      |
 | pay_code        | int    | true     | Product code, contact our operations to obtain                                                                     |
 | price           | int    | true     | Order amount, unit: cent, integer                                                                                  |
-| pay_type        | string | true     | Payment method: `WALLET`, `CASH`, `TC` (Credit Card), `TD` (Debit Card), `NET_BANKING_CLP` (Bank transfer)         |
+| pay_method        | string | true     | Payment method: `WALLET`, `CASH`, `TC` (Credit Card), `TD` (Debit Card), `NET_BANKING_CLP` (Bank transfer)         |
 | order_no        | string | true     | Merchant order number                                                                                               |
 | success_url     | string | false    | Payment success redirect URL                                                                                        |
 | fail_url        | string | false    | Payment failure redirect URL                                                                                        |
@@ -69,7 +69,7 @@
   "app_id": 51,
   "pay_code": 91145,
   "price": 10000,
-  "pay_type": "NET_BANKING_CLP",
+  "pay_method": "NET_BANKING_CLP",
   "success_url": "",
   "fail_url": "",
   "pay_notice_url": "http://www.test.com",
