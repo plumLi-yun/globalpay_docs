@@ -145,7 +145,7 @@
 | real_price   | int    | true  | 用户真实付款金额 ,单位:派萨                                                                                         |
 | nti_time     | int    | false | 发起通知时间                                                                                                 |
 | payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
-| pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
+| pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  |
 | create_time  | int    | true  | 创建时间                                                                                                   |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                         |
 
