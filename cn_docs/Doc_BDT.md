@@ -501,8 +501,9 @@
 |------------|--------|--------|
 | pay_method | BKASH  | bKash  |
 | pay_method | NAGAD  | Nagad  |
-| pay_method       | ROCKET | rocket |
-| pay_method       | wallet | wallet |
+| pay_method | ROCKET | rocket |
+| pay_method | wallet | wallet |
+| pay_method | BANK   | bank   |
 
 
 # 12、银行编码字典 代付字段 bank_code
