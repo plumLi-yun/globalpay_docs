@@ -43,22 +43,22 @@
 
 ## 4.1 代收-下单请求参数
 
-| 名称             | 类型   | 必填  | 描述                                                                                                      |
-|----------------|------|-----|---------------------------------------------------------------------------------------------------------|
-| trade_no       | int    | true  | 商户号                                                                                                     |
-| app_id         | int    | true  | 商户 appId                                                                                                |
-| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                           |
-| pay_method     | string    | true  | 支付方式固定值 THB式                                                                                            |
-| price          | int    | true  | 下单金额，单位：萨当（Satang），整型。1 泰铢（THB）= 100 萨当                                                                 |
-| order_no       | string | true  | 商户订单号                                                                                                   |
-| success_url    | string | false | 支付成功跳转 url                                                                                              |
-| fail_url       | string | false | 支付失败跳转 url                                                                                              |
-| pay_notice_url | string | false | 支付成功通知 url                                                                                              |
-| user_id        | string | false | 商家用户ID                                                                                                  |
-| user_ip        | string | false | 付款人 IP                                                                                                  |
+| 名称             | 类型   | 必填  | 描述                                                                                              |
+|----------------|------|-----|-------------------------------------------------------------------------------------------------|
+| trade_no       | int    | true  | 商户号                                                                                             |
+| app_id         | int    | true  | 商户 appId                                                                                        |
+| pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                   |
+| pay_method     | string    | true  | 支付方式                                                                                            |
+| price          | int    | true  | 下单金额，单位：萨当（Satang），整型。1 泰铢（THB）= 100 萨当                                                         |
+| order_no       | string | true  | 商户订单号                                                                                           |
+| success_url    | string | false | 支付成功跳转 url                                                                                      |
+| fail_url       | string | false | 支付失败跳转 url                                                                                      |
+| pay_notice_url | string | false | 支付成功通知 url                                                                                      |
+| user_id        | string | false | 商家用户ID                                                                                          |
+| user_ip        | string | false | 付款人 IP                                                                                          |
 |attach|string|false| 附加参数 json字符串 付款人信息 |
-| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                          |
-|timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                                         |
+| sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                  |
+|timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                                 |
 
 -  代收-attach 附加参数字段说明
 
@@ -545,7 +545,14 @@
 https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商户订单号}}&amount={{商户金额}}&notice_url={{异步通知地址}}&pay_code={{产品编码}}
 ```
 
-# 13、代收银行编码 代收字段 attach.bank_code
+# 13、代收银行编码 代收字段 pay_method
+
+| 字段         | 值               | 描述   |
+|------------|------------------|------|
+| pay_method | THB          | 泰国支付 |
+
+
+# 14、代收银行编码 代收字段 attach.bank_code
 
 | 字段名称 | 编码 | 银行名称 |
 |:---------|:-----|:---------|
@@ -589,7 +596,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 
 
 
-# 14、代付银行编码 代付字段 bank_code
+# 15、代付银行编码 代付字段 bank_code
 
 | 字段名称 | 编码 | 银行名称 |
 |:---------|:-----|:---------|
@@ -632,7 +639,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 | bank_code | THB_SMEB | Small and Medium Enterprise Development Bank of Thailand |
 
 
-# 15、文档更新时间
+# 16、文档更新时间
 ```
 2026-06-11 00:30:00
 ```

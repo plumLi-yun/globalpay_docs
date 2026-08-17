@@ -48,7 +48,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 | trade_no | int | true | Merchant ID |
 | app_id | int | true | Merchant `appId` |
 | pay_code | int | true | Product code, please contact our operations team |
-| pay_method | string | true | Payment method, see the payment methods below |
+| pay_method | string | true | Payment method |
 | price | int | true | Order amount, unit: Satang, integer. `1 THB = 100 Satang` |
 | order_no | string | true | Merchant order number |
 | success_url | string | false | Redirect URL after successful payment |
@@ -64,9 +64,9 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
 
 | Name | Type | Required | Description |
 |---------------|--------|-------|-------------------------------------------------------------------------|
-| phone | string | false | Mobile number, preferably a real mobile number; can be filled if unavailable |
-| email | string | false | Email address, preferably a real email address; can be filled if unavailable |
-| product_name | string | false | Product name |
+| bank_code | string | true | Pay-in bank code |
+| name | string | true | Payer name |
+| account_no | string | true | Payer bank account number |
 
 - Pay-in order request example
 
@@ -78,7 +78,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayInOrder`
   "pay_code": 0,
   "price": 10099,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"phone\":\"0812345678\",\"email\":\"somchai@example.com\",\"product_name\":\"Test Product\"}",
+  "attach": "{\"bank_code\":\"THB_ICBC\",\"name\":\"Somchai Som\",\"account_no\":\"XXXXXXXXXXXXXXXXX\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "203.144.160.100",
   "success_url": "",
@@ -188,7 +188,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | identify_type | string | false | ID type |
 | identify_num | string | false | ID number |
 | pay_notice_url | string | false | Pay-out success callback URL |
-| attach | string | true | Additional parameters in JSON string format |
+| attach | string | false | Additional parameters in JSON string format |
 | user_ip | string | false | Recipient IP |
 | sign | string | true | Signature result, see the signature method at the top of the document |
 | timestamp | string | false | Order timestamp, 10-digit Unix timestamp in seconds |
@@ -199,13 +199,6 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 |----------|--------|------|----------------|
 | phone | string | false | Recipient mobile number (PromptPay can use mobile number) |
 | email | string | false | Recipient email |
-
-- Pay-out BankCode: `THB_BANK` parameter description
-
-| Name | Type | Required | Description |
-|----------|--------|------|----------------|
-| account_no | string | true | Bank account number |
-| account_name | string | true | Recipient name |
 
 - Pay-out request example
 
@@ -555,15 +548,56 @@ Request method: `GET`
 https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{merchant_order_no}}&amount={{merchant_amount}}&notice_url={{callback_url}}&pay_code={{product_code}}
 ```
 
-# 13. Pay-in Payment Methods
+# 13. Pay-in `pay_method` Values
 
-| Field Name | Value | Description |
-|-----------|-------|------|
-| pay_method | THBPay | THB Pay-in |
-| pay_method | QR | QR payment |
-| pay_method | BANK_TRANSFER | Bank transfer |
+| Field | Value | Description |
+|------------|------------------|------|
+| pay_method | THB | Thailand local payment |
 
-# 14. Pay-out Bank Codes
+
+# 14. Pay-in Bank Codes for `attach.bank_code`
+
+| Field Name | Code | Bank Name |
+|:---------|:-----|:---------|
+| attach.bank_code | THB_BBL | Bangkok Bank Public Company Limited |
+| attach.bank_code | THB_KBANK | Kasikornbank Public Company Limited |
+| attach.bank_code | THB_KTB | Krung Thai Bank Public Company Limited |
+| attach.bank_code | THB_JPMC | JPMorgan Chase Bank, Bangkok Branch |
+| attach.bank_code | THB_OCBC | Oversea-Chinese Banking Corporation Ltd. |
+| attach.bank_code | THB_BTMU | The Bank of Tokyo-Mitsubishi UFJ, Ltd |
+| attach.bank_code | THB_TTB | TMB Bank Public Company Limited |
+| attach.bank_code | THB_SCB | Siam Commercial Bank Public Company Limited |
+| attach.bank_code | THB_CITI | Citibank N.A. |
+| attach.bank_code | THB_SMBC | Sumitomo Mitsui Banking Corporation |
+| attach.bank_code | THB_SCBT | Standard Chartered Bank (Thai) Public Company Limited |
+| attach.bank_code | THB_CIMB | CIMB Thai Bank Public Company Limited |
+| attach.bank_code | THB_RHB | RHB Bank Berhad |
+| attach.bank_code | THB_UOBT | United Overseas Bank (Thai) PCL |
+| attach.bank_code | THB_BAY | Bank of Ayudhya Public Company Limited |
+| attach.bank_code | THB_MEGA_ICBC | Mega International Commercial Bank Public Company Limited |
+| attach.bank_code | THB_AMERICA | Bank of America National Association |
+| attach.bank_code | THB_CALYON | Calyon |
+| attach.bank_code | THB_IOB | Indian Overseas Bank, Bangkok Branch |
+| attach.bank_code | THB_GOV | Government Saving Bank |
+| attach.bank_code | THB_HSBC | Hong Kong & Shanghai Corporation Limited |
+| attach.bank_code | THB_DB | Deutsche Bank Aktiengesellschaft |
+| attach.bank_code | THB_GHB | Government Housing Bank |
+| attach.bank_code | THB_AGRI | Bank for Agriculture and Agricultural Cooperatives |
+| attach.bank_code | THB_EXIM | Export-Import Bank of Thailand |
+| attach.bank_code | THB_MHCB | Mizuho Corporate Bank Limited |
+| attach.bank_code | THB_BNPP | BNPN Paribas, Bangkok |
+| attach.bank_code | THB_BOC | Bank of China Limited, Bangkok Branch |
+| attach.bank_code | THB_ISBT | Islamic Bank of Thailand |
+| attach.bank_code | THB_TISCO | Tisco Bank Public Company Limited |
+| attach.bank_code | THB_KK | Kiatnakin Bank Public Company Limited |
+| attach.bank_code | THB_ICBC | Industrial and Commercial Bank of China (THAI) Public Company Limited |
+| attach.bank_code | THB_TCRB | The Thai Credit Retail Bank Public Company Limited |
+| attach.bank_code | THB_LHBANK | Land and Houses Bank Public Company Limited |
+| attach.bank_code | THB_ANZ | ANZ Bank (Thai) Public Company Limited |
+| attach.bank_code | THB_SMTB | Sumitomo Mitsui Trust Bank (THAI) PCL. |
+| attach.bank_code | THB_SMEB | Small and Medium Enterprise Development Bank of Thailand |
+
+# 15. Pay-out Bank Codes
 
 | Field Name | Code | Bank Name |
 |:---------|:-----|:---------|
@@ -605,7 +639,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 | bank_code | THB_SMTB | Sumitomo Mitsui Trust Bank (THAI) PCL. |
 | bank_code | THB_SMEB | Small and Medium Enterprise Development Bank of Thailand |
 
-# 15. Document Update Time
+# 16. Document Update Time
 ```
 2026-06-11 00:30:00
 ```
