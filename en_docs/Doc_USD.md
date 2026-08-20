@@ -199,6 +199,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 |----------|--------|------|----------------|
 | routing_number | string | false | Routing Number |
 | card_valid | string | false | Card expiration date, format: `MM/YYYY` |
+| swift_code | string | false | Bank Identifier Code (SWIFT Code) |
 
 - Pay-out BankCode: `ACH_USD` parameter description
 
@@ -206,6 +207,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 |----------|--------|------|----------------|
 | account_no | string | true | Bank account number |
 | attach.routing_number | string | true | Routing Number |
+| attach.swift_code | string | true | Bank Identifier Code (SWIFT Code) |
 
 - Pay-out BankCode: `PayPal_USD` parameter description
 
@@ -225,6 +227,12 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 |----------|--------|------|----------------|
 | account_no | string | true | Card number |
 | attach.card_valid | string | true | Card expiration date, format: `MM/YYYY` |
+
+- Pay-out BankCode: `VENMO_USD` parameter description
+
+| Name | Type | Required | Description |
+|----------|--------|------|----------------|
+| account_no | string | true | Personal Venmo email address |
 
 - Pay-out request example
 
@@ -591,6 +599,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 | bank_code | CARD_USD | card |
 | bank_code | PayPal_USD | paypal |
 | bank_code | Cash_USD | ecashapp |
+| bank_code | VENMO_USD | venmo |
 
 # 15. Document Update Time
 ```

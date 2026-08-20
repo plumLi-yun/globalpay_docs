@@ -199,15 +199,16 @@
 |----------|--------|------|----------------|
 | routing_number      |string| false | 路由号码（Routing Number）          |
 | card_valid| string| false | 卡号过期时间 格式：MM/YYYY |
+| swift_code         | string | false | 银行国际识别码 (SWIFT Code)           |
 
 
 -  代付-BankCode：ACH_USD 参数说明
 
-| 名称       | 类型     | 必填   | 描述             |
-|----------|--------|------|----------------|
-| account_no      |string| true | 银行帐户号码          |
-| attach.routing_number      |string| true | 路由号码（Routing Number）          |
-
+| 名称                    | 类型     | 必填   | 描述                   |
+|-----------------------|--------|------|----------------------|
+| account_no            |string| true | 银行帐户号码               |
+| attach.routing_number |string| true | 路由号码（Routing Number） |
+| attach.swift_code     |string| true | 银行国际识别码 (SWIFT Code)           |
 
 -  代付-BankCode：PayPal_USD 参数说明
 
@@ -232,6 +233,12 @@
 | attach.card_valid| string| true | 卡号过期时间 格式：MM/YYYY |
 
 
+
+-  代付-BankCode：VENMO_USD 参数说明
+
+| 名称       | 类型     | 必填   | 描述        |
+|----------|--------|------|-----------|
+| account_no      |string| true | 本人venmo邮箱 |
 
 - 代付-请求参数示例
 
@@ -588,12 +595,13 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 
 # 14、代付银行编码 代付字段 bank_code
 
-| 字段名称 | 编码 | 银行名称 |
-|:---------|:-----|:---------|
-| bank_code | ACH_USD | ach |
-| bank_code | CARD_USD| card|
+| 字段名称      | 编码         | 银行名称 |
+|:----------|:-----------|:---------|
+| bank_code | ACH_USD    | ach |
+| bank_code | CARD_USD   | card|
 | bank_code | PayPal_USD | paypal |
-| bank_code | Cash_USD | ecashapp |
+| bank_code | Cash_USD   | ecashapp |
+|b ank_codeb  VENMO_USD  | venmo |
 
 
 # 15、文档更新时间
