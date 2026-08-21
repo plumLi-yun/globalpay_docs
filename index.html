@@ -75,7 +75,7 @@
                         <option value="en">English</option>
                     </select>
                 </div>
-                <h4 id="sidebar-title">国家列表</h4>
+                <h4 id="sidebar-title">国家、地区、币种列表</h4>
                 <ul class="doc-list" id="doc-list">
                     <!-- 文档列表将动态生成 -->
                 </ul>
@@ -101,7 +101,7 @@
         // ==========================================
         const i18n = {
             'cn': {
-                sidebarTitle: '国家列表',
+                sidebarTitle: '国家、地区、币种列表',
                 tocTitle: '目录',
                 backToTop: '回到顶部 ↑',
                 welcomeTitle: '欢迎',
@@ -127,13 +127,14 @@
                     "cop": "哥伦比亚",
                     "bdt": "孟加拉",
                     "usd": "美国",
+                    "hkd": "香港",
                     "thb": "泰国",
                     "myr": "马来西亚",
                     "usdt": "USDT"
                 }
             },
             'en': {
-                sidebarTitle: 'Countries',
+                sidebarTitle: 'Countries, Regions, and Currencies',
                 tocTitle: 'Table of Contents',
                 backToTop: 'Back to Top ↑',
                 welcomeTitle: 'Welcome',
@@ -159,6 +160,7 @@
                     "cop": "Colombia",
                     "bdt": "Bengal",
                     "usd": "United States",
+                    "hkd": "Hong Kong",
                     "thb": "Thailand",
                     "myr": "Malaysia",
                     "usdt": "USDT"
@@ -173,7 +175,7 @@
             const _a='\x76\x68\x66\x48\x58\x75\x6d\x42\x59\x74\x45\x52\x57\x69\x4b\x50\x6a\x65';
             const P=_6||_a;
             let L='cn';
-            const D=[{n:'brl',f:'Doc_BRL.md'},{n:'mmk',f:'Doc_MMK.md'},{n:'rub',f:'Doc_RUB.md'},{n:'inr',f:'Doc_INR.md'},{n:'mxn',f:'Doc_MXN.md'},{n:'vnd',f:'Doc_VND.md'},{n:'try',f:'Doc_TRY.md'},{n:'php',f:'Doc_PHP.md'},{n:'pkr',f:'Doc_PKR.md'},{n:'idr',f:'Doc_IDR.md'},{n:"egp",f:"Doc_EGP.md"},{n:"pen",f:"Doc_PEN.md"},{n:"clp",f:"Doc_CLP.md"},{n:"ars",f:"Doc_ARS.md"},{n:"cop",f:"Doc_COP.md"},{n:"bdt",f:"Doc_BDT.md"},{n:"usd",f:"Doc_USD.md"},{n:"thb",f:"Doc_THB.md"},{n:"myr",f:"Doc_MYR.md"},{n:"usdt",f:"Doc_USDT.md"}];
+            const D=[{n:'brl',f:'Doc_BRL.md'},{n:'mmk',f:'Doc_MMK.md'},{n:'rub',f:'Doc_RUB.md'},{n:'inr',f:'Doc_INR.md'},{n:'mxn',f:'Doc_MXN.md'},{n:'vnd',f:'Doc_VND.md'},{n:'try',f:'Doc_TRY.md'},{n:'php',f:'Doc_PHP.md'},{n:'pkr',f:'Doc_PKR.md'},{n:'idr',f:'Doc_IDR.md'},{n:"egp",f:"Doc_EGP.md"},{n:"pen",f:"Doc_PEN.md"},{n:"clp",f:"Doc_CLP.md"},{n:"ars",f:"Doc_ARS.md"},{n:"cop",f:"Doc_COP.md"},{n:"bdt",f:"Doc_BDT.md"},{n:"usd",f:"Doc_USD.md"},{n:"hkd",f:"Doc_HKD.md"},{n:"thb",f:"Doc_THB.md"},{n:"myr",f:"Doc_MYR.md"},{n:"usdt",f:"Doc_USDT.md"}];
             const P_MAP={'cn':'cn_docs/','en':'en_docs/'};
             window.switchLang=function(l){if(L===l)return;L=l;document.getElementById('lang-select').value=l;U();R();};
             function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
