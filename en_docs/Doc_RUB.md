@@ -541,7 +541,7 @@ With payment voucher:
 | bank_code | Банк_БКФ | Банк БКФ |
 | bank_code | Банк_ВБРР | Банк ВБРР |
 | bank_code | Банк_Венец | Банк Венец |
-| bank_code | Банк_Во隔жанин | Банк Вологжанин |
+| bank_code | Банк_Вологжанин | Банк Вологжанин |
 | bank_code | Банк_ДОМ.РФ | Банк ДОМ.РФ |
 | bank_code | Банк_Екатеринбург | Банк Екатеринбург |
 | bank_code | Банк_Заречье | Банк Заречье |
@@ -783,5 +783,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 ---
 # 14. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-08-24 13:05:52
 ```

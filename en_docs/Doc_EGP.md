@@ -166,7 +166,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
   "dis_order_no": "2025071130460153942908928india1sKQbX",
   "order_price": 10099,
   "real_price": 10000,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"CPF,CNPJ\"}",
   "nti_time": 1752826164,
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -379,7 +379,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"CPF,CNPJ\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -509,12 +509,12 @@ With payment voucher:
 ```
 
 
-# 11. Payment Method (Pay-in Field: pay_method)
+# 11. Bank Codes
 
-| Field      | Country |Value            | Description                                                                                 |
-| :-------- |:--------|:--------------|:-------------------------------------------------------------------------------------|
-| bank_code | Egypt   |EGPWALLETS_MM | EGPWALLETS(MobileMoney)                                                              |
-| bank_code | Egypt   |Vodafone      | Vodafone                                                                             |
+| Field Name | Code | Bank Name |
+| :--- | :--- | :--- |
+| bank_code | EGPWALLETS_MM | EGPWALLETS (MobileMoney) |
+| bank_code | Vodafone | Vodafone |
 
 
 # 12. Error Codes
@@ -574,5 +574,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 ---
 # 14. Document Update Time
 ```
-2026-05-11 18:03:00
+2026-08-24 13:05:52
 ```

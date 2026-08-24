@@ -84,7 +84,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
   "pay_code": 0,
   "price": 10099,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"name\":\"张三\",\"email\":\"zhangsan@example.com\",\"phone\":\"09123456789\",\"account_no\":\"1234567890\",\"account_type\":\"PHONE\",\"bank_code\":\"123456\",\"bank_name\":\"中国银行\"}",
+  "attach": "{\"name\":\"Zhang San\",\"email\":\"zhangsan@example.com\",\"phone\":\"09123456789\",\"account_no\":\"1234567890\",\"account_type\":\"PHONE\",\"bank_code\":\"123456\",\"bank_name\":\"Bank of China\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
@@ -647,5 +647,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 ---
 # 14. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-08-24 13:05:52
 ```

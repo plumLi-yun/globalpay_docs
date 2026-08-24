@@ -193,7 +193,7 @@
 | price          | int    | true  | 下单金额,单位:分 ,整数       |
 | account_no     | string | true  | 出款账号                |
 | account_name   | string | true  | 姓名                  |
-| account_type   | string | true  | 账号类型:BANK,JAZZCASH,EASYPAISA |
+| account_type   | string | true  | 账号类型:BANK,JAZZCASH,EASYPAISA,WALLET |
 | bank_code      | string | true  | 银行编码在末尾             |
 | pay_notice_url | string | false | 代付成功通知 url          |
 | attach         | string | false | 附加参数                |

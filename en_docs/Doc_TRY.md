@@ -216,7 +216,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
   "pay_code": 1,
   "price": 10001,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"first_name\":\"张\",\"last_name\":\"三\",\"email\":\"zhangsan@example.com\"}",
+  "attach": "{\"first_name\":\"Zhang\",\"last_name\":\"San\",\"email\":\"zhangsan@example.com\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "BANK",
@@ -522,5 +522,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 
 # 14. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-08-24 13:05:52
 ```

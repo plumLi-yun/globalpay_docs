@@ -350,7 +350,7 @@ Failure:
 ```json
 {
   "code": 1017,
-  "msg": "订单不存在"
+  "msg": "Order does not exist"
 }
 ```
 
@@ -414,7 +414,7 @@ Failure:
 ```json
 {
   "code": 10001,
-  "msg": "商户不存在"
+  "msg": "Merchant does not exist"
 }
 ```
 
@@ -642,5 +642,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 # 16. Document Update Time
 
 ```
-2026-06-11 00:30:00
+2026-08-24 13:05:52
 ```

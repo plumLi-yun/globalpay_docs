@@ -206,7 +206,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | pay_code       | int    | true     | Product code, obtain from our operations team                                         |
 | price          | int    | true     | Order amount, unit: centavos, integer. 1 peso = 100 centavos                          |
 | account_no     | string | true     | Beneficiary account number                                                            |
-| account_type   | string | true     | Account type: BANK                                                                    |
+| account_type   | string | true     | Account type: BANK,JAZZCASH,EASYPAISA,WALLET |
 | account_name   | string | true     | Name                                                                                  |
 | bank_code      | string | true     | Bank code                                                                             |
 | pay_notice_url | string | false    | Pay-out success notification URL                                                      |
@@ -376,7 +376,7 @@ Failure:
 }
 ```
 
-成功:
+Success:
 
 ```json
 {
@@ -563,5 +563,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{Mer
 
 # 14. Document Update Time
 ```
-2026-05-10 19:25:00
+2026-08-24 13:05:52
 ```

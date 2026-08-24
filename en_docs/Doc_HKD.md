@@ -508,126 +508,126 @@ Payment voucher available
 | Field Name | Code | Bank Name |
 | :--- | :--- | :--- |
 | bank_code | BETPAY | BetPay |
-| bank_code | ZSK | 转数快 |
-| bank_code | ZDBXG | 渣打銀行(香港)有限公司 |
-| bank_code | XGSHHF | 香港上海匯豐銀行有限公司 |
-| bank_code | DFHL | 東方匯理銀行 |
-| bank_code | HQB | 花旗銀行 |
-| bank_code | MGDT | 摩根大通銀行 |
-| bank_code | GMXMS | 國民西敏寺資本市場銀行有限公司 |
-| bank_code | ZGJSB | 中國建設銀行(亞洲)股份有限公司 |
-| bank_code | ZGB | 中國銀行(香港)有限公司 |
-| bank_code | DYB | 東亞銀行有限公司 |
-| bank_code | XZB | 星展銀行(香港)有限公司 |
-| bank_code | ZXB | 中信銀行國際有限公司 |
-| bank_code | ZSYL | 招商永隆銀行有限公司 |
-| bank_code | HUAQB | 華僑銀行 |
-| bank_code | HSB | 恒生銀行有限公司 |
-| bank_code | SHY | 上海商業銀行有限公司 |
-| bank_code | JTB | 交通銀行股份有限公司 |
-| bank_code | DZB | 大眾銀行(香港)有限公司 |
-| bank_code | HQYH | 華僑永亨銀行有限公司 |
-| bank_code | DAYB | 大有銀行有限公司 |
-| bank_code | JIYB | 集友銀行有限公司 |
-| bank_code | DXB | 大新銀行有限公司 |
-| bank_code | CXB | 創興銀行有限公司 |
-| bank_code | NYSY | 南洋商業銀行有限公司 |
+| bank_code | ZSK | Faster Payment System (FPS) |
+| bank_code | ZDBXG | Standard Chartered Bank (Hong Kong) Limited |
+| bank_code | XGSHHF | The Hongkong and Shanghai Banking Corporation Limited |
+| bank_code | DFHL | Credit Agricole CIB |
+| bank_code | HQB | Citibank |
+| bank_code | MGDT | JPMorgan Chase Bank |
+| bank_code | GMXMS | NatWest Markets Plc |
+| bank_code | ZGJSB | China Construction Bank (Asia) Corporation Limited |
+| bank_code | ZGB | Bank of China (Hong Kong) Limited |
+| bank_code | DYB | The Bank of East Asia, Limited |
+| bank_code | XZB | DBS Bank (Hong Kong) Limited |
+| bank_code | ZXB | China CITIC Bank International Limited |
+| bank_code | ZSYL | CMB Wing Lung Bank Limited |
+| bank_code | HUAQB | OCBC Bank |
+| bank_code | HSB | Hang Seng Bank Limited |
+| bank_code | SHY | Shanghai Commercial Bank Limited |
+| bank_code | JTB | Bank of Communications Co., Ltd. |
+| bank_code | DZB | Public Bank (Hong Kong) Limited |
+| bank_code | HQYH | OCBC Wing Hang Bank Limited |
+| bank_code | DAYB | Tai Yau Bank Limited |
+| bank_code | JIYB | Chiyu Banking Corporation Limited |
+| bank_code | DXB | Dah Sing Bank Limited |
+| bank_code | CXB | Chong Hing Bank Limited |
+| bank_code | NYSY | Nanyang Commercial Bank Limited |
 | bank_code | UCOB | UCOBANK |
 | bank_code | KEBHANABANK | KEBHANABANK |
-| bank_code | SLUFJ | 三菱UFJ銀行 |
-| bank_code | PANGB | 盤谷銀行 |
-| bank_code | YDHY | 印度海外銀行 |
-| bank_code | DYZB | 德意志銀行 |
-| bank_code | MGB | 美國銀行 |
-| bank_code | FZBL | 法國巴黎銀行 |
-| bank_code | YDB | 印度銀行 |
-| bank_code | BJGM | 巴基斯坦國民銀行 |
-| bank_code | DSB | 大生銀行有限公司 |
-| bank_code | MLB | 馬來亞銀行 |
-| bank_code | SJZY | 三井住友銀行 |
-| bank_code | YNGB | 印尼國家銀行 |
-| bank_code | JYB | 金融銀行有限公司 |
-| bank_code | DAHB | 大華銀行有限公司 |
-| bank_code | ZGGSB | 中國工商銀行(亞洲)有限公司 |
+| bank_code | SLUFJ | MUFG Bank, Ltd. |
+| bank_code | PANGB | Bangkok Bank |
+| bank_code | YDHY | Indian Overseas Bank |
+| bank_code | DYZB | Deutsche Bank |
+| bank_code | MGB | Bank of America |
+| bank_code | FZBL | BNP Paribas |
+| bank_code | YDB | Bank of India |
+| bank_code | BJGM | National Bank of Pakistan |
+| bank_code | DSB | Tai Sang Bank Limited |
+| bank_code | MLB | Malayan Banking Berhad |
+| bank_code | SJZY | Sumitomo Mitsui Banking Corporation |
+| bank_code | YNGB | Bank Negara Indonesia |
+| bank_code | JYB | Finance Bank Limited |
+| bank_code | DAHB | United Overseas Bank Limited |
+| bank_code | ZGGSB | Industrial and Commercial Bank of China (Asia) Limited |
 | bank_code | BARCLAYSBANKPLC | BARCLAYSBANKPLC. |
-| bank_code | JNDFY | 加拿大豐業銀行 |
-| bank_code | JNDHJ | 加拿大皇家銀行 |
-| bank_code | FGXY | 法國興業銀行 |
-| bank_code | YDGB | 印度國家銀行 |
-| bank_code | DLDDM | 多倫多道明銀行 |
-| bank_code | MDKB | 滿地可銀行 |
-| bank_code | JNDDG | 加拿大帝國商業銀行 |
-| bank_code | DGSY | 德國商業銀行 |
-| bank_code | RSB | 瑞士銀行 |
-| bank_code | MGHF | 美國滙豐銀行 |
-| bank_code | RUISB | 瑞穗銀行 |
-| bank_code | DGZY | 德國中央合作銀行 |
-| bank_code | YOULB | 友利銀行 |
+| bank_code | JNDFY | The Bank of Nova Scotia |
+| bank_code | JNDHJ | Royal Bank of Canada |
+| bank_code | FGXY | Societe Generale |
+| bank_code | YDGB | State Bank of India |
+| bank_code | DLDDM | The Toronto-Dominion Bank |
+| bank_code | MDKB | Bank of Montreal |
+| bank_code | JNDDG | Canadian Imperial Bank of Commerce |
+| bank_code | DGSY | Commerzbank |
+| bank_code | RSB | UBS |
+| bank_code | MGHF | HSBC Bank USA |
+| bank_code | RUISB | Mizuho Bank |
+| bank_code | DGZY | DZ Bank |
+| bank_code | YOULB | Woori Bank |
 | bank_code | PHILIPPINENATIONALBANK | PHILIPPINENATIONALBANK |
-| bank_code | FUBB | 富邦銀行(香港)有限公司 |
-| bank_code | SLUFJXT | 三菱UFJ信託銀行 |
-| bank_code | NYMLB | 紐約梅隆銀行有限公司 |
+| bank_code | FUBB | Fubon Bank (Hong Kong) Limited |
+| bank_code | SLUFJXT | Mitsubishi UFJ Trust and Banking Corporation |
+| bank_code | NYMLB | The Bank of New York Mellon |
 | bank_code | INGBANKN | INGBANKN.V. |
-| bank_code | XBYDY | 西班牙對外銀行 |
-| bank_code | ADLYG | 澳大利亞國民銀行 |
-| bank_code | XTPY | 西太平洋銀行 |
-| bank_code | AOXINB | 澳新銀行集團有限公司 |
-| bank_code | AZLB | 澳洲聯邦銀行 |
-| bank_code | YDLLH | 義大利聯合聖保羅銀行股份有限公司 |
-| bank_code | YUXB | 裕信(德國)銀行股份有限公司 |
-| bank_code | RDSY | 瑞典商業銀行 |
-| bank_code | QIANYB | 千葉銀行 |
-| bank_code | BLSLH | 比利時聯合銀行 |
-| bank_code | FUGUO | 富國銀行香港分行 |
-| bank_code | HELAN | 荷蘭合作銀行 |
-| bank_code | XINZHAN | 星展銀行香港分行 |
-| bank_code | JINW | 靜岡銀行 |
-| bank_code | BASER | 八十二銀行 |
-| bank_code | HUANSY | 華南商業銀行股份有限公司 |
-| bank_code | ZIHB | 滋賀銀行 |
-| bank_code | YIWAN | 臺灣銀行股份有限公司 |
+| bank_code | XBYDY | BBVA |
+| bank_code | ADLYG | National Australia Bank |
+| bank_code | XTPY | Westpac Banking Corporation |
+| bank_code | AOXINB | Australia and New Zealand Banking Group Limited |
+| bank_code | AZLB | Commonwealth Bank of Australia |
+| bank_code | YDLLH | Intesa Sanpaolo S.p.A. |
+| bank_code | YUXB | UniCredit Bank AG |
+| bank_code | RDSY | Svenska Handelsbanken |
+| bank_code | QIANYB | The Chiba Bank, Ltd. |
+| bank_code | BLSLH | KBC Bank N.V. |
+| bank_code | FUGUO | Wells Fargo Bank Hong Kong Branch |
+| bank_code | HELAN | Rabobank |
+| bank_code | XINZHAN | DBS Bank Hong Kong Branch |
+| bank_code | JINW | The Shizuoka Bank, Ltd. |
+| bank_code | BASER | The Hachijuni Bank, Ltd. |
+| bank_code | HUANSY | Hua Nan Commercial Bank, Ltd. |
+| bank_code | ZIHB | The Shiga Bank, Ltd. |
+| bank_code | YIWAN | Bank of Taiwan Co., Ltd. |
 | bank_code | THECHUGOKUBANKLIMITED | THECHUGOKUBANKLIMITED |
-| bank_code | DYSY | 第一商業銀行股份有限公司 |
-| bank_code | ZHSY | 彰化商業銀行股份有限公司 |
-| bank_code | FGWM | 法國外貿銀行 |
-| bank_code | ZGGS | 中國工商銀行股份有限公司 |
-| bank_code | MGDF | 美國道富銀行 |
-| bank_code | ZGJS | 中國建設銀行股份有限公司 |
-| bank_code | ZGNY | 中國農業銀行股份有限公司 |
+| bank_code | DYSY | First Commercial Bank, Ltd. |
+| bank_code | ZHSY | Chang Hwa Commercial Bank, Ltd. |
+| bank_code | FGWM | Natixis |
+| bank_code | ZGGS | Industrial and Commercial Bank of China Limited |
+| bank_code | MGDF | State Street Bank and Trust Company |
+| bank_code | ZGJS | China Construction Bank Corporation |
+| bank_code | ZGNY | Agricultural Bank of China Limited |
 | bank_code | ERSTEGROUPBANKAG | ERSTEGROUPBANKAG |
-| bank_code | ZGXT | 中國信託商業銀行股份有限公司 |
-| bank_code | YWZXQY | 臺灣中小企業銀行股份有限公司 |
+| bank_code | ZGXT | CTBC Bank Co., Ltd. |
+| bank_code | YWZXQY | Taiwan Business Bank, Ltd. |
 | bank_code | CREDITSUISSEAG | CREDITSUISSEAG |
-| bank_code | GTSHSY | 國泰世華商業銀行股份有限公司 |
-| bank_code | RSYF | 瑞士盈豐銀行股份有限公司 |
-| bank_code | ZSYB | 招商銀行股份有限公司 |
-| bank_code | TBFBSY | 台北富邦商業銀行股份有限公司 |
-| bank_code | YFSYB | 永豐商業銀行股份有限公司 |
-| bank_code | ZFGJSY | 兆豐國際商業銀行 |
-| bank_code | YSSYB | 玉山商業銀行股份有限公司 |
-| bank_code | TXGJSY | 台新國際商業銀行股份有限公司 |
-| bank_code | FLYB | 豐隆銀行有限公司 |
-| bank_code | ZDB | 渣打銀行 |
-| bank_code | HQXGB | 花旗銀行(香港)有限公司 |
+| bank_code | GTSHSY | Cathay United Bank Co., Ltd. |
+| bank_code | RSYF | EFG Bank AG |
+| bank_code | ZSYB | China Merchants Bank Co., Ltd. |
+| bank_code | TBFBSY | Taipei Fubon Commercial Bank Co., Ltd. |
+| bank_code | YFSYB | Bank SinoPac Co., Ltd. |
+| bank_code | ZFGJSY | Mega International Commercial Bank Co., Ltd. |
+| bank_code | YSSYB | E.SUN Commercial Bank, Ltd. |
+| bank_code | TXGJSY | Taishin International Bank Co., Ltd. |
+| bank_code | FLYB | Hong Leong Bank Berhad |
+| bank_code | ZDB | Standard Chartered Bank |
+| bank_code | HQXGB | Citibank (Hong Kong) Limited |
 | bank_code | ICICIBANKLIMITED | ICICIBANKLIMITED |
 | bank_code | MELLIBANKPLC | MELLIBANKPLC |
-| bank_code | HUAMB | 華美銀行 |
-| bank_code | BALD | 巴魯達銀行 |
-| bank_code | YDGJSY | 遠東國際商業銀行股份有限公司 |
+| bank_code | HUAMB | East West Bank |
+| bank_code | BALD | Bank of Baroda |
+| bank_code | YDGJSY | Far Eastern International Bank Co., Ltd. |
 | bank_code | CANARABANK | CANARABANK |
-| bank_code | GUOTB | 國泰銀行 |
-| bank_code | TWTDB | 台灣土地銀行股份有限公司 |
-| bank_code | HZJKSY | 合作金庫商業銀行股份有限公司 |
+| bank_code | GUOTB | Cathay Bank |
+| bank_code | TWTDB | Land Bank of Taiwan Co., Ltd. |
+| bank_code | HZJKSY | Taiwan Cooperative Bank, Ltd. |
 | bank_code | PUNJABNATIONALBANK | PUNJABNATIONALBANK |
-| bank_code | XBYSTD | 西班牙桑坦德銀行有限公司 |
+| bank_code | XBYSTD | Banco Santander, S.A. |
 | bank_code | UNIONBANKOFINDIA | UNIONBANKOFINDIA |
-| bank_code | SHSYCX | 上海商業儲蓄銀行股份有限公司 |
+| bank_code | SHSYCX | Shanghai Commercial & Savings Bank, Ltd. |
 | bank_code | INDUSTRIALBANKOFKOREA | INDUSTRIALBANKOFKOREA |
-| bank_code | XJPB | 新加坡銀行有限公司 |
+| bank_code | XJPB | Bank of Singapore Limited |
 | bank_code | SHINHANBANK | SHINHANBANK |
-| bank_code | WDSY | 王道商業銀行股份有限公司 |
+| bank_code | WDSY | O-Bank Co., Ltd. |
 | bank_code | BNPPARIBASSECURITIESSERVICES | BNPPARIBASSECURITIESSERVICES |
-| bank_code | GJKFB | 國家開發銀行 |
+| bank_code | GJKFB | China Development Bank |
 | bank_code | FIRSTABUDHABIBANKPJSC | FIRSTABUDHABIBANKPJSC |
 | bank_code | SAFRASARASINLTD | BANKJ.SAFRASARASINLTD. |
 | bank_code | ABNAMROBANKN | ABNAMROBANKN.V. |
@@ -636,47 +636,47 @@ Payment voucher available
 | bank_code | SKANDINAVISKAENSKILDABANKENAB | SKANDINAVISKAENSKILDABANKENAB |
 | bank_code | BANKJULIUSBAER | BANKJULIUSBAER&CO.LTD. |
 | bank_code | CREDITINDUSTRIELETCOMMERCIAL | CREDITINDUSTRIELETCOMMERCIAL |
-| bank_code | YWXGSY | 臺灣新光商業銀行股份有限公司 |
-| bank_code | ZGYHXG | 中國銀行香港分行 |
+| bank_code | YWXGSY | Shin Kong Commercial Bank Co., Ltd. |
+| bank_code | ZGYHXG | Bank of China Hong Kong Branch |
 | bank_code | SWITZERLAND | CAINDOSUEZ(SWITZERLAND)SA |
 | bank_code | ICBCSTANDARDBANKPLC | ICBCSTANDARDBANKPLC |
-| bank_code | LGTHJXG | LGT皇家銀行(香港) |
-| bank_code | MGLB | 麥格理銀行有限公司 |
-| bank_code | SHPDFZ | 上海浦東發展銀行股份有限公司 |
-| bank_code | ZGMSB | 中國民生銀行股份有限公司 |
+| bank_code | LGTHJXG | LGT Bank (Hong Kong) |
+| bank_code | MGLB | Macquarie Bank Limited |
+| bank_code | SHPDFZ | Shanghai Pudong Development Bank Co., Ltd. |
+| bank_code | ZGMSB | China Minsheng Banking Corp., Ltd. |
 | bank_code | PICTET&CIE | PICTET&CIE(EUROPE)S.A. |
-| bank_code | GFB | 廣發銀行股份有限公司 |
-| bank_code | BOHB | 渤海銀行股份有限公司 |
-| bank_code | ZGGD | 中國光大銀行股份有限公司 |
-| bank_code | SJZYXT | 三井住友信託銀行 |
-| bank_code | SHXGB | 上海銀行(香港)有限公司 |
+| bank_code | GFB | China Guangfa Bank Co., Ltd. |
+| bank_code | BOHB | Bank of Bohai Co., Ltd. |
+| bank_code | ZGGD | China Everbright Bank Co., Ltd. |
+| bank_code | SJZYXT | Sumitomo Mitsui Trust Bank, Limited |
+| bank_code | SHXGB | Bank of Shanghai (Hong Kong) Limited |
 | bank_code | CIMBBANKBERHAD | CIMBBANKBERHAD |
-| bank_code | XINYEB | 興業銀行股份有限公司 |
-| bank_code | YDSY | 元大商業銀行股份有限公司 |
+| bank_code | XINYEB | Industrial Bank Co., Ltd. |
+| bank_code | YDSY | Yuanta Commercial Bank Co., Ltd. |
 | bank_code | MASHREQBANK | MASHREQBANK-PUBLICSHAREHOLDINGCOMPANY |
 | bank_code | KOOKMINBANK | KOOKMINBANK |
-| bank_code | JTXG | 交通銀行(香港)有限公司 |
-| bank_code | ZSYHB | 浙商銀行股份有限公司 |
-| bank_code | MGSDL | 摩根士丹利銀行亞洲有限公司 |
-| bank_code | PINANB | 平安銀行股份有限公司 |
-| bank_code | HUAXIA | 華夏銀行股份有限公司 |
-| bank_code | ZANB | 眾安銀行有限公司 |
+| bank_code | JTXG | Bank of Communications (Hong Kong) Limited |
+| bank_code | ZSYHB | China Zheshang Bank Co., Ltd. |
+| bank_code | MGSDL | Morgan Stanley Bank Asia Limited |
+| bank_code | PINANB | Ping An Bank Co., Ltd. |
+| bank_code | HUAXIA | Hua Xia Bank Co., Ltd. |
+| bank_code | ZANB | ZA Bank Limited |
 | bank_code | LIVIVBLIMITED | LIVIVBLIMITED |
 | bank_code | MOXBANKLIMITED | MOXBANKLIMITED |
 | bank_code | WELABBANKLIMITED | WELABBANKLIMITED |
-| bank_code | FRB | 富融銀行有限公司 |
-| bank_code | PAYZHT | 平安壹賬通銀行(香港)有限公司 |
-| bank_code | MYXG | 螞蟻銀行(香港)有限公司 |
+| bank_code | FRB | Fusion Bank Limited |
+| bank_code | PAYZHT | PAO Bank Limited |
+| bank_code | MYXG | Ant Bank (Hong Kong) Limited |
 | bank_code | QATARNATIONALBANK | QATARNATIONALBANK(Q.P.S.C.) |
-| bank_code | TXB | 天星銀行有限公司 |
+| bank_code | TXB | Airstar Bank Limited |
 | bank_code | HONGKONGSECURITIESCLEARINGCOMPANYLIMITED | HONGKONGSECURITIESCLEARINGCOMPANYLIMITED |
 | bank_code | CLSBANKINTERNATIONAL | CLSBANKINTERNATIONAL |
 | bank_code | BANQUE | BANQUE PICTET & CIE SA |
-| bank_code | DGB | 東莞銀行股份有限公司 |
-| bank_code | NXB | 農協銀行 |
+| bank_code | DGB | Bank of Dongguan Co., Ltd. |
+| bank_code | NXB | NongHyup Bank |
 | bank_code | WECHAT | WeChat Pay Hong Kong Limited |
 | bank_code | ALIPAY | Alipay Financial Services(HK) Limited |
-| bank_code | BDTK | 八達通卡有限公司 |
+| bank_code | BDTK | Octopus Cards Limited |
 | bank_code | LHB | 388 LIVI BANK LIMITED |
 
 # 13. Error Codes
@@ -735,5 +735,5 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 ---
 # 15. Document Update Time
 ```
-2026-08-21 00:00:00
+2026-08-24 13:05:52
 ```
