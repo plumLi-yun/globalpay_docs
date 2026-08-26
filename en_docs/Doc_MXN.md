@@ -544,6 +544,8 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 | Field   | Country | Value   | Description                   |
 |------------|----------|-----------|-------------------------------------------------|
 | pay_method | Mexico  | CLABE   | Mexico CLABE                  |
+| pay_method | Mexico  | CODI    | Mexico CODI                   |
+| pay_method | Mexico  | CLABE   | Mexico CLABE                  |
 
 
 
