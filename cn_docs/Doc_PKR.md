@@ -341,7 +341,7 @@
 | remark       | string | true  | 代付失败原因                                                          |
 | fee          | int    | false | 订单手续费 ,单位:分                                                   |
 | create_time  | int    | true  | 创建时间                                                              |
-| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CPF,CNPJ,EMAIL,PHONE","account_no":"账号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:BANK,JAZZCASH,EASYPAISA,WALLET","account_no":"账号","bank_code":"银行编码","identify_num":"证件号码"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                  |
 |utr2|string|false|银行订单号|
@@ -372,7 +372,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\"}",
+  "payer": "{\"account_name\":\"TEST\",\"account_type\":\"BANK\",\"account_no\":\"012345678910111213\",\"bank_code\":\"BKKB\",\"identify_num\":\"1234567890123\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

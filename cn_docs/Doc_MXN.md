@@ -143,7 +143,7 @@
 | order_price  | int    | true  | 订单金额,单位:分                                                                                              |
 | real_price   | int    | true  | 用户真实付款金额 ,单位:分                                                                                         |
 | nti_time     | int    | false | 发起通知时间                                                                                                 |
-| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
+| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"RFC,CURP"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
 | create_time  | int    | true  | 创建时间                                                                                                   |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                         |
@@ -158,7 +158,7 @@
   "dis_order_no": "2025071130460153942908928india1sKQbX",
   "order_price": 10099,
   "real_price": 10000,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"name\":\"Juan Perez\",\"email\":\"juan.perez@example.mx\",\"phone\":\"5512345678\",\"identify_type\":\"RFC\",\"identify_num\":\"XAXX010101000\"}",
   "nti_time": 1752826164,
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -260,11 +260,11 @@
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "CLABE",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "PKREAYPAISA",
+  "account_no": "032180000118359719",
+  "account_name": "Juan Perez",
+  "bank_code": "BANAMEX",
   "identify_type": "RFC",
-  "identify_num": "RFC1234567890"
+  "identify_num": "XAXX010101000"
 }
 ```
 
@@ -387,7 +387,7 @@
 | remark       | string | true  | 代付失败原因                                                                                                                                            |
 | fee          | int    | false | 订单手续费 ,单位:分                                                                                                                                       |
 | create_time  | int    | true  | 创建时间                                                                                                                                              |
-| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CPF,CNPJ,EMAIL,PHONE","account_no":"账号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CLABE,BANK","account_no":"账号","identify_type":"证件类型","identify_num":"RFC,CURP"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                    |
 |utr2|string|false|银行订单号|
@@ -418,7 +418,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CLABE\",\"account_no\":\"032180000118359719\",\"identify_type\":\"RFC\",\"identify_num\":\"XAXX010101000\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -543,8 +543,7 @@
 | 字段      | 国家   | 值     | 描述       |
 |-----------|------|-------|----------|
 | pay_method | 墨西哥   | CLABE | 墨西哥CLABE |
-| pay_method | 墨西哥   | CODI  | 墨西哥CODI  |
-| pay_method | 墨西哥   | CLABE | 墨西哥CLABE |
+| pay_method | 墨西哥   | OXXO  | 墨西哥OXXO  |
 
 
 # 12、银行编码

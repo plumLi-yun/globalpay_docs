@@ -225,12 +225,12 @@
   "app_id": 51,
   "pay_code": 91145,
   "price": 10000,
-  "account_type": "EMAIL",
-  "account_no": "asda12321@gmail.com",
-  "account_name": "TEST",
-  "bank_code": "PIX",
-  "identify_type": "CPF",
-  "identify_num": "10703569562",
+  "account_type": "CHECKING",
+  "account_no": "1234567890",
+  "account_name": "Juan Perez",
+  "bank_code": "Chile",
+  "identify_type": "RUT",
+  "identify_num": "123456785",
   "pay_notice_url": "http://www.test.com",
   "attach": "",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
@@ -359,7 +359,7 @@
 | remark       | string | true  | 代付失败原因                                                                                                               |
 | fee          | int    | false | 订单手续费 ,单位:分                                                                                                        |
 | create_time  | int    | true  | 创建时间                                                                                                                   |
-| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CHECKING,SAVINGS,RUT,VISTA","account_no":"账号","identify_type":"证件类型:RUT,PP","identify_num":"证件号码","bank_code":"银行编码"} |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                |
 
 - 查询响应示例
@@ -388,7 +388,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CHECKING\",\"account_no\":\"1234567890\",\"identify_type\":\"RUT\",\"identify_num\":\"123456785\",\"bank_code\":\"Chile\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

@@ -223,12 +223,12 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
  "attach": "",
  "sign": "12f74d71fa929087af79b5083567c453",
  "user_ip": "87.200.59.100",
- "account_type": "PHONE",
- "account_no": "123456789",
- "account_name": "test",
- "bank_code": "INR_UPI",
- "identify_type": "",
- "identify_num": ""
+ "account_type": "BANK",
+ "account_no": "1234567890",
+ "account_name": "Rahul Sharma",
+ "bank_code": "INR_BANK",
+ "identify_type": "IFSC",
+ "identify_num": "HDFC0001234"
 }
 ```
 
@@ -352,7 +352,7 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Paise.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CPF, CNPJ, EMAIL, PHONE", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}.       |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: UPI, BANK", "account_no":"Account", "identify_type":"Identity Type: IFSC", "identify_num":"IFSC number", "bank_code":"Bank Code"}.       |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 | utr2     | string | false  | Bank order number.                                                                                              |
@@ -383,7 +383,7 @@ Success:
  "remark": "",
  "fee": 10,
  "create_time": 1695317066,
- "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "payer": "{\"account_name\":\"Rahul Sharma\",\"account_type\":\"BANK\",\"account_no\":\"1234567890\",\"identify_type\":\"IFSC\",\"identify_num\":\"HDFC0001234\",\"bank_code\":\"INR_BANK\"}",
  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

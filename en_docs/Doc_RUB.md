@@ -191,7 +191,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | pay_code    | int  | true   | Product code, obtained from our operations.                        |
 | price     | int  | true   | Order amount, unit: Kopek, integer. Cannot have decimal points after converting to Ruble. |
 | account_no   | string | true   | Receiving account number.                                 |
-| account_type  | string | true   | Account type: CPF, CNPJ, EMAIL, PHONE, UPI (India UPI), BANK (Bank Account), CLABE (Mex). |
+| account_type  | string | true   | Account type: BANK. |
 | account_name  | string | true   | Name.                                           |
 | bank_code   | string | true   | Receiving bank code, refer to bank codes.                         |
 | identify_type | string | true   | Identity type: Brazil (CPF, CNPJ), Pakistan (CNIC), India (IFSC, BANK_CODE).       |
@@ -215,12 +215,12 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
  "attach": "",
  "sign": "12f74d71fa929087af79b5083567c453",
  "user_ip": "87.200.59.100",
- "account_type": "PHONE",
- "account_no": "123456789",
- "account_name": "test",
- "bank_code": "PKREAYPAISA",
- "identify_type": "",
- "identify_num": ""
+ "account_type": "BANK",
+ "account_no": "40817810099910004312",
+ "account_name": "Ivan Ivanov",
+ "bank_code": "SBER",
+ "identify_type": "BANK_CODE",
+ "identify_num": "044525225"
 }
 ```
 
@@ -344,7 +344,7 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Kopek.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CPF, CNPJ, EMAIL, PHONE", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}.       |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: BANK", "account_no":"Account", "bank_code":"Bank Code"}.       |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 | utr2     | string | false  | Bank order number.                                                                                              |
@@ -375,7 +375,7 @@ Success:
  "remark": "",
  "fee": 10,
  "create_time": 1695317066,
- "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "payer": "{\"account_name\":\"Ivan Ivanov\",\"account_type\":\"BANK\",\"account_no\":\"40817810099910004312\",\"bank_code\":\"SBER\"}",
  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

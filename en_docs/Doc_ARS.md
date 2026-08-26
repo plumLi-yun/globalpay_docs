@@ -225,12 +225,12 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
   "attach": "",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "BANK",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "AR_PAYOUT",
-  "identify_type": "",
-  "identify_num": ""
+  "account_type": "CBU",
+  "account_no": "2850590940090418135201",
+  "account_name": "Juan Perez",
+  "bank_code": "CBU",
+  "identify_type": "DNI",
+  "identify_num": "12345678"
 }
 ```
 
@@ -356,7 +356,7 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | remark        | string | true     | Payout failure reason                                                                |
 | fee           | int    | false    | Transaction fee                                                                      |
 | create_time   | int    | true     | Order creation time                                                                  |
-| payer         | string | false    | JSON string with payer information: `{"name":"Full Name","account":"Account","utr2":"Bank Transaction No."}` |
+| payer         | string | false    | JSON string with payer information: `{"account_name":"Full Name","account_type":"Account Type: CBU, CVU, BANK","account_no":"Account","identify_type":"ID Type: DNI, CUIL, RUC, PP","identify_num":"ID Number","bank_code":"Bank Code","utr2":"Bank Transaction No."}` |
 | pay_info      | string | false    | Payment information as a JSON string, e.g.: raw payment data, card number, name, bank, etc. |
 | sign          | string | true     | Signature result — see signing method at the top of this document                   |
 | utr2          | string | false    | Bank order number                                                                    |
@@ -387,7 +387,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"Full Name\"}",
+  "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CBU\",\"account_no\":\"2850590940090418135201\",\"identify_type\":\"DNI\",\"identify_num\":\"12345678\",\"bank_code\":\"CBU\",\"utr2\":\"9901108391\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

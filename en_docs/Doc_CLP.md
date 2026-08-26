@@ -203,12 +203,12 @@ Order URL: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
   "app_id": 51,
   "pay_code": 91145,
   "price": 10000,
-  "account_type": "EMAIL",
-  "account_no": "asda12321@gmail.com",
-  "account_name": "TEST",
-  "bank_code": "PIX",
-  "identify_type": "CPF",
-  "identify_num": "10703569562",
+  "account_type": "CHECKING",
+  "account_no": "1234567890",
+  "account_name": "Juan Perez",
+  "bank_code": "Chile",
+  "identify_type": "RUT",
+  "identify_num": "123456785",
   "pay_notice_url": "http://www.test.com",
   "attach": "",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
@@ -325,7 +325,7 @@ Query URL: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Centavos.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"name":"Name","email":"Email","phone":"Phone","identify_type":"ID Type","identify_num":"CPF,CNPJ"}.       |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name","account_type":"Account Type: CHECKING, SAVINGS, RUT, VISTA","account_no":"Account","identify_type":"ID Type: RUT, PP","identify_num":"ID Number","bank_code":"Bank Code"}.       |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 Failure:
 
@@ -351,7 +351,7 @@ Success:
  "remark": "",
  "fee": 10,
  "create_time": 1695317066,
- "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CHECKING\",\"account_no\":\"1234567890\",\"identify_type\":\"RUT\",\"identify_num\":\"123456785\",\"bank_code\":\"Chile\"}",
  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

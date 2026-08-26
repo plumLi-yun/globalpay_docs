@@ -223,12 +223,12 @@
   "attach": "",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "BANK",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "AR_PAYOUT",
-  "identify_type": "",
-  "identify_num": ""
+  "account_type": "CBU",
+  "account_no": "2850590940090418135201",
+  "account_name": "Juan Perez",
+  "bank_code": "CBU",
+  "identify_type": "DNI",
+  "identify_num": "12345678"
 }
 ```
 
@@ -352,7 +352,7 @@
 | remark       | string | true  | 代付失败原因                                                      |
 | fee          | int    | false | 订单手续费                                              |
 | create_time  | int    | true  | 创建时间                                                        |
-| payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","utr2":"银行流水号"}|
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CBU,CVU,BANK","account_no":"账号","identify_type":"证件类型:DNI,CUIL,RUC,PP","identify_num":"证件号码","bank_code":"银行编码","utr2":"银行流水号"}|
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等|
 | sign         | string | true  | 签名结果,签名方法在文档顶部           |
 |utr2|string|false|银行订单号|
@@ -383,7 +383,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\"}",
+  "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CBU\",\"account_no\":\"2850590940090418135201\",\"identify_type\":\"DNI\",\"identify_num\":\"12345678\",\"bank_code\":\"CBU\",\"utr2\":\"9901108391\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

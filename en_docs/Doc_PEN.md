@@ -222,12 +222,12 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
   "attach": "{\"email\":\"Email\",\"phone\":\"Phone\",\"cci\":\"CCI number\",\"pay_type\":\"Payment method\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "BANK",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "",
-  "identify_type": "",
-  "identify_num": ""
+  "account_type": "SA",
+  "account_no": "12345678901234",
+  "account_name": "Juan Perez",
+  "bank_code": "BCP",
+  "identify_type": "DNI",
+  "identify_num": "12345678"
 }
 ```
 
@@ -351,7 +351,7 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | remark | string | true | Pay-out failure reason |
 | fee | int | false | Order fee, unit: centimos |
 | create_time | int | true | Creation time |
-| payer | string | false | JSON string of payer information: `{"account_name":"Name","account_type":"Account type","account_no":"Account","identify_type":"ID type","identify_num":"ID number"}` |
+| payer | string | false | JSON string of payer information: `{"account_name":"Name","account_type":"Account type: CA, SA","account_no":"Account","identify_type":"ID type: DNI, CE, RUC, PAS","identify_num":"ID number","bank_code":"Bank code"}` |
 | pay_info | string | false | Payment information JSON string, for example: native payment info, card number, name, bank, etc. |
 | sign | string | true | Signature result, see the signature method at the top of the document |
 | utr2 | string | false | Bank order number |
@@ -382,7 +382,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID type\",\"identify_num\":\"ID number\"}",
+  "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"SA\",\"account_no\":\"12345678901234\",\"identify_type\":\"DNI\",\"identify_num\":\"12345678\",\"bank_code\":\"BCP\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

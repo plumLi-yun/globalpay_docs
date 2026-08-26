@@ -213,12 +213,10 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
   "attach": "",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
-  "account_type": "PHONE",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "PMP",
-  "identify_type": "",
-  "identify_num": ""
+  "account_type": "BANK",
+  "account_no": "012345678901",
+  "account_name": "Juan Dela Cruz",
+  "bank_code": "PH_BDO"
 }
 ```
 
@@ -348,7 +346,7 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | remark       | string | true     | Pay-out failure reason                                                                                                                                                         |
 | fee          | int    | false    | Transaction fee, unit: centavos                                                                                                                                                |
 | create_time  | int    | true     | Create time                                                                                                                                                                    |
-| payer        | string | false    | JSON string, payer info {"account_name":"Name","account_type":"Account type: CPF,CNPJ,EMAIL,PHONE","account_no":"Account","identify_type":"ID type","identify_num":"CPF,CNPJ"} |
+| payer        | string | false    | JSON string, payer info {"account_name":"Name","account_type":"Account type: BANK","account_no":"Account","bank_code":"Bank code"} |
 | pay_info     | string | false    | Payment info JSON string, e.g. collection/payment raw info, card number, name, bank, etc. 25-10-28                                                                             |
 | sign         | string | true     | Signature result, signature method described at the top of the document                                                                                                        |
 | utr2         | string | false    | Bank order number                                                                                                                                                              |
@@ -379,7 +377,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Juan Dela Cruz\",\"account_type\":\"BANK\",\"account_no\":\"012345678901\",\"bank_code\":\"PH_BDO\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

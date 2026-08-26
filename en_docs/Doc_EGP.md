@@ -193,7 +193,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | account_no   | string | true   | Receiving account number.                                                           |
 | account_type  | string | true   | Account type:  PHONE,BANK.                                                          |
 | account_name  | string | true   | Name.                                                                               |
-| bank_code   | string | true   | Fixed: PIXPAY.                                                                      |
+| bank_code   | string | true   | Receiving bank code, refer to bank codes.                                           |
 | pay_notice_url | string | false  | Notification URL for successful pay-out.                                            |
 | attach     | string | false  | Additional parameters: {"email":"Email", "phone":"Phone", "bank_name":"Bank Name"}. |
 | user_ip | string | false | Receiving user IP address.                                                          |
@@ -215,11 +215,9 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
-  "account_no": "123456789",
-  "account_name": "test",
-  "bank_code": "PKREAYPAISA",
-  "identify_type": "",
-  "identify_num": ""
+  "account_no": "201234567890",
+  "account_name": "Mohamed Ali",
+  "bank_code": "Vodafone"
 }
 ```
 
@@ -346,7 +344,7 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Centavos.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CPF, CNPJ, EMAIL, PHONE", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}.       |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: PHONE, BANK", "account_no":"Account", "bank_code":"Bank Code"}.       |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 | utr2     | string | false  | Bank order number.                                                                                              |
@@ -379,7 +377,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"ID Type\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Mohamed Ali\",\"account_type\":\"PHONE\",\"account_no\":\"201234567890\",\"bank_code\":\"Vodafone\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```

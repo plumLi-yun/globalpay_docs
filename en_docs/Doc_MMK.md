@@ -239,9 +239,9 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
  "attach": "",
  "sign": "12f74d71fa929087af79b5083567c453",
  "user_ip": "87.200.59.100",
- "account_type": "PHONE",
- "account_no": "123456789",
- "account_name": "test",
+ "account_type": "BANK",
+ "account_no": "09682555313",
+ "account_name": "Shauk Mi",
  "bank_code": "WavePay_BANK"
 }
 ```
@@ -365,7 +365,7 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Pya.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type", "account_no":"Account"}.                                                   |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: BANK", "account_no":"Account", "bank_code":"Bank Code"}.                                                   |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 | utr2     | string | false  | Bank order number.                                                                                              |
@@ -397,7 +397,7 @@ Success:
  "remark": "",
  "otherOrder": [],
  "create_time": 1776337862,
- "payer": "{\"bank_code\":\"WavePay_MMK\",\"bank_name\":\"WavePay\"}",
+ "payer": "{\"account_name\":\"Shauk Mi\",\"account_type\":\"BANK\",\"account_no\":\"09682555313\",\"bank_code\":\"WavePay_BANK\"}",
  "sign": "04fced22db3308031e4a63392d5fcc64",
  "pay_info": "{\"account_no\":\"09682555313\",\"name\":\"Shauk+Mi\"}"
 }

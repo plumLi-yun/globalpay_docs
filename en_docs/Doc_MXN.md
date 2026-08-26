@@ -143,7 +143,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | order_price | int  | true   | Order amount, unit: Centavo.                                                                                                                      |
 | real_price  | int  | true   | Actual amount paid by the user, unit: Centavo.                                                                                                             |
 | nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
-| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}. Also includes payer-related fields from `attach`. |
+| payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"RFC, CURP"}. Also includes payer-related fields from `attach`. |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
 | create_time | int  | true   | Creation time.                                                                                                                            |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                                                |
@@ -158,7 +158,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
  "dis_order_no": "2025071130460153942908928india1sKQbX",
  "order_price": 10099,
  "real_price": 10000,
- "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "payer": "{\"name\":\"Juan Perez\",\"email\":\"juan.perez@example.mx\",\"phone\":\"5512345678\",\"identify_type\":\"RFC\",\"identify_num\":\"XAXX010101000\"}",
  "nti_time": 1752826164,
  "create_time": 1752751502,
  "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -261,11 +261,11 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
  "sign": "12f74d71fa929087af79b5083567c453",
  "user_ip": "87.200.59.100",
  "account_type": "CLABE",
- "account_no": "123456789",
- "account_name": "test",
- "bank_code": "PKREAYPAISA",
+ "account_no": "032180000118359719",
+ "account_name": "Juan Perez",
+ "bank_code": "BANAMEX",
  "identify_type": "RFC",
- "identify_num": "RFC1234567890"
+ "identify_num": "XAXX010101000"
 }
 ```
 
@@ -389,7 +389,7 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | remark    | string | true   | Reason for pay-out failure.                                                                                         |
 | fee     | int  | false  | Order fee, unit: Centavo.                                                                                           |
 | create_time | int  | true   | Creation time.                                                                                                |
-| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CPF, CNPJ, EMAIL, PHONE", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"CPF, CNPJ"}.       |
+| payer    | string | false  | JSON string, payer info: {"account_name":"Name", "account_type":"Account Type: CLABE, BANK", "account_no":"Account", "identify_type":"Identity Type", "identify_num":"RFC, CURP"}.       |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                      |
 | sign     | string | true   | Signature result, see the top of the document for the signature method.                                                                   |
 | utr2     | string | false  | Bank order number.                                                                                              |
@@ -420,7 +420,7 @@ Success:
  "remark": "",
  "fee": 10,
  "create_time": 1695317066,
- "payer": "{\"name\":\"Name\",\"email\":\"Email\",\"phone\":\"Phone\",\"identify_type\":\"Identity Type\",\"identify_num\":\"CPF,CNPJ\"}",
+ "payer": "{\"account_name\":\"Juan Perez\",\"account_type\":\"CLABE\",\"account_no\":\"032180000118359719\",\"identify_type\":\"RFC\",\"identify_num\":\"XAXX010101000\"}",
  "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -541,11 +541,11 @@ Address: https://{api_domain}/api/v1/payApi/QueryCertificate
 
 # 11. Payment Method (Pay-in Field: pay_method)
 
-| Field   | Country | Value   | Description                   |
-|------------|----------|-----------|-------------------------------------------------|
-| pay_method | Mexico  | CLABE   | Mexico CLABE                  |
-| pay_method | Mexico  | CODI    | Mexico CODI                   |
-| pay_method | Mexico  | CLABE   | Mexico CLABE                  |
+| Field   | Country | Value | Description  |
+|------------|----------|-------|--------------|
+| pay_method | Mexico  | CLABE | Mexico CLABE |
+| pay_method | Mexico  | OXXO  | Mexico OXXO  |
+
 
 
 

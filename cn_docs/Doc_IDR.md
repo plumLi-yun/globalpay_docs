@@ -221,8 +221,8 @@
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
-  "account_no": "123456789",
-  "account_name": "test",
+  "account_no": "081234567890",
+  "account_name": "Agus Setiawan",
   "bank_code": "DANA"
 }
 ```
@@ -346,7 +346,7 @@
 | remark       | string | true  | 代付失败原因                                                                                                                                            |
 | fee          | int    | false | 订单手续费 ,单位:派萨                                                                                                                                       |
 | create_time  | int    | true  | 创建时间                                                                                                                                              |
-| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:CPF,CNPJ,EMAIL,PHONE","account_no":"账号","identify_type":"证件类型","identify_num":"CPF,CNPJ"} |
+| payer        | string | false | JSON 字符串,付款人信息{"account_name":"姓名","account_type":"账号类型:PHONE,BANK","account_no":"账号","bank_code":"银行或钱包编码"} |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等  25-10-28 |
 | sign         | string | true  | 签名结果,签名方法在文档顶部                                                                                                                                    |
 |utr2|string|false|银行订单号|
@@ -377,7 +377,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"name\":\"姓名\",\"email\":\"邮箱\",\"phone\":\"手机号\",\"identify_type\":\"证件类型\",\"identify_num\":\"CPF,CNPJ\"}",
+  "payer": "{\"account_name\":\"Agus Setiawan\",\"account_type\":\"PHONE\",\"account_no\":\"081234567890\",\"bank_code\":\"DANA\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
