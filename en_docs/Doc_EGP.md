@@ -274,7 +274,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | dis_order_no | string | true   | Platform order number.                          |
 | order_price | int  | true   | Order amount, unit: Centavos.                        |
 | fee     | int  | false  | Order fee, unit: Centavos.                          |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds)                                                                                       |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
 | status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
 | pay_info   | string | false  | Payment information.                           |
 | remark    | string | false  | Failure reason.                              |

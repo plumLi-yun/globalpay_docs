@@ -281,7 +281,7 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 | dis_order_no  | string | true     | Platform order number                                                    |
 | order_price   | int    | true     | Order amount                                                             |
 | fee           | int    | false    | Transaction fee                                                          |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds)                                                                                       |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
 | status        | int    | true     | Order status: 2 = Payout successful, 3 = Payout failed, 7 = Rejected, 9 = Reversed |
 | pay_info      | string | false    | Payment information                                                      |
 | remark        | string | false    | Failure reason                                                           |
