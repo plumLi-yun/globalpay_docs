@@ -274,7 +274,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | dis_order_no | string | true   | Platform order number.                          |
 | order_price | int  | true   | Order amount, unit: Centavos.                        |
 | fee     | int  | false  | Order fee, unit: Centavos.                          |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
 | status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
 | pay_info   | string | false  | Payment information.                           |
 | remark    | string | false  | Failure reason.                              |
@@ -290,8 +290,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
   "trade_no": 10003,
   "status": 3,
   "order_price": 10000,
-  "real_price": 10000,
-  "order_no": "p71584120257igU8n8FII",
+"order_no": "p71584120257igU8n8FII",
   "dis_order_no": "2025071130700746140950528india15rLVI",
   "nti_time": 1752808888,
   "create_time": 1752808865,

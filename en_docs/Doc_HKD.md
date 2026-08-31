@@ -275,7 +275,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 | dis_order_no | string | true  | Platform order number                                         |
 | order_price        | int    | true  | Order amount, unit: Hong Kong Cents (Cents)                                     |
 | fee          | int    | false | Order fee, unit: Hong Kong Cents (Cents)                         |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
 | status       | int    | true  | Order status, `2` pay-out success, `3` pay-out failure, `7` rejected, `9` reversed               |
 | pay_info  | string    | false | Payment information JSON string, for example: collection/payment raw information, card number, name, bank, `utr2`, etc. |
 | remark       | string | false | Failure reason                                          |
@@ -292,7 +292,6 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
   "order_no": "20060354339090013",
   "dis_order_no": "Meg2352644o2nmjo0800hkgYZ2A",
   "order_price": 11000,
-  "real_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
   "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",

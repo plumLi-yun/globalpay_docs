@@ -274,7 +274,7 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 | dis_order_no | string | true     | Platform order number                                                   |
 | order_price  | int    | true     | Order amount, unit: centavos                                            |
 | fee          | int    | false    | Transaction fee, unit: centavos                                         |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
 | status       | int    | true     | Order status: 2 = success, 3 = failure, 7 = rejected, 9 = reversed      |
 | pay_info     | string | false    | Payment info                                                            |
 | remark       | string | false    | Failure reason                                                          |
@@ -291,7 +291,6 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
   "order_no": "20060354339090013",
   "dis_order_no": "Meg2352644o2nmjo0800indiaYZ2A",
   "order_price": 11000,
-  "real_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
   "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",
