@@ -270,6 +270,7 @@
 | dis_order_no | string | true  | 平台订单号                               |
 | order_price        | int    | true  | 订单金额,单位:分                         |
 | fee          | int    | false | 订单手续费 ,单位:分                      |
+| real_price   | int    | false | 真实代付出款金额 (代付成功时才有) <span style="color:red;">此字段暂未更新，接入时验签算法需考虑该字段，避免更新后出现签名错误</span>                                                                                       |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正 |
 | pay_info  | string    | false | 付款信息                          |
 | remark       | string | false | 失败原因                                 |
