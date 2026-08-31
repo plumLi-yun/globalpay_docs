@@ -289,6 +289,7 @@
 | dis_order_no | string | true  | 平台订单号                               |
 | order_price  | int    | true  | 订单金额,单位:分                         |
 | fee          | int    | false | 订单手续费 ,单位:分                      |
+| real_price   | int    | false | 真实代付出款金额 (代付成功时才有)                                                                                       |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正  |
 | pay_info     | string | false | 付款信息                                 |
 | remark       | string | false | 失败原因                                 |
@@ -305,6 +306,7 @@
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
+  "real_price": 10000,
   "fee": 10,
   "pay_info": "",
   "remark": "",

@@ -261,6 +261,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | dis_order_no | string | true     | Platform order number                                               |
 | order_price  | int    | true     | Order amount, unit: Centavos                                        |
 | fee          | int    | false    | Order fee, unit: Centavos                                           |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds)                                                                                       |
 | status       | int    | true     | Order status: 2. Payout success, 3. Payout failure, 7. Rejected, 9. Reversal |
 | pay_info     | string | false    | Payment information                                                 |
 | remark       | string | false    | Failure reason                                                      |
@@ -277,6 +278,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
   "order_no": "p71584121t1693047656571",
   "dis_order_no": "lufei169246816001692",
   "order_price": 10000,
+  "real_price": 10000,
   "fee": 10,
   "pay_info": "",
   "remark": "",

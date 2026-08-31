@@ -283,6 +283,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | dis_order_no | string | true   | Platform order number.                                 |
 | order_price | int  | true   | Order amount, unit: Paise.                               |
 | fee     | int  | false  | Order fee, unit: Paise.                                 |
+| real_price   | int    | false | Actual payout amount (only available when payout succeeds)                                                                                       |
 | status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.             |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, utr2, etc. |
 | remark    | string | false  | Failure reason.                                     |
@@ -299,6 +300,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
  "order_no": "20060354339090013",
  "dis_order_no": "Meg2352644o2nmjo0800indiaYZ2A",
  "order_price": 11000,
+ "real_price": 11000,
  "nti_time": 1776665229,
  "create_time": 1776665034,
  "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",
