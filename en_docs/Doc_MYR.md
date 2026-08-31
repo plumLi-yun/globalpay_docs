@@ -268,7 +268,6 @@ Push URL: the `pay_notice_url` submitted by the merchant when placing the order.
 | dis_order_no | string | true     | Platform order number |
 | order_price  | int    | true     | Order amount, unit: Sen, integer. `1 RM = 100 Sen` |
 | fee          | int    | false    | Order fee, unit: Sen, integer. `1 RM = 100 Sen` |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds; use together with status and do not determine business success based on this field alone)                                                                                       |
 | status       | int    | true     | Order status, `2` = pay-out success, `3` = pay-out failed, `7` = rejected, `9` = reversed |
 | pay_info     | string | false    | Payment info JSON string, for example: payer/payee native information, card number, name, bank, `utr2`, etc. |
 | remark       | string | false    | Failure reason |
@@ -285,7 +284,6 @@ Push URL: the `pay_notice_url` submitted by the merchant when placing the order.
   "order_no": "20060354339090013",
   "dis_order_no": "Meg2352644o2nmjo0800myrYZ2A",
   "order_price": 11000,
-  "real_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
   "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",

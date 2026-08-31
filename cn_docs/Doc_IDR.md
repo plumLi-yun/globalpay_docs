@@ -278,7 +278,6 @@
 | dis_order_no | string | true  | 平台订单号                                         |
 | order_price        | int    | true  | 订单金额,单位:派萨                                     |
 | fee          | int    | false | 订单手续费 ,单位:派萨                                   |
-| real_price   | int    | false | 真实代付出款金额 (代付成功时才有，需要配合status进行使用，不可单凭此字段来判断业务是否成功)                                                                                       |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正               |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行、utr2等 |
 | remark       | string | false | 失败原因                                          |
@@ -295,7 +294,6 @@
   "order_no": "20060354339090013",
   "dis_order_no": "Meg2352644o2nmjo0800indiaYZ2A",
   "order_price": 11000,
-  "real_price": 11000,
   "nti_time": 1776665229,
   "create_time": 1776665034,
   "sign": "d2f74c18dca3bd6bd79172a1a7c26d9a",

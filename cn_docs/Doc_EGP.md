@@ -276,7 +276,6 @@
 | dis_order_no | string | true  | 平台订单号                                       |
 | order_price  | int    | true  | 订单金额,单位:分                                   |
 | fee          | int    | false | 订单手续费 ,单位:分                                 |
-| real_price   | int    | false | 真实代付出款金额 (代付成功时才有，需要配合status进行使用，不可单凭此字段来判断业务是否成功)                                                                                       |
 | status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正             |
 | pay_info     | string | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 25-10-28 |
 | remark       | string | false | 失败原因                                        |
@@ -292,8 +291,7 @@
   "trade_no": 10003,
   "status": 3,
   "order_price": 10000,
-  "real_price": 10000,
-  "order_no": "p71584120257igU8n8FII",
+"order_no": "p71584120257igU8n8FII",
   "dis_order_no": "2025071130700746140950528india15rLVI",
   "nti_time": 1752808888,
   "create_time": 1752808865,
