@@ -39,7 +39,7 @@
 
 ## 3.2 Callback Related
 
-> 1. If the callback is received and processed successfully, please return the text **success** without any other characters. The system will stop pushing this order information. Otherwise, it will push repeatedly multiple times.
+> 1. If the callback is received and processed successfully, please return the text <span style="color:red;">**success**</span> without any other characters. The system will stop pushing this order information. Otherwise, it will push repeatedly multiple times.
 >
 > 2. During asynchronous notification interaction, if the response received is not **success**, it will be considered a notification failure. The system will resend notifications periodically based on a strategy. The retry intervals are: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
 >
@@ -188,7 +188,7 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 
 ## 5.2 Pay-in Callback Response Description
 
-If the callback is received and processed successfully, please return **success**. The system will stop pushing this order information, otherwise it will push repeatedly multiple times.
+If the callback is received and processed successfully, please return <span style="color:red;">**success**</span>. The system will stop pushing this order information, otherwise it will push repeatedly multiple times.
 
 
 # 6. Pay-out Order API
@@ -315,7 +315,7 @@ Callback IP: `call_back_server_ip`, please add our IP into the callback whitelis
 
 ## 7.2 Pay-out Callback Response Description
 
-If the callback is received and processed successfully, please return **success**. The system will stop pushing this order information, otherwise it will push repeatedly multiple times.
+If the callback is received and processed successfully, please return <span style="color:red;">**success**</span>. The system will stop pushing this order information, otherwise it will push repeatedly multiple times.
 
 ---
 

@@ -31,7 +31,7 @@
 
 ## 3.2 Callback Related
 
-> 1. The callback reception was successful. Please return the text "success". This text must not contain any other characters. Otherwise, the system will no longer push this order information; otherwise, it will push it multiple times.
+> 1. The callback reception was successful. Please return the text "<span style="color:red;">success</span>". This text must not contain any other characters. Otherwise, the system will no longer push this order information; otherwise, it will push it multiple times.
 > 
 > 2. During asynchronous notification interaction, if the received response is not `success`, it is considered a notification failure, and notifications will be re-initiated periodically based on a certain strategy. The notification intervals are: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
 > 
@@ -57,7 +57,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | pay_notice_url | string | false  | Notification URL for successful payment.                      |
 | user_id    | string | true   | System user ID.                                   |
 | user_ip    | string | true   | Payer IP address.                                  |
-| attach     | string | true   | Additional parameters in JSON string format: {"name":"Name"} (Recommended).     |
+| attach     | string | false   | Additional parameters in JSON string format: {"name":"Name"} (Recommended).     |
 | sign      | string | true   | Signature result, see the top of the document for the signature method.       |
 | timestamp   | string | false  | Order timestamp (10-digit timestamp in seconds).                  |
 
@@ -200,7 +200,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 ```
 
 ## 5.2 Pay-in Callback - Response Description
-If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
+If the callback is successfully received and processed, please return <span style="color:red;">`success`</span>. The system will stop pushing this order information; otherwise, it will be resent multiple times.
 
 # 6. Pay-out (Disbursement) Order Interface
 
@@ -321,7 +321,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 ```
 
 ## 7.2 Pay-out Callback Response Description
-If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
+If the callback is successfully received and processed, please return <span style="color:red;">`success`</span>. The system will stop pushing this order information; otherwise, it will be resent multiple times.
 
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 

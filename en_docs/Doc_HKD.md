@@ -30,7 +30,7 @@
 > 4. `user_ip` should collect the user's real IP whenever possible. If unavailable, leave it empty. Do not use a local IP such as `127.0.0.1`.
 
 ## 3.2 Callback Related
-> 1. After successfully processing the callback, please return the text `success` without any additional characters. Otherwise, the system will continue to resend the order notification multiple times.
+> 1. After successfully processing the callback, please return the text <span style="color:red;">`success`</span> without any additional characters. Otherwise, the system will continue to resend the order notification multiple times.
 >
 > 2. During asynchronous notification interaction, if the received response is not `success`, the notification will be considered failed, and retries will be sent periodically according to the following schedule: `1m`, `1m`, `4m`, `10m`, `10m`, `1h`, `2h`, `6h`, `15h`.
 >
@@ -165,7 +165,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 }
 ```
 ## 5.2 Pay-in Callback Response Description
-After successfully processing the callback, please return `success`. The system will then stop pushing this order notification; otherwise, it will continue to retry.
+After successfully processing the callback, please return <span style="color:red;">`success`</span>. The system will then stop pushing this order notification; otherwise, it will continue to retry.
 
 # 6. Pay-out Order API
 
@@ -299,7 +299,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 }
 ```
 ## 7.2 Pay-out Callback Response Description
-After successfully processing the callback, please return `success`. The system will then stop pushing this order notification; otherwise, it will continue to retry.
+After successfully processing the callback, please return <span style="color:red;">`success`</span>. The system will then stop pushing this order notification; otherwise, it will continue to retry.
 
 # 8. Order Query API (Shared by Pay-in and Pay-out)
 

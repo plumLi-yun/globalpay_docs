@@ -32,7 +32,7 @@
 
 ## 3.2 Callback-Related
 
-> 1. If the callback is received and processed successfully, please return the text `success` with no other characters. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
+> 1. If the callback is received and processed successfully, please return the text <span style="color:red;">`success`</span> with no other characters. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
 >
 > 2. During asynchronous notification interactions, if the response received is not `success`, the notification is considered failed. The system will periodically retry using the following interval schedule: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
 >
@@ -173,7 +173,7 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 
 ## 5.2 Pay-In Callback – Response Description
 
-If the callback is received and processed successfully, please return `success`. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
+If the callback is received and processed successfully, please return <span style="color:red;">`success`</span>. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
 
 # 6. Payout (Pay-Out) Order API
 
@@ -308,7 +308,7 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 
 ## 7.2 Pay-Out Callback – Response Description
 
-If the callback is received and processed successfully, please return `success`. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
+If the callback is received and processed successfully, please return <span style="color:red;">`success`</span>. The system will then stop pushing notifications for this order. Otherwise, it will continue to push multiple times.
 
 # 8. Order Query API (Shared by Pay-In and Pay-Out)
 

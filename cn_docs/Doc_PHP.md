@@ -30,7 +30,7 @@
 > 4、user_ip 尽量收集用户真实ip，确实没有就留空，不要使用127.0.0.1这种本地ip
 
 ## 3.2 回调相关
-> 1、回调接收处理成功，请返回文本success不能含有其他任何字符，系统将不再推送此订单信息，否则还会重复推送多次
+> 1、回调接收处理成功，请返回文本<span style="color:red;">success</span>不能含有其他任何字符，系统将不再推送此订单信息，否则还会重复推送多次
 > 
 > 2、在进行异步通知交互时，如果收到的应答不是 success ，会认为通知失败，会通过一定的策略定期重新发起通知。通知的间隔频率为：1m、1m、4m、10m、10m、1h、2h、6h、15h。
 > 
@@ -56,7 +56,7 @@
 | pay_notice_url | string | false | 支付成功通知 url                                                                                        |
 | user_id        | string | true  | 系统用户ID                                                                                            |
 | user_ip        | string | true  | 付款人 IP                                                                                            |
-|attach|string| true  | 附加参数 json字符串  {”name”:”姓名”,"phone":"电话","email":"邮箱"} |
+|attach|string| false  | 附加参数 json字符串  {”name”:”姓名”,"phone":"电话","email":"邮箱"} |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                    |
 |timestamp|string| false | 下单时间戳 10位时间戳单位S                                                                                   |
 
@@ -158,7 +158,7 @@
 }
 ```
 ## 5.2 代收回调-响应说明
-回调接收处理成功，请返回 success，系统将不再推送此订单信息，否则还会重复推送多次
+回调接收处理成功，请返回 <span style="color:red;">success</span>，系统将不再推送此订单信息，否则还会重复推送多次
 
 # 6、代付下单接口
 
@@ -279,7 +279,7 @@
 }
 ```
 ## 7.2 代付回调响应说明
-回调接收处理成功，请返回 success，系统将不再推送此订单信息，否则还会重复推送多次
+回调接收处理成功，请返回 <span style="color:red;">success</span>，系统将不再推送此订单信息，否则还会重复推送多次
 
 # 8、查询订单接口 (代收 代付共用)
 

@@ -32,7 +32,7 @@
 
 ## 3.2 Callback-Related
 
-> 1. Upon successfully receiving and processing a callback, return the plain text `success` with no other characters. The system will then stop pushing notifications for that order; otherwise, it will retry multiple times.
+> 1. Upon successfully receiving and processing a callback, return the plain text <span style="color:red;">`success`</span> with no other characters. The system will then stop pushing notifications for that order; otherwise, it will retry multiple times.
 >
 > 2. During asynchronous notification interactions, if the response received is not `success`, the notification is considered failed, and the system will re-send notifications at scheduled intervals: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
 >
@@ -177,7 +177,7 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 
 ## 5.2 Pay-In Callback — Response Description
 
-Upon successfully receiving and processing the callback, return `success`. The system will then stop pushing notifications for this order; otherwise, it will retry multiple times.
+Upon successfully receiving and processing the callback, return <span style="color:red;">`success`</span>. The system will then stop pushing notifications for this order; otherwise, it will retry multiple times.
 
 # 6. Payout (Pay-Out) Order API
 
@@ -312,7 +312,7 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 
 ## 7.2 Pay-Out Callback — Response Description
 
-Upon successfully receiving and processing the callback, return `success`. The system will then stop pushing notifications for this order; otherwise, it will retry multiple times.
+Upon successfully receiving and processing the callback, return <span style="color:red;">`success`</span>. The system will then stop pushing notifications for this order; otherwise, it will retry multiple times.
 
 # 8. Order Query API (Shared by Pay-In and Pay-Out)
 

@@ -21,7 +21,7 @@
 > 4. `user_ip` – try to collect the user's real IP; if not available, leave it blank. Do not use local IPs like `127.0.0.1`.
 
 ## 3.2 Callback Related
-> 1. If the callback is successfully processed, return the plain text `success` without any other characters. The system will not push this order again; otherwise, it will retry multiple times.
+> 1. If the callback is successfully processed, return the plain text <span style="color:red;">`success`</span> without any other characters. The system will not push this order again; otherwise, it will retry multiple times.
 > 2. During async notification interaction, if the response is not `success`, the notification is considered failed and will be retried periodically. Retry intervals: 1m, 1m, 4m, 10m, 10m, 1h, 2h, 6h, 15h.
 > 3. If `pay_notice_url` is empty, it means the merchant does not require a callback, and the system will not push notifications.
 
@@ -157,7 +157,7 @@ Callback IP: call_back_server_ip. Please add our IP to the callback whitelist.
 ```
 
 ## 5.2 Collection Callback – Response Instructions
-If the callback is successfully processed, return success. The system will not push this order again; otherwise, it will retry multiple times.
+If the callback is successfully processed, return <span style="color:red;">success</span>. The system will not push this order again; otherwise, it will retry multiple times.
 
 # 6. Payout Order Creation Interface
 (Order creation IP needs to be whitelisted by us)
@@ -287,7 +287,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 }
 ```
 ## 7.2 Pay-out Callback Response Description
-If the callback is successfully received and processed, please return `success`. The system will stop pushing this order information; otherwise, it will be resent multiple times.
+If the callback is successfully received and processed, please return <span style="color:red;">`success`</span>. The system will stop pushing this order information; otherwise, it will be resent multiple times.
 
 # 8. Query Order Interface (Common for Pay-in and Pay-out)
 (Request IP needs to be whitelisted by us)

@@ -32,7 +32,7 @@
 
 ## 3.2 Callback Related
 
-> 1. If the callback is processed successfully, please return the plain text `success` without any extra characters. Otherwise, the system will continue to push the order notification repeatedly.
+> 1. If the callback is processed successfully, please return the plain text <span style="color:red;">`success`</span> without any extra characters. Otherwise, the system will continue to push the order notification repeatedly.
 >
 > 2. During asynchronous notification processing, if the received response is not `success`, the notification will be considered failed and retried periodically. The retry schedule is: `1m`, `1m`, `4m`, `10m`, `10m`, `1h`, `2h`, `6h`, `15h`.
 >
@@ -167,7 +167,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when placing the order.
 
 ## 5.2 Pay-in Callback Response Description
 
-If the callback is processed successfully, please return `success`. The system will stop pushing this order notification; otherwise, it will continue to retry.
+If the callback is processed successfully, please return <span style="color:red;">`success`</span>. The system will stop pushing this order notification; otherwise, it will continue to retry.
 
 # 6. Pay-out Order Interface
 
@@ -294,7 +294,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when placing the order.
 
 ## 7.2 Pay-out Callback Response Description
 
-If the callback is processed successfully, please return `success`. The system will stop pushing this order notification; otherwise, it will continue to retry.
+If the callback is processed successfully, please return <span style="color:red;">`success`</span>. The system will stop pushing this order notification; otherwise, it will continue to retry.
 
 # 8. Query Order Interface (Shared by Pay-in and Pay-out)
 
