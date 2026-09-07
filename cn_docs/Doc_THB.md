@@ -56,7 +56,7 @@
 | pay_notice_url | string | false | 支付成功通知 url                                                                                      |
 | user_id        | string | false | 商家用户ID                                                                                          |
 | user_ip        | string | false | 付款人 IP                                                                                          |
-|attach|string|false| 附加参数 json字符串 付款人信息 |
+|attach|string|true| 附加参数 json字符串 付款人信息 |
 | sign           | string | true  | 签名结果,签名方法在文档顶部                                                                                  |
 |timestamp|string|false| 下单时间戳 10位时间戳单位S                                                                                 |
 
@@ -137,11 +137,11 @@
 | 名称         | 类型   | 必填  | 描述                                                                                                     |
 |------------|------|-----|--------------------------------------------------------------------------------------------------------|
 | trade_no     | int    | true  | 商户号                                                                                                    |
-| status       | int    | true  | 订单状态, 2.成功, 3.失败                                                                                       |
+| status       | int    | true  | 订单状态, <span style="color:red;">2.成功</span>, 3.失败                                                                                       |
 | order_no     | string | true  | 商户订单号                                                                                                  |
 | dis_order_no | string | true  | 平台订单号                                                                                                  |
 | order_price  | int    | true  | 订单金额,单位:萨当（Satang）                                                                                              |
-| real_price   | int    | true  | 用户真实付款金额 ,单位:萨当（Satang）                                                                                         |
+| <span style="color:red;">real_price</span>   | int    | true  | <span style="color:red;">用户真实付款金额 ,单位:萨当（Satang）</span>                                                                                         |
 | nti_time     | int    | false | 发起通知时间                                                                                                 |
 | payer        | string | false | JSON 字符串,付款人信息{"name":"姓名","account":"账号","bank":"付款的用户银行编码","utr2":"银行流水号","email":"邮箱","phone":"手机号","identify_type":"证件类型","identify_num":"证件号码"}，除示例字段外，当前参数会整合商户传递的attach里付款人信息相关字段|
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行等 |
@@ -273,8 +273,8 @@
 | dis_order_no | string | true  | 平台订单号                                         |
 | order_price        | int    | true  | 订单金额,单位:萨当（Satang）                                     |
 | fee          | int    | false | 订单手续费 ,单位:萨当（Satang）                         |
-| real_price   | int    | false | 真实代付出款金额 (代付成功时才有) <span style="color:red;">此字段暂未更新，接入时验签算法需考虑该字段，避免更新后出现签名错误</span>                                                                                       |
-| status       | int    | true  | 订单状态, 2.代付成功, 3.代付失败, 7.驳回 9.冲正               |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">真实代付出款金额 (代付成功时才有) 此字段暂未更新，接入时验签算法需考虑该字段，避免更新后出现签名错误</span>                                                                                       |
+| status       | int    | true  | 订单状态, <span style="color:red;">2.代付成功</span>, 3.代付失败, 7.驳回 9.冲正               |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行、utr2等 |
 | remark       | string | false | 失败原因                                          |
 | create_time  | int    | true  | 创建时间                                          |
@@ -334,8 +334,8 @@
 | code         | int    | true  | 200:查询成功 其他:失败                                                                                                                                    |
 | msg          | string | true  | 查询失败原因                                                                                                                                            |
 | trade_no     | int    | true  | 商户号                                                                                                                                               |
-| real_price   | int    | true  | 真实付款金额 ,单位:萨当（Satang）                                                                                                                              |
-| status       | int    | true  | 订单状态, 1.未支付, 2.成功, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                                       |
+| <span style="color:red;">real_price</span>   | int    | true  | <span style="color:red;">真实付款金额 ,单位:萨当（Satang）</span>                                                                                                                              |
+| status       | int    | true  | 订单状态, 1.未支付, <span style="color:red;">2.成功</span>, 3.失败 , 7.驳回 9.冲正  10:处理中                                                                                                       |
 | success_time | int    | true  | 成功时间戳                                                                                                                                             |
 | order_no     | string | true  | 商户订单号                                                                                                                                             |
 | dis_order_no | string | true  | 平台订单号                                                                                                                                             |

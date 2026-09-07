@@ -147,11 +147,11 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 | Name          | Type   | Required | Description                                                                                                              |
 |---------------|--------|----------|--------------------------------------------------------------------------------------------------------------------------|
 | trade_no      | int    | true     | Merchant ID                                                                                                              |
-| status        | int    | true     | Order status: 2 = Success, 3 = Failed                                                                                    |
+| status        | int    | true     | Order status: <span style="color:red;">2 = Success</span>, 3 = Failed                                                                                    |
 | order_no      | string | true     | Merchant order number                                                                                                    |
 | dis_order_no  | string | true     | Platform order number                                                                                                    |
 | order_price   | int    | true     | Order amount in <span style="color:red;">Centavo</span>                                                                    |
-| real_price    | int    | true     | Actual amount paid by user in <span style="color:red;">Centavo</span>                                                      |
+| <span style="color:red;">real_price</span>    | int    | true     | <span style="color:red;">Actual amount paid by user in Centavo</span>                                                      |
 | nti_time      | int    | false    | Notification dispatch time                                                                                               |
 | payer         | string | false    | JSON string with payer information: `{"name":"Full Name","account":"Account","utr2":"Bank Transaction No."}`. In addition to the example fields, this parameter will also include payer-related fields from the merchant's `attach`. |
 | pay_info      | string | false    | Payment information as a JSON string, e.g.: raw payment data, card number, name, bank, etc.                              |
@@ -286,8 +286,8 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 | dis_order_no  | string | true     | Platform order number                                                    |
 | order_price   | int    | true     | Order amount                                                             |
 | fee           | int    | false    | Transaction fee                                                          |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
-| status        | int    | true     | Order status: 2 = Payout successful, 3 = Payout failed, 7 = Rejected, 9 = Reversed |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| status        | int    | true     | Order status: <span style="color:red;">2 = Payout successful</span>, 3 = Payout failed, 7 = Rejected, 9 = Reversed |
 | pay_info      | string | false    | Payment information                                                      |
 | remark        | string | false    | Failure reason                                                           |
 | create_time   | int    | true     | Order creation time                                                      |
@@ -349,8 +349,8 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | code          | int    | true     | 200: Query successful; other values: Failed                                          |
 | msg           | string | true     | Query failure reason                                                                 |
 | trade_no      | int    | true     | Merchant ID                                                                          |
-| real_price    | int    | true     | Actual payment amount                                                                |
-| status        | int    | true     | Order status: 1 = Unpaid, 2 = Success, 3 = Failed, 7 = Rejected, 9 = Reversed, 10 = Processing |
+| <span style="color:red;">real_price</span>    | int    | true     | <span style="color:red;">Actual payment amount</span>                                                                |
+| status        | int    | true     | Order status: 1 = Unpaid, <span style="color:red;">2 = Success</span>, 3 = Failed, 7 = Rejected, 9 = Reversed, 10 = Processing |
 | success_time  | int    | true     | Success timestamp                                                                    |
 | order_no      | string | true     | Merchant order number                                                                |
 | dis_order_no  | string | true     | Platform order number                                                                |

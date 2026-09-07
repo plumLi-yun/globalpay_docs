@@ -140,11 +140,11 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 | Name | Type | Required | Description |
 |------------|------|-----|--------------------------------------------------------------------------------------------------------|
 | trade_no | int | true | Merchant ID |
-| status | int | true | Order status: `2` success, `3` failed |
+| status | int | true | Order status: <span style="color:red;">`2` success</span>, `3` failed |
 | order_no | string | true | Merchant order number |
 | dis_order_no | string | true | Platform order number |
 | order_price | int | true | Order amount in Centavos |
-| real_price | int | true | Actual amount paid by the user, in Centavos |
+| <span style="color:red;">real_price</span> | int | true | <span style="color:red;">Actual amount paid by the user, in Centavos</span> |
 | nti_time | int | false | Notification time |
 | payer | string | false | JSON string of payer information: `{"name":"Name","account":"Account","bank":"User bank code","utr2":"Bank reference","email":"Email","phone":"Phone","identify_type":"ID type","identify_num":"ID number"}`. Besides the example fields, payer-related fields passed in `attach` may also be merged into this parameter |
 | pay_info | string | false | Payment information JSON string, for example native payment info, card number, name, bank, etc. |
@@ -282,8 +282,8 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 | dis_order_no | string | true | Platform order number |
 | order_price | int | true | Order amount in Centavos |
 | fee | int | false | Transaction fee in Centavos |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
-| status | int | true | Order status: `2` success, `3` failed, `7` rejected, `9` reversed |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| status | int | true | Order status: <span style="color:red;">`2` success</span>, `3` failed, `7` rejected, `9` reversed |
 | pay_info | string | false | Payment information JSON string, for example native payment info, card number, name, bank, `utr2`, etc. |
 | remark | string | false | Failure reason |
 | create_time | int | true | Creation time |
@@ -344,8 +344,8 @@ Query URL: https://{api_domain}/api/v1/payApi/QueryOrder
 | code | int | true | `200`: query successful, others: failed |
 | msg | string | true | Failure reason |
 | trade_no | int | true | Merchant ID |
-| real_price | int | true | Actual paid amount in Centavos |
-| status | int | true | Order status: `1` unpaid, `2` success, `3` failed, `7` rejected, `9` reversed, `10` processing |
+| <span style="color:red;">real_price</span> | int | true | <span style="color:red;">Actual paid amount in Centavos</span> |
+| status | int | true | Order status: `1` unpaid, <span style="color:red;">`2` success</span>, `3` failed, `7` rejected, `9` reversed, `10` processing |
 | success_time | int | true | Success timestamp |
 | order_no | string | true | Merchant order number |
 | dis_order_no | string | true | Platform order number |

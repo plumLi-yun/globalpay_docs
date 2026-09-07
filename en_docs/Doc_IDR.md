@@ -143,11 +143,11 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 | Name         | Type   | Required | Description                                                                                                                                                                                                                         |
 |------------|------|-----|--------------------------------------------------------------------------------------------------------|
 | trade_no     | int    | true  | Merchant number                                                                                                                                                                                                                     |
-| status       | int    | true  | Order status: 2 = Success, 3 = Failed                                                                                                                                                                                               |
+| status       | int    | true  | Order status: <span style="color:red;">2 = Success</span>, 3 = Failed                                                                                                                                                                                               |
 | order_no     | string | true  | Merchant order number                                                                                                                                                                                                               |
 | dis_order_no | string | true  | Platform order number                                                                                                                                                                                                               |
 | order_price  | int    | true  | Order amount, unit: Sen                                                                                                                                                                                                             |
-| real_price   | int    | true  | Actual amount paid by the user, unit: Sen                                                                                                                                                                                           |
+| <span style="color:red;">real_price</span>   | int    | true  | <span style="color:red;">Actual amount paid by the user, unit: Sen</span>                                                                                                                                                                                           |
 | nti_time     | int    | false | Time the notification was initiated                                                                                                                                                                                                 |
 | payer        | string | false | JSON string with payer information: `{"name":"Full name","account_no":"Account","account_type":"Account type","bank_code":"Payer bank or wallet code","utr2":"Bank reference number","email":"Email","phone":"Phone number"}`. In addition to the example fields, this parameter may also include payer-related fields passed by the merchant in `attach`. |
 | pay_info     | string | false | Payment information JSON string, for example: native payment info, redirect URL, payer account, name, bank, etc.                                                                                                                     |
@@ -194,7 +194,7 @@ Order URL: `https://{api_domain}/api/v1/payApi/CreatePayOutOrder`
 | account_name   | string | true  | Full name                                                                   |
 | bank_code      | string | true  | Payee bank / wallet code. Refer to the Pay-Out bank code list below.        |
 | pay_notice_url | string | false | Payout success notification URL                                             |
-| attach         | string | false | Additional parameters: `{"email":"email address","phone":"phone number","pay_type":"payment method"}` |
+| attach         | string | true  | Additional parameters: `{"email":"email address","phone":"phone number","pay_type":"payment method"}` |
 | user_ip        | string | false | Payee's IP address                                                          |
 | sign           | string | true  | Signature result. See signature method at the top of this document.         |
 | timestamp      | string | false | Order timestamp. 10-digit Unix timestamp in seconds (S).                    |
@@ -282,8 +282,8 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 | dis_order_no | string | true  | Platform order number                                                                       |
 | order_price  | int    | true  | Order amount, unit: Sen                                                                     |
 | fee          | int    | false | Order handling fee, unit: Sen                                                               |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
-| status       | int    | true  | Order status: 2 = Payout successful, 3 = Payout failed, 7 = Rejected, 9 = Reversal         |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| status       | int    | true  | Order status: <span style="color:red;">2 = Payout successful</span>, 3 = Payout failed, 7 = Rejected, 9 = Reversal         |
 | pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, utr2, etc. |
 | remark       | string | false | Reason for failure                                                                          |
 | create_time  | int    | true  | Creation time                                                                               |
@@ -345,8 +345,8 @@ Query URL: `https://{api_domain}/api/v1/payApi/QueryOrder`
 | code         | int    | true  | 200: Query successful. Other values: Failed.                                                                                                                   |
 | msg          | string | true  | Reason for query failure                                                                                                                                       |
 | trade_no     | int    | true  | Merchant number                                                                                                                                               |
-| real_price   | int    | true  | Actual amount paid, unit: Sen                                                                                                                                 |
-| status       | int    | true  | Order status: 1 = Unpaid, 2 = Success, 3 = Failed, 7 = Rejected, 9 = Reversal, 10 = Processing                                                               |
+| <span style="color:red;">real_price</span>   | int    | true  | <span style="color:red;">Actual amount paid, unit: Sen</span>                                                                                                                                 |
+| status       | int    | true  | Order status: 1 = Unpaid, <span style="color:red;">2 = Success</span>, 3 = Failed, 7 = Rejected, 9 = Reversal, 10 = Processing                                                               |
 | success_time | int    | true  | Success timestamp                                                                                                                                             |
 | order_no     | string | true  | Merchant order number                                                                                                                                         |
 | dis_order_no | string | true  | Platform order number                                                                                                                                         |

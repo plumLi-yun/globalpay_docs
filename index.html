@@ -79,6 +79,10 @@
                 <ul class="doc-list" id="doc-list">
                     <!-- 文档列表将动态生成 -->
                 </ul>
+                <h4 id="demo-title">验签工具 Demo</h4>
+                <ul class="doc-list" id="demo-list">
+                    <!-- Demo 列表将动态生成 -->
+                </ul>
             </div>
             <div class="content-area">
                 <div id="markdown-viewer" class="markdown-body">
@@ -102,6 +106,7 @@
         const i18n = {
             'cn': {
                 sidebarTitle: '国家、地区、币种列表',
+                demoTitle: '验签工具 Demo',
                 tocTitle: '目录',
                 backToTop: '回到顶部 ↑',
                 welcomeTitle: '欢迎',
@@ -131,10 +136,17 @@
                     "thb": "泰国",
                     "myr": "马来西亚",
                     "usdt": "USDT"
+                },
+                demos: {
+                    "python": "Python",
+                    "php": "PHP",
+                    "golang": "Golang",
+                    "java": "Java"
                 }
             },
             'en': {
                 sidebarTitle: 'Countries, Regions, and Currencies',
+                demoTitle: 'Signature Tool Demo',
                 tocTitle: 'Table of Contents',
                 backToTop: 'Back to Top ↑',
                 welcomeTitle: 'Welcome',
@@ -164,6 +176,12 @@
                     "thb": "Thailand",
                     "myr": "Malaysia",
                     "usdt": "USDT"
+                },
+                demos: {
+                    "python": "Python",
+                    "php": "PHP",
+                    "golang": "Golang",
+                    "java": "Java"
                 }
             }
         };
@@ -176,13 +194,14 @@
             const P=_6||_a;
             let L='cn';
             const D=[{n:'brl',f:'Doc_BRL.md'},{n:'mmk',f:'Doc_MMK.md'},{n:'rub',f:'Doc_RUB.md'},{n:'inr',f:'Doc_INR.md'},{n:'mxn',f:'Doc_MXN.md'},{n:'vnd',f:'Doc_VND.md'},{n:'try',f:'Doc_TRY.md'},{n:'php',f:'Doc_PHP.md'},{n:'pkr',f:'Doc_PKR.md'},{n:'idr',f:'Doc_IDR.md'},{n:"egp",f:"Doc_EGP.md"},{n:"pen",f:"Doc_PEN.md"},{n:"clp",f:"Doc_CLP.md"},{n:"ars",f:"Doc_ARS.md"},{n:"cop",f:"Doc_COP.md"},{n:"bdt",f:"Doc_BDT.md"},{n:"usd",f:"Doc_USD.md"},{n:"hkd",f:"Doc_HKD.md"},{n:"thb",f:"Doc_THB.md"},{n:"myr",f:"Doc_MYR.md"},{n:"usdt",f:"Doc_USDT.md"}];
-            const P_MAP={'cn':'cn_docs/','en':'en_docs/'};
+            const DEMO_D=[{n:'python',f:'python.md'},{n:'php',f:'php.md'},{n:'golang',f:'golang.md'},{n:'java',f:'java.md'}];
+            const P_MAP={docs:{'cn':'cn_docs/','en':'en_docs/'},demo:{'cn':'cn_demo/','en':'en_demo/'}};
             window.switchLang=function(l){if(L===l)return;L=l;document.getElementById('lang-select').value=l;U();R();};
-            function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
+            function U(){const t=i18n[L];document.getElementById('sidebar-title').textContent=t.sidebarTitle;document.getElementById('demo-title').textContent=t.demoTitle;document.getElementById('toc-title').textContent=t.tocTitle;const v=document.getElementById('markdown-viewer');if(v.querySelector('h1')?.id==='welcome-title'){v.innerHTML='<h1 id="welcome-title">'+t.welcomeTitle+'</h1><p id="welcome-msg">'+t.welcomeMsg+'</p>';}}
             window.checkPassword=function(){const i=document.getElementById('password-input').value;if(i===P){sessionStorage.setItem('isLoggedIn','true');S();}else{document.getElementById('error-msg').style.display='block';}};
             window.handleKeyPress=function(e){if(e.key==='Enter')window.checkPassword();};
             function S(){document.getElementById('login-overlay').style.display='none';document.getElementById('main-content').style.display='flex';R();}
-            function R(){const l=document.getElementById('doc-list');l.innerHTML='';const t=i18n[L];D.forEach((d,i)=>{const li=document.createElement('li');li.className='doc-item';li.textContent=t.countries[d.n]||d.n;const p=P_MAP[L]+d.f;li.onclick=()=>LD(p,li);l.appendChild(li);if(i===0)LD(p,li);});}
+            function R(){const l=document.getElementById('doc-list');const dl=document.getElementById('demo-list');l.innerHTML='';dl.innerHTML='';const t=i18n[L];D.forEach((d,i)=>{const li=document.createElement('li');li.className='doc-item';li.textContent=t.countries[d.n]||d.n;const p=P_MAP.docs[L]+d.f;li.onclick=()=>LD(p,li);l.appendChild(li);if(i===0)LD(p,li);});DEMO_D.forEach((d)=>{const li=document.createElement('li');li.className='doc-item';li.textContent=t.demos[d.n]||d.n;const p=P_MAP.demo[L]+d.f;li.onclick=()=>LD(p,li);dl.appendChild(li);});}
             async function LD(p,e){document.querySelectorAll('.doc-item').forEach(el=>el.classList.remove('active'));e.classList.add('active');const v=document.getElementById('markdown-viewer');const tp=document.getElementById('toc-panel');const tl=document.getElementById('toc-list-content');const t=i18n[L];v.innerHTML='<p>'+t.loading+'</p>';tp.style.display='none';try{const r=await fetch(p);if(!r.ok)throw new Error(t.fileNotFound);const tx=await r.text();marked.setOptions({highlight:function(c,l){const lg=hljs.getLanguage(l)?l:'plaintext';return hljs.highlight(c,{language:lg}).value;},langPrefix:'hljs language-'});v.innerHTML=marked.parse(tx);GT(v,tl);tp.style.display='block';v.querySelectorAll('pre code').forEach((b)=>{hljs.highlightElement(b);});}catch(err){v.innerHTML='<p style="color: red;">'+t.loadFailed+err.message+'</p>';}}
             function GT(v,tl){tl.innerHTML='';const t=i18n[L];const top=document.createElement('li');top.className='toc-item h1';top.textContent=t.backToTop;top.onclick=()=>{document.querySelector('.content-area').scrollTo({top:0,behavior:'smooth'});};tl.appendChild(top);v.querySelectorAll('h1, h2, h3').forEach((h,i)=>{h.id='heading-'+i;const li=document.createElement('li');li.className='toc-item '+h.tagName.toLowerCase();li.textContent=h.textContent;li.title=h.textContent;li.onclick=()=>{h.scrollIntoView({behavior:'smooth'});};tl.appendChild(li);});}
             window.onload=()=>{if(window.location.protocol==='file:'){document.getElementById('protocol-warning').style.display='block';}if(sessionStorage.getItem('isLoggedIn')==='true'){S();}};

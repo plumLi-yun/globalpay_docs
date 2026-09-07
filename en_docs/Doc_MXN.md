@@ -137,11 +137,11 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | Name     | Type  | Required | Description                                                                                                                              |
 |--------------|--------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | trade_no   | int  | true   | Merchant ID.                                                                                                                             |
-| status    | int  | true   | Order status: 2. Success, 3. Failure.                                                                                                                 |
+| status    | int  | true   | Order status: <span style="color:red;">2. Success</span>, 3. Failure.                                                                                                                 |
 | order_no   | string | true   | Merchant order number.                                                                                                                        |
 | dis_order_no | string | true   | Platform order number.                                                                                                                        |
 | order_price | int  | true   | Order amount, unit: Centavo.                                                                                                                      |
-| real_price  | int  | true   | Actual amount paid by the user, unit: Centavo.                                                                                                             |
+| <span style="color:red;">real_price</span>  | int  | true   | <span style="color:red;">Actual amount paid by the user, unit: Centavo.</span>                                                                                                             |
 | nti_time   | int  | false  | Notification initiation time.                                                                                                                     |
 | payer    | string | false  | JSON string, payer info: {"name":"Name", "account":"Account", "bank":"User Bank Code", "utr2":"Bank serial number", "email":"Email", "phone":"Phone", "identify_type":"Identity Type", "identify_num":"RFC, CURP"}. Also includes payer-related fields from `attach`. |
 | pay_info   | string | false  | Payment information JSON string. e.g., original pay-in/pay-out info, card number, name, bank, etc.                                                                                  |
@@ -320,8 +320,8 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
 | dis_order_no | string | true   | Platform order number.                          |
 | order_price | int  | true   | Order amount, unit: Centavo.                        |
 | fee     | int  | false  | Order fee, unit: Centavo.                          |
-| real_price   | int    | false | Actual payout amount (only available when payout succeeds) <span style="color:red;">This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
-| status    | int  | true   | Order status: 2. Success, 3. Failure, 7. Rejected, 9. Reversal.      |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| status    | int  | true   | Order status: <span style="color:red;">2. Success</span>, 3. Failure, 7. Rejected, 9. Reversal.      |
 | pay_info   | string | false  | Payment information.                           |
 | remark    | string | false  | Failure reason.                              |
 | create_time | int  | true   | Creation time.                              |
@@ -382,8 +382,8 @@ Query address: https://{api_domain}/api/v1/payApi/QueryOrder
 | code     | int  | true   | 200: Query successful; Others: Failure.                                                                                   |
 | msg     | string | true   | Query failure reason.                                                                                            |
 | trade_no   | int  | true   | Merchant ID.                                                                                                 |
-| real_price  | int  | true   | Actual amount paid, unit: Centavo.                                                                                       |
-| status    | int  | true   | Order status: 1. Unpaid, 2. Success, 3. Failure, 7. Rejected, 9. Reversal, 10. Processing.                                                          |
+| <span style="color:red;">real_price</span>  | int  | true   | <span style="color:red;">Actual amount paid, unit: Centavo.</span>                                                                                       |
+| status    | int  | true   | Order status: 1. Unpaid, <span style="color:red;">2. Success</span>, 3. Failure, 7. Rejected, 9. Reversal, 10. Processing.                                                          |
 | success_time | int  | true   | Success timestamp.                                                                                              |
 | order_no   | string | true   | Merchant order number.                                                                                            |
 | dis_order_no | string | true   | Platform order number.                                                                                            |
