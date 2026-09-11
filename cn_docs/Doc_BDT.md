@@ -509,11 +509,11 @@
 
 # 12、银行编码字典 代付字段 bank_code
 
-| 字段名称 | 值 | 描述 |
-|------|-----------|-----------------------|
-| bank_code     | BKASH       | bKash |
-| bank_code | NAGAD | Nagad |
-| bank_code       | rocket | rocket |
+| 字段名称 | 值      | 描述 |
+|------|--------|-----------------------|
+| bank_code     | BKASH  | bKash |
+| bank_code | NAGAD  | Nagad |
+| bank_code       | ROCKET | rocket |
 | bank_code       | wallet | wallet |
 
 
