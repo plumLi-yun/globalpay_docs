@@ -130,7 +130,8 @@
   "order_no": "p7158412025J2dZjXLmz0",
   "dis_order_no": "2025071130770572062498816india1oushe",
   "create_time": 1752825512,
-  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5"
+  "pay_url": "https://api.sunpayinr.net/checkout/scanqr/943543da169d4757a40bfa49b3eb83b5",
+  "qr_code": "TNVPdaYdXnUxADTfLcKvkam4836B2vkKT5"
 }
 ```
 
