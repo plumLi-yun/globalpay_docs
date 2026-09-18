@@ -50,7 +50,7 @@
 | trade_no       | int    | true  | 商户号                                                                                                                                                                           |
 | app_id         | int    | true  | 商户 appId                                                                                                                                                                      |
 | pay_code       | int    | true  | 产品编码,联系我方运营获取                                                                                                                                                                 |
-| pay_method     | string | true  | 支付方式 KES-Payment（示例） |
+| pay_method     | string | true  | 支付方式 KES-Payment |
 | price          | int    | true  | 下单金额,单位:分 ,整数                                                                                                                                                                 |
 | order_no       | string | true  | 商户订单号                                                                                                                                                                         |
 | success_url    | string | false | 支付成功跳转 url                                                                                                                                                                    |
@@ -67,7 +67,7 @@
   | 名称            | 类型     | 必填    | 描述                                               |
   | ------------- | ------ | ----- |--------------------------------------------------|
   | email         | string | true | 付款人邮箱                                            |
-  | phone         | string | true | 付款人手机号,下单成功后向付款人手机发起 STK Push                                          |
+  | phone         | string | true | 付款人手机号,下单成功后向付款人手机发起 STK Push，格式为以0开头的10位号码                                          |
 
 
 - 代收-下单请求示例
@@ -81,7 +81,7 @@
   "pay_method": "KES-Payment",
   "price": 10000,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\"}",
+  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
@@ -128,7 +128,7 @@
   "dis_order_no": "2025071130770572062498816kenya1oushe",
   "create_time": 1752825512,
   "pay_url": "https://checkout.example.com/kes/order-example",
-  "pay_info": "{\"acc_no\":\"2547*****678\",\"bank\":\"M-PESA\",\"memo\":\"KES payment example\",\"name\":\"John K***\",\"pay_raw\":\"\"}"
+  "pay_info": "{\"acc_no\":\"07*****678\",\"bank\":\"M-PESA\",\"memo\":\"KES payment example\",\"name\":\"John K***\",\"pay_raw\":\"\"}"
 }
 ```
 
@@ -174,7 +174,7 @@
   "dis_order_no": "2025071130460153942908928kenya1sKQbX",
   "order_price": 10000,
   "real_price": 10000,
-  "payer": "{\"name\":\"John Kamau\",\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\",\"account\":\"254712345678\",\"bank\":\"MPESA\"}",
+  "payer": "{\"name\":\"John Kamau\",\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\",\"account\":\"0712345678\",\"bank\":\"M-PESA\"}",
   "nti_time": 1752826164,
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -220,13 +220,13 @@
   "pay_code": 1,
   "price": 10000,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\",\"bank_name\":\"M-PESA\"}",
+  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\",\"bank_name\":\"M-PESA\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
-  "account_no": "254712345678",
+  "account_no": "0712345678",
   "account_name": "John Kamau",
-  "bank_code": "MPESA"
+  "bank_code": "M-PESA"
 }
 ```
 
@@ -388,7 +388,7 @@
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"account_name\":\"John Kamau\",\"account_type\":\"PHONE\",\"account_no\":\"254712345678\",\"bank_code\":\"MPESA\"}",
+  "payer": "{\"account_name\":\"John Kamau\",\"account_type\":\"PHONE\",\"account_no\":\"0712345678\",\"bank_code\":\"M-PESA\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -525,13 +525,13 @@
 
 | 字段名称   | 值          | 描述         |
 | ---------- | ----------- | ------------ |
-| pay_method | KES-Payment | 肯尼亚代收（示例） |
+| pay_method | KES-Payment | 肯尼亚代收 |
 
 # 12、银行编码
 
 | 字段名称 | 编码  | 银行名称 |
 | :--- | :--- | :--- |
-| bank_code | MPESA | M-PESA（示例） |
+| bank_code | M-PESA | MPESA |
 
 
 # 13、错误码

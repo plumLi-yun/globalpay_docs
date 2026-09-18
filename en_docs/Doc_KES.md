@@ -50,7 +50,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | trade_no    | int  | true   | Merchant ID.                                                                                                                             |
 | app_id     | int  | true   | Merchant appId.                                                                                                                            |
 | pay_code    | int  | true   | Product code, obtained from our operations.                                                                                                              |
-| pay_method   | string | true   | Payment method: KES-Payment (example).                                                                                                                     |
+| pay_method   | string | true   | Payment method: KES-Payment.                                                                                                                     |
 | price     | int  | true   | Order amount, unit: cents, integer.                                                                                                                  |
 | order_no    | string | true   | Merchant order number.                                                                                                                        |
 | success_url  | string | false  | Redirect URL for successful payment.                                                                                                                 |
@@ -67,7 +67,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
 | Name         | Type   | Required | Description                              |
 | ------------ | ------ | -------- | ---------------------------------------- |
 | email        | string | true     | Payer email.                             |
-| phone        | string | true     | Payer phone number. An STK Push is sent to the payer's phone after the order is successfully placed. |
+| phone        | string | true     | Payer phone number. An STK Push is sent to the payer's phone after the order is successfully placed. Must be a 10-digit number starting with 0. |
 
 - Pay-in - Order Request Example
 
@@ -80,7 +80,7 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayInOrder
   "pay_method": "KES-Payment",
   "price": 10000,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\"}",
+  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\"}",
   "sign": "3d6dea05a7c08564911b9922e16455c2",
   "user_ip": "87.200.59.100",
   "success_url": "",
@@ -127,7 +127,7 @@ Success:
   "dis_order_no": "2025071130770572062498816kenya1oushe",
   "create_time": 1752825512,
   "pay_url": "https://checkout.example.com/kes/order-example",
-  "pay_info": "{\"acc_no\":\"2547*****678\",\"bank\":\"M-PESA\",\"memo\":\"KES payment example\",\"name\":\"John K***\",\"pay_raw\":\"\"}"
+  "pay_info": "{\"acc_no\":\"07*****678\",\"bank\":\"M-PESA\",\"memo\":\"KES payment example\",\"name\":\"John K***\",\"pay_raw\":\"\"}"
 }
 ```
 
@@ -175,7 +175,7 @@ Push address: The `pay_notice_url` provided by the merchant during order placeme
   "dis_order_no": "2025071130460153942908928kenya1sKQbX",
   "order_price": 10000,
   "real_price": 10000,
-  "payer": "{\"name\":\"John Kamau\",\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\",\"account\":\"254712345678\",\"bank\":\"MPESA\"}",
+  "payer": "{\"name\":\"John Kamau\",\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\",\"account\":\"0712345678\",\"bank\":\"M-PESA\"}",
   "nti_time": 1752826164,
   "create_time": 1752751502,
   "sign": "eba7f27e0f49581d8784294ef29f994d"
@@ -221,13 +221,13 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
   "pay_code": 1,
   "price": 10000,
   "pay_notice_url": "http://host/api/v1/mer/cbtest",
-  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"254712345678\",\"bank_name\":\"M-PESA\"}",
+  "attach": "{\"email\":\"john.kamau@example.com\",\"phone\":\"0712345678\",\"bank_name\":\"M-PESA\"}",
   "sign": "12f74d71fa929087af79b5083567c453",
   "user_ip": "87.200.59.100",
   "account_type": "PHONE",
-  "account_no": "254712345678",
+  "account_no": "0712345678",
   "account_name": "John Kamau",
-  "bank_code": "MPESA"
+  "bank_code": "M-PESA"
 }
 ```
 
@@ -389,7 +389,7 @@ Success:
   "remark": "",
   "fee": 10,
   "create_time": 1695317066,
-  "payer": "{\"account_name\":\"John Kamau\",\"account_type\":\"PHONE\",\"account_no\":\"254712345678\",\"bank_code\":\"MPESA\"}",
+  "payer": "{\"account_name\":\"John Kamau\",\"account_type\":\"PHONE\",\"account_no\":\"0712345678\",\"bank_code\":\"M-PESA\"}",
   "sign": "db3406277185f9660b3b928d6adc7bc4"
 }
 ```
@@ -526,13 +526,13 @@ With payment voucher:
 
 | Field Name | Value       | Description            |
 | ---------- | ----------- | ---------------------- |
-| pay_method | KES-Payment | Kenya pay-in (example) |
+| pay_method | KES-Payment | Kenya pay-in |
 
 # 12. Bank Codes
 
 | Field Name | Code  | Bank Name |
 | :--------- | :---- | :-------- |
-| bank_code  | MPESA | M-PESA (example) |
+| bank_code  | M-PESA | MPESA |
 
 
 # 13. Error Codes
