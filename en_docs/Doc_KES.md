@@ -200,15 +200,21 @@ Order address: https://{api_domain}/api/v1/payApi/CreatePayOutOrder
 | app_id         | int    | true     | Merchant appId                                                                                  |
 | pay_code       | int    | true     | Product code, contact our operations team to obtain                                             |
 | price          | int    | true     | Order amount, unit: cents, integer. After conversion to Kenyan shillings, decimals are not allowed |
-| account_no     | string | true     | Receiving account                                                                               |
-| account_type   | string | true     | Account type: PHONE, BANK (bank account)                                                        |
+| account_no     | string | true     | Receiving account. Must be a 10-digit number starting with 0.                                    |
+| account_type   | string | true     | Account type: PHONE                                                                            |
 | account_name   | string | true     | Recipient name                                                                                  |
 | bank_code      | string | true     | Receiving bank code, refer to bank code list                                                    |
 | pay_notice_url | string | false    | Payout success callback URL                                                                     |
-| attach         | string | false    | Additional parameters {"email":"Email","phone":"Phone number","bank_name":"Bank name"}          |
+| attach         | string | true     | Additional parameters {"email":"Email"}                                                        |
 | user_ip        | string | true     | Recipient user IP                                                                               |
 | sign           | string | true     | Signature result, signature method described at the top of this document                        |
 | timestamp      | string | false    | Order timestamp, 10-digit Unix timestamp in seconds                                             |
+
+- Pay-out - attach Additional Parameter Field Description
+
+| Name         | Type   | Required | Description                              |
+| ------------ | ------ | -------- | ---------------------------------------- |
+| email        | string | true     | Recipient email.                         |
 
 - Pay-out - Request Example
 
