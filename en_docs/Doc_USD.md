@@ -591,7 +591,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{mer
 |-----------|-------|------|
 | pay_method | ApplePay | ApplePay |
 | pay_method | CashApp | CashApp |
-| pay_method | PAY_IN_USD_GOOGLE | GooglePay |
+| pay_method   | googlePay       |      GooglePay  |
 
 # 14. Pay-out Bank Codes
 

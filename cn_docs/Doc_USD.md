@@ -592,7 +592,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 |-----------|-------|------|
 | pay_method         | ApplePay    | ApplePay |
 | pay_method         | CashApp    | CashApp |
-| pay_method              | PAY_IN_USD_GOOGLE       |      GooglePay  |
+| pay_method         | googlePay       |      GooglePay  |
 
 
 # 14、代付银行编码 代付字段 bank_code
@@ -603,7 +603,7 @@ https://{api_domain}/api/v1/cashApi/CashIn.html?app_id={{app_id}}&order_no={{商
 | bank_code | CARD_USD   | card|
 | bank_code | PayPal_USD | paypal |
 | bank_code | Cash_USD   | ecashapp |
-|b ank_codeb  VENMO_USD  | venmo |
+|bank_code |  VENMO_USD  | venmo |
 
 
 # 15、文档更新时间
