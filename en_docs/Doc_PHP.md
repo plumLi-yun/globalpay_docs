@@ -512,13 +512,13 @@ Payment voucher available:
 
 | Field      | Country     | Value | Description |
 | ---------- | ----------- | ----- | ----------- |
-| bayad      | Philippines | PH_BAYAD      | Bayad             |
-| grabpay    | Philippines | PH_GRABPAY    | GrabPay           |
-| coins      | Philippines | PH_COINS      | Coins.PH          |
-| omni       | Philippines | PH_OMNI       | Omnipay, Inc.     |
-| gcash      | Philippines | PH_GCASH      | GCash             |
-| paymaya    | Philippines | PH_PAYMAYA    | PayMaya           |
-| qrhx       | Philippines | PH_QRPH    | QR            |
+| pay_method      | Philippines | PH_BAYAD      | Bayad             |
+| pay_method    | Philippines | PH_GRABPAY    | GrabPay           |
+| pay_method      | Philippines | PH_COINS      | Coins.PH          |
+| pay_method       | Philippines | PH_OMNI       | Omnipay, Inc.     |
+| pay_method      | Philippines | PH_GCASH      | GCash             |
+| pay_method    | Philippines | PH_PAYMAYA    | PayMaya           |
+| pay_method       | Philippines | PH_QRPH    | QR            |
 
 ---
 
