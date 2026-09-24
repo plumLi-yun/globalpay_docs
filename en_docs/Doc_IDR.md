@@ -282,7 +282,7 @@ Push address: The `pay_notice_url` provided by the merchant at order placement. 
 | dis_order_no | string | true  | Platform order number                                                                       |
 | order_price  | int    | true  | Order amount, unit: Sen                                                                     |
 | fee          | int    | false | Order handling fee, unit: Sen                                                               |
-| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when the payout succeeds). To use the real_price field, please contact our staff to configure it.</span>                                                                                       |
 | status       | int    | true  | Order status: <span style="color:red;">2 = Payout successful</span>, 3 = Payout failed, 7 = Rejected, 9 = Reversal         |
 | pay_info     | string | false | Payment information JSON string. Examples: raw payment info, card number, name, bank, utr2, etc. |
 | remark       | string | false | Reason for failure                                                                          |

@@ -271,7 +271,7 @@ Push URL: the `pay_notice_url` submitted by the merchant when creating the order
 | dis_order_no | string | true | Platform order number |
 | order_price | int | true | Order amount, unit: Satang |
 | fee | int | false | Order fee, unit: Satang |
-| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when the payout succeeds). To use the real_price field, please contact our staff to configure it.</span>                                                                                       |
 | status | int | true | Order status: <span style="color:red;">`2` pay-out success</span>, `3` pay-out failed, `7` rejected, `9` reversed |
 | pay_info | string | false | Payment information JSON string, for example: native payment info, card number, name, bank, `utr2`, etc. |
 | remark | string | false | Failure reason |

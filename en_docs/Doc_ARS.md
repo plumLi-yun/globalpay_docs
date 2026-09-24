@@ -286,7 +286,7 @@ Callback IP: `call_back_server_ip` — please add our IP to your callback whitel
 | dis_order_no  | string | true     | Platform order number                                                    |
 | order_price   | int    | true     | Order amount                                                             |
 | fee           | int    | false    | Transaction fee                                                          |
-| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when payout succeeds) This field is not yet live. Your signature verification algorithm should account for this field during integration to avoid signature errors after it is enabled.</span>                                                                                       |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">Actual payout amount (only available when the payout succeeds). To use the real_price field, please contact our staff to configure it.</span>                                                                                       |
 | status        | int    | true     | Order status: <span style="color:red;">2 = Payout successful</span>, 3 = Payout failed, 7 = Rejected, 9 = Reversed |
 | pay_info      | string | false    | Payment information                                                      |
 | remark        | string | false    | Failure reason                                                           |

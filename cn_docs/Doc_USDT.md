@@ -274,7 +274,7 @@
 | dis_order_no | string | true  | 平台订单号                                         |
 | order_price        | int    | true  | 订单金额,单位:USDT（USDT），实际传值为 USDT 金额 x100                                     |
 | fee          | int    | false | 订单手续费,单位:USDT（USDT），实际传值为 USDT 金额 x100                         |
-| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">真实代付出款金额 (代付成功时才有) 此字段暂未更新，接入时验签算法需考虑该字段，避免更新后出现签名错误</span>                                                                                       |
+| <span style="color:red;">real_price</span>   | int    | false | <span style="color:red;">真实代付出款金额 (代付成功时才有) 如需使用real_price字段，请与工作人员联系配置</span>                                                                                       |
 | status       | int    | true  | 订单状态, <span style="color:red;">2.代付成功</span>, 3.代付失败, 7.驳回 9.冲正               |
 | pay_info  | string    | false | 付款信息 json字符串 例如：收、付款原生信息、卡号、名字、银行、utr2等 |
 | remark       | string | false | 失败原因                                          |
