@@ -586,6 +586,7 @@
 | bank_code | HLB        | Hong Leong Bank Vietnam Limited |
 | bank_code | DAB        | DongA Bank |
 | bank_code | COOP       | Vietnam Cooperative Bank |
+| bank_code        |   BAB           |  Ngân hàng TMCP Bắc Á (BAC A BANK)        |
 
 
 # 12、错误码
